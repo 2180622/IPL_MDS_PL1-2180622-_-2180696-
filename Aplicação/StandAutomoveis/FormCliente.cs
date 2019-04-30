@@ -15,30 +15,26 @@ namespace StandAutomoveis
         public FormCliente()
         {
             InitializeComponent();
+            BDStand = new BDStandContainer();
+            dataGridViewClientes.DataSource = BDStand.Clientes.ToList<Cliente>();
         }
 
         public BDStandContainer BDStand;
 
         private void toolStripButtonGuardaAlteracoes_Click(object sender, EventArgs e)
         {
-
             Cliente novocliente = new Cliente();
 
             novocliente.Nome = textBoxNome.Text;
             novocliente.NIF = textBoxNIF.Text;
             novocliente.Morada = textBoxMorada.Text;
             novocliente.Contacto = int.Parse(textBoxContacto.Text);
-
-            BDStand = new BDStandContainer();
             
             BDStand.Clientes.Add(novocliente);
             
-
             BDStand.SaveChanges();
-
+            
             dataGridViewClientes.DataSource = BDStand.Clientes.ToList<Cliente>();
-
-            dataGridViewClientes.Rows.Add(novocliente.Nome, novocliente.NIF);
         }
     }
 }

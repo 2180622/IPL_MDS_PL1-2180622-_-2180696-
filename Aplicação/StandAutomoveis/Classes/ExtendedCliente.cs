@@ -8,9 +8,6 @@ namespace StandAutomoveis
 {
     public partial class Cliente
     {
-        public override string ToString()
-        {
-            return this.Nome;
-        }
+
     }
 }
