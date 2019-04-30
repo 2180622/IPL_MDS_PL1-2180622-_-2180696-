@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0852b0020f9647eb93db6caad0edd9bc" Name="Diagram1" >
+        <EntityTypeShape EntityType="BDStand.Cliente" Width="1.5" PointX="0.625" PointY="2.5" />
+        <EntityTypeShape EntityType="BDStand.Aluguer" Width="1.5" PointX="6.625" PointY="5.75" />
+        <EntityTypeShape EntityType="BDStand.Venda" Width="1.5" PointX="4.125" PointY="3.5" />
+        <EntityTypeShape EntityType="BDStand.CarroOficina" Width="1.5" PointX="9.375" PointY="0.5" />
+        <EntityTypeShape EntityType="BDStand.Servico" Width="1.5" PointX="6.375" PointY="1.25" />
+        <EntityTypeShape EntityType="BDStand.Parcela" Width="1.5" PointX="3" PointY="1.25" />
+        <EntityTypeShape EntityType="BDStand.CarroVenda" Width="1.5" PointX="7" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDStand.CarroAluguer" Width="1.5" PointX="9.375" PointY="6.25" />
+        <EntityTypeShape EntityType="BDStand.Carro" Width="1.5" PointX="9.375" PointY="3" />
+        <AssociationConnector Association="BDStand.ClienteCarroOficina" />
+        <AssociationConnector Association="BDStand.ClienteVenda" />
+        <AssociationConnector Association="BDStand.ClienteAluguer" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="BDStand.VendaCarroVenda" />
+        <AssociationConnector Association="BDStand.AluguerCarroAluguer" />
+        <AssociationConnector Association="BDStand.CarroOficinaServico" />
+        <AssociationConnector Association="BDStand.ServicoParcela" />
+        <InheritanceConnector EntityType="BDStand.CarroAluguer" />
+        <InheritanceConnector EntityType="BDStand.CarroOficina" />
+        <InheritanceConnector EntityType="BDStand.CarroVenda" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
