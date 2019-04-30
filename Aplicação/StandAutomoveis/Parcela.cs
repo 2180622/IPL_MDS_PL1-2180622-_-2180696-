@@ -15,7 +15,7 @@ namespace StandAutomoveis
     public partial class Parcela
     {
         public int IdParcela { get; set; }
-        public string Valor { get; set; }
+        public decimal Valor { get; set; }
         public string Descricao { get; set; }
         public int ServicoIdServicos { get; set; }
     

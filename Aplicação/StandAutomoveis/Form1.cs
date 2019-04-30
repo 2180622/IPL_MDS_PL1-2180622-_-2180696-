@@ -16,5 +16,12 @@ namespace StandAutomoveis
         {
             InitializeComponent();
         }
+
+        private void buttonGestaoClientes_Click(object sender, EventArgs e)
+        {
+            FormCliente formcliente = new FormCliente();
+
+            formcliente.Show();
+        }
     }
 }
