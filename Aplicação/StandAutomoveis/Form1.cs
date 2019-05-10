@@ -23,5 +23,10 @@ namespace StandAutomoveis
 
             formcliente.Show();
         }
+
+        private void buttonExitApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -7,34 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace StandAutomoveis
 {
     public partial class FormCliente : Form
     {
-        public FormCliente()
-        {
-            InitializeComponent();
-            BDStand = new BDStandContainer();
-            dataGridViewClientes.DataSource = BDStand.Clientes.ToList<Cliente>();
-        }
 
         public BDStandContainer BDStand;
 
-        private void toolStripButtonGuardaAlteracoes_Click(object sender, EventArgs e)
+        public FormCliente()
         {
-            Cliente novocliente = new Cliente();
+            InitializeComponent();
 
-            novocliente.Nome = textBoxNome.Text;
-            novocliente.NIF = textBoxNIF.Text;
-            novocliente.Morada = textBoxMorada.Text;
-            novocliente.Contacto = int.Parse(textBoxContacto.Text);
-            
-            BDStand.Clientes.Add(novocliente);
-            
+            BDStand = new BDStandContainer();
+
+            (from cliente in BDStand.Clientes
+             orderby cliente.Nome
+             select cliente).Load();
+
+            clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+        }
+
+        private void buttonExitApp_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void toolStripButtonGuardar_Click(object sender, EventArgs e)
+        {
             BDStand.SaveChanges();
-            
-            dataGridViewClientes.DataSource = BDStand.Clientes.ToList<Cliente>();
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
         }
     }
 }

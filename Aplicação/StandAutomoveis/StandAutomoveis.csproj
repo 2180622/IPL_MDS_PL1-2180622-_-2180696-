@@ -135,6 +135,7 @@
       <DependentUpon>BDStand.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Cliente.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -172,6 +173,7 @@
       <LastGenOutput>BDStand.cs</LastGenOutput>
       <DependentUpon>BDStand.edmx</DependentUpon>
     </Content>
+    <None Include="Resources\actions_exit_application.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
