@@ -114,6 +114,12 @@
     <Compile Include="Servico.cs">
       <DependentUpon>BDStand.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControlCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlCliente.Designer.cs">
+      <DependentUpon>UserControlCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Venda.cs">
       <DependentUpon>BDStand.tt</DependentUpon>
     </Compile>
@@ -136,6 +142,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControlCliente.resx">
+      <DependentUpon>UserControlCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="BDStand.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BDStand.Designer.cs</LastGenOutput>
@@ -182,6 +191,9 @@
       <LastGenOutput>BDStand.cs</LastGenOutput>
       <DependentUpon>BDStand.edmx</DependentUpon>
     </Content>
+    <None Include="Resources\iconeVenda.png" />
+    <None Include="Resources\iconeAluguer.png" />
+    <None Include="Resources\iconeOficina.jpg" />
     <None Include="Resources\actions_exit_application.png" />
   </ItemGroup>
   <ItemGroup>

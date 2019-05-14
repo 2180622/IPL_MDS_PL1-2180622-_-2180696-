@@ -28,20 +28,27 @@ namespace StandAutomoveis
 
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
         }
-
         private void buttonExitApp_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
+            FormInicial forminicial = new FormInicial();
 
-        private void toolStripButtonGuardar_Click(object sender, EventArgs e)
-        {
-            BDStand.SaveChanges();
+            this.Close();
+
+            forminicial.Show();
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             //clienteBindingSource.AllowNew = true;
+
+            BDStand.SaveChanges();
+        }
+
+        private void buttonOficinaCliente_Click(object sender, EventArgs e)
+        {
+            FormOficina formoficina = new FormOficina();
+
+            formoficina.Show();
         }
     }
 }

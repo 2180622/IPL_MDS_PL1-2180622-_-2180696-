@@ -41,10 +41,12 @@
             this.labelContactoCliente = new System.Windows.Forms.Label();
             this.labelValorTotalCliente = new System.Windows.Forms.Label();
             this.servicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.algueresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelCarroTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.groupBoxClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.servicosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.algueresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCarroTop
@@ -156,6 +158,11 @@
             // 
             this.servicosBindingSource.DataSource = typeof(StandAutomoveis.Servico);
             // 
+            // algueresBindingSource
+            // 
+            this.algueresBindingSource.DataMember = "Algueres";
+            this.algueresBindingSource.DataSource = this.clienteBindingSource;
+            // 
             // FormOficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +184,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.groupBoxClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.servicosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.algueresBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,5 +204,6 @@
         private System.Windows.Forms.Label labelValorTotalCliente;
         private System.Windows.Forms.BindingSource servicosBindingSource;
         private System.Windows.Forms.BindingSource clienteBindingSource;
+        private System.Windows.Forms.BindingSource algueresBindingSource;
     }
 }

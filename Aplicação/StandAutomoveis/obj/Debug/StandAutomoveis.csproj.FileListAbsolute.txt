@@ -31,3 +31,4 @@ C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-218
 C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.pdb
 C:\Users\2180622\Downloads\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormOficina.resources
 C:\Users\2180622\Downloads\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormInicial.resources
+C:\Users\2180622\Downloads\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.UserControlCliente.resources
