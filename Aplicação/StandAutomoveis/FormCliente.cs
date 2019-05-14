@@ -41,7 +41,7 @@ namespace StandAutomoveis
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            clienteBindingSource.AllowNew = true;
+            //clienteBindingSource.AllowNew = true;
         }
     }
 }
