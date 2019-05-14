@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
             System.Windows.Forms.Label contactoLabel;
             System.Windows.Forms.Label moradaLabel;
             System.Windows.Forms.Label nIFLabel;
             System.Windows.Forms.Label nomeLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
             this.panelClienteTop = new System.Windows.Forms.Panel();
             this.buttonExitApp = new System.Windows.Forms.Button();
             this.labelTituloCliente = new System.Windows.Forms.Label();
@@ -72,6 +72,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // contactoLabel
+            // 
+            contactoLabel.AutoSize = true;
+            contactoLabel.Location = new System.Drawing.Point(85, 214);
+            contactoLabel.Name = "contactoLabel";
+            contactoLabel.Size = new System.Drawing.Size(53, 13);
+            contactoLabel.TabIndex = 10;
+            contactoLabel.Text = "Contacto:";
+            // 
+            // moradaLabel
+            // 
+            moradaLabel.AutoSize = true;
+            moradaLabel.Location = new System.Drawing.Point(85, 240);
+            moradaLabel.Name = "moradaLabel";
+            moradaLabel.Size = new System.Drawing.Size(46, 13);
+            moradaLabel.TabIndex = 14;
+            moradaLabel.Text = "Morada:";
+            // 
+            // nIFLabel
+            // 
+            nIFLabel.AutoSize = true;
+            nIFLabel.Location = new System.Drawing.Point(85, 188);
+            nIFLabel.Name = "nIFLabel";
+            nIFLabel.Size = new System.Drawing.Size(27, 13);
+            nIFLabel.TabIndex = 16;
+            nIFLabel.Text = "NIF:";
+            // 
+            // nomeLabel
+            // 
+            nomeLabel.AutoSize = true;
+            nomeLabel.Location = new System.Drawing.Point(85, 162);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(38, 13);
+            nomeLabel.TabIndex = 18;
+            nomeLabel.Text = "Nome:";
             // 
             // panelClienteTop
             // 
@@ -117,6 +153,7 @@
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.BindingSource = this.clienteBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -254,15 +291,6 @@
             this.clienteDataGridView.Size = new System.Drawing.Size(543, 319);
             this.clienteDataGridView.TabIndex = 10;
             // 
-            // contactoLabel
-            // 
-            contactoLabel.AutoSize = true;
-            contactoLabel.Location = new System.Drawing.Point(85, 214);
-            contactoLabel.Name = "contactoLabel";
-            contactoLabel.Size = new System.Drawing.Size(53, 13);
-            contactoLabel.TabIndex = 10;
-            contactoLabel.Text = "Contacto:";
-            // 
             // contactoTextBox
             // 
             this.contactoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Contacto", true));
@@ -270,15 +298,6 @@
             this.contactoTextBox.Name = "contactoTextBox";
             this.contactoTextBox.Size = new System.Drawing.Size(205, 20);
             this.contactoTextBox.TabIndex = 11;
-            // 
-            // moradaLabel
-            // 
-            moradaLabel.AutoSize = true;
-            moradaLabel.Location = new System.Drawing.Point(85, 240);
-            moradaLabel.Name = "moradaLabel";
-            moradaLabel.Size = new System.Drawing.Size(46, 13);
-            moradaLabel.TabIndex = 14;
-            moradaLabel.Text = "Morada:";
             // 
             // moradaTextBox
             // 
@@ -288,15 +307,6 @@
             this.moradaTextBox.Size = new System.Drawing.Size(205, 20);
             this.moradaTextBox.TabIndex = 15;
             // 
-            // nIFLabel
-            // 
-            nIFLabel.AutoSize = true;
-            nIFLabel.Location = new System.Drawing.Point(85, 188);
-            nIFLabel.Name = "nIFLabel";
-            nIFLabel.Size = new System.Drawing.Size(27, 13);
-            nIFLabel.TabIndex = 16;
-            nIFLabel.Text = "NIF:";
-            // 
             // nIFTextBox
             // 
             this.nIFTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "NIF", true));
@@ -304,15 +314,6 @@
             this.nIFTextBox.Name = "nIFTextBox";
             this.nIFTextBox.Size = new System.Drawing.Size(205, 20);
             this.nIFTextBox.TabIndex = 17;
-            // 
-            // nomeLabel
-            // 
-            nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(85, 162);
-            nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(38, 13);
-            nomeLabel.TabIndex = 18;
-            nomeLabel.Text = "Nome:";
             // 
             // nomeTextBox
             // 

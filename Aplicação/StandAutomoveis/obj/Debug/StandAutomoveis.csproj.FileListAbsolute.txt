@@ -14,3 +14,19 @@ C:\Users\2180622\Downloads\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\Sta
 C:\Users\2180622\Downloads\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CopyComplete
 C:\Users\2180622\Downloads\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.exe
 C:\Users\2180622\Downloads\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.pdb
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\bin\Debug\StandAutomoveis.exe.config
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\bin\Debug\StandAutomoveis.exe
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\bin\Debug\StandAutomoveis.pdb
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.dll
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.SqlServer.dll
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.xml
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.SqlServer.xml
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csprojAssemblyReference.cache
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.Form1.resources
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormCliente.resources
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.Properties.Resources.resources
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.GenerateResource.cache
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CoreCompileInputs.cache
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CopyComplete
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.exe
+C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.pdb
