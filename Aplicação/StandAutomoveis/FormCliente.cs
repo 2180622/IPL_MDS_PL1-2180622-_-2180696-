@@ -30,11 +30,11 @@ namespace StandAutomoveis
         }
         private void buttonExitApp_Click(object sender, EventArgs e)
         {
-            FormInicial forminicial = new FormInicial();
+            //FormInicial forminicial = new FormInicial();
 
             this.Close();
 
-            forminicial.Show();
+            //forminicial.Show();
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)

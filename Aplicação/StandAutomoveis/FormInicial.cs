@@ -20,8 +20,11 @@ namespace StandAutomoveis
         public void buttonGestaoClientes_Click(object sender, EventArgs e)
         {
             FormCliente formcliente = new FormCliente();
+            FormInicial forminicial = new FormInicial();
 
             formcliente.Show();
+
+            forminicial.Visible = false;
         }
 
         private void buttonExitApp_Click(object sender, EventArgs e)

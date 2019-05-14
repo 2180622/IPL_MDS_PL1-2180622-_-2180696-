@@ -19,7 +19,7 @@ namespace StandAutomoveis
 
         public override string ToString()
         {
-            return Nome + "(" + NIF + ")" + " " + Contacto;
+            return Nome + "(" + NIF + ")" + " Contacto: " + Contacto;
         }
     }
 }
