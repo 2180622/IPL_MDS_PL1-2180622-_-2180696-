@@ -35,13 +35,23 @@
             System.Windows.Forms.Label nomeLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
             this.panelClienteTop = new System.Windows.Forms.Panel();
+            this.buttonExitApp = new System.Windows.Forms.Button();
             this.labelTituloCliente = new System.Windows.Forms.Label();
             this.panelLeftCliente = new System.Windows.Forms.Panel();
+            this.buttonVendasCliente = new System.Windows.Forms.Button();
+            this.buttonAluguerCliente = new System.Windows.Forms.Button();
+            this.buttonOficinaCliente = new System.Windows.Forms.Button();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.clienteDataGridView = new System.Windows.Forms.DataGridView();
             this.contactoTextBox = new System.Windows.Forms.TextBox();
@@ -54,16 +64,6 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.buttonVendasCliente = new System.Windows.Forms.Button();
-            this.buttonAluguerCliente = new System.Windows.Forms.Button();
-            this.buttonOficinaCliente = new System.Windows.Forms.Button();
-            this.buttonExitApp = new System.Windows.Forms.Button();
             contactoLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
@@ -123,6 +123,16 @@
             this.panelClienteTop.Size = new System.Drawing.Size(990, 65);
             this.panelClienteTop.TabIndex = 2;
             // 
+            // buttonExitApp
+            // 
+            this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
+            this.buttonExitApp.Location = new System.Drawing.Point(946, 3);
+            this.buttonExitApp.Name = "buttonExitApp";
+            this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
+            this.buttonExitApp.TabIndex = 11;
+            this.buttonExitApp.UseVisualStyleBackColor = true;
+            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
+            // 
             // labelTituloCliente
             // 
             this.labelTituloCliente.AutoSize = true;
@@ -146,6 +156,34 @@
             this.panelLeftCliente.Size = new System.Drawing.Size(85, 408);
             this.panelLeftCliente.TabIndex = 3;
             // 
+            // buttonVendasCliente
+            // 
+            this.buttonVendasCliente.Image = global::StandAutomoveis.Properties.Resources.iconeVenda;
+            this.buttonVendasCliente.Location = new System.Drawing.Point(3, 292);
+            this.buttonVendasCliente.Name = "buttonVendasCliente";
+            this.buttonVendasCliente.Size = new System.Drawing.Size(79, 79);
+            this.buttonVendasCliente.TabIndex = 22;
+            this.buttonVendasCliente.UseVisualStyleBackColor = true;
+            // 
+            // buttonAluguerCliente
+            // 
+            this.buttonAluguerCliente.Image = global::StandAutomoveis.Properties.Resources.iconeAluguer;
+            this.buttonAluguerCliente.Location = new System.Drawing.Point(3, 171);
+            this.buttonAluguerCliente.Name = "buttonAluguerCliente";
+            this.buttonAluguerCliente.Size = new System.Drawing.Size(79, 79);
+            this.buttonAluguerCliente.TabIndex = 21;
+            this.buttonAluguerCliente.UseVisualStyleBackColor = true;
+            // 
+            // buttonOficinaCliente
+            // 
+            this.buttonOficinaCliente.Image = global::StandAutomoveis.Properties.Resources.iconeOficina;
+            this.buttonOficinaCliente.Location = new System.Drawing.Point(3, 52);
+            this.buttonOficinaCliente.Name = "buttonOficinaCliente";
+            this.buttonOficinaCliente.Size = new System.Drawing.Size(79, 79);
+            this.buttonOficinaCliente.TabIndex = 20;
+            this.buttonOficinaCliente.UseVisualStyleBackColor = true;
+            this.buttonOficinaCliente.Click += new System.EventHandler(this.buttonOficinaCliente_Click);
+            // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -162,8 +200,8 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.bindingNavigatorAddNewItem});
             this.bindingNavigator1.Location = new System.Drawing.Point(85, 65);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -175,12 +213,48 @@
             this.bindingNavigator1.TabIndex = 10;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(110, 22);
+            this.bindingNavigatorAddNewItem.Text = "Adicionar Linha";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
@@ -200,6 +274,24 @@
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
@@ -295,98 +387,6 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Contacto";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(132, 22);
-            this.bindingNavigatorAddNewItem.Text = "Adicionar e Guardar";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // buttonVendasCliente
-            // 
-            this.buttonVendasCliente.Image = global::StandAutomoveis.Properties.Resources.iconeVenda;
-            this.buttonVendasCliente.Location = new System.Drawing.Point(3, 292);
-            this.buttonVendasCliente.Name = "buttonVendasCliente";
-            this.buttonVendasCliente.Size = new System.Drawing.Size(79, 79);
-            this.buttonVendasCliente.TabIndex = 22;
-            this.buttonVendasCliente.UseVisualStyleBackColor = true;
-            // 
-            // buttonAluguerCliente
-            // 
-            this.buttonAluguerCliente.Image = global::StandAutomoveis.Properties.Resources.iconeAluguer;
-            this.buttonAluguerCliente.Location = new System.Drawing.Point(3, 171);
-            this.buttonAluguerCliente.Name = "buttonAluguerCliente";
-            this.buttonAluguerCliente.Size = new System.Drawing.Size(79, 79);
-            this.buttonAluguerCliente.TabIndex = 21;
-            this.buttonAluguerCliente.UseVisualStyleBackColor = true;
-            // 
-            // buttonOficinaCliente
-            // 
-            this.buttonOficinaCliente.Image = global::StandAutomoveis.Properties.Resources.iconeOficina;
-            this.buttonOficinaCliente.Location = new System.Drawing.Point(3, 52);
-            this.buttonOficinaCliente.Name = "buttonOficinaCliente";
-            this.buttonOficinaCliente.Size = new System.Drawing.Size(79, 79);
-            this.buttonOficinaCliente.TabIndex = 20;
-            this.buttonOficinaCliente.UseVisualStyleBackColor = true;
-            this.buttonOficinaCliente.Click += new System.EventHandler(this.buttonOficinaCliente_Click);
-            // 
-            // buttonExitApp
-            // 
-            this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
-            this.buttonExitApp.Location = new System.Drawing.Point(946, 3);
-            this.buttonExitApp.Name = "buttonExitApp";
-            this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
-            this.buttonExitApp.TabIndex = 11;
-            this.buttonExitApp.UseVisualStyleBackColor = true;
-            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
             // 
             // FormCliente
             // 

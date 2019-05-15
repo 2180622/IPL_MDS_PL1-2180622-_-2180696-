@@ -47,6 +47,11 @@ namespace StandAutomoveis
         {
             this.Close();
         }
+
+        private void buttonAddCarro_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 
 
