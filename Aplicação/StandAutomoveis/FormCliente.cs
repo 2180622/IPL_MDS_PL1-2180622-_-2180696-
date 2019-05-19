@@ -45,8 +45,13 @@ namespace StandAutomoveis
         private void buttonOficinaCliente_Click(object sender, EventArgs e)
         {
             FormOficina formoficina = new FormOficina();
+            this.Close();
+            formoficina.ShowDialog();
+        }
 
-            formoficina.Show();
+        private void buttonAluguerCliente_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

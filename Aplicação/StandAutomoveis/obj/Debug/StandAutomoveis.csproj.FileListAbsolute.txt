@@ -52,3 +52,21 @@ C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Metodologias de Desenvolvimento d
 C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormOficina.resources
 C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormInicial.resources
 C:\TeSP\2º Semestre\Metodologias de Desenvolvimento de Software\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.UserControlCliente.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\bin\Debug\StandAutomoveis.exe.config
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\bin\Debug\StandAutomoveis.exe
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\bin\Debug\StandAutomoveis.pdb
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.dll
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.SqlServer.dll
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.xml
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.SqlServer.xml
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csprojAssemblyReference.cache
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormOficina.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormInicial.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormCliente.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.Properties.Resources.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.UserControlCliente.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.GenerateResource.cache
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CoreCompileInputs.cache
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CopyComplete
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.exe
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.pdb

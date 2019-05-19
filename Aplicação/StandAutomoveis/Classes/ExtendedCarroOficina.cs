@@ -10,7 +10,7 @@ namespace StandAutomoveis
     {
         public override string ToString()
         {
-            return this.NumeroChassis + "Marca: " + this.Marca + " -" + this.Modelo + "  " + this.Matricula + " " + this.Kms + " Kms" + this.Combustivel + "L";
+            return this.Marca + " " + this.Modelo + " " + this.Matricula + " | " + this.NumeroChassis + " | " + this.Kms + "Kms " + this.Combustivel + "L";
         }
     }
 }

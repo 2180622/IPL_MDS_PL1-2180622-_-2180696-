@@ -88,6 +88,14 @@
       <DependentUpon>BDStand.tt</DependentUpon>
     </Compile>
     <Compile Include="Classes\ExtendedCliente.cs" />
+    <Compile Include="Classes\ExtendedCarro.cs" />
+    <Compile Include="Classes\ExtendedCarroOficina.cs" />
+    <Compile Include="FormAddCarroOficina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddCarroOficina.Designer.cs">
+      <DependentUpon>FormAddCarroOficina.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOficina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +131,9 @@
     <Compile Include="Venda.cs">
       <DependentUpon>BDStand.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormAddCarroOficina.resx">
+      <DependentUpon>FormAddCarroOficina.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOficina.resx">
       <DependentUpon>FormOficina.cs</DependentUpon>
     </EmbeddedResource>
