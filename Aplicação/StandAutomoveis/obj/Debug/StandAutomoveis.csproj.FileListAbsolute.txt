@@ -70,3 +70,4 @@ C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\t
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CopyComplete
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.exe
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.pdb
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddCarroOficina.resources
