@@ -37,6 +37,8 @@
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxClientes = new System.Windows.Forms.GroupBox();
             this.groupBoxAdicionarCarro = new System.Windows.Forms.GroupBox();
+            this.buttonAddCarro = new System.Windows.Forms.Button();
+            this.listBoxCarros = new System.Windows.Forms.ListBox();
             this.labelClienteSelecionado = new System.Windows.Forms.Label();
             this.labelNIFCliente = new System.Windows.Forms.Label();
             this.labelMoradaCliente = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.servicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.algueresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carroOficinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listBoxCarros = new System.Windows.Forms.ListBox();
-            this.buttonAddCarro = new System.Windows.Forms.Button();
             this.panelCarroTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.groupBoxClientes.SuspendLayout();
@@ -62,16 +62,18 @@
             this.panelCarroTop.Controls.Add(this.labelTituloCliente);
             this.panelCarroTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCarroTop.Location = new System.Drawing.Point(0, 0);
+            this.panelCarroTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelCarroTop.Name = "panelCarroTop";
-            this.panelCarroTop.Size = new System.Drawing.Size(990, 65);
+            this.panelCarroTop.Size = new System.Drawing.Size(1320, 80);
             this.panelCarroTop.TabIndex = 3;
             // 
             // buttonExitForm
             // 
             this.buttonExitForm.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
-            this.buttonExitForm.Location = new System.Drawing.Point(946, 3);
+            this.buttonExitForm.Location = new System.Drawing.Point(1283, 4);
+            this.buttonExitForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonExitForm.Name = "buttonExitForm";
-            this.buttonExitForm.Size = new System.Drawing.Size(25, 25);
+            this.buttonExitForm.Size = new System.Drawing.Size(33, 31);
             this.buttonExitForm.TabIndex = 11;
             this.buttonExitForm.UseVisualStyleBackColor = true;
             this.buttonExitForm.Click += new System.EventHandler(this.buttonExitForm_Click);
@@ -81,9 +83,10 @@
             this.labelTituloCliente.AutoSize = true;
             this.labelTituloCliente.Font = new System.Drawing.Font("MS Reference Sans Serif", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTituloCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(193)))), ((int)(((byte)(253)))));
-            this.labelTituloCliente.Location = new System.Drawing.Point(229, -1);
+            this.labelTituloCliente.Location = new System.Drawing.Point(301, -1);
+            this.labelTituloCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTituloCliente.Name = "labelTituloCliente";
-            this.labelTituloCliente.Size = new System.Drawing.Size(516, 66);
+            this.labelTituloCliente.Size = new System.Drawing.Size(649, 82);
             this.labelTituloCliente.TabIndex = 7;
             this.labelTituloCliente.Text = "Stand Automóveis";
             // 
@@ -91,18 +94,21 @@
             // 
             this.panelLeftCarro.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panelLeftCarro.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeftCarro.Location = new System.Drawing.Point(0, 65);
+            this.panelLeftCarro.Location = new System.Drawing.Point(0, 80);
+            this.panelLeftCarro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelLeftCarro.Name = "panelLeftCarro";
-            this.panelLeftCarro.Size = new System.Drawing.Size(85, 408);
+            this.panelLeftCarro.Size = new System.Drawing.Size(113, 502);
             this.panelLeftCarro.TabIndex = 4;
             // 
             // listBoxClientes
             // 
             this.listBoxClientes.DataSource = this.clienteBindingSource;
             this.listBoxClientes.FormattingEnabled = true;
-            this.listBoxClientes.Location = new System.Drawing.Point(6, 21);
+            this.listBoxClientes.ItemHeight = 16;
+            this.listBoxClientes.Location = new System.Drawing.Point(8, 26);
+            this.listBoxClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxClientes.Name = "listBoxClientes";
-            this.listBoxClientes.Size = new System.Drawing.Size(205, 381);
+            this.listBoxClientes.Size = new System.Drawing.Size(272, 468);
             this.listBoxClientes.TabIndex = 5;
             this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
@@ -113,9 +119,11 @@
             // groupBoxClientes
             // 
             this.groupBoxClientes.Controls.Add(this.listBoxClientes);
-            this.groupBoxClientes.Location = new System.Drawing.Point(91, 65);
+            this.groupBoxClientes.Location = new System.Drawing.Point(121, 80);
+            this.groupBoxClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxClientes.Name = "groupBoxClientes";
-            this.groupBoxClientes.Size = new System.Drawing.Size(217, 408);
+            this.groupBoxClientes.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxClientes.Size = new System.Drawing.Size(289, 502);
             this.groupBoxClientes.TabIndex = 6;
             this.groupBoxClientes.TabStop = false;
             this.groupBoxClientes.Text = "Selecione um Cliente";
@@ -124,20 +132,44 @@
             // 
             this.groupBoxAdicionarCarro.Controls.Add(this.buttonAddCarro);
             this.groupBoxAdicionarCarro.Controls.Add(this.listBoxCarros);
-            this.groupBoxAdicionarCarro.Location = new System.Drawing.Point(314, 134);
+            this.groupBoxAdicionarCarro.Location = new System.Drawing.Point(419, 165);
+            this.groupBoxAdicionarCarro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxAdicionarCarro.Name = "groupBoxAdicionarCarro";
-            this.groupBoxAdicionarCarro.Size = new System.Drawing.Size(200, 333);
+            this.groupBoxAdicionarCarro.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxAdicionarCarro.Size = new System.Drawing.Size(267, 410);
             this.groupBoxAdicionarCarro.TabIndex = 11;
             this.groupBoxAdicionarCarro.TabStop = false;
             this.groupBoxAdicionarCarro.Text = "Adicionar Carro";
+            // 
+            // buttonAddCarro
+            // 
+            this.buttonAddCarro.Location = new System.Drawing.Point(8, 372);
+            this.buttonAddCarro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddCarro.Name = "buttonAddCarro";
+            this.buttonAddCarro.Size = new System.Drawing.Size(251, 31);
+            this.buttonAddCarro.TabIndex = 1;
+            this.buttonAddCarro.Text = "Adicionar Carro";
+            this.buttonAddCarro.UseVisualStyleBackColor = true;
+            this.buttonAddCarro.Click += new System.EventHandler(this.buttonAddCarro_Click);
+            // 
+            // listBoxCarros
+            // 
+            this.listBoxCarros.FormattingEnabled = true;
+            this.listBoxCarros.ItemHeight = 16;
+            this.listBoxCarros.Location = new System.Drawing.Point(7, 23);
+            this.listBoxCarros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxCarros.Name = "listBoxCarros";
+            this.listBoxCarros.Size = new System.Drawing.Size(251, 340);
+            this.listBoxCarros.TabIndex = 0;
             // 
             // labelClienteSelecionado
             // 
             this.labelClienteSelecionado.AutoSize = true;
             this.labelClienteSelecionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.labelClienteSelecionado.Location = new System.Drawing.Point(314, 68);
+            this.labelClienteSelecionado.Location = new System.Drawing.Point(419, 84);
+            this.labelClienteSelecionado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelClienteSelecionado.Name = "labelClienteSelecionado";
-            this.labelClienteSelecionado.Size = new System.Drawing.Size(310, 29);
+            this.labelClienteSelecionado.Size = new System.Drawing.Size(370, 36);
             this.labelClienteSelecionado.TabIndex = 7;
             this.labelClienteSelecionado.Text = "Sem Cliente Selecionado";
             // 
@@ -145,9 +177,10 @@
             // 
             this.labelNIFCliente.AutoSize = true;
             this.labelNIFCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelNIFCliente.Location = new System.Drawing.Point(316, 97);
+            this.labelNIFCliente.Location = new System.Drawing.Point(421, 119);
+            this.labelNIFCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNIFCliente.Name = "labelNIFCliente";
-            this.labelNIFCliente.Size = new System.Drawing.Size(13, 17);
+            this.labelNIFCliente.Size = new System.Drawing.Size(15, 20);
             this.labelNIFCliente.TabIndex = 8;
             this.labelNIFCliente.Text = "-";
             // 
@@ -155,9 +188,10 @@
             // 
             this.labelMoradaCliente.AutoSize = true;
             this.labelMoradaCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelMoradaCliente.Location = new System.Drawing.Point(316, 114);
+            this.labelMoradaCliente.Location = new System.Drawing.Point(421, 140);
+            this.labelMoradaCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelMoradaCliente.Name = "labelMoradaCliente";
-            this.labelMoradaCliente.Size = new System.Drawing.Size(13, 17);
+            this.labelMoradaCliente.Size = new System.Drawing.Size(15, 20);
             this.labelMoradaCliente.TabIndex = 9;
             this.labelMoradaCliente.Text = "-";
             // 
@@ -165,9 +199,10 @@
             // 
             this.labelValorTotalCliente.AutoSize = true;
             this.labelValorTotalCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.labelValorTotalCliente.Location = new System.Drawing.Point(863, 80);
+            this.labelValorTotalCliente.Location = new System.Drawing.Point(1151, 98);
+            this.labelValorTotalCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelValorTotalCliente.Name = "labelValorTotalCliente";
-            this.labelValorTotalCliente.Size = new System.Drawing.Size(61, 13);
+            this.labelValorTotalCliente.Size = new System.Drawing.Size(81, 17);
             this.labelValorTotalCliente.TabIndex = 10;
             this.labelValorTotalCliente.Text = "Valor Total:";
             // 
@@ -184,30 +219,12 @@
             // 
             this.carroOficinaBindingSource.DataSource = typeof(StandAutomoveis.CarroOficina);
             // 
-            // listBoxCarros
-            // 
-            this.listBoxCarros.FormattingEnabled = true;
-            this.listBoxCarros.Location = new System.Drawing.Point(5, 19);
-            this.listBoxCarros.Name = "listBoxCarros";
-            this.listBoxCarros.Size = new System.Drawing.Size(189, 277);
-            this.listBoxCarros.TabIndex = 0;
-            // 
-            // buttonAddCarro
-            // 
-            this.buttonAddCarro.Location = new System.Drawing.Point(6, 302);
-            this.buttonAddCarro.Name = "buttonAddCarro";
-            this.buttonAddCarro.Size = new System.Drawing.Size(188, 25);
-            this.buttonAddCarro.TabIndex = 1;
-            this.buttonAddCarro.Text = "Adicionar Carro";
-            this.buttonAddCarro.UseVisualStyleBackColor = true;
-            this.buttonAddCarro.Click += new System.EventHandler(this.buttonAddCarro_Click);
-            // 
             // FormOficina
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(990, 473);
+            this.ClientSize = new System.Drawing.Size(1320, 582);
             this.Controls.Add(this.groupBoxAdicionarCarro);
             this.Controls.Add(this.labelValorTotalCliente);
             this.Controls.Add(this.labelMoradaCliente);
@@ -217,6 +234,7 @@
             this.Controls.Add(this.panelLeftCarro);
             this.Controls.Add(this.panelCarroTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormOficina";
             this.Text = "FormCarro";
             this.panelCarroTop.ResumeLayout(false);

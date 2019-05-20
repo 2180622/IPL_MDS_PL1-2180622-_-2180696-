@@ -71,3 +71,21 @@ C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\t
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.exe
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.pdb
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\teste\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddCarroOficina.resources
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\StandAutomoveis.exe.config
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\StandAutomoveis.exe
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\StandAutomoveis.pdb
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.dll
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.xml
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csprojAssemblyReference.cache
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddCarroOficina.resources
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormOficina.resources
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormInicial.resources
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormCliente.resources
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.Properties.Resources.resources
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.GenerateResource.cache
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CoreCompileInputs.cache
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CopyComplete
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.exe
+C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.pdb
