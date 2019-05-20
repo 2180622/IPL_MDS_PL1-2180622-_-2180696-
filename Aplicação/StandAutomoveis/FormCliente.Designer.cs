@@ -43,7 +43,6 @@
             this.buttonOficinaCliente = new System.Windows.Forms.Button();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -55,15 +54,16 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.clienteDataGridView = new System.Windows.Forms.DataGridView();
+            this.contactoTextBox = new System.Windows.Forms.TextBox();
+            this.moradaTextBox = new System.Windows.Forms.TextBox();
+            this.nIFTextBox = new System.Windows.Forms.TextBox();
+            this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactoTextBox = new System.Windows.Forms.TextBox();
-            this.moradaTextBox = new System.Windows.Forms.TextBox();
-            this.nIFTextBox = new System.Windows.Forms.TextBox();
-            this.nomeTextBox = new System.Windows.Forms.TextBox();
             contactoLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
@@ -72,47 +72,43 @@
             this.panelLeftCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // contactoLabel
             // 
             contactoLabel.AutoSize = true;
-            contactoLabel.Location = new System.Drawing.Point(137, 309);
-            contactoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            contactoLabel.Location = new System.Drawing.Point(103, 251);
             contactoLabel.Name = "contactoLabel";
-            contactoLabel.Size = new System.Drawing.Size(68, 17);
+            contactoLabel.Size = new System.Drawing.Size(53, 13);
             contactoLabel.TabIndex = 10;
             contactoLabel.Text = "Contacto:";
             // 
             // moradaLabel
             // 
             moradaLabel.AutoSize = true;
-            moradaLabel.Location = new System.Drawing.Point(137, 341);
-            moradaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            moradaLabel.Location = new System.Drawing.Point(103, 277);
             moradaLabel.Name = "moradaLabel";
-            moradaLabel.Size = new System.Drawing.Size(60, 17);
+            moradaLabel.Size = new System.Drawing.Size(46, 13);
             moradaLabel.TabIndex = 14;
             moradaLabel.Text = "Morada:";
             // 
             // nIFLabel
             // 
             nIFLabel.AutoSize = true;
-            nIFLabel.Location = new System.Drawing.Point(137, 277);
-            nIFLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nIFLabel.Location = new System.Drawing.Point(103, 225);
             nIFLabel.Name = "nIFLabel";
-            nIFLabel.Size = new System.Drawing.Size(33, 17);
+            nIFLabel.Size = new System.Drawing.Size(27, 13);
             nIFLabel.TabIndex = 16;
             nIFLabel.Text = "NIF:";
             // 
             // nomeLabel
             // 
             nomeLabel.AutoSize = true;
-            nomeLabel.Location = new System.Drawing.Point(137, 245);
-            nomeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nomeLabel.Location = new System.Drawing.Point(103, 199);
             nomeLabel.Name = "nomeLabel";
-            nomeLabel.Size = new System.Drawing.Size(49, 17);
+            nomeLabel.Size = new System.Drawing.Size(38, 13);
             nomeLabel.TabIndex = 18;
             nomeLabel.Text = "Nome:";
             // 
@@ -123,18 +119,16 @@
             this.panelClienteTop.Controls.Add(this.labelTituloCliente);
             this.panelClienteTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelClienteTop.Location = new System.Drawing.Point(0, 0);
-            this.panelClienteTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelClienteTop.Name = "panelClienteTop";
-            this.panelClienteTop.Size = new System.Drawing.Size(1320, 80);
+            this.panelClienteTop.Size = new System.Drawing.Size(990, 65);
             this.panelClienteTop.TabIndex = 2;
             // 
             // buttonExitApp
             // 
             this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
-            this.buttonExitApp.Location = new System.Drawing.Point(1261, 4);
-            this.buttonExitApp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonExitApp.Location = new System.Drawing.Point(962, 3);
             this.buttonExitApp.Name = "buttonExitApp";
-            this.buttonExitApp.Size = new System.Drawing.Size(33, 31);
+            this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
             this.buttonExitApp.TabIndex = 11;
             this.buttonExitApp.UseVisualStyleBackColor = true;
             this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
@@ -144,10 +138,9 @@
             this.labelTituloCliente.AutoSize = true;
             this.labelTituloCliente.Font = new System.Drawing.Font("MS Reference Sans Serif", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTituloCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(193)))), ((int)(((byte)(253)))));
-            this.labelTituloCliente.Location = new System.Drawing.Point(301, -1);
-            this.labelTituloCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTituloCliente.Location = new System.Drawing.Point(226, -1);
             this.labelTituloCliente.Name = "labelTituloCliente";
-            this.labelTituloCliente.Size = new System.Drawing.Size(649, 82);
+            this.labelTituloCliente.Size = new System.Drawing.Size(516, 66);
             this.labelTituloCliente.TabIndex = 7;
             this.labelTituloCliente.Text = "Stand Automóveis";
             // 
@@ -158,29 +151,26 @@
             this.panelLeftCliente.Controls.Add(this.buttonAluguerCliente);
             this.panelLeftCliente.Controls.Add(this.buttonOficinaCliente);
             this.panelLeftCliente.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeftCliente.Location = new System.Drawing.Point(0, 80);
-            this.panelLeftCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLeftCliente.Location = new System.Drawing.Point(0, 65);
             this.panelLeftCliente.Name = "panelLeftCliente";
-            this.panelLeftCliente.Size = new System.Drawing.Size(113, 502);
+            this.panelLeftCliente.Size = new System.Drawing.Size(85, 408);
             this.panelLeftCliente.TabIndex = 3;
             // 
             // buttonVendasCliente
             // 
             this.buttonVendasCliente.Image = global::StandAutomoveis.Properties.Resources.iconeVenda;
-            this.buttonVendasCliente.Location = new System.Drawing.Point(4, 359);
-            this.buttonVendasCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonVendasCliente.Location = new System.Drawing.Point(3, 292);
             this.buttonVendasCliente.Name = "buttonVendasCliente";
-            this.buttonVendasCliente.Size = new System.Drawing.Size(105, 97);
+            this.buttonVendasCliente.Size = new System.Drawing.Size(79, 79);
             this.buttonVendasCliente.TabIndex = 22;
             this.buttonVendasCliente.UseVisualStyleBackColor = true;
             // 
             // buttonAluguerCliente
             // 
             this.buttonAluguerCliente.Image = global::StandAutomoveis.Properties.Resources.iconeAluguer;
-            this.buttonAluguerCliente.Location = new System.Drawing.Point(4, 210);
-            this.buttonAluguerCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAluguerCliente.Location = new System.Drawing.Point(3, 171);
             this.buttonAluguerCliente.Name = "buttonAluguerCliente";
-            this.buttonAluguerCliente.Size = new System.Drawing.Size(105, 97);
+            this.buttonAluguerCliente.Size = new System.Drawing.Size(79, 79);
             this.buttonAluguerCliente.TabIndex = 21;
             this.buttonAluguerCliente.UseVisualStyleBackColor = true;
             this.buttonAluguerCliente.Click += new System.EventHandler(this.buttonAluguerCliente_Click);
@@ -188,10 +178,9 @@
             // buttonOficinaCliente
             // 
             this.buttonOficinaCliente.Image = global::StandAutomoveis.Properties.Resources.iconeOficina;
-            this.buttonOficinaCliente.Location = new System.Drawing.Point(4, 64);
-            this.buttonOficinaCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOficinaCliente.Location = new System.Drawing.Point(3, 52);
             this.buttonOficinaCliente.Name = "buttonOficinaCliente";
-            this.buttonOficinaCliente.Size = new System.Drawing.Size(105, 97);
+            this.buttonOficinaCliente.Size = new System.Drawing.Size(79, 79);
             this.buttonOficinaCliente.TabIndex = 20;
             this.buttonOficinaCliente.UseVisualStyleBackColor = true;
             this.buttonOficinaCliente.Click += new System.EventHandler(this.buttonOficinaCliente_Click);
@@ -215,14 +204,14 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorDeleteItem,
             this.bindingNavigatorAddNewItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(113, 80);
+            this.bindingNavigator1.Location = new System.Drawing.Point(85, 65);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1207, 27);
+            this.bindingNavigator1.Size = new System.Drawing.Size(905, 27);
             this.bindingNavigator1.TabIndex = 10;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -231,18 +220,14 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(136, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(114, 24);
             this.bindingNavigatorAddNewItem.Text = "Adicionar Linha";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -283,7 +268,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(65, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
@@ -328,12 +313,47 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.clienteDataGridView.DataSource = this.clienteBindingSource;
-            this.clienteDataGridView.Location = new System.Drawing.Point(557, 144);
-            this.clienteDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.clienteDataGridView.Location = new System.Drawing.Point(435, 117);
             this.clienteDataGridView.Name = "clienteDataGridView";
             this.clienteDataGridView.ReadOnly = true;
-            this.clienteDataGridView.Size = new System.Drawing.Size(724, 393);
+            this.clienteDataGridView.Size = new System.Drawing.Size(543, 319);
             this.clienteDataGridView.TabIndex = 10;
+            // 
+            // contactoTextBox
+            // 
+            this.contactoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Contacto", true));
+            this.contactoTextBox.Location = new System.Drawing.Point(173, 249);
+            this.contactoTextBox.Name = "contactoTextBox";
+            this.contactoTextBox.Size = new System.Drawing.Size(205, 20);
+            this.contactoTextBox.TabIndex = 11;
+            // 
+            // moradaTextBox
+            // 
+            this.moradaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
+            this.moradaTextBox.Location = new System.Drawing.Point(173, 275);
+            this.moradaTextBox.Name = "moradaTextBox";
+            this.moradaTextBox.Size = new System.Drawing.Size(205, 20);
+            this.moradaTextBox.TabIndex = 15;
+            // 
+            // nIFTextBox
+            // 
+            this.nIFTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "NIF", true));
+            this.nIFTextBox.Location = new System.Drawing.Point(173, 223);
+            this.nIFTextBox.Name = "nIFTextBox";
+            this.nIFTextBox.Size = new System.Drawing.Size(205, 20);
+            this.nIFTextBox.TabIndex = 17;
+            // 
+            // nomeTextBox
+            // 
+            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nome", true));
+            this.nomeTextBox.Location = new System.Drawing.Point(173, 197);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(205, 20);
+            this.nomeTextBox.TabIndex = 19;
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -370,48 +390,12 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // contactoTextBox
-            // 
-            this.contactoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Contacto", true));
-            this.contactoTextBox.Location = new System.Drawing.Point(231, 306);
-            this.contactoTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.contactoTextBox.Name = "contactoTextBox";
-            this.contactoTextBox.Size = new System.Drawing.Size(272, 22);
-            this.contactoTextBox.TabIndex = 11;
-            // 
-            // moradaTextBox
-            // 
-            this.moradaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Morada", true));
-            this.moradaTextBox.Location = new System.Drawing.Point(231, 338);
-            this.moradaTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.moradaTextBox.Name = "moradaTextBox";
-            this.moradaTextBox.Size = new System.Drawing.Size(272, 22);
-            this.moradaTextBox.TabIndex = 15;
-            // 
-            // nIFTextBox
-            // 
-            this.nIFTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "NIF", true));
-            this.nIFTextBox.Location = new System.Drawing.Point(231, 274);
-            this.nIFTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nIFTextBox.Name = "nIFTextBox";
-            this.nIFTextBox.Size = new System.Drawing.Size(272, 22);
-            this.nIFTextBox.TabIndex = 17;
-            // 
-            // nomeTextBox
-            // 
-            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nome", true));
-            this.nomeTextBox.Location = new System.Drawing.Point(231, 242);
-            this.nomeTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(272, 22);
-            this.nomeTextBox.TabIndex = 19;
-            // 
             // FormCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1320, 582);
+            this.ClientSize = new System.Drawing.Size(990, 473);
             this.Controls.Add(contactoLabel);
             this.Controls.Add(this.contactoTextBox);
             this.Controls.Add(moradaLabel);
@@ -426,17 +410,16 @@
             this.Controls.Add(this.panelClienteTop);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormCliente";
-            this.Text = "s";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.panelClienteTop.ResumeLayout(false);
             this.panelClienteTop.PerformLayout();
             this.panelLeftCliente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

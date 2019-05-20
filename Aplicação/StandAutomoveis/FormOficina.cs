@@ -45,16 +45,14 @@ namespace StandAutomoveis
 
         private void buttonExitForm_Click(object sender, EventArgs e)
         {
-            FormCliente formcliente = new FormCliente();
-            formcliente.ShowDialog();
-
             this.Close();
-            
         }
 
         private void buttonAddCarro_Click(object sender, EventArgs e)
         {
-            
+            FormAddCarroOficina formaddcarro = new FormAddCarroOficina();
+
+            formaddcarro.ShowDialog();
         }
     }
 

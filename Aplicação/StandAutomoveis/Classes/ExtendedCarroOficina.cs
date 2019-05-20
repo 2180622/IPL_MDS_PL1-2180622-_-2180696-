@@ -8,9 +8,19 @@ namespace StandAutomoveis
 {
     public partial class CarroOficina
     {
+
+        public CarroOficina(string Marca, string Modelo, string Matricula, string NumeroChassis, string Kms, string Combustivel)
+        {
+            this.Marca = Marca;
+            this.Modelo = Modelo;
+            this.Matricula = Matricula;
+            this.NumeroChassis = NumeroChassis;
+            this.Kms = Kms;
+            this.Combustivel = Combustivel;
+        }
         public override string ToString()
         {
-            return this.Marca + " " + this.Modelo + " " + this.Matricula + " | " + this.NumeroChassis + " | " + this.Kms + "Kms " + this.Combustivel + "L";
+            return Marca + " " + Modelo + " " + Matricula + " | " + NumeroChassis + " | " + Kms + "Kms " + Combustivel + "L";
         }
     }
 }
