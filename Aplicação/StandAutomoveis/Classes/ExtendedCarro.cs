@@ -8,9 +8,5 @@ namespace StandAutomoveis
 {
     public partial class Carro
     {
-        public override string ToString()
-        {
-            return this.Marca + this.Modelo;
-        }
     }
 }
