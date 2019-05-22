@@ -34,25 +34,46 @@ namespace StandAutomoveis
 
             if(clienteSelecionado != null)
             {
+                // atualiza as labels de acordo com o cliente selecionado
                 labelClienteSelecionado.Text = clienteSelecionado.Nome;
                 labelNIFCliente.Text = clienteSelecionado.NIF;
                 labelMoradaCliente.Text = clienteSelecionado.Morada;
-
-                listBoxClientes.DataSource = null;
-                listBoxClientes.DataSource = clienteBindingSource;
+                
+                // Adicionar CarroOficina à listbox
+                listBoxCarros.DataSource = null;
+                listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
             }
         }
 
         private void buttonExitForm_Click(object sender, EventArgs e)
         {
+            // fecha o form
             this.Close();
         }
 
         private void buttonAddCarro_Click(object sender, EventArgs e)
         {
+            // instancia um novo form para adicionar o carro
             FormAddCarroOficina formaddcarro = new FormAddCarroOficina();
+            this.Hide();
+            if (formaddcarro.ShowDialog() == DialogResult.OK)
+            {
+                CarroOficina novoCarroOficina = new CarroOficina(formaddcarro.marca, formaddcarro.modelo, formaddcarro.matricula, formaddcarro.numeroChassis, formaddcarro.kms, formaddcarro.combustivel);
+                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
-            formaddcarro.ShowDialog();
+                clienteSelecionado.CarrosOficina.Add(novoCarroOficina);
+            }
+        }
+
+        private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+
+            if (clienteSelecionado != null)
+            {
+                listBoxCarros.DataSource = null;
+                listBoxCarros.DataSource = carroOficinaBindingSource;
+            }*/
         }
     }
 

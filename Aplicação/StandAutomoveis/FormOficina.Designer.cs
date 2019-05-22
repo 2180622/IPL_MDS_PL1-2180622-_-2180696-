@@ -39,21 +39,24 @@
             this.groupBoxAdicionarCarro = new System.Windows.Forms.GroupBox();
             this.buttonAddCarro = new System.Windows.Forms.Button();
             this.listBoxCarros = new System.Windows.Forms.ListBox();
+            this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carroOficinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelClienteSelecionado = new System.Windows.Forms.Label();
             this.labelNIFCliente = new System.Windows.Forms.Label();
             this.labelMoradaCliente = new System.Windows.Forms.Label();
             this.labelValorTotalCliente = new System.Windows.Forms.Label();
             this.servicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.algueresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carroOficinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonSaveChanges = new System.Windows.Forms.Button();
+            this.groupBoxServicos = new System.Windows.Forms.GroupBox();
+            this.buttonAddServico = new System.Windows.Forms.Button();
+            this.listBoxServicos = new System.Windows.Forms.ListBox();
             this.panelCarroTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.groupBoxClientes.SuspendLayout();
             this.groupBoxAdicionarCarro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.servicosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.algueresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroOficinaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicosBindingSource)).BeginInit();
+            this.groupBoxServicos.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCarroTop
@@ -123,21 +126,20 @@
             // 
             // groupBoxAdicionarCarro
             // 
-            this.groupBoxAdicionarCarro.Controls.Add(this.buttonSaveChanges);
             this.groupBoxAdicionarCarro.Controls.Add(this.buttonAddCarro);
             this.groupBoxAdicionarCarro.Controls.Add(this.listBoxCarros);
-            this.groupBoxAdicionarCarro.Location = new System.Drawing.Point(314, 134);
+            this.groupBoxAdicionarCarro.Location = new System.Drawing.Point(314, 140);
             this.groupBoxAdicionarCarro.Name = "groupBoxAdicionarCarro";
-            this.groupBoxAdicionarCarro.Size = new System.Drawing.Size(200, 333);
+            this.groupBoxAdicionarCarro.Size = new System.Drawing.Size(212, 333);
             this.groupBoxAdicionarCarro.TabIndex = 11;
             this.groupBoxAdicionarCarro.TabStop = false;
             this.groupBoxAdicionarCarro.Text = "Adicionar Carro";
             // 
             // buttonAddCarro
             // 
-            this.buttonAddCarro.Location = new System.Drawing.Point(6, 276);
+            this.buttonAddCarro.Location = new System.Drawing.Point(5, 302);
             this.buttonAddCarro.Name = "buttonAddCarro";
-            this.buttonAddCarro.Size = new System.Drawing.Size(188, 25);
+            this.buttonAddCarro.Size = new System.Drawing.Size(203, 25);
             this.buttonAddCarro.TabIndex = 1;
             this.buttonAddCarro.Text = "Adicionar Carro";
             this.buttonAddCarro.UseVisualStyleBackColor = true;
@@ -145,11 +147,21 @@
             // 
             // listBoxCarros
             // 
+            this.listBoxCarros.DataSource = this.carroBindingSource;
             this.listBoxCarros.FormattingEnabled = true;
             this.listBoxCarros.Location = new System.Drawing.Point(5, 19);
             this.listBoxCarros.Name = "listBoxCarros";
-            this.listBoxCarros.Size = new System.Drawing.Size(189, 251);
+            this.listBoxCarros.Size = new System.Drawing.Size(203, 277);
             this.listBoxCarros.TabIndex = 0;
+            this.listBoxCarros.SelectedIndexChanged += new System.EventHandler(this.listBoxCarros_SelectedIndexChanged);
+            // 
+            // carroBindingSource
+            // 
+            this.carroBindingSource.DataSource = typeof(StandAutomoveis.Carro);
+            // 
+            // carroOficinaBindingSource
+            // 
+            this.carroOficinaBindingSource.DataSource = typeof(StandAutomoveis.CarroOficina);
             // 
             // labelClienteSelecionado
             // 
@@ -195,23 +207,34 @@
             // 
             this.servicosBindingSource.DataSource = typeof(StandAutomoveis.Servico);
             // 
-            // algueresBindingSource
+            // groupBoxServicos
             // 
-            this.algueresBindingSource.DataMember = "Algueres";
-            this.algueresBindingSource.DataSource = this.clienteBindingSource;
+            this.groupBoxServicos.Controls.Add(this.buttonAddServico);
+            this.groupBoxServicos.Controls.Add(this.listBoxServicos);
+            this.groupBoxServicos.Location = new System.Drawing.Point(532, 140);
+            this.groupBoxServicos.Name = "groupBoxServicos";
+            this.groupBoxServicos.Size = new System.Drawing.Size(199, 333);
+            this.groupBoxServicos.TabIndex = 12;
+            this.groupBoxServicos.TabStop = false;
+            this.groupBoxServicos.Text = "Criar Serviço";
             // 
-            // carroOficinaBindingSource
+            // buttonAddServico
             // 
-            this.carroOficinaBindingSource.DataSource = typeof(StandAutomoveis.CarroOficina);
+            this.buttonAddServico.Location = new System.Drawing.Point(5, 302);
+            this.buttonAddServico.Name = "buttonAddServico";
+            this.buttonAddServico.Size = new System.Drawing.Size(188, 25);
+            this.buttonAddServico.TabIndex = 1;
+            this.buttonAddServico.Text = "Criar Serviços";
+            this.buttonAddServico.UseVisualStyleBackColor = true;
             // 
-            // buttonSaveChanges
+            // listBoxServicos
             // 
-            this.buttonSaveChanges.Location = new System.Drawing.Point(6, 302);
-            this.buttonSaveChanges.Name = "buttonSaveChanges";
-            this.buttonSaveChanges.Size = new System.Drawing.Size(188, 25);
-            this.buttonSaveChanges.TabIndex = 2;
-            this.buttonSaveChanges.Text = "Guardar alterações";
-            this.buttonSaveChanges.UseVisualStyleBackColor = true;
+            this.listBoxServicos.DataSource = this.carroBindingSource;
+            this.listBoxServicos.FormattingEnabled = true;
+            this.listBoxServicos.Location = new System.Drawing.Point(5, 19);
+            this.listBoxServicos.Name = "listBoxServicos";
+            this.listBoxServicos.Size = new System.Drawing.Size(188, 277);
+            this.listBoxServicos.TabIndex = 0;
             // 
             // FormOficina
             // 
@@ -219,6 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 473);
+            this.Controls.Add(this.groupBoxServicos);
             this.Controls.Add(this.groupBoxAdicionarCarro);
             this.Controls.Add(this.labelValorTotalCliente);
             this.Controls.Add(this.labelMoradaCliente);
@@ -235,9 +259,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.groupBoxClientes.ResumeLayout(false);
             this.groupBoxAdicionarCarro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.servicosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.algueresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroOficinaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicosBindingSource)).EndInit();
+            this.groupBoxServicos.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,11 +282,13 @@
         private System.Windows.Forms.Label labelValorTotalCliente;
         private System.Windows.Forms.BindingSource servicosBindingSource;
         private System.Windows.Forms.BindingSource clienteBindingSource;
-        private System.Windows.Forms.BindingSource algueresBindingSource;
         private System.Windows.Forms.BindingSource carroOficinaBindingSource;
         private System.Windows.Forms.GroupBox groupBoxAdicionarCarro;
         private System.Windows.Forms.Button buttonAddCarro;
         private System.Windows.Forms.ListBox listBoxCarros;
-        private System.Windows.Forms.Button buttonSaveChanges;
+        private System.Windows.Forms.BindingSource carroBindingSource;
+        private System.Windows.Forms.GroupBox groupBoxServicos;
+        private System.Windows.Forms.Button buttonAddServico;
+        private System.Windows.Forms.ListBox listBoxServicos;
     }
 }

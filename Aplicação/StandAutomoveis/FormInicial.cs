@@ -19,10 +19,9 @@ namespace StandAutomoveis
 
         public void buttonGestaoClientes_Click(object sender, EventArgs e)
         {
-
             this.Hide();
-
-            FormCliente formcliente = new FormCliente();           
+            FormCliente formcliente = new FormCliente();
+            
             formcliente.ShowDialog();
         }
 
@@ -33,9 +32,10 @@ namespace StandAutomoveis
 
         private void buttonGestaoOficina_Click(object sender, EventArgs e)
         {
-            FormOficina formoficina = new FormOficina();
+            this.Hide();
+            FormOficina formOficina = new FormOficina();
 
-            formoficina.Show();
+            formOficina.ShowDialog();
         }
     }
 }
