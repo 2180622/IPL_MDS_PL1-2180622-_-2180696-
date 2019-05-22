@@ -38,7 +38,9 @@ namespace StandAutomoveis
                 labelClienteSelecionado.Text = clienteSelecionado.Nome;
                 labelNIFCliente.Text = clienteSelecionado.NIF;
                 labelMoradaCliente.Text = clienteSelecionado.Morada;
-                
+
+                // Limpa listBox dos serviços
+                listBoxServicos.DataSource = null;
                 // Adicionar CarroOficina à listbox
                 listBoxCarros.DataSource = null;
                 listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
@@ -67,6 +69,7 @@ namespace StandAutomoveis
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
 
@@ -80,7 +83,14 @@ namespace StandAutomoveis
         private void buttonAddServico_Click(object sender, EventArgs e)
         {
             Servico novoServico = new Servico(tipoTextBox.Text);
+            CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
+            novoServico.IdServicos = carroSelecionado.ClienteIdCliente;
+
+            BDStand.Servicos.Add(novoServico);
+
+            BDStand.SaveChanges();
 
 
             /*CarroOficina novoCarroOficina = new CarroOficina(marcaTextBox.Text, modeloTextBox.Text, matriculaTextBox.Text, numeroChassisTextBox.Text, kmsTextBox.Text, combustivelTextBox.Text);

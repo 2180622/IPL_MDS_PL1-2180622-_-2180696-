@@ -115,7 +115,6 @@ C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\V
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\VELHO\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.SqlServer.xml
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\VELHO\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csprojAssemblyReference.cache
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\VELHO\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddCarroOficina.resources
-C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\VELHO\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddServico.resources
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\VELHO\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormOficina.resources
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\VELHO\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormInicial.resources
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\VELHO\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormCliente.resources
