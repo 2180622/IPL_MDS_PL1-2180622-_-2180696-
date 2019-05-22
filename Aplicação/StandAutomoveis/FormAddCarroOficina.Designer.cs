@@ -143,7 +143,7 @@
             this.labelTituloForm1.AutoSize = true;
             this.labelTituloForm1.Font = new System.Drawing.Font("MS Reference Sans Serif", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTituloForm1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(193)))), ((int)(((byte)(253)))));
-            this.labelTituloForm1.Location = new System.Drawing.Point(58, 0);
+            this.labelTituloForm1.Location = new System.Drawing.Point(51, 0);
             this.labelTituloForm1.Name = "labelTituloForm1";
             this.labelTituloForm1.Size = new System.Drawing.Size(516, 66);
             this.labelTituloForm1.TabIndex = 6;
@@ -164,7 +164,7 @@
             this.buttonAddCarroOficina.Name = "buttonAddCarroOficina";
             this.buttonAddCarroOficina.Size = new System.Drawing.Size(282, 29);
             this.buttonAddCarroOficina.TabIndex = 34;
-            this.buttonAddCarroOficina.Text = "Adicionar carro";
+            this.buttonAddCarroOficina.Text = "Adicionar Carro";
             this.buttonAddCarroOficina.UseVisualStyleBackColor = true;
             this.buttonAddCarroOficina.Click += new System.EventHandler(this.buttonAddCarroOficina_Click);
             // 

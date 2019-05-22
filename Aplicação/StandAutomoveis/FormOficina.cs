@@ -67,13 +67,30 @@ namespace StandAutomoveis
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
 
-            if (clienteSelecionado != null)
+            if (carroSelecionado != null)
             {
-                listBoxCarros.DataSource = null;
-                listBoxCarros.DataSource = carroOficinaBindingSource;
-            }*/
+                listBoxServicos.DataSource = null;
+                listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+            }
+        }
+
+        private void buttonAddServico_Click(object sender, EventArgs e)
+        {
+            Servico novoServico = new Servico(tipoTextBox.Text);
+
+
+
+            /*CarroOficina novoCarroOficina = new CarroOficina(marcaTextBox.Text, modeloTextBox.Text, matriculaTextBox.Text, numeroChassisTextBox.Text, kmsTextBox.Text, combustivelTextBox.Text);
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+
+            novoCarroOficina.ClienteIdCliente = clienteSelecionado.IdCliente;
+
+            BDStand.Carros.Add(novoCarroOficina);
+
+            BDStand.SaveChanges();*/
         }
     }
 

@@ -90,6 +90,7 @@
     <Compile Include="Classes\ExtendedCliente.cs" />
     <Compile Include="Classes\ExtendedCarro.cs" />
     <Compile Include="Classes\ExtendedCarroOficina.cs" />
+    <Compile Include="Classes\ExtendedServico.cs" />
     <Compile Include="FormAddCarroOficina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +159,7 @@
     <None Include="Properties\DataSources\Carro.datasource" />
     <None Include="Properties\DataSources\CarroOficina.datasource" />
     <None Include="Properties\DataSources\Cliente.datasource" />
+    <None Include="Properties\DataSources\Servico.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
