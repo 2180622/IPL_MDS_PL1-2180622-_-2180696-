@@ -25,6 +25,7 @@ namespace StandAutomoveis
         public FormAddCarroOficina()
         {
             InitializeComponent();
+            CenterToScreen();
 
             BDStand = new BDStandContainer();
 
@@ -53,7 +54,7 @@ namespace StandAutomoveis
             BDStand.SaveChanges();
 
             this.Close();
-
+            
             formOficina.ShowDialog();
         }
 

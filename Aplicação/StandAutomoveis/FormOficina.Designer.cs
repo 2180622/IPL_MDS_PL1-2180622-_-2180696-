@@ -76,7 +76,7 @@
             this.panelCarroTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCarroTop.Location = new System.Drawing.Point(0, 0);
             this.panelCarroTop.Name = "panelCarroTop";
-            this.panelCarroTop.Size = new System.Drawing.Size(990, 65);
+            this.panelCarroTop.Size = new System.Drawing.Size(1146, 65);
             this.panelCarroTop.TabIndex = 3;
             // 
             // buttonExitForm
@@ -106,7 +106,7 @@
             this.panelLeftCarro.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftCarro.Location = new System.Drawing.Point(0, 65);
             this.panelLeftCarro.Name = "panelLeftCarro";
-            this.panelLeftCarro.Size = new System.Drawing.Size(85, 410);
+            this.panelLeftCarro.Size = new System.Drawing.Size(85, 474);
             this.panelLeftCarro.TabIndex = 4;
             // 
             // listBoxClientes
@@ -218,14 +218,14 @@
             // 
             // groupBoxServicos
             // 
+            this.groupBoxServicos.Controls.Add(this.dataEntradaDateTimePicker);
+            this.groupBoxServicos.Controls.Add(this.dataSaidaDateTimePicker);
             this.groupBoxServicos.Controls.Add(dataEntradaLabel);
             this.groupBoxServicos.Controls.Add(this.buttonAddServico);
-            this.groupBoxServicos.Controls.Add(this.dataEntradaDateTimePicker);
             this.groupBoxServicos.Controls.Add(dataSaidaLabel);
             this.groupBoxServicos.Controls.Add(this.listBoxServicos);
-            this.groupBoxServicos.Controls.Add(this.dataSaidaDateTimePicker);
-            this.groupBoxServicos.Controls.Add(this.tipoTextBox);
             this.groupBoxServicos.Controls.Add(tipoLabel);
+            this.groupBoxServicos.Controls.Add(this.tipoTextBox);
             this.groupBoxServicos.Location = new System.Drawing.Point(532, 140);
             this.groupBoxServicos.Name = "groupBoxServicos";
             this.groupBoxServicos.Size = new System.Drawing.Size(244, 333);
@@ -245,70 +245,75 @@
             // 
             // listBoxServicos
             // 
-            this.listBoxServicos.DataSource = this.carroBindingSource;
+            this.listBoxServicos.DataSource = this.servicosBindingSource;
             this.listBoxServicos.FormattingEnabled = true;
             this.listBoxServicos.Location = new System.Drawing.Point(5, 19);
             this.listBoxServicos.Name = "listBoxServicos";
-            this.listBoxServicos.Size = new System.Drawing.Size(234, 173);
+            this.listBoxServicos.Size = new System.Drawing.Size(234, 199);
             this.listBoxServicos.TabIndex = 0;
+            this.listBoxServicos.SelectedIndexChanged += new System.EventHandler(this.listBoxServicos_SelectedIndexChanged);
             // 
             // dataEntradaLabel
             // 
             dataEntradaLabel.AutoSize = true;
-            dataEntradaLabel.Location = new System.Drawing.Point(3, 202);
+            dataEntradaLabel.Location = new System.Drawing.Point(6, 233);
             dataEntradaLabel.Name = "dataEntradaLabel";
             dataEntradaLabel.Size = new System.Drawing.Size(73, 13);
-            dataEntradaLabel.TabIndex = 12;
+            dataEntradaLabel.TabIndex = 14;
             dataEntradaLabel.Text = "Data Entrada:";
             // 
             // dataEntradaDateTimePicker
             // 
             this.dataEntradaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.servicosBindingSource, "DataEntrada", true));
-            this.dataEntradaDateTimePicker.Location = new System.Drawing.Point(82, 198);
+            this.dataEntradaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataEntradaDateTimePicker.Location = new System.Drawing.Point(95, 227);
             this.dataEntradaDateTimePicker.Name = "dataEntradaDateTimePicker";
-            this.dataEntradaDateTimePicker.Size = new System.Drawing.Size(156, 20);
-            this.dataEntradaDateTimePicker.TabIndex = 13;
+            this.dataEntradaDateTimePicker.Size = new System.Drawing.Size(143, 20);
+            this.dataEntradaDateTimePicker.TabIndex = 15;
+            this.dataEntradaDateTimePicker.Value = new System.DateTime(2019, 5, 22, 0, 0, 0, 0);
             // 
             // dataSaidaLabel
             // 
             dataSaidaLabel.AutoSize = true;
-            dataSaidaLabel.Location = new System.Drawing.Point(3, 228);
+            dataSaidaLabel.Location = new System.Drawing.Point(6, 259);
             dataSaidaLabel.Name = "dataSaidaLabel";
             dataSaidaLabel.Size = new System.Drawing.Size(63, 13);
-            dataSaidaLabel.TabIndex = 14;
+            dataSaidaLabel.TabIndex = 16;
             dataSaidaLabel.Text = "Data Saida:";
             // 
             // dataSaidaDateTimePicker
             // 
             this.dataSaidaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.servicosBindingSource, "DataSaida", true));
-            this.dataSaidaDateTimePicker.Location = new System.Drawing.Point(82, 224);
+            this.dataSaidaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataSaidaDateTimePicker.Location = new System.Drawing.Point(95, 253);
             this.dataSaidaDateTimePicker.Name = "dataSaidaDateTimePicker";
-            this.dataSaidaDateTimePicker.Size = new System.Drawing.Size(156, 20);
-            this.dataSaidaDateTimePicker.TabIndex = 15;
+            this.dataSaidaDateTimePicker.Size = new System.Drawing.Size(143, 20);
+            this.dataSaidaDateTimePicker.TabIndex = 17;
+            this.dataSaidaDateTimePicker.Value = new System.DateTime(2019, 5, 22, 0, 0, 0, 0);
             // 
             // tipoLabel
             // 
             tipoLabel.AutoSize = true;
-            tipoLabel.Location = new System.Drawing.Point(3, 279);
+            tipoLabel.Location = new System.Drawing.Point(6, 283);
             tipoLabel.Name = "tipoLabel";
             tipoLabel.Size = new System.Drawing.Size(31, 13);
-            tipoLabel.TabIndex = 18;
+            tipoLabel.TabIndex = 20;
             tipoLabel.Text = "Tipo:";
             // 
             // tipoTextBox
             // 
             this.tipoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.servicosBindingSource, "Tipo", true));
-            this.tipoTextBox.Location = new System.Drawing.Point(40, 276);
+            this.tipoTextBox.Location = new System.Drawing.Point(43, 280);
             this.tipoTextBox.Name = "tipoTextBox";
-            this.tipoTextBox.Size = new System.Drawing.Size(198, 20);
-            this.tipoTextBox.TabIndex = 19;
+            this.tipoTextBox.Size = new System.Drawing.Size(195, 20);
+            this.tipoTextBox.TabIndex = 21;
             // 
             // FormOficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(990, 475);
+            this.ClientSize = new System.Drawing.Size(1146, 539);
             this.Controls.Add(this.groupBoxServicos);
             this.Controls.Add(this.groupBoxAdicionarCarro);
             this.Controls.Add(this.labelValorTotalCliente);

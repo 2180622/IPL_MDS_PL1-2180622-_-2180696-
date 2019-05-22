@@ -18,6 +18,7 @@ namespace StandAutomoveis
         public FormOficina()
         {
             InitializeComponent();
+            CenterToScreen();
 
             BDStand = new BDStandContainer();
 
@@ -85,22 +86,22 @@ namespace StandAutomoveis
             Servico novoServico = new Servico(tipoTextBox.Text);
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-
-            novoServico.IdServicos = carroSelecionado.ClienteIdCliente;
+            
+            novoServico.CarroOficinaIdCarro = carroSelecionado.IdCarro;
 
             BDStand.Servicos.Add(novoServico);
 
             BDStand.SaveChanges();
+        }
 
+        private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
-            /*CarroOficina novoCarroOficina = new CarroOficina(marcaTextBox.Text, modeloTextBox.Text, matriculaTextBox.Text, numeroChassisTextBox.Text, kmsTextBox.Text, combustivelTextBox.Text);
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            if(servicoSelecionado != null)
+            {
 
-            novoCarroOficina.ClienteIdCliente = clienteSelecionado.IdCliente;
-
-            BDStand.Carros.Add(novoCarroOficina);
-
-            BDStand.SaveChanges();*/
+            }
         }
     }
 
