@@ -35,13 +35,13 @@
       <End Role="Aluguer" EntitySet="Algueres" />
       <End Role="CarroAluguer" EntitySet="Carros_CarroAluguer" />
     </AssociationSet>
-    <AssociationSet Name="ServicoParcela" Association="BDStand.Store.ServicoParcela">
-      <End Role="Servico" EntitySet="Servicos" />
-      <End Role="Parcela" EntitySet="Parcelas" />
-    </AssociationSet>
     <AssociationSet Name="CarroOficinaServico" Association="BDStand.Store.CarroOficinaServico">
       <End Role="CarroOficina" EntitySet="Carros_CarroOficina" />
       <End Role="Servico" EntitySet="Servicos" />
+    </AssociationSet>
+    <AssociationSet Name="ServicoParcela" Association="BDStand.Store.ServicoParcela">
+      <End Role="Servico" EntitySet="Servicos" />
+      <End Role="Parcela" EntitySet="Parcelas" />
     </AssociationSet>
     <AssociationSet Name="FK_CarroOficina_inherits_Carro" Association="BDStand.Store.FK_CarroOficina_inherits_Carro">
       <End Role="Carro" EntitySet="Carros" />
@@ -97,7 +97,7 @@
     <Property Name="DataEntrada" Type="datetime" Nullable="false" />
     <Property Name="Tipo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DataSaida" Type="datetime" Nullable="false" />
-    <Property Name="CarroOficinaIdCarro" Type="int" Nullable="false" />
+    <Property Name="CarroOficina_IdCarro" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Parcelas">
     <Key>
@@ -202,6 +202,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="CarroOficinaServico">
+    <End Role="CarroOficina" Type="BDStand.Store.Carros_CarroOficina" Multiplicity="1" />
+    <End Role="Servico" Type="BDStand.Store.Servicos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CarroOficina">
+        <PropertyRef Name="IdCarro" />
+      </Principal>
+      <Dependent Role="Servico">
+        <PropertyRef Name="CarroOficina_IdCarro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="ServicoParcela">
     <End Role="Servico" Type="BDStand.Store.Servicos" Multiplicity="1" />
     <End Role="Parcela" Type="BDStand.Store.Parcelas" Multiplicity="*" />
@@ -211,18 +223,6 @@
       </Principal>
       <Dependent Role="Parcela">
         <PropertyRef Name="ServicoIdServicos" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="CarroOficinaServico">
-    <End Role="CarroOficina" Type="BDStand.Store.Carros_CarroOficina" Multiplicity="1" />
-    <End Role="Servico" Type="BDStand.Store.Servicos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CarroOficina">
-        <PropertyRef Name="IdCarro" />
-      </Principal>
-      <Dependent Role="Servico">
-        <PropertyRef Name="CarroOficinaIdCarro" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -299,13 +299,13 @@
             <End Role="Aluguer" EntitySet="Algueres" />
             <End Role="CarroAluguer" EntitySet="Carros" />
           </AssociationSet>
-          <AssociationSet Name="ServicoParcela" Association="BDStand.ServicoParcela">
-            <End Role="Servico" EntitySet="Servicos" />
-            <End Role="Parcela" EntitySet="Parcelas" />
-          </AssociationSet>
           <AssociationSet Name="CarroOficinaServico" Association="BDStand.CarroOficinaServico">
             <End Role="CarroOficina" EntitySet="Carros" />
             <End Role="Servico" EntitySet="Servicos" />
+          </AssociationSet>
+          <AssociationSet Name="ServicoParcela" Association="BDStand.ServicoParcela">
+            <End Role="Servico" EntitySet="Servicos" />
+            <End Role="Parcela" EntitySet="Parcelas" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Cliente">
@@ -361,9 +361,8 @@
           <Property Name="DataEntrada" Type="DateTime" Nullable="false" />
           <Property Name="Tipo" Type="String" Nullable="false" />
           <Property Name="DataSaida" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="Parcelas" Relationship="BDStand.ServicoParcela" FromRole="Servico" ToRole="Parcela" />
           <NavigationProperty Name="CarroOficina" Relationship="BDStand.CarroOficinaServico" FromRole="Servico" ToRole="CarroOficina" />
-          <Property Name="CarroOficinaIdCarro" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Parcelas" Relationship="BDStand.ServicoParcela" FromRole="Servico" ToRole="Parcela" />
         </EntityType>
         <EntityType Name="Parcela">
           <Key>
@@ -438,6 +437,10 @@
           <End Type="BDStand.Aluguer" Role="Aluguer" Multiplicity="*" />
           <End Type="BDStand.CarroAluguer" Role="CarroAluguer" Multiplicity="1" />
         </Association>
+        <Association Name="CarroOficinaServico">
+          <End Type="BDStand.CarroOficina" Role="CarroOficina" Multiplicity="1" />
+          <End Type="BDStand.Servico" Role="Servico" Multiplicity="*" />
+        </Association>
         <Association Name="ServicoParcela">
           <End Type="BDStand.Servico" Role="Servico" Multiplicity="1" />
           <End Type="BDStand.Parcela" Role="Parcela" Multiplicity="*" />
@@ -447,18 +450,6 @@
             </Principal>
             <Dependent Role="Parcela">
               <PropertyRef Name="ServicoIdServicos" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="CarroOficinaServico">
-          <End Type="BDStand.CarroOficina" Role="CarroOficina" Multiplicity="1" />
-          <End Type="BDStand.Servico" Role="Servico" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CarroOficina">
-              <PropertyRef Name="IdCarro" />
-            </Principal>
-            <Dependent Role="Servico">
-              <PropertyRef Name="CarroOficinaIdCarro" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -509,7 +500,6 @@
           <ScalarProperty Name="DataEntrada" ColumnName="DataEntrada" />
           <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="DataSaida" ColumnName="DataSaida" />
-          <ScalarProperty Name="CarroOficinaIdCarro" ColumnName="CarroOficinaIdCarro" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -569,6 +559,14 @@
       </EndProperty>
       <EndProperty Name="Aluguer">
         <ScalarProperty Name="IdAluguer" ColumnName="IdAluguer" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CarroOficinaServico" TypeName="BDStand.CarroOficinaServico" StoreEntitySet="Servicos">
+      <EndProperty Name="CarroOficina">
+        <ScalarProperty Name="IdCarro" ColumnName="CarroOficina_IdCarro" />
+      </EndProperty>
+      <EndProperty Name="Servico">
+        <ScalarProperty Name="IdServicos" ColumnName="IdServicos" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

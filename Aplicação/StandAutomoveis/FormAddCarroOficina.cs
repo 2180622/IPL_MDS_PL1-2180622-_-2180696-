@@ -15,25 +15,17 @@ namespace StandAutomoveis
     {
         public BDStandContainer BDStand;
 
-        public string matricula;
-        public string marca;
-        public string modelo;
-        public string numeroChassis;
-        public string kms;
-        public string combustivel;
-
         public FormAddCarroOficina()
         {
             InitializeComponent();
-            CenterToScreen();
 
             BDStand = new BDStandContainer();
 
-            (from cliente in BDStand.Clientes
-             orderby cliente.Nome
-             select cliente).Load();
+            (from carro in BDStand.Carros
+             orderby carro.Marca
+             select carro).Load();
 
-            clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+            carroOficinaBindingSource.DataSource = BDStand.Carros.Local.ToBindingList();
         }
 
         private void buttonExitApp_Click(object sender, EventArgs e)
@@ -44,31 +36,12 @@ namespace StandAutomoveis
         private void buttonAddCarroOficina_Click(object sender, EventArgs e)
         {
             CarroOficina novoCarroOficina = new CarroOficina(marcaTextBox.Text, modeloTextBox.Text, matriculaTextBox.Text, numeroChassisTextBox.Text, kmsTextBox.Text, combustivelTextBox.Text);
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            FormOficina formOficina = new FormOficina();
-
-            novoCarroOficina.ClienteIdCliente = clienteSelecionado.IdCliente;
+            Carro novoCarro = new Carro();
 
             BDStand.Carros.Add(novoCarroOficina);
-
-            BDStand.SaveChanges();
+            BDStand.Carros.Add(novoCarro);
 
             this.Close();
-            
-            formOficina.ShowDialog();
-        }
-
-        private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-
-            if (clienteSelecionado != null)
-            {
-                labelNomeCliente.Text = clienteSelecionado.Nome;
-
-                listBoxClientes.DataSource = null;
-                listBoxClientes.DataSource = clienteBindingSource;
-            }
         }
     }
 }

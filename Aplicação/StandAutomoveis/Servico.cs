@@ -24,10 +24,9 @@ namespace StandAutomoveis
         public System.DateTime DataEntrada { get; set; }
         public string Tipo { get; set; }
         public System.DateTime DataSaida { get; set; }
-        public int CarroOficinaIdCarro { get; set; }
     
+        public virtual CarroOficina CarroOficina { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Parcela> Parcelas { get; set; }
-        public virtual CarroOficina CarroOficina { get; set; }
     }
 }

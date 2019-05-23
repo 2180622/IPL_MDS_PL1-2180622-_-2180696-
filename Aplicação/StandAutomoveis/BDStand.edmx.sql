@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/22/2019 21:08:18
--- Generated from EDMX file: C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\VELHO\Aplicação\StandAutomoveis\BDStand.edmx
+-- Date Created: 05/20/2019 16:50:06
+-- Generated from EDMX file: C:\Users\rui_p\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\BDStand.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -123,7 +123,7 @@ CREATE TABLE [dbo].[Servicos] (
     [DataEntrada] datetime  NOT NULL,
     [Tipo] nvarchar(max)  NOT NULL,
     [DataSaida] datetime  NOT NULL,
-    [CarroOficinaIdCarro] int  NOT NULL
+    [CarroOficina_IdCarro] int  NOT NULL
 );
 GO
 
@@ -307,6 +307,21 @@ ON [dbo].[Algueres]
     ([CarroAluguer_IdCarro]);
 GO
 
+-- Creating foreign key on [CarroOficina_IdCarro] in table 'Servicos'
+ALTER TABLE [dbo].[Servicos]
+ADD CONSTRAINT [FK_CarroOficinaServico]
+    FOREIGN KEY ([CarroOficina_IdCarro])
+    REFERENCES [dbo].[Carros_CarroOficina]
+        ([IdCarro])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_CarroOficinaServico'
+CREATE INDEX [IX_FK_CarroOficinaServico]
+ON [dbo].[Servicos]
+    ([CarroOficina_IdCarro]);
+GO
+
 -- Creating foreign key on [ServicoIdServicos] in table 'Parcelas'
 ALTER TABLE [dbo].[Parcelas]
 ADD CONSTRAINT [FK_ServicoParcela]
@@ -320,21 +335,6 @@ GO
 CREATE INDEX [IX_FK_ServicoParcela]
 ON [dbo].[Parcelas]
     ([ServicoIdServicos]);
-GO
-
--- Creating foreign key on [CarroOficinaIdCarro] in table 'Servicos'
-ALTER TABLE [dbo].[Servicos]
-ADD CONSTRAINT [FK_CarroOficinaServico]
-    FOREIGN KEY ([CarroOficinaIdCarro])
-    REFERENCES [dbo].[Carros_CarroOficina]
-        ([IdCarro])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_CarroOficinaServico'
-CREATE INDEX [IX_FK_CarroOficinaServico]
-ON [dbo].[Servicos]
-    ([CarroOficinaIdCarro]);
 GO
 
 -- Creating foreign key on [IdCarro] in table 'Carros_CarroOficina'

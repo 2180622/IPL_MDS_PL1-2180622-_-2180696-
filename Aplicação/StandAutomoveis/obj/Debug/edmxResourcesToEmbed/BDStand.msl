@@ -42,7 +42,6 @@
           <ScalarProperty Name="DataEntrada" ColumnName="DataEntrada" />
           <ScalarProperty Name="Tipo" ColumnName="Tipo" />
           <ScalarProperty Name="DataSaida" ColumnName="DataSaida" />
-          <ScalarProperty Name="CarroOficinaIdCarro" ColumnName="CarroOficinaIdCarro" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -102,6 +101,14 @@
       </EndProperty>
       <EndProperty Name="Aluguer">
         <ScalarProperty Name="IdAluguer" ColumnName="IdAluguer" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CarroOficinaServico" TypeName="BDStand.CarroOficinaServico" StoreEntitySet="Servicos">
+      <EndProperty Name="CarroOficina">
+        <ScalarProperty Name="IdCarro" ColumnName="CarroOficina_IdCarro" />
+      </EndProperty>
+      <EndProperty Name="Servico">
+        <ScalarProperty Name="IdServicos" ColumnName="IdServicos" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>
