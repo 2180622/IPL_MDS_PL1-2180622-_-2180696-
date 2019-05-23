@@ -18,7 +18,7 @@ namespace StandAutomoveis
         public FormGestaoVenda()
         {
             InitializeComponent();
-
+            CenterToScreen();
 
             BDStand = new BDStandContainer();
 

@@ -115,7 +115,7 @@
             // 
             // buttonGestaoClientes
             // 
-            this.buttonGestaoClientes.Image = global::StandAutomoveis.Properties.Resources.GestaoClientes;
+            this.buttonGestaoClientes.Image = global::StandAutomoveis.Properties.Resources.iconeClientes;
             this.buttonGestaoClientes.Location = new System.Drawing.Point(3, 51);
             this.buttonGestaoClientes.Name = "buttonGestaoClientes";
             this.buttonGestaoClientes.Size = new System.Drawing.Size(79, 79);

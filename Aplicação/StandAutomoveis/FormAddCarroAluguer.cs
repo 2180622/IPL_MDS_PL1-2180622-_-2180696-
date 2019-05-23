@@ -15,11 +15,17 @@ namespace StandAutomoveis
         public FormAddCarroAluguer()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void buttonExitApp_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonAddCarroAluguer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

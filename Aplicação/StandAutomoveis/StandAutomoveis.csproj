@@ -221,6 +221,7 @@
       <LastGenOutput>BDStand.cs</LastGenOutput>
       <DependentUpon>BDStand.edmx</DependentUpon>
     </Content>
+    <None Include="Resources\iconeClientes.png" />
     <None Include="Resources\iconeVenda.png" />
     <None Include="Resources\iconeAluguer.png" />
     <None Include="Resources\iconeOficina.jpg" />

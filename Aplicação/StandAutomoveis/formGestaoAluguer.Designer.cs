@@ -30,19 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelForm1 = new System.Windows.Forms.Panel();
+            this.buttonExitApp = new System.Windows.Forms.Button();
             this.labelTituloForm1 = new System.Windows.Forms.Label();
             this.panelLeftCliente = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonGestaoClientes = new System.Windows.Forms.Button();
+            this.buttonVendasCliente = new System.Windows.Forms.Button();
+            this.buttonOficinaCliente = new System.Windows.Forms.Button();
+            this.listBoxCarrosAluguer = new System.Windows.Forms.ListBox();
+            this.buttonAddCarro = new System.Windows.Forms.Button();
+            this.buttonEditCarro = new System.Windows.Forms.Button();
+            this.buttonDeleteCarro = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBoxClientes = new System.Windows.Forms.GroupBox();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.listBoxAlugueres = new System.Windows.Forms.ListBox();
+            this.buttonDeleteAluguer = new System.Windows.Forms.Button();
+            this.buttonFatura = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.labelClienteSelecionado = new System.Windows.Forms.Label();
             this.labelNIFCliente = new System.Windows.Forms.Label();
@@ -50,6 +54,7 @@
             this.labelMoradaCliente = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.kmsTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.valorTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,12 +62,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.buttonGestaoClientes = new System.Windows.Forms.Button();
-            this.buttonVendasCliente = new System.Windows.Forms.Button();
-            this.buttonOficinaCliente = new System.Windows.Forms.Button();
-            this.buttonExitApp = new System.Windows.Forms.Button();
+            this.buttonAddAluguer = new System.Windows.Forms.Button();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelForm1.SuspendLayout();
             this.panelLeftCliente.SuspendLayout();
@@ -84,6 +84,16 @@
             this.panelForm1.Name = "panelForm1";
             this.panelForm1.Size = new System.Drawing.Size(990, 65);
             this.panelForm1.TabIndex = 6;
+            // 
+            // buttonExitApp
+            // 
+            this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
+            this.buttonExitApp.Location = new System.Drawing.Point(962, 3);
+            this.buttonExitApp.Name = "buttonExitApp";
+            this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
+            this.buttonExitApp.TabIndex = 7;
+            this.buttonExitApp.UseVisualStyleBackColor = true;
+            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
             // 
             // labelTituloForm1
             // 
@@ -108,47 +118,75 @@
             this.panelLeftCliente.Size = new System.Drawing.Size(85, 408);
             this.panelLeftCliente.TabIndex = 7;
             // 
-            // listBox1
+            // buttonGestaoClientes
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(6, 19);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(205, 212);
-            this.listBox1.TabIndex = 23;
+            this.buttonGestaoClientes.Image = global::StandAutomoveis.Properties.Resources.iconeClientes;
+            this.buttonGestaoClientes.Location = new System.Drawing.Point(3, 49);
+            this.buttonGestaoClientes.Name = "buttonGestaoClientes";
+            this.buttonGestaoClientes.Size = new System.Drawing.Size(79, 79);
+            this.buttonGestaoClientes.TabIndex = 23;
+            this.buttonGestaoClientes.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonGestaoClientes.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonVendasCliente
             // 
-            this.button1.Location = new System.Drawing.Point(6, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(205, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Adicionar um carro novo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonVendasCliente.Image = global::StandAutomoveis.Properties.Resources.iconeVenda;
+            this.buttonVendasCliente.Location = new System.Drawing.Point(3, 292);
+            this.buttonVendasCliente.Name = "buttonVendasCliente";
+            this.buttonVendasCliente.Size = new System.Drawing.Size(79, 79);
+            this.buttonVendasCliente.TabIndex = 22;
+            this.buttonVendasCliente.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonOficinaCliente
             // 
-            this.button2.Location = new System.Drawing.Point(6, 266);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 23);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Editar carro";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonOficinaCliente.Image = global::StandAutomoveis.Properties.Resources.iconeOficina;
+            this.buttonOficinaCliente.Location = new System.Drawing.Point(3, 171);
+            this.buttonOficinaCliente.Name = "buttonOficinaCliente";
+            this.buttonOficinaCliente.Size = new System.Drawing.Size(79, 79);
+            this.buttonOficinaCliente.TabIndex = 20;
+            this.buttonOficinaCliente.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // listBoxCarrosAluguer
             // 
-            this.button3.Location = new System.Drawing.Point(111, 266);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 23);
-            this.button3.TabIndex = 27;
-            this.button3.Text = "Apagar carro";
-            this.button3.UseVisualStyleBackColor = true;
+            this.listBoxCarrosAluguer.FormattingEnabled = true;
+            this.listBoxCarrosAluguer.Location = new System.Drawing.Point(6, 19);
+            this.listBoxCarrosAluguer.Name = "listBoxCarrosAluguer";
+            this.listBoxCarrosAluguer.Size = new System.Drawing.Size(205, 212);
+            this.listBoxCarrosAluguer.TabIndex = 23;
+            // 
+            // buttonAddCarro
+            // 
+            this.buttonAddCarro.Location = new System.Drawing.Point(6, 237);
+            this.buttonAddCarro.Name = "buttonAddCarro";
+            this.buttonAddCarro.Size = new System.Drawing.Size(205, 23);
+            this.buttonAddCarro.TabIndex = 25;
+            this.buttonAddCarro.Text = "Adicionar Carro";
+            this.buttonAddCarro.UseVisualStyleBackColor = true;
+            // 
+            // buttonEditCarro
+            // 
+            this.buttonEditCarro.Location = new System.Drawing.Point(6, 266);
+            this.buttonEditCarro.Name = "buttonEditCarro";
+            this.buttonEditCarro.Size = new System.Drawing.Size(100, 23);
+            this.buttonEditCarro.TabIndex = 26;
+            this.buttonEditCarro.Text = "Editar Carro";
+            this.buttonEditCarro.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteCarro
+            // 
+            this.buttonDeleteCarro.Location = new System.Drawing.Point(111, 266);
+            this.buttonDeleteCarro.Name = "buttonDeleteCarro";
+            this.buttonDeleteCarro.Size = new System.Drawing.Size(100, 23);
+            this.buttonDeleteCarro.TabIndex = 27;
+            this.buttonDeleteCarro.Text = "Apagar Carro";
+            this.buttonDeleteCarro.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.listBoxCarrosAluguer);
+            this.groupBox1.Controls.Add(this.buttonDeleteCarro);
+            this.groupBox1.Controls.Add(this.buttonAddCarro);
+            this.groupBox1.Controls.Add(this.buttonEditCarro);
             this.groupBox1.Location = new System.Drawing.Point(314, 169);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(217, 295);
@@ -177,9 +215,9 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listBox2);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.button6);
+            this.groupBox2.Controls.Add(this.listBoxAlugueres);
+            this.groupBox2.Controls.Add(this.buttonDeleteAluguer);
+            this.groupBox2.Controls.Add(this.buttonFatura);
             this.groupBox2.Location = new System.Drawing.Point(537, 169);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(217, 295);
@@ -187,31 +225,31 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Alugueres do cliente";
             // 
-            // listBox2
+            // listBoxAlugueres
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(6, 19);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(205, 238);
-            this.listBox2.TabIndex = 23;
+            this.listBoxAlugueres.FormattingEnabled = true;
+            this.listBoxAlugueres.Location = new System.Drawing.Point(6, 19);
+            this.listBoxAlugueres.Name = "listBoxAlugueres";
+            this.listBoxAlugueres.Size = new System.Drawing.Size(205, 238);
+            this.listBoxAlugueres.TabIndex = 23;
             // 
-            // button4
+            // buttonDeleteAluguer
             // 
-            this.button4.Location = new System.Drawing.Point(111, 266);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 23);
-            this.button4.TabIndex = 27;
-            this.button4.Text = "Apagar aluguer";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonDeleteAluguer.Location = new System.Drawing.Point(111, 266);
+            this.buttonDeleteAluguer.Name = "buttonDeleteAluguer";
+            this.buttonDeleteAluguer.Size = new System.Drawing.Size(100, 23);
+            this.buttonDeleteAluguer.TabIndex = 27;
+            this.buttonDeleteAluguer.Text = "Apagar Aluguer";
+            this.buttonDeleteAluguer.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonFatura
             // 
-            this.button6.Location = new System.Drawing.Point(6, 266);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(100, 23);
-            this.button6.TabIndex = 26;
-            this.button6.Text = "Emitir fatura";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonFatura.Location = new System.Drawing.Point(6, 266);
+            this.buttonFatura.Name = "buttonFatura";
+            this.buttonFatura.Size = new System.Drawing.Size(100, 23);
+            this.buttonFatura.TabIndex = 26;
+            this.buttonFatura.Text = "Emitir Fatura";
+            this.buttonFatura.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -277,7 +315,7 @@
             this.groupBox4.Controls.Add(this.label2);
             this.groupBox4.Controls.Add(this.dateTimePicker1);
             this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.button8);
+            this.groupBox4.Controls.Add(this.buttonAddAluguer);
             this.groupBox4.Location = new System.Drawing.Point(761, 169);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(217, 295);
@@ -291,6 +329,13 @@
             this.kmsTextBox.Name = "kmsTextBox";
             this.kmsTextBox.Size = new System.Drawing.Size(151, 20);
             this.kmsTextBox.TabIndex = 33;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(49, 100);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(151, 20);
+            this.textBox1.TabIndex = 32;
             // 
             // valorTextBox
             // 
@@ -349,59 +394,14 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Inicio do aluguer:";
             // 
-            // button8
+            // buttonAddAluguer
             // 
-            this.button8.Location = new System.Drawing.Point(6, 266);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(205, 23);
-            this.button8.TabIndex = 25;
-            this.button8.Text = "Registar novo aluguer";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(49, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 20);
-            this.textBox1.TabIndex = 32;
-            // 
-            // buttonGestaoClientes
-            // 
-            this.buttonGestaoClientes.Image = global::StandAutomoveis.Properties.Resources.GestaoClientes;
-            this.buttonGestaoClientes.Location = new System.Drawing.Point(3, 49);
-            this.buttonGestaoClientes.Name = "buttonGestaoClientes";
-            this.buttonGestaoClientes.Size = new System.Drawing.Size(79, 79);
-            this.buttonGestaoClientes.TabIndex = 23;
-            this.buttonGestaoClientes.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonGestaoClientes.UseVisualStyleBackColor = true;
-            // 
-            // buttonVendasCliente
-            // 
-            this.buttonVendasCliente.Image = global::StandAutomoveis.Properties.Resources.iconeVenda;
-            this.buttonVendasCliente.Location = new System.Drawing.Point(3, 292);
-            this.buttonVendasCliente.Name = "buttonVendasCliente";
-            this.buttonVendasCliente.Size = new System.Drawing.Size(79, 79);
-            this.buttonVendasCliente.TabIndex = 22;
-            this.buttonVendasCliente.UseVisualStyleBackColor = true;
-            // 
-            // buttonOficinaCliente
-            // 
-            this.buttonOficinaCliente.Image = global::StandAutomoveis.Properties.Resources.iconeOficina;
-            this.buttonOficinaCliente.Location = new System.Drawing.Point(3, 171);
-            this.buttonOficinaCliente.Name = "buttonOficinaCliente";
-            this.buttonOficinaCliente.Size = new System.Drawing.Size(79, 79);
-            this.buttonOficinaCliente.TabIndex = 20;
-            this.buttonOficinaCliente.UseVisualStyleBackColor = true;
-            // 
-            // buttonExitApp
-            // 
-            this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
-            this.buttonExitApp.Location = new System.Drawing.Point(962, 3);
-            this.buttonExitApp.Name = "buttonExitApp";
-            this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
-            this.buttonExitApp.TabIndex = 7;
-            this.buttonExitApp.UseVisualStyleBackColor = true;
-            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
+            this.buttonAddAluguer.Location = new System.Drawing.Point(6, 266);
+            this.buttonAddAluguer.Name = "buttonAddAluguer";
+            this.buttonAddAluguer.Size = new System.Drawing.Size(205, 23);
+            this.buttonAddAluguer.TabIndex = 25;
+            this.buttonAddAluguer.Text = "Registar Novo Aluguer";
+            this.buttonAddAluguer.UseVisualStyleBackColor = true;
             // 
             // clienteBindingSource
             // 
@@ -446,24 +446,24 @@
         private System.Windows.Forms.Panel panelLeftCliente;
         private System.Windows.Forms.Button buttonVendasCliente;
         private System.Windows.Forms.Button buttonOficinaCliente;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ListBox listBoxCarrosAluguer;
+        private System.Windows.Forms.Button buttonAddCarro;
+        private System.Windows.Forms.Button buttonEditCarro;
+        private System.Windows.Forms.Button buttonDeleteCarro;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBoxClientes;
         private System.Windows.Forms.ListBox listBoxClientes;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ListBox listBoxAlugueres;
+        private System.Windows.Forms.Button buttonDeleteAluguer;
+        private System.Windows.Forms.Button buttonFatura;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label labelClienteSelecionado;
         private System.Windows.Forms.Label labelNIFCliente;
         private System.Windows.Forms.Label labelValorTotalCliente;
         private System.Windows.Forms.Label labelMoradaCliente;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button buttonAddAluguer;
         private System.Windows.Forms.TextBox kmsTextBox;
         private System.Windows.Forms.TextBox valorTextBox;
         private System.Windows.Forms.Label label4;

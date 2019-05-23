@@ -39,12 +39,12 @@
             this.matriculaTextBox = new System.Windows.Forms.TextBox();
             this.modeloTextBox = new System.Windows.Forms.TextBox();
             this.numeroChassisTextBox = new System.Windows.Forms.TextBox();
-            this.buttonAddCarroOficina = new System.Windows.Forms.Button();
+            this.buttonAddCarroAluguer = new System.Windows.Forms.Button();
             this.panelLeftCarro = new System.Windows.Forms.Panel();
             this.panelForm1 = new System.Windows.Forms.Panel();
+            this.buttonExitApp = new System.Windows.Forms.Button();
             this.labelTituloForm1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.buttonExitApp = new System.Windows.Forms.Button();
             combustivelLabel = new System.Windows.Forms.Label();
             estadoLabel = new System.Windows.Forms.Label();
             marcaLabel = new System.Windows.Forms.Label();
@@ -143,14 +143,15 @@
             this.numeroChassisTextBox.Size = new System.Drawing.Size(190, 20);
             this.numeroChassisTextBox.TabIndex = 65;
             // 
-            // buttonAddCarroOficina
+            // buttonAddCarroAluguer
             // 
-            this.buttonAddCarroOficina.Location = new System.Drawing.Point(193, 267);
-            this.buttonAddCarroOficina.Name = "buttonAddCarroOficina";
-            this.buttonAddCarroOficina.Size = new System.Drawing.Size(282, 29);
-            this.buttonAddCarroOficina.TabIndex = 53;
-            this.buttonAddCarroOficina.Text = "Adicionar carro";
-            this.buttonAddCarroOficina.UseVisualStyleBackColor = true;
+            this.buttonAddCarroAluguer.Location = new System.Drawing.Point(193, 267);
+            this.buttonAddCarroAluguer.Name = "buttonAddCarroAluguer";
+            this.buttonAddCarroAluguer.Size = new System.Drawing.Size(282, 29);
+            this.buttonAddCarroAluguer.TabIndex = 53;
+            this.buttonAddCarroAluguer.Text = "Adicionar carro";
+            this.buttonAddCarroAluguer.UseVisualStyleBackColor = true;
+            this.buttonAddCarroAluguer.Click += new System.EventHandler(this.buttonAddCarroAluguer_Click);
             // 
             // panelLeftCarro
             // 
@@ -171,6 +172,16 @@
             this.panelForm1.Name = "panelForm1";
             this.panelForm1.Size = new System.Drawing.Size(620, 65);
             this.panelForm1.TabIndex = 51;
+            // 
+            // buttonExitApp
+            // 
+            this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
+            this.buttonExitApp.Location = new System.Drawing.Point(592, 3);
+            this.buttonExitApp.Name = "buttonExitApp";
+            this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
+            this.buttonExitApp.TabIndex = 7;
+            this.buttonExitApp.UseVisualStyleBackColor = true;
+            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
             // 
             // labelTituloForm1
             // 
@@ -195,16 +206,6 @@
             this.comboBox1.Size = new System.Drawing.Size(190, 21);
             this.comboBox1.TabIndex = 66;
             // 
-            // buttonExitApp
-            // 
-            this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
-            this.buttonExitApp.Location = new System.Drawing.Point(592, 3);
-            this.buttonExitApp.Name = "buttonExitApp";
-            this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
-            this.buttonExitApp.TabIndex = 7;
-            this.buttonExitApp.UseVisualStyleBackColor = true;
-            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
-            // 
             // FormAddCarroAluguer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,7 +224,7 @@
             this.Controls.Add(this.modeloTextBox);
             this.Controls.Add(numeroChassisLabel);
             this.Controls.Add(this.numeroChassisTextBox);
-            this.Controls.Add(this.buttonAddCarroOficina);
+            this.Controls.Add(this.buttonAddCarroAluguer);
             this.Controls.Add(this.panelLeftCarro);
             this.Controls.Add(this.panelForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -243,7 +244,7 @@
         private System.Windows.Forms.TextBox matriculaTextBox;
         private System.Windows.Forms.TextBox modeloTextBox;
         private System.Windows.Forms.TextBox numeroChassisTextBox;
-        private System.Windows.Forms.Button buttonAddCarroOficina;
+        private System.Windows.Forms.Button buttonAddCarroAluguer;
         private System.Windows.Forms.Panel panelLeftCarro;
         private System.Windows.Forms.Panel panelForm1;
         private System.Windows.Forms.Button buttonExitApp;
