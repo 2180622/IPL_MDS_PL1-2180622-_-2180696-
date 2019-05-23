@@ -15,6 +15,7 @@ namespace StandAutomoveis
         public FormInicial()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         public void buttonGestaoClientes_Click(object sender, EventArgs e)

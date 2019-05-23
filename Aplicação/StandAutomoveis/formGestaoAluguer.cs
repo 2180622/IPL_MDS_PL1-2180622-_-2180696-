@@ -48,5 +48,10 @@ namespace StandAutomoveis
         {
             this.Close();
         }
+
+        private void buttonFatura_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -90,6 +90,7 @@
     <Compile Include="Classes\ExtendedCliente.cs" />
     <Compile Include="Classes\ExtendedCarro.cs" />
     <Compile Include="Classes\ExtendedCarroOficina.cs" />
+    <Compile Include="Classes\ExtendedServico.cs" />
     <Compile Include="FormAddCarroAluguer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,8 +183,13 @@
       <DependentUpon>BDStand.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Aluguer.datasource" />
+    <None Include="Properties\DataSources\Carro1.datasource" />
+    <None Include="Properties\DataSources\CarroAluguer.datasource" />
     <None Include="Properties\DataSources\CarroOficina.datasource" />
+    <None Include="Properties\DataSources\CarroVenda.datasource" />
     <None Include="Properties\DataSources\Cliente.datasource" />
+    <None Include="Properties\DataSources\Venda.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

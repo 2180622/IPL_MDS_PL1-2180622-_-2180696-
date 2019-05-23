@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="BDStand.Aluguer" Width="1.5" PointX="6.625" PointY="5.75" />
         <EntityTypeShape EntityType="BDStand.Venda" Width="1.5" PointX="4.125" PointY="3.5" />
         <EntityTypeShape EntityType="BDStand.CarroOficina" Width="1.5" PointX="9.375" PointY="0.5" />
-        <EntityTypeShape EntityType="BDStand.Servico" Width="1.5" PointX="6.375" PointY="1.25" />
+        <EntityTypeShape EntityType="BDStand.Servico" Width="1.5" PointX="6.375" PointY="1" />
         <EntityTypeShape EntityType="BDStand.Parcela" Width="1.5" PointX="3" PointY="1.25" />
         <EntityTypeShape EntityType="BDStand.CarroVenda" Width="1.5" PointX="7" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BDStand.CarroAluguer" Width="1.5" PointX="9.375" PointY="6.25" />
@@ -20,11 +20,11 @@
         </AssociationConnector>
         <AssociationConnector Association="BDStand.VendaCarroVenda" />
         <AssociationConnector Association="BDStand.AluguerCarroAluguer" />
-        <AssociationConnector Association="BDStand.CarroOficinaServico" />
         <AssociationConnector Association="BDStand.ServicoParcela" />
         <InheritanceConnector EntityType="BDStand.CarroAluguer" />
         <InheritanceConnector EntityType="BDStand.CarroOficina" />
         <InheritanceConnector EntityType="BDStand.CarroVenda" />
+        <AssociationConnector Association="BDStand.CarroOficinaServico" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

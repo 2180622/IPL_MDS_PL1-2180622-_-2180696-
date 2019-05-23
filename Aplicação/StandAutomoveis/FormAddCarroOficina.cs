@@ -15,9 +15,17 @@ namespace StandAutomoveis
     {
         public BDStandContainer BDStand;
 
+        public string matricula;
+        public string marca;
+        public string modelo;
+        public string numeroChassis;
+        public string kms;
+        public string combustivel;
+
         public FormAddCarroOficina()
         {
             InitializeComponent();
+            CenterToScreen();
 
             BDStand = new BDStandContainer();
 
@@ -36,12 +44,32 @@ namespace StandAutomoveis
         private void buttonAddCarroOficina_Click(object sender, EventArgs e)
         {
             CarroOficina novoCarroOficina = new CarroOficina(marcaTextBox.Text, modeloTextBox.Text, matriculaTextBox.Text, numeroChassisTextBox.Text, kmsTextBox.Text, combustivelTextBox.Text);
-            Carro novoCarro = new Carro();
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            FormOficina formOficina = new FormOficina();
+
+            novoCarroOficina.ClienteIdCliente = clienteSelecionado.IdCliente;
 
             BDStand.Carros.Add(novoCarroOficina);
-            BDStand.Carros.Add(novoCarro);
+
+            BDStand.SaveChanges();
 
             this.Close();
+
+            formOficina.ShowDialog();
+        }
+
+        private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+
+            if (clienteSelecionado != null)
+            {
+                labelNomeCliente.Text = clienteSelecionado.Nome;
+
+                listBoxClientes.DataSource = null;
+                listBoxClientes.DataSource = clienteBindingSource;
+            }
         }
     }
 }

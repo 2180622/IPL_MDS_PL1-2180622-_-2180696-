@@ -124,7 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(990, 473);
+            this.ClientSize = new System.Drawing.Size(990, 475);
             this.Controls.Add(this.panelForm1);
             this.Controls.Add(this.buttonGestaoVendas);
             this.Controls.Add(this.buttonGestaoAluguer);

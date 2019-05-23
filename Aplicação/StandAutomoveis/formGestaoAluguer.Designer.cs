@@ -37,14 +37,17 @@
             this.buttonVendasCliente = new System.Windows.Forms.Button();
             this.buttonOficinaCliente = new System.Windows.Forms.Button();
             this.listBoxCarrosAluguer = new System.Windows.Forms.ListBox();
+            this.carroAluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonAddCarro = new System.Windows.Forms.Button();
             this.buttonEditCarro = new System.Windows.Forms.Button();
             this.buttonDeleteCarro = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBoxClientes = new System.Windows.Forms.GroupBox();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBoxAlugueres = new System.Windows.Forms.ListBox();
+            this.aluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonDeleteAluguer = new System.Windows.Forms.Button();
             this.buttonFatura = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -58,20 +61,21 @@
             this.valorTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFim = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerInicio = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAddAluguer = new System.Windows.Forms.Button();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelForm1.SuspendLayout();
             this.panelLeftCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBoxClientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.aluguerBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelForm1
@@ -115,7 +119,7 @@
             this.panelLeftCliente.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftCliente.Location = new System.Drawing.Point(0, 65);
             this.panelLeftCliente.Name = "panelLeftCliente";
-            this.panelLeftCliente.Size = new System.Drawing.Size(85, 408);
+            this.panelLeftCliente.Size = new System.Drawing.Size(85, 410);
             this.panelLeftCliente.TabIndex = 7;
             // 
             // buttonGestaoClientes
@@ -148,15 +152,20 @@
             // 
             // listBoxCarrosAluguer
             // 
+            this.listBoxCarrosAluguer.DataSource = this.carroAluguerBindingSource;
             this.listBoxCarrosAluguer.FormattingEnabled = true;
             this.listBoxCarrosAluguer.Location = new System.Drawing.Point(6, 19);
             this.listBoxCarrosAluguer.Name = "listBoxCarrosAluguer";
-            this.listBoxCarrosAluguer.Size = new System.Drawing.Size(205, 212);
+            this.listBoxCarrosAluguer.Size = new System.Drawing.Size(205, 225);
             this.listBoxCarrosAluguer.TabIndex = 23;
+            // 
+            // carroAluguerBindingSource
+            // 
+            this.carroAluguerBindingSource.DataSource = typeof(StandAutomoveis.CarroAluguer);
             // 
             // buttonAddCarro
             // 
-            this.buttonAddCarro.Location = new System.Drawing.Point(6, 237);
+            this.buttonAddCarro.Location = new System.Drawing.Point(6, 244);
             this.buttonAddCarro.Name = "buttonAddCarro";
             this.buttonAddCarro.Size = new System.Drawing.Size(205, 23);
             this.buttonAddCarro.TabIndex = 25;
@@ -165,7 +174,7 @@
             // 
             // buttonEditCarro
             // 
-            this.buttonEditCarro.Location = new System.Drawing.Point(6, 266);
+            this.buttonEditCarro.Location = new System.Drawing.Point(6, 273);
             this.buttonEditCarro.Name = "buttonEditCarro";
             this.buttonEditCarro.Size = new System.Drawing.Size(100, 23);
             this.buttonEditCarro.TabIndex = 26;
@@ -174,7 +183,7 @@
             // 
             // buttonDeleteCarro
             // 
-            this.buttonDeleteCarro.Location = new System.Drawing.Point(111, 266);
+            this.buttonDeleteCarro.Location = new System.Drawing.Point(111, 273);
             this.buttonDeleteCarro.Name = "buttonDeleteCarro";
             this.buttonDeleteCarro.Size = new System.Drawing.Size(100, 23);
             this.buttonDeleteCarro.TabIndex = 27;
@@ -189,7 +198,7 @@
             this.groupBox1.Controls.Add(this.buttonEditCarro);
             this.groupBox1.Location = new System.Drawing.Point(314, 169);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(217, 295);
+            this.groupBox1.Size = new System.Drawing.Size(217, 300);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Disponíveis para aluguer";
@@ -199,19 +208,24 @@
             this.groupBoxClientes.Controls.Add(this.listBoxClientes);
             this.groupBoxClientes.Location = new System.Drawing.Point(91, 71);
             this.groupBoxClientes.Name = "groupBoxClientes";
-            this.groupBoxClientes.Size = new System.Drawing.Size(217, 393);
+            this.groupBoxClientes.Size = new System.Drawing.Size(217, 398);
             this.groupBoxClientes.TabIndex = 29;
             this.groupBoxClientes.TabStop = false;
             this.groupBoxClientes.Text = "Selecione um Cliente";
             // 
             // listBoxClientes
             // 
+            this.listBoxClientes.DataSource = this.clienteBindingSource;
             this.listBoxClientes.FormattingEnabled = true;
             this.listBoxClientes.Location = new System.Drawing.Point(6, 21);
             this.listBoxClientes.Name = "listBoxClientes";
             this.listBoxClientes.Size = new System.Drawing.Size(205, 368);
             this.listBoxClientes.TabIndex = 5;
             this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
             // 
             // groupBox2
             // 
@@ -220,22 +234,27 @@
             this.groupBox2.Controls.Add(this.buttonFatura);
             this.groupBox2.Location = new System.Drawing.Point(537, 169);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(217, 295);
+            this.groupBox2.Size = new System.Drawing.Size(217, 300);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Alugueres do cliente";
             // 
             // listBoxAlugueres
             // 
+            this.listBoxAlugueres.DataSource = this.aluguerBindingSource;
             this.listBoxAlugueres.FormattingEnabled = true;
             this.listBoxAlugueres.Location = new System.Drawing.Point(6, 19);
             this.listBoxAlugueres.Name = "listBoxAlugueres";
-            this.listBoxAlugueres.Size = new System.Drawing.Size(205, 238);
+            this.listBoxAlugueres.Size = new System.Drawing.Size(205, 251);
             this.listBoxAlugueres.TabIndex = 23;
+            // 
+            // aluguerBindingSource
+            // 
+            this.aluguerBindingSource.DataSource = typeof(StandAutomoveis.Aluguer);
             // 
             // buttonDeleteAluguer
             // 
-            this.buttonDeleteAluguer.Location = new System.Drawing.Point(111, 266);
+            this.buttonDeleteAluguer.Location = new System.Drawing.Point(111, 271);
             this.buttonDeleteAluguer.Name = "buttonDeleteAluguer";
             this.buttonDeleteAluguer.Size = new System.Drawing.Size(100, 23);
             this.buttonDeleteAluguer.TabIndex = 27;
@@ -244,12 +263,13 @@
             // 
             // buttonFatura
             // 
-            this.buttonFatura.Location = new System.Drawing.Point(6, 266);
+            this.buttonFatura.Location = new System.Drawing.Point(6, 271);
             this.buttonFatura.Name = "buttonFatura";
             this.buttonFatura.Size = new System.Drawing.Size(100, 23);
             this.buttonFatura.TabIndex = 26;
             this.buttonFatura.Text = "Emitir Fatura";
             this.buttonFatura.UseVisualStyleBackColor = true;
+            this.buttonFatura.Click += new System.EventHandler(this.buttonFatura_Click);
             // 
             // groupBox3
             // 
@@ -311,35 +331,35 @@
             this.groupBox4.Controls.Add(this.valorTextBox);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.dateTimePicker2);
+            this.groupBox4.Controls.Add(this.dateTimePickerFim);
             this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.dateTimePicker1);
+            this.groupBox4.Controls.Add(this.dateTimePickerInicio);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.buttonAddAluguer);
             this.groupBox4.Location = new System.Drawing.Point(761, 169);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(217, 295);
+            this.groupBox4.Size = new System.Drawing.Size(217, 300);
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Informação do aluguer";
             // 
             // kmsTextBox
             // 
-            this.kmsTextBox.Location = new System.Drawing.Point(49, 126);
+            this.kmsTextBox.Location = new System.Drawing.Point(50, 169);
             this.kmsTextBox.Name = "kmsTextBox";
             this.kmsTextBox.Size = new System.Drawing.Size(151, 20);
             this.kmsTextBox.TabIndex = 33;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(49, 100);
+            this.textBox1.Location = new System.Drawing.Point(50, 143);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(151, 20);
             this.textBox1.TabIndex = 32;
             // 
             // valorTextBox
             // 
-            this.valorTextBox.Location = new System.Drawing.Point(49, 100);
+            this.valorTextBox.Location = new System.Drawing.Point(50, 143);
             this.valorTextBox.Name = "valorTextBox";
             this.valorTextBox.Size = new System.Drawing.Size(151, 20);
             this.valorTextBox.TabIndex = 32;
@@ -347,7 +367,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 133);
+            this.label4.Location = new System.Drawing.Point(14, 176);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 31;
@@ -356,34 +376,34 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 107);
+            this.label3.Location = new System.Drawing.Point(10, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 30;
             this.label3.Text = "Valor:";
             // 
-            // dateTimePicker2
+            // dateTimePickerFim
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(6, 74);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(205, 20);
-            this.dateTimePicker2.TabIndex = 29;
+            this.dateTimePickerFim.Location = new System.Drawing.Point(6, 94);
+            this.dateTimePickerFim.Name = "dateTimePickerFim";
+            this.dateTimePickerFim.Size = new System.Drawing.Size(205, 20);
+            this.dateTimePickerFim.TabIndex = 29;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 58);
+            this.label2.Location = new System.Drawing.Point(6, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 28;
             this.label2.Text = "Fim do aluguer:";
             // 
-            // dateTimePicker1
+            // dateTimePickerInicio
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(6, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(205, 20);
-            this.dateTimePicker1.TabIndex = 27;
+            this.dateTimePickerInicio.Location = new System.Drawing.Point(6, 35);
+            this.dateTimePickerInicio.Name = "dateTimePickerInicio";
+            this.dateTimePickerInicio.Size = new System.Drawing.Size(205, 20);
+            this.dateTimePickerInicio.TabIndex = 27;
             // 
             // label1
             // 
@@ -396,23 +416,19 @@
             // 
             // buttonAddAluguer
             // 
-            this.buttonAddAluguer.Location = new System.Drawing.Point(6, 266);
+            this.buttonAddAluguer.Location = new System.Drawing.Point(6, 271);
             this.buttonAddAluguer.Name = "buttonAddAluguer";
             this.buttonAddAluguer.Size = new System.Drawing.Size(205, 23);
             this.buttonAddAluguer.TabIndex = 25;
             this.buttonAddAluguer.Text = "Registar Novo Aluguer";
             this.buttonAddAluguer.UseVisualStyleBackColor = true;
             // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
-            // 
             // FormGestaoAluguer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(990, 473);
+            this.ClientSize = new System.Drawing.Size(990, 475);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -426,14 +442,16 @@
             this.panelForm1.ResumeLayout(false);
             this.panelForm1.PerformLayout();
             this.panelLeftCliente.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBoxClientes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.aluguerBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,12 +486,14 @@
         private System.Windows.Forms.TextBox valorTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFim;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerInicio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonGestaoClientes;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.BindingSource clienteBindingSource;
+        private System.Windows.Forms.BindingSource carroAluguerBindingSource;
+        private System.Windows.Forms.BindingSource aluguerBindingSource;
     }
 }
