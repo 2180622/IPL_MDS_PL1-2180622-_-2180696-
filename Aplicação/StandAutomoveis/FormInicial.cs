@@ -38,5 +38,13 @@ namespace StandAutomoveis
 
             formOficina.ShowDialog();
         }
+
+        private void buttonGestaoVendas_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormVenda formvenda = new FormVenda();
+
+            formvenda.ShowDialog();
+        }
     }
 }

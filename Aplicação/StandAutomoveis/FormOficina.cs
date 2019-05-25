@@ -50,8 +50,12 @@ namespace StandAutomoveis
 
         private void buttonExitForm_Click(object sender, EventArgs e)
         {
-            // fecha o form
+            // fecha o form e abre o menu inicial
+            FormInicial forminicial = new FormInicial();
+
             this.Close();
+
+            forminicial.Show();
         }
 
         private void buttonAddCarro_Click(object sender, EventArgs e)
