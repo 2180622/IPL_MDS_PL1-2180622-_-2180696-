@@ -8,5 +8,6 @@ namespace StandAutomoveis
 {
     public partial class Carro
     {
+
     }
 }

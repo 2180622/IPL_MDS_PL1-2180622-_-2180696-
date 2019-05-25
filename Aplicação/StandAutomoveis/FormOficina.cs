@@ -70,6 +70,7 @@ namespace StandAutomoveis
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
 
@@ -85,7 +86,7 @@ namespace StandAutomoveis
             Servico novoServico = new Servico(tipoTextBox.Text);
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-
+            
             novoServico.CarroOficinaIdCarro = carroSelecionado.IdCarro;
 
             BDStand.Servicos.Add(novoServico);
@@ -97,10 +98,34 @@ namespace StandAutomoveis
         {
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
-            if (servicoSelecionado != null)
+            if(servicoSelecionado != null)
             {
 
             }
+        }
+
+        private void buttonOficinaCliente_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormCliente formcliente = new FormCliente();
+
+            formcliente.ShowDialog();
+        }
+
+        private void buttonAluguerCliente_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAluguer formaluguer = new FormAluguer();
+
+            formaluguer.ShowDialog();
+        }
+
+        private void buttonVendasCliente_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormVenda formvenda = new FormVenda();
+
+            formvenda.ShowDialog();
         }
     }
 

@@ -91,29 +91,17 @@
     <Compile Include="Classes\ExtendedCarro.cs" />
     <Compile Include="Classes\ExtendedCarroOficina.cs" />
     <Compile Include="Classes\ExtendedServico.cs" />
-    <Compile Include="FormAddCarroAluguer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAddCarroAluguer.Designer.cs">
-      <DependentUpon>FormAddCarroAluguer.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormAddCarroOficina.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAddCarroOficina.Designer.cs">
       <DependentUpon>FormAddCarroOficina.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGestaoAluguer.cs">
+    <Compile Include="FormAluguer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGestaoAluguer.Designer.cs">
-      <DependentUpon>FormGestaoAluguer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormGestaoVenda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormGestaoVenda.Designer.cs">
-      <DependentUpon>FormGestaoVenda.cs</DependentUpon>
+    <Compile Include="FormAluguer.Designer.cs">
+      <DependentUpon>FormAluguer.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOficina.cs">
       <SubType>Form</SubType>
@@ -133,6 +121,12 @@
     <Compile Include="FormCliente.Designer.cs">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVenda.Designer.cs">
+      <DependentUpon>FormVenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Parcela.cs">
       <DependentUpon>BDStand.tt</DependentUpon>
     </Compile>
@@ -144,17 +138,11 @@
     <Compile Include="Venda.cs">
       <DependentUpon>BDStand.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormAddCarroAluguer.resx">
-      <DependentUpon>FormAddCarroAluguer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormAddCarroOficina.resx">
       <DependentUpon>FormAddCarroOficina.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGestaoAluguer.resx">
-      <DependentUpon>FormGestaoAluguer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormGestaoVenda.resx">
-      <DependentUpon>FormGestaoVenda.cs</DependentUpon>
+    <EmbeddedResource Include="FormAluguer.resx">
+      <DependentUpon>FormAluguer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOficina.resx">
       <DependentUpon>FormOficina.cs</DependentUpon>
@@ -164,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVenda.resx">
+      <DependentUpon>FormVenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -183,13 +174,10 @@
       <DependentUpon>BDStand.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Aluguer.datasource" />
-    <None Include="Properties\DataSources\Carro1.datasource" />
-    <None Include="Properties\DataSources\CarroAluguer.datasource" />
+    <None Include="Properties\DataSources\Carro.datasource" />
     <None Include="Properties\DataSources\CarroOficina.datasource" />
-    <None Include="Properties\DataSources\CarroVenda.datasource" />
     <None Include="Properties\DataSources\Cliente.datasource" />
-    <None Include="Properties\DataSources\Venda.datasource" />
+    <None Include="Properties\DataSources\Servico.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

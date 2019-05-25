@@ -29,11 +29,11 @@ namespace StandAutomoveis
 
             BDStand = new BDStandContainer();
 
-            (from carro in BDStand.Carros
-             orderby carro.Marca
-             select carro).Load();
+            (from cliente in BDStand.Clientes
+             orderby cliente.Nome
+             select cliente).Load();
 
-            carroOficinaBindingSource.DataSource = BDStand.Carros.Local.ToBindingList();
+            clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
         }
 
         private void buttonExitApp_Click(object sender, EventArgs e)
@@ -54,13 +54,12 @@ namespace StandAutomoveis
             BDStand.SaveChanges();
 
             this.Close();
-
+            
             formOficina.ShowDialog();
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
             if (clienteSelecionado != null)

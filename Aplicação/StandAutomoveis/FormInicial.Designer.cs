@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInicial));
             this.panelForm1 = new System.Windows.Forms.Panel();
-            this.buttonExitApp = new System.Windows.Forms.Button();
             this.labelTituloForm1 = new System.Windows.Forms.Label();
+            this.buttonExitApp = new System.Windows.Forms.Button();
             this.buttonGestaoVendas = new System.Windows.Forms.Button();
             this.buttonGestaoAluguer = new System.Windows.Forms.Button();
             this.buttonGestaoOficina = new System.Windows.Forms.Button();
@@ -50,16 +50,6 @@
             this.panelForm1.Size = new System.Drawing.Size(990, 65);
             this.panelForm1.TabIndex = 5;
             // 
-            // buttonExitApp
-            // 
-            this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
-            this.buttonExitApp.Location = new System.Drawing.Point(962, 3);
-            this.buttonExitApp.Name = "buttonExitApp";
-            this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
-            this.buttonExitApp.TabIndex = 7;
-            this.buttonExitApp.UseVisualStyleBackColor = true;
-            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
-            // 
             // labelTituloForm1
             // 
             this.labelTituloForm1.AutoSize = true;
@@ -70,6 +60,16 @@
             this.labelTituloForm1.Size = new System.Drawing.Size(516, 66);
             this.labelTituloForm1.TabIndex = 6;
             this.labelTituloForm1.Text = "Stand Automóveis";
+            // 
+            // buttonExitApp
+            // 
+            this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
+            this.buttonExitApp.Location = new System.Drawing.Point(962, 3);
+            this.buttonExitApp.Name = "buttonExitApp";
+            this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
+            this.buttonExitApp.TabIndex = 7;
+            this.buttonExitApp.UseVisualStyleBackColor = true;
+            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
             // 
             // buttonGestaoVendas
             // 
@@ -92,7 +92,6 @@
             this.buttonGestaoAluguer.Text = "Gestão de Aluguer";
             this.buttonGestaoAluguer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonGestaoAluguer.UseVisualStyleBackColor = true;
-            this.buttonGestaoAluguer.Click += new System.EventHandler(this.buttonGestaoAluguer_Click);
             // 
             // buttonGestaoOficina
             // 
