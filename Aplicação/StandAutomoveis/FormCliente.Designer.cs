@@ -64,6 +64,8 @@
             this.moradaTextBox = new System.Windows.Forms.TextBox();
             this.nIFTextBox = new System.Windows.Forms.TextBox();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.textBoxFiltrar = new System.Windows.Forms.TextBox();
+            this.buttonFiltrar = new System.Windows.Forms.Button();
             contactoLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
@@ -391,12 +393,31 @@
             this.nomeTextBox.Size = new System.Drawing.Size(205, 20);
             this.nomeTextBox.TabIndex = 19;
             // 
+            // textBoxFiltrar
+            // 
+            this.textBoxFiltrar.Location = new System.Drawing.Point(191, 387);
+            this.textBoxFiltrar.Name = "textBoxFiltrar";
+            this.textBoxFiltrar.Size = new System.Drawing.Size(187, 20);
+            this.textBoxFiltrar.TabIndex = 20;
+            // 
+            // buttonFiltrar
+            // 
+            this.buttonFiltrar.Location = new System.Drawing.Point(106, 384);
+            this.buttonFiltrar.Name = "buttonFiltrar";
+            this.buttonFiltrar.Size = new System.Drawing.Size(79, 23);
+            this.buttonFiltrar.TabIndex = 21;
+            this.buttonFiltrar.Text = "Filtrar Cliente";
+            this.buttonFiltrar.UseVisualStyleBackColor = true;
+            this.buttonFiltrar.Click += new System.EventHandler(this.buttonFiltrar_Click);
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 475);
+            this.Controls.Add(this.buttonFiltrar);
+            this.Controls.Add(this.textBoxFiltrar);
             this.Controls.Add(contactoLabel);
             this.Controls.Add(this.contactoTextBox);
             this.Controls.Add(moradaLabel);
@@ -457,5 +478,7 @@
         private System.Windows.Forms.Button buttonOficinaCliente;
         private System.Windows.Forms.Button buttonAluguerCliente;
         private System.Windows.Forms.Button buttonVendasCliente;
+        private System.Windows.Forms.TextBox textBoxFiltrar;
+        private System.Windows.Forms.Button buttonFiltrar;
     }
 }

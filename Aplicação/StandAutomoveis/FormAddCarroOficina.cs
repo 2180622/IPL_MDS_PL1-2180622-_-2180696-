@@ -55,7 +55,7 @@ namespace StandAutomoveis
 
             this.Close();
             
-            formOficina.ShowDialog();
+            formOficina.Show();
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)

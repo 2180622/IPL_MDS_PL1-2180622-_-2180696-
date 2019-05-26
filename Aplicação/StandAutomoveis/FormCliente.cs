@@ -66,5 +66,38 @@ namespace StandAutomoveis
 
             formvenda.ShowDialog();
         }
+
+        private void toolStripButtonFiltrar_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void buttonFiltrar_Click(object sender, EventArgs e)
+        {
+            if (textBoxFiltrar.Text.Length > 0)
+            {
+                bindingNavigatorAddNewItem.Enabled = true;
+                BDStand.Dispose(); 
+                BDStand = new BDStandContainer();
+
+                (from cliente in BDStand.Clientes
+                    where cliente.Nome.ToUpper().Contains(textBoxFiltrar.Text.ToUpper())
+                    orderby cliente.Nome
+                    select cliente).ToList();
+
+                clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+            }
+            else
+            {
+                bindingNavigatorAddNewItem.Enabled = true;
+
+                BDStand.Dispose();
+                BDStand = new BDStandContainer();
+                (from cliente in BDStand.Clientes
+                    orderby cliente.Nome
+                    select cliente).Load();
+
+                clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+            }
+        }
     }
 }

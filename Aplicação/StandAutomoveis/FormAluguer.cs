@@ -26,5 +26,29 @@ namespace StandAutomoveis
 
             forminicial.Show();
         }
+
+        private void buttonOficinaCliente_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormCliente formcliente = new FormCliente();
+
+            formcliente.ShowDialog();
+        }
+
+        private void buttonAluguerCliente_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAluguer formaluguer = new FormAluguer();
+
+            formaluguer.ShowDialog();
+        }
+
+        private void buttonVendasCliente_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormVenda formvenda = new FormVenda();
+
+            formvenda.ShowDialog();
+        }
     }
 }
