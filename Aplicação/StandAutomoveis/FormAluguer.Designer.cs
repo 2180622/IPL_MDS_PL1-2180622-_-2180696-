@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelCarroTop = new System.Windows.Forms.Panel();
             this.buttonExitForm = new System.Windows.Forms.Button();
             this.labelTituloCliente = new System.Windows.Forms.Label();
@@ -43,10 +44,21 @@
             this.groupBoxAdicionarCarro = new System.Windows.Forms.GroupBox();
             this.buttonAddCarro = new System.Windows.Forms.Button();
             this.listBoxCarros = new System.Windows.Forms.ListBox();
+            this.groupBoxAluguer = new System.Windows.Forms.GroupBox();
+            this.buttonAddAluguer = new System.Windows.Forms.Button();
+            this.listBoxAlugueres = new System.Windows.Forms.ListBox();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonEditAluguer = new System.Windows.Forms.Button();
+            this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelCarroTop.SuspendLayout();
             this.panelLeftCarro.SuspendLayout();
             this.groupBoxClientes.SuspendLayout();
             this.groupBoxAdicionarCarro.SuspendLayout();
+            this.groupBoxAluguer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aluguerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCarroTop
@@ -132,6 +144,7 @@
             // 
             // listBoxClientes
             // 
+            this.listBoxClientes.DataSource = this.clienteBindingSource;
             this.listBoxClientes.FormattingEnabled = true;
             this.listBoxClientes.Location = new System.Drawing.Point(6, 21);
             this.listBoxClientes.Name = "listBoxClientes";
@@ -172,7 +185,7 @@
             // 
             this.groupBoxAdicionarCarro.Controls.Add(this.buttonAddCarro);
             this.groupBoxAdicionarCarro.Controls.Add(this.listBoxCarros);
-            this.groupBoxAdicionarCarro.Location = new System.Drawing.Point(308, 134);
+            this.groupBoxAdicionarCarro.Location = new System.Drawing.Point(537, 142);
             this.groupBoxAdicionarCarro.Name = "groupBoxAdicionarCarro";
             this.groupBoxAdicionarCarro.Size = new System.Drawing.Size(212, 333);
             this.groupBoxAdicionarCarro.TabIndex = 13;
@@ -190,17 +203,70 @@
             // 
             // listBoxCarros
             // 
+            this.listBoxCarros.DataSource = this.carroBindingSource;
             this.listBoxCarros.FormattingEnabled = true;
             this.listBoxCarros.Location = new System.Drawing.Point(5, 19);
             this.listBoxCarros.Name = "listBoxCarros";
             this.listBoxCarros.Size = new System.Drawing.Size(203, 277);
             this.listBoxCarros.TabIndex = 0;
             // 
+            // groupBoxAluguer
+            // 
+            this.groupBoxAluguer.Controls.Add(this.buttonEditAluguer);
+            this.groupBoxAluguer.Controls.Add(this.buttonAddAluguer);
+            this.groupBoxAluguer.Controls.Add(this.listBoxAlugueres);
+            this.groupBoxAluguer.Location = new System.Drawing.Point(319, 142);
+            this.groupBoxAluguer.Name = "groupBoxAluguer";
+            this.groupBoxAluguer.Size = new System.Drawing.Size(212, 333);
+            this.groupBoxAluguer.TabIndex = 14;
+            this.groupBoxAluguer.TabStop = false;
+            this.groupBoxAluguer.Text = "Iniciar Aluguer";
+            // 
+            // buttonAddAluguer
+            // 
+            this.buttonAddAluguer.Location = new System.Drawing.Point(5, 302);
+            this.buttonAddAluguer.Name = "buttonAddAluguer";
+            this.buttonAddAluguer.Size = new System.Drawing.Size(100, 25);
+            this.buttonAddAluguer.TabIndex = 1;
+            this.buttonAddAluguer.Text = "Adicionar Aluguer";
+            this.buttonAddAluguer.UseVisualStyleBackColor = true;
+            // 
+            // listBoxAlugueres
+            // 
+            this.listBoxAlugueres.DataSource = this.aluguerBindingSource;
+            this.listBoxAlugueres.FormattingEnabled = true;
+            this.listBoxAlugueres.Location = new System.Drawing.Point(5, 19);
+            this.listBoxAlugueres.Name = "listBoxAlugueres";
+            this.listBoxAlugueres.Size = new System.Drawing.Size(203, 277);
+            this.listBoxAlugueres.TabIndex = 0;
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
+            // 
+            // buttonEditAluguer
+            // 
+            this.buttonEditAluguer.Location = new System.Drawing.Point(108, 302);
+            this.buttonEditAluguer.Name = "buttonEditAluguer";
+            this.buttonEditAluguer.Size = new System.Drawing.Size(100, 25);
+            this.buttonEditAluguer.TabIndex = 2;
+            this.buttonEditAluguer.Text = "Editar Aluguer";
+            this.buttonEditAluguer.UseVisualStyleBackColor = true;
+            // 
+            // carroBindingSource
+            // 
+            this.carroBindingSource.DataSource = typeof(StandAutomoveis.Carro);
+            // 
+            // aluguerBindingSource
+            // 
+            this.aluguerBindingSource.DataSource = typeof(StandAutomoveis.Aluguer);
+            // 
             // FormAluguer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 475);
+            this.Controls.Add(this.groupBoxAluguer);
             this.Controls.Add(this.groupBoxAdicionarCarro);
             this.Controls.Add(this.labelMoradaCliente);
             this.Controls.Add(this.labelNIFCliente);
@@ -216,6 +282,10 @@
             this.panelLeftCarro.ResumeLayout(false);
             this.groupBoxClientes.ResumeLayout(false);
             this.groupBoxAdicionarCarro.ResumeLayout(false);
+            this.groupBoxAluguer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aluguerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +308,12 @@
         private System.Windows.Forms.GroupBox groupBoxAdicionarCarro;
         private System.Windows.Forms.Button buttonAddCarro;
         private System.Windows.Forms.ListBox listBoxCarros;
+        private System.Windows.Forms.BindingSource clienteBindingSource;
+        private System.Windows.Forms.GroupBox groupBoxAluguer;
+        private System.Windows.Forms.Button buttonEditAluguer;
+        private System.Windows.Forms.Button buttonAddAluguer;
+        private System.Windows.Forms.ListBox listBoxAlugueres;
+        private System.Windows.Forms.BindingSource carroBindingSource;
+        private System.Windows.Forms.BindingSource aluguerBindingSource;
     }
 }

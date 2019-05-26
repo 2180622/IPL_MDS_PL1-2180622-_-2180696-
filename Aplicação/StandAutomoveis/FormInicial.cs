@@ -46,5 +46,13 @@ namespace StandAutomoveis
 
             formvenda.ShowDialog();
         }
+
+        private void buttonGestaoAluguer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAluguer formaluguer = new FormAluguer();
+
+            formaluguer.ShowDialog();
+        }
     }
 }

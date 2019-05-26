@@ -41,10 +41,10 @@
             this.panelLeftCarro = new System.Windows.Forms.Panel();
             this.groupBoxClientes = new System.Windows.Forms.GroupBox();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelNomeCliente = new System.Windows.Forms.Label();
             this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carroAluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.combustivelTextBox = new System.Windows.Forms.TextBox();
             this.estadoTextBox = new System.Windows.Forms.TextBox();
             this.marcaTextBox = new System.Windows.Forms.TextBox();
@@ -60,10 +60,64 @@
             numeroChassisLabel = new System.Windows.Forms.Label();
             this.panelForm1.SuspendLayout();
             this.groupBoxClientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // combustivelLabel
+            // 
+            combustivelLabel.AutoSize = true;
+            combustivelLabel.Location = new System.Drawing.Point(321, 147);
+            combustivelLabel.Name = "combustivelLabel";
+            combustivelLabel.Size = new System.Drawing.Size(67, 13);
+            combustivelLabel.TabIndex = 54;
+            combustivelLabel.Text = "Combustivel:";
+            // 
+            // estadoLabel
+            // 
+            estadoLabel.AutoSize = true;
+            estadoLabel.Location = new System.Drawing.Point(321, 182);
+            estadoLabel.Name = "estadoLabel";
+            estadoLabel.Size = new System.Drawing.Size(43, 13);
+            estadoLabel.TabIndex = 56;
+            estadoLabel.Text = "Estado:";
+            // 
+            // marcaLabel
+            // 
+            marcaLabel.AutoSize = true;
+            marcaLabel.Location = new System.Drawing.Point(321, 217);
+            marcaLabel.Name = "marcaLabel";
+            marcaLabel.Size = new System.Drawing.Size(40, 13);
+            marcaLabel.TabIndex = 60;
+            marcaLabel.Text = "Marca:";
+            // 
+            // matriculaLabel
+            // 
+            matriculaLabel.AutoSize = true;
+            matriculaLabel.Location = new System.Drawing.Point(321, 252);
+            matriculaLabel.Name = "matriculaLabel";
+            matriculaLabel.Size = new System.Drawing.Size(53, 13);
+            matriculaLabel.TabIndex = 62;
+            matriculaLabel.Text = "Matricula:";
+            // 
+            // modeloLabel
+            // 
+            modeloLabel.AutoSize = true;
+            modeloLabel.Location = new System.Drawing.Point(321, 287);
+            modeloLabel.Name = "modeloLabel";
+            modeloLabel.Size = new System.Drawing.Size(45, 13);
+            modeloLabel.TabIndex = 64;
+            modeloLabel.Text = "Modelo:";
+            // 
+            // numeroChassisLabel
+            // 
+            numeroChassisLabel.AutoSize = true;
+            numeroChassisLabel.Location = new System.Drawing.Point(321, 322);
+            numeroChassisLabel.Name = "numeroChassisLabel";
+            numeroChassisLabel.Size = new System.Drawing.Size(86, 13);
+            numeroChassisLabel.TabIndex = 66;
+            numeroChassisLabel.Text = "Numero Chassis:";
             // 
             // panelForm1
             // 
@@ -124,6 +178,10 @@
             this.listBoxClientes.Size = new System.Drawing.Size(205, 381);
             this.listBoxClientes.TabIndex = 5;
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
+            // 
             // labelNomeCliente
             // 
             this.labelNomeCliente.AutoSize = true;
@@ -142,19 +200,6 @@
             // 
             this.carroAluguerBindingSource.DataSource = typeof(StandAutomoveis.CarroAluguer);
             // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
-            // 
-            // combustivelLabel
-            // 
-            combustivelLabel.AutoSize = true;
-            combustivelLabel.Location = new System.Drawing.Point(321, 147);
-            combustivelLabel.Name = "combustivelLabel";
-            combustivelLabel.Size = new System.Drawing.Size(67, 13);
-            combustivelLabel.TabIndex = 54;
-            combustivelLabel.Text = "Combustivel:";
-            // 
             // combustivelTextBox
             // 
             this.combustivelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroAluguerBindingSource, "Combustivel", true));
@@ -162,15 +207,6 @@
             this.combustivelTextBox.Name = "combustivelTextBox";
             this.combustivelTextBox.Size = new System.Drawing.Size(189, 20);
             this.combustivelTextBox.TabIndex = 55;
-            // 
-            // estadoLabel
-            // 
-            estadoLabel.AutoSize = true;
-            estadoLabel.Location = new System.Drawing.Point(321, 182);
-            estadoLabel.Name = "estadoLabel";
-            estadoLabel.Size = new System.Drawing.Size(43, 13);
-            estadoLabel.TabIndex = 56;
-            estadoLabel.Text = "Estado:";
             // 
             // estadoTextBox
             // 
@@ -180,15 +216,6 @@
             this.estadoTextBox.Size = new System.Drawing.Size(189, 20);
             this.estadoTextBox.TabIndex = 57;
             // 
-            // marcaLabel
-            // 
-            marcaLabel.AutoSize = true;
-            marcaLabel.Location = new System.Drawing.Point(321, 217);
-            marcaLabel.Name = "marcaLabel";
-            marcaLabel.Size = new System.Drawing.Size(40, 13);
-            marcaLabel.TabIndex = 60;
-            marcaLabel.Text = "Marca:";
-            // 
             // marcaTextBox
             // 
             this.marcaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroAluguerBindingSource, "Marca", true));
@@ -196,15 +223,6 @@
             this.marcaTextBox.Name = "marcaTextBox";
             this.marcaTextBox.Size = new System.Drawing.Size(189, 20);
             this.marcaTextBox.TabIndex = 61;
-            // 
-            // matriculaLabel
-            // 
-            matriculaLabel.AutoSize = true;
-            matriculaLabel.Location = new System.Drawing.Point(321, 252);
-            matriculaLabel.Name = "matriculaLabel";
-            matriculaLabel.Size = new System.Drawing.Size(53, 13);
-            matriculaLabel.TabIndex = 62;
-            matriculaLabel.Text = "Matricula:";
             // 
             // matriculaTextBox
             // 
@@ -214,15 +232,6 @@
             this.matriculaTextBox.Size = new System.Drawing.Size(189, 20);
             this.matriculaTextBox.TabIndex = 63;
             // 
-            // modeloLabel
-            // 
-            modeloLabel.AutoSize = true;
-            modeloLabel.Location = new System.Drawing.Point(321, 287);
-            modeloLabel.Name = "modeloLabel";
-            modeloLabel.Size = new System.Drawing.Size(45, 13);
-            modeloLabel.TabIndex = 64;
-            modeloLabel.Text = "Modelo:";
-            // 
             // modeloTextBox
             // 
             this.modeloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroAluguerBindingSource, "Modelo", true));
@@ -230,15 +239,6 @@
             this.modeloTextBox.Name = "modeloTextBox";
             this.modeloTextBox.Size = new System.Drawing.Size(189, 20);
             this.modeloTextBox.TabIndex = 65;
-            // 
-            // numeroChassisLabel
-            // 
-            numeroChassisLabel.AutoSize = true;
-            numeroChassisLabel.Location = new System.Drawing.Point(321, 322);
-            numeroChassisLabel.Name = "numeroChassisLabel";
-            numeroChassisLabel.Size = new System.Drawing.Size(86, 13);
-            numeroChassisLabel.TabIndex = 66;
-            numeroChassisLabel.Text = "Numero Chassis:";
             // 
             // numeroChassisTextBox
             // 
@@ -286,9 +286,9 @@
             this.panelForm1.ResumeLayout(false);
             this.panelForm1.PerformLayout();
             this.groupBoxClientes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

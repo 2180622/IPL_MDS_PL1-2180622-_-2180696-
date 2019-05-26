@@ -93,6 +93,7 @@
             this.buttonGestaoAluguer.Text = "Gestão de Aluguer";
             this.buttonGestaoAluguer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonGestaoAluguer.UseVisualStyleBackColor = true;
+            this.buttonGestaoAluguer.Click += new System.EventHandler(this.buttonGestaoAluguer_Click);
             // 
             // buttonGestaoOficina
             // 

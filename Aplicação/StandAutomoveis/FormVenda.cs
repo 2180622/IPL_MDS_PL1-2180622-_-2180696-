@@ -21,7 +21,6 @@ namespace StandAutomoveis
         private void buttonExitForm_Click(object sender, EventArgs e)
         {
             FormInicial forminicial = new FormInicial();
-
             this.Close();
 
             forminicial.Show();
