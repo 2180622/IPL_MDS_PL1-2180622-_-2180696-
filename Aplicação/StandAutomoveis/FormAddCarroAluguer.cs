@@ -26,13 +26,13 @@ namespace StandAutomoveis
              orderby cliente.Nome
              select cliente).Load();
 
-            clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+            aluguerBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
         }
 
         private void buttonAddCarroAluguer_Click(object sender, EventArgs e)
         {
             CarroAluguer novoCarroAluguer = new CarroAluguer();
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            Cliente clienteSelecionado = (Cliente)listBoxAluguer.SelectedItem;
             FormAluguer formAluguer = new FormAluguer();
 
             BDStand.Carros.Add(novoCarroAluguer);

@@ -66,24 +66,30 @@ namespace StandAutomoveis
         {
             this.Hide();
             FormAddCarroAluguer formaddcarro = new FormAddCarroAluguer();
+            if (formaddcarro.ShowDialog() == DialogResult.OK)
+            {
+                CarroAluguer novoCarroAluguer = new CarroAluguer();
+                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
-            formaddcarro.ShowDialog();
+                //clienteSelecionado
+            }
         }
 
         private void buttonAddAluguer_Click(object sender, EventArgs e)
         {
             Aluguer novoAluguer = new Aluguer(decimal.Parse(valorTextBox.Text), double.Parse(kmsTextBox.Text));
-            Cliente clienteSelecionado = (Cliente)listBoxAluguerClientes.SelectedItem;
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
             novoAluguer.ClienteIdCliente = clienteSelecionado.IdCliente;
+            
             BDStand.Algueres.Add(novoAluguer);
 
-            BDStand.SaveChanges();
+            listBoxAlugueres.DataSource = aluguerBindingSource;
         }
 
         private void listBoxAluguerClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cliente clienteSelecionado = (Cliente)listBoxAluguerClientes.SelectedItem;
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
             if (clienteSelecionado != null)
             {
@@ -94,9 +100,9 @@ namespace StandAutomoveis
 
                 // Limpa listBox dos carros
                 listBoxCarros.DataSource = null;
-                /* Adicionar CarroOficina à listbox
+                // Adicionar CarroOficina à listbox
                 listBoxAlugueres.DataSource = null;
-                listBoxAlugueres.DataSource = clienteSelecionado.Algueres.ToList();*/
+                listBoxAlugueres.DataSource = aluguerBindingSource;
             }
         }
     }

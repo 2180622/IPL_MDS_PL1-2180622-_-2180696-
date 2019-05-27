@@ -41,7 +41,7 @@
             this.buttonCliente = new System.Windows.Forms.Button();
             this.buttonOficina = new System.Windows.Forms.Button();
             this.groupBoxClientes = new System.Windows.Forms.GroupBox();
-            this.listBoxAluguerClientes = new System.Windows.Forms.ListBox();
+            this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelMoradaCliente = new System.Windows.Forms.Label();
             this.labelNIFCliente = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             // dataFimLabel
             // 
             dataFimLabel.AutoSize = true;
-            dataFimLabel.Location = new System.Drawing.Point(212, 32);
+            dataFimLabel.Location = new System.Drawing.Point(241, 18);
             dataFimLabel.Name = "dataFimLabel";
             dataFimLabel.Size = new System.Drawing.Size(52, 13);
             dataFimLabel.TabIndex = 5;
@@ -85,7 +85,7 @@
             // dataInicioLabel
             // 
             dataInicioLabel.AutoSize = true;
-            dataInicioLabel.Location = new System.Drawing.Point(212, 95);
+            dataInicioLabel.Location = new System.Drawing.Point(241, 81);
             dataInicioLabel.Name = "dataInicioLabel";
             dataInicioLabel.Size = new System.Drawing.Size(61, 13);
             dataInicioLabel.TabIndex = 7;
@@ -94,7 +94,7 @@
             // kmsLabel
             // 
             kmsLabel.AutoSize = true;
-            kmsLabel.Location = new System.Drawing.Point(216, 157);
+            kmsLabel.Location = new System.Drawing.Point(245, 156);
             kmsLabel.Name = "kmsLabel";
             kmsLabel.Size = new System.Drawing.Size(30, 13);
             kmsLabel.TabIndex = 11;
@@ -103,7 +103,7 @@
             // valorLabel
             // 
             valorLabel.AutoSize = true;
-            valorLabel.Location = new System.Drawing.Point(216, 183);
+            valorLabel.Location = new System.Drawing.Point(245, 182);
             valorLabel.Name = "valorLabel";
             valorLabel.Size = new System.Drawing.Size(34, 13);
             valorLabel.TabIndex = 13;
@@ -185,7 +185,7 @@
             // 
             // groupBoxClientes
             // 
-            this.groupBoxClientes.Controls.Add(this.listBoxAluguerClientes);
+            this.groupBoxClientes.Controls.Add(this.listBoxClientes);
             this.groupBoxClientes.Location = new System.Drawing.Point(91, 65);
             this.groupBoxClientes.Name = "groupBoxClientes";
             this.groupBoxClientes.Size = new System.Drawing.Size(217, 408);
@@ -193,15 +193,15 @@
             this.groupBoxClientes.TabStop = false;
             this.groupBoxClientes.Text = "Selecione um Cliente";
             // 
-            // listBoxAluguerClientes
+            // listBoxClientes
             // 
-            this.listBoxAluguerClientes.DataSource = this.clienteBindingSource;
-            this.listBoxAluguerClientes.FormattingEnabled = true;
-            this.listBoxAluguerClientes.Location = new System.Drawing.Point(6, 21);
-            this.listBoxAluguerClientes.Name = "listBoxAluguerClientes";
-            this.listBoxAluguerClientes.Size = new System.Drawing.Size(205, 381);
-            this.listBoxAluguerClientes.TabIndex = 5;
-            this.listBoxAluguerClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxAluguerClientes_SelectedIndexChanged);
+            this.listBoxClientes.DataSource = this.clienteBindingSource;
+            this.listBoxClientes.FormattingEnabled = true;
+            this.listBoxClientes.Location = new System.Drawing.Point(6, 21);
+            this.listBoxClientes.Name = "listBoxClientes";
+            this.listBoxClientes.Size = new System.Drawing.Size(205, 381);
+            this.listBoxClientes.TabIndex = 5;
+            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxAluguerClientes_SelectedIndexChanged);
             // 
             // clienteBindingSource
             // 
@@ -241,7 +241,7 @@
             // 
             this.groupBoxAdicionarCarro.Controls.Add(this.buttonAddCarro);
             this.groupBoxAdicionarCarro.Controls.Add(this.listBoxCarros);
-            this.groupBoxAdicionarCarro.Location = new System.Drawing.Point(314, 140);
+            this.groupBoxAdicionarCarro.Location = new System.Drawing.Point(778, 142);
             this.groupBoxAdicionarCarro.Name = "groupBoxAdicionarCarro";
             this.groupBoxAdicionarCarro.Size = new System.Drawing.Size(212, 333);
             this.groupBoxAdicionarCarro.TabIndex = 13;
@@ -284,9 +284,9 @@
             this.groupBoxAluguer.Controls.Add(this.buttonEditAluguer);
             this.groupBoxAluguer.Controls.Add(this.buttonAddAluguer);
             this.groupBoxAluguer.Controls.Add(this.listBoxAlugueres);
-            this.groupBoxAluguer.Location = new System.Drawing.Point(532, 144);
+            this.groupBoxAluguer.Location = new System.Drawing.Point(314, 142);
             this.groupBoxAluguer.Name = "groupBoxAluguer";
-            this.groupBoxAluguer.Size = new System.Drawing.Size(441, 331);
+            this.groupBoxAluguer.Size = new System.Drawing.Size(458, 331);
             this.groupBoxAluguer.TabIndex = 14;
             this.groupBoxAluguer.TabStop = false;
             this.groupBoxAluguer.Text = "Iniciar Aluguer";
@@ -294,7 +294,7 @@
             // dataFimDateTimePicker
             // 
             this.dataFimDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.aluguerBindingSource, "DataFim", true));
-            this.dataFimDateTimePicker.Location = new System.Drawing.Point(215, 48);
+            this.dataFimDateTimePicker.Location = new System.Drawing.Point(244, 34);
             this.dataFimDateTimePicker.Name = "dataFimDateTimePicker";
             this.dataFimDateTimePicker.Size = new System.Drawing.Size(197, 20);
             this.dataFimDateTimePicker.TabIndex = 6;
@@ -306,7 +306,7 @@
             // dataInicioDateTimePicker
             // 
             this.dataInicioDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.aluguerBindingSource, "DataInicio", true));
-            this.dataInicioDateTimePicker.Location = new System.Drawing.Point(215, 111);
+            this.dataInicioDateTimePicker.Location = new System.Drawing.Point(244, 97);
             this.dataInicioDateTimePicker.Name = "dataInicioDateTimePicker";
             this.dataInicioDateTimePicker.Size = new System.Drawing.Size(197, 20);
             this.dataInicioDateTimePicker.TabIndex = 8;
@@ -314,7 +314,7 @@
             // kmsTextBox
             // 
             this.kmsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aluguerBindingSource, "Kms", true));
-            this.kmsTextBox.Location = new System.Drawing.Point(256, 154);
+            this.kmsTextBox.Location = new System.Drawing.Point(285, 153);
             this.kmsTextBox.Name = "kmsTextBox";
             this.kmsTextBox.Size = new System.Drawing.Size(156, 20);
             this.kmsTextBox.TabIndex = 12;
@@ -322,14 +322,14 @@
             // valorTextBox
             // 
             this.valorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aluguerBindingSource, "Valor", true));
-            this.valorTextBox.Location = new System.Drawing.Point(256, 180);
+            this.valorTextBox.Location = new System.Drawing.Point(285, 179);
             this.valorTextBox.Name = "valorTextBox";
             this.valorTextBox.Size = new System.Drawing.Size(156, 20);
             this.valorTextBox.TabIndex = 14;
             // 
             // buttonEditAluguer
             // 
-            this.buttonEditAluguer.Location = new System.Drawing.Point(335, 297);
+            this.buttonEditAluguer.Location = new System.Drawing.Point(352, 296);
             this.buttonEditAluguer.Name = "buttonEditAluguer";
             this.buttonEditAluguer.Size = new System.Drawing.Size(100, 25);
             this.buttonEditAluguer.TabIndex = 2;
@@ -338,7 +338,7 @@
             // 
             // buttonAddAluguer
             // 
-            this.buttonAddAluguer.Location = new System.Drawing.Point(215, 297);
+            this.buttonAddAluguer.Location = new System.Drawing.Point(246, 296);
             this.buttonAddAluguer.Name = "buttonAddAluguer";
             this.buttonAddAluguer.Size = new System.Drawing.Size(100, 25);
             this.buttonAddAluguer.TabIndex = 1;
@@ -352,7 +352,7 @@
             this.listBoxAlugueres.FormattingEnabled = true;
             this.listBoxAlugueres.Location = new System.Drawing.Point(6, 19);
             this.listBoxAlugueres.Name = "listBoxAlugueres";
-            this.listBoxAlugueres.Size = new System.Drawing.Size(203, 303);
+            this.listBoxAlugueres.Size = new System.Drawing.Size(229, 303);
             this.listBoxAlugueres.TabIndex = 0;
             // 
             // FormAluguer
@@ -397,7 +397,7 @@
         private System.Windows.Forms.Button buttonCliente;
         private System.Windows.Forms.Button buttonOficina;
         private System.Windows.Forms.GroupBox groupBoxClientes;
-        private System.Windows.Forms.ListBox listBoxAluguerClientes;
+        private System.Windows.Forms.ListBox listBoxClientes;
         private System.Windows.Forms.Label labelMoradaCliente;
         private System.Windows.Forms.Label labelNIFCliente;
         private System.Windows.Forms.Label labelClienteSelecionado;
