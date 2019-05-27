@@ -33,9 +33,9 @@
             this.buttonExitForm = new System.Windows.Forms.Button();
             this.labelTituloCliente = new System.Windows.Forms.Label();
             this.panelLeftCarro = new System.Windows.Forms.Panel();
-            this.buttonVendasCliente = new System.Windows.Forms.Button();
-            this.buttonOficinaCliente = new System.Windows.Forms.Button();
-            this.buttonAluguerCliente = new System.Windows.Forms.Button();
+            this.buttonVenda = new System.Windows.Forms.Button();
+            this.buttonCliente = new System.Windows.Forms.Button();
+            this.buttonOficina = new System.Windows.Forms.Button();
             this.groupBoxClientes = new System.Windows.Forms.GroupBox();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -74,7 +74,6 @@
             // 
             // buttonExitForm
             // 
-            this.buttonExitForm.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
             this.buttonExitForm.Location = new System.Drawing.Point(965, 0);
             this.buttonExitForm.Name = "buttonExitForm";
             this.buttonExitForm.Size = new System.Drawing.Size(25, 25);
@@ -96,44 +95,44 @@
             // panelLeftCarro
             // 
             this.panelLeftCarro.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panelLeftCarro.Controls.Add(this.buttonVendasCliente);
-            this.panelLeftCarro.Controls.Add(this.buttonOficinaCliente);
-            this.panelLeftCarro.Controls.Add(this.buttonAluguerCliente);
+            this.panelLeftCarro.Controls.Add(this.buttonVenda);
+            this.panelLeftCarro.Controls.Add(this.buttonCliente);
+            this.panelLeftCarro.Controls.Add(this.buttonOficina);
             this.panelLeftCarro.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftCarro.Location = new System.Drawing.Point(0, 65);
             this.panelLeftCarro.Name = "panelLeftCarro";
             this.panelLeftCarro.Size = new System.Drawing.Size(85, 410);
             this.panelLeftCarro.TabIndex = 5;
             // 
-            // buttonVendasCliente
+            // buttonVenda
             // 
-            this.buttonVendasCliente.Image = global::StandAutomoveis.Properties.Resources.iconeVenda;
-            this.buttonVendasCliente.Location = new System.Drawing.Point(3, 292);
-            this.buttonVendasCliente.Name = "buttonVendasCliente";
-            this.buttonVendasCliente.Size = new System.Drawing.Size(79, 79);
-            this.buttonVendasCliente.TabIndex = 24;
-            this.buttonVendasCliente.UseVisualStyleBackColor = true;
-            this.buttonVendasCliente.Click += new System.EventHandler(this.buttonVendasCliente_Click);
+            this.buttonVenda.Image = global::StandAutomoveis.Properties.Resources.iconeVenda;
+            this.buttonVenda.Location = new System.Drawing.Point(3, 292);
+            this.buttonVenda.Name = "buttonVenda";
+            this.buttonVenda.Size = new System.Drawing.Size(79, 79);
+            this.buttonVenda.TabIndex = 24;
+            this.buttonVenda.UseVisualStyleBackColor = true;
+            this.buttonVenda.Click += new System.EventHandler(this.buttonVendasCliente_Click);
             // 
-            // buttonOficinaCliente
+            // buttonCliente
             // 
-            this.buttonOficinaCliente.Image = global::StandAutomoveis.Properties.Resources.iconeClientes;
-            this.buttonOficinaCliente.Location = new System.Drawing.Point(3, 52);
-            this.buttonOficinaCliente.Name = "buttonOficinaCliente";
-            this.buttonOficinaCliente.Size = new System.Drawing.Size(79, 79);
-            this.buttonOficinaCliente.TabIndex = 23;
-            this.buttonOficinaCliente.UseVisualStyleBackColor = true;
-            this.buttonOficinaCliente.Click += new System.EventHandler(this.buttonOficinaCliente_Click);
+            this.buttonCliente.Image = global::StandAutomoveis.Properties.Resources.iconeClientes;
+            this.buttonCliente.Location = new System.Drawing.Point(3, 52);
+            this.buttonCliente.Name = "buttonCliente";
+            this.buttonCliente.Size = new System.Drawing.Size(79, 79);
+            this.buttonCliente.TabIndex = 23;
+            this.buttonCliente.UseVisualStyleBackColor = true;
+            this.buttonCliente.Click += new System.EventHandler(this.buttonOficinaCliente_Click);
             // 
-            // buttonAluguerCliente
+            // buttonOficina
             // 
-            this.buttonAluguerCliente.Image = global::StandAutomoveis.Properties.Resources.iconeOficina;
-            this.buttonAluguerCliente.Location = new System.Drawing.Point(3, 171);
-            this.buttonAluguerCliente.Name = "buttonAluguerCliente";
-            this.buttonAluguerCliente.Size = new System.Drawing.Size(79, 79);
-            this.buttonAluguerCliente.TabIndex = 22;
-            this.buttonAluguerCliente.UseVisualStyleBackColor = true;
-            this.buttonAluguerCliente.Click += new System.EventHandler(this.buttonAluguerCliente_Click);
+            this.buttonOficina.Image = global::StandAutomoveis.Properties.Resources.iconeOficina;
+            this.buttonOficina.Location = new System.Drawing.Point(3, 171);
+            this.buttonOficina.Name = "buttonOficina";
+            this.buttonOficina.Size = new System.Drawing.Size(79, 79);
+            this.buttonOficina.TabIndex = 22;
+            this.buttonOficina.UseVisualStyleBackColor = true;
+            this.buttonOficina.Click += new System.EventHandler(this.buttonAluguerCliente_Click);
             // 
             // groupBoxClientes
             // 
@@ -207,6 +206,7 @@
             this.buttonAddCarro.TabIndex = 1;
             this.buttonAddCarro.Text = "Adicionar Carro";
             this.buttonAddCarro.UseVisualStyleBackColor = true;
+            this.buttonAddCarro.Click += new System.EventHandler(this.buttonAddCarro_Click);
             // 
             // listBoxCarros
             // 
@@ -301,9 +301,9 @@
         private System.Windows.Forms.Button buttonExitForm;
         private System.Windows.Forms.Label labelTituloCliente;
         private System.Windows.Forms.Panel panelLeftCarro;
-        private System.Windows.Forms.Button buttonVendasCliente;
-        private System.Windows.Forms.Button buttonOficinaCliente;
-        private System.Windows.Forms.Button buttonAluguerCliente;
+        private System.Windows.Forms.Button buttonVenda;
+        private System.Windows.Forms.Button buttonCliente;
+        private System.Windows.Forms.Button buttonOficina;
         private System.Windows.Forms.GroupBox groupBoxClientes;
         private System.Windows.Forms.ListBox listBoxClientes;
         private System.Windows.Forms.Label labelMoradaCliente;

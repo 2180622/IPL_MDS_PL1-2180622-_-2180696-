@@ -50,5 +50,13 @@ namespace StandAutomoveis
 
             formvenda.ShowDialog();
         }
+
+        private void buttonAddCarro_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAddCarroAluguer formaddcarro = new FormAddCarroAluguer();
+
+            formaddcarro.ShowDialog();
+        }
     }
 }

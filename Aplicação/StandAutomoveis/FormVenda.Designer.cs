@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelCarroTop = new System.Windows.Forms.Panel();
             this.buttonExitForm = new System.Windows.Forms.Button();
             this.labelTituloCliente = new System.Windows.Forms.Label();
@@ -35,8 +36,10 @@
             this.buttonAluguer = new System.Windows.Forms.Button();
             this.buttonCliente = new System.Windows.Forms.Button();
             this.buttonOficina = new System.Windows.Forms.Button();
+            this.carroVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelCarroTop.SuspendLayout();
             this.panelLeftCarro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carroVendaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCarroTop
@@ -110,6 +113,10 @@
             this.buttonOficina.TabIndex = 22;
             this.buttonOficina.UseVisualStyleBackColor = true;
             // 
+            // carroVendaBindingSource
+            // 
+            this.carroVendaBindingSource.DataSource = typeof(StandAutomoveis.CarroVenda);
+            // 
             // FormVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,6 +131,7 @@
             this.panelCarroTop.ResumeLayout(false);
             this.panelCarroTop.PerformLayout();
             this.panelLeftCarro.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.carroVendaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -137,5 +145,6 @@
         private System.Windows.Forms.Button buttonAluguer;
         private System.Windows.Forms.Button buttonCliente;
         private System.Windows.Forms.Button buttonOficina;
+        private System.Windows.Forms.BindingSource carroVendaBindingSource;
     }
 }

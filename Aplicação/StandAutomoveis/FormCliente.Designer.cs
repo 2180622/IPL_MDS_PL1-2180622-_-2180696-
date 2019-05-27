@@ -223,8 +223,8 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(114, 24);
-            this.bindingNavigatorAddNewItem.Text = "Adicionar Linha";
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(160, 24);
+            this.bindingNavigatorAddNewItem.Text = "Adicionar Linha e Gravar";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // clienteBindingSource

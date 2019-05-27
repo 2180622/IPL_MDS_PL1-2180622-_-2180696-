@@ -67,10 +67,6 @@ namespace StandAutomoveis
             formvenda.ShowDialog();
         }
 
-        private void toolStripButtonFiltrar_Click(object sender, EventArgs e)
-        {
-        }
-
         private void buttonFiltrar_Click(object sender, EventArgs e)
         {
             if (textBoxFiltrar.Text.Length > 0)
