@@ -28,6 +28,11 @@ namespace StandAutomoveis
              select cliente).Load();
 
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+
+            nomeTextBox.Enabled = false;
+            nIFTextBox.Enabled = false;
+            moradaTextBox.Enabled = false;
+            contactoTextBox.Enabled = false;
         }
         private void buttonExitApp_Click(object sender, EventArgs e)
         {
@@ -36,11 +41,6 @@ namespace StandAutomoveis
             this.Close();
 
             forminicial.Show();
-        }
-
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            BDStand.SaveChanges();
         }
 
         private void buttonOficinaCliente_Click(object sender, EventArgs e)
@@ -98,6 +98,43 @@ namespace StandAutomoveis
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
+            foreach (DataGridViewRow item in this.clienteDataGridView.SelectedRows)
+            {
+                clienteDataGridView.Rows.RemoveAt(item.Index);
+            }
+        }
+
+        private void toolStripButtonGravar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BDStand.SaveChanges();
+
+                nomeTextBox.Enabled = true;
+                nIFTextBox.Enabled = true;
+                moradaTextBox.Enabled = true;
+                contactoTextBox.Enabled = true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void toolStripButtonEditar_Click(object sender, EventArgs e)
+        {
+            nomeTextBox.Enabled = true;
+            nIFTextBox.Enabled = true;
+            moradaTextBox.Enabled = true;
+            contactoTextBox.Enabled = true;
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            nomeTextBox.Enabled = true;
+            nIFTextBox.Enabled = true;
+            moradaTextBox.Enabled = true;
+            contactoTextBox.Enabled = true;
         }
     }
 }

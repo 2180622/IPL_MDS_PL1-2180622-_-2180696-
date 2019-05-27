@@ -139,10 +139,16 @@
   <data name="iconeAluguer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeAluguer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iconeClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconeClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iconSave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconSave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="iconeVenda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconeVenda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iconeClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconeClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="iconEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconEdit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

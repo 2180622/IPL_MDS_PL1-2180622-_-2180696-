@@ -133,6 +133,16 @@ namespace StandAutomoveis.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconEdit {
+            get {
+                object obj = ResourceManager.GetObject("iconEdit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconeOficina {
             get {
                 object obj = ResourceManager.GetObject("iconeOficina", resourceCulture);
@@ -146,6 +156,16 @@ namespace StandAutomoveis.Properties {
         internal static System.Drawing.Bitmap iconeVenda {
             get {
                 object obj = ResourceManager.GetObject("iconeVenda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconSave {
+            get {
+                object obj = ResourceManager.GetObject("iconSave", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
