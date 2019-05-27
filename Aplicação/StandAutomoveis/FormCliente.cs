@@ -95,5 +95,9 @@ namespace StandAutomoveis
                 clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
             }
         }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

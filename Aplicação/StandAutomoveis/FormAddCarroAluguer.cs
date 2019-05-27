@@ -33,7 +33,7 @@ namespace StandAutomoveis
         {
             CarroAluguer novoCarroAluguer = new CarroAluguer();
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            FormOficina formOficina = new FormOficina();
+            FormAluguer formAluguer = new FormAluguer();
 
             BDStand.Carros.Add(novoCarroAluguer);
 
@@ -41,7 +41,7 @@ namespace StandAutomoveis
 
             this.Close();
 
-            formOficina.ShowDialog();
+            formAluguer.ShowDialog();
         }
     }
 }

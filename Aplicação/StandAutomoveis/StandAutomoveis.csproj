@@ -92,6 +92,7 @@
     <Compile Include="Classes\ExtendedCarroOficina.cs" />
     <Compile Include="Classes\ExtendedServico.cs" />
     <Compile Include="Classes\ExtendedCarroAluguer.cs" />
+    <Compile Include="Classes\ExtendedAluguer.cs" />
     <Compile Include="FormAddCarroAluguer.cs">
       <SubType>Form</SubType>
     </Compile>
