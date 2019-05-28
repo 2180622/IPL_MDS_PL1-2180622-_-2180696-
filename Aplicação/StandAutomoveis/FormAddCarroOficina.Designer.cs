@@ -36,7 +36,6 @@
             System.Windows.Forms.Label modeloLabel;
             System.Windows.Forms.Label numeroChassisLabel;
             this.panelForm1 = new System.Windows.Forms.Panel();
-            this.buttonExitApp = new System.Windows.Forms.Button();
             this.labelTituloForm1 = new System.Windows.Forms.Label();
             this.panelLeftCarro = new System.Windows.Forms.Panel();
             this.buttonAddCarroOficina = new System.Windows.Forms.Button();
@@ -51,6 +50,7 @@
             this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelNomeCliente = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             combustivelLabel = new System.Windows.Forms.Label();
             kmsLabel = new System.Windows.Forms.Label();
             marcaLabel = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
             modeloLabel = new System.Windows.Forms.Label();
             numeroChassisLabel = new System.Windows.Forms.Label();
             this.panelForm1.SuspendLayout();
+            this.panelLeftCarro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carroOficinaBindingSource)).BeginInit();
             this.groupBoxClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
@@ -120,23 +121,12 @@
             // panelForm1
             // 
             this.panelForm1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panelForm1.Controls.Add(this.buttonExitApp);
             this.panelForm1.Controls.Add(this.labelTituloForm1);
             this.panelForm1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelForm1.Location = new System.Drawing.Point(0, 0);
             this.panelForm1.Name = "panelForm1";
             this.panelForm1.Size = new System.Drawing.Size(620, 65);
             this.panelForm1.TabIndex = 6;
-            // 
-            // buttonExitApp
-            // 
-            this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
-            this.buttonExitApp.Location = new System.Drawing.Point(592, 3);
-            this.buttonExitApp.Name = "buttonExitApp";
-            this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
-            this.buttonExitApp.TabIndex = 7;
-            this.buttonExitApp.UseVisualStyleBackColor = true;
-            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
             // 
             // labelTituloForm1
             // 
@@ -152,6 +142,7 @@
             // panelLeftCarro
             // 
             this.panelLeftCarro.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelLeftCarro.Controls.Add(this.button1);
             this.panelLeftCarro.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftCarro.Location = new System.Drawing.Point(0, 65);
             this.panelLeftCarro.Name = "panelLeftCarro";
@@ -254,6 +245,18 @@
             this.labelNomeCliente.TabIndex = 53;
             this.labelNomeCliente.Text = "Cliente";
             // 
+            // button1
+            // 
+            this.button1.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(0, 385);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 30);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Sair";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // FormAddCarroOficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,6 +285,7 @@
             this.Text = "FormAddCarroOficina";
             this.panelForm1.ResumeLayout(false);
             this.panelForm1.PerformLayout();
+            this.panelLeftCarro.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.carroOficinaBindingSource)).EndInit();
             this.groupBoxClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
@@ -293,7 +297,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelForm1;
-        private System.Windows.Forms.Button buttonExitApp;
         private System.Windows.Forms.Label labelTituloForm1;
         private System.Windows.Forms.Panel panelLeftCarro;
         private System.Windows.Forms.Button buttonAddCarroOficina;
@@ -308,5 +311,6 @@
         private System.Windows.Forms.ListBox listBoxClientes;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private System.Windows.Forms.Label labelNomeCliente;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -135,7 +135,6 @@ namespace StandAutomoveis
 
             formvenda.ShowDialog();
         }
-        
     }
 
 

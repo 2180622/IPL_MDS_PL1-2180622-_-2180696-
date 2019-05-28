@@ -35,39 +35,47 @@
             System.Windows.Forms.Label nomeLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
             this.panelClienteTop = new System.Windows.Forms.Panel();
+            this.buttonExitApp = new System.Windows.Forms.Button();
             this.labelTituloCliente = new System.Windows.Forms.Label();
             this.panelLeftCliente = new System.Windows.Forms.Panel();
+            this.buttonVendasCliente = new System.Windows.Forms.Button();
+            this.buttonAluguerCliente = new System.Windows.Forms.Button();
+            this.buttonOficinaCliente = new System.Windows.Forms.Button();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonEditar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonGravar = new System.Windows.Forms.ToolStripButton();
             this.clienteDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactoTextBox = new System.Windows.Forms.TextBox();
             this.moradaTextBox = new System.Windows.Forms.TextBox();
             this.nIFTextBox = new System.Windows.Forms.TextBox();
             this.nomeTextBox = new System.Windows.Forms.TextBox();
             this.textBoxFiltrar = new System.Windows.Forms.TextBox();
             this.buttonFiltrar = new System.Windows.Forms.Button();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonEditar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonGravar = new System.Windows.Forms.ToolStripButton();
-            this.buttonVendasCliente = new System.Windows.Forms.Button();
-            this.buttonAluguerCliente = new System.Windows.Forms.Button();
-            this.buttonOficinaCliente = new System.Windows.Forms.Button();
-            this.buttonExitApp = new System.Windows.Forms.Button();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelCarroTop = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelLeftCarro = new System.Windows.Forms.Panel();
+            this.buttonVenda = new System.Windows.Forms.Button();
+            this.buttonOficina = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             contactoLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
@@ -76,8 +84,10 @@
             this.panelLeftCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
+            this.panelCarroTop.SuspendLayout();
+            this.panelLeftCarro.SuspendLayout();
             this.SuspendLayout();
             // 
             // contactoLabel
@@ -119,6 +129,7 @@
             // panelClienteTop
             // 
             this.panelClienteTop.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelClienteTop.Controls.Add(this.panelCarroTop);
             this.panelClienteTop.Controls.Add(this.buttonExitApp);
             this.panelClienteTop.Controls.Add(this.labelTituloCliente);
             this.panelClienteTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -126,6 +137,16 @@
             this.panelClienteTop.Name = "panelClienteTop";
             this.panelClienteTop.Size = new System.Drawing.Size(990, 65);
             this.panelClienteTop.TabIndex = 2;
+            // 
+            // buttonExitApp
+            // 
+            this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
+            this.buttonExitApp.Location = new System.Drawing.Point(962, 3);
+            this.buttonExitApp.Name = "buttonExitApp";
+            this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
+            this.buttonExitApp.TabIndex = 11;
+            this.buttonExitApp.UseVisualStyleBackColor = true;
+            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
             // 
             // labelTituloCliente
             // 
@@ -141,14 +162,47 @@
             // panelLeftCliente
             // 
             this.panelLeftCliente.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelLeftCliente.Controls.Add(this.panelLeftCarro);
             this.panelLeftCliente.Controls.Add(this.buttonVendasCliente);
-            this.panelLeftCliente.Controls.Add(this.buttonAluguerCliente);
             this.panelLeftCliente.Controls.Add(this.buttonOficinaCliente);
             this.panelLeftCliente.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftCliente.Location = new System.Drawing.Point(0, 65);
             this.panelLeftCliente.Name = "panelLeftCliente";
             this.panelLeftCliente.Size = new System.Drawing.Size(85, 410);
             this.panelLeftCliente.TabIndex = 3;
+            // 
+            // buttonVendasCliente
+            // 
+            this.buttonVendasCliente.Image = global::StandAutomoveis.Properties.Resources.iconeVenda;
+            this.buttonVendasCliente.Location = new System.Drawing.Point(3, 292);
+            this.buttonVendasCliente.Name = "buttonVendasCliente";
+            this.buttonVendasCliente.Size = new System.Drawing.Size(79, 79);
+            this.buttonVendasCliente.TabIndex = 22;
+            this.buttonVendasCliente.UseVisualStyleBackColor = true;
+            this.buttonVendasCliente.Click += new System.EventHandler(this.buttonVendasCliente_Click);
+            // 
+            // buttonAluguerCliente
+            // 
+            this.buttonAluguerCliente.Image = global::StandAutomoveis.Properties.Resources.iconeAluguer;
+            this.buttonAluguerCliente.Location = new System.Drawing.Point(0, 113);
+            this.buttonAluguerCliente.Name = "buttonAluguerCliente";
+            this.buttonAluguerCliente.Size = new System.Drawing.Size(85, 99);
+            this.buttonAluguerCliente.TabIndex = 21;
+            this.buttonAluguerCliente.Text = "Aluguer";
+            this.buttonAluguerCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonAluguerCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonAluguerCliente.UseVisualStyleBackColor = true;
+            this.buttonAluguerCliente.Click += new System.EventHandler(this.buttonAluguerCliente_Click);
+            // 
+            // buttonOficinaCliente
+            // 
+            this.buttonOficinaCliente.Image = global::StandAutomoveis.Properties.Resources.iconeOficina;
+            this.buttonOficinaCliente.Location = new System.Drawing.Point(3, 52);
+            this.buttonOficinaCliente.Name = "buttonOficinaCliente";
+            this.buttonOficinaCliente.Size = new System.Drawing.Size(79, 79);
+            this.buttonOficinaCliente.TabIndex = 20;
+            this.buttonOficinaCliente.UseVisualStyleBackColor = true;
+            this.buttonOficinaCliente.Click += new System.EventHandler(this.buttonOficinaCliente_Click);
             // 
             // bindingNavigator1
             // 
@@ -182,12 +236,52 @@
             this.bindingNavigator1.TabIndex = 10;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(114, 24);
+            this.bindingNavigatorAddNewItem.Text = "Adicionar Linha";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(109, 24);
+            this.bindingNavigatorDeleteItem.Text = "Apagar Cliente";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
@@ -208,10 +302,46 @@
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButtonEditar
+            // 
+            this.toolStripButtonEditar.Image = global::StandAutomoveis.Properties.Resources.iconEdit;
+            this.toolStripButtonEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonEditar.Name = "toolStripButtonEditar";
+            this.toolStripButtonEditar.Size = new System.Drawing.Size(61, 24);
+            this.toolStripButtonEditar.Text = "Editar";
+            this.toolStripButtonEditar.Click += new System.EventHandler(this.toolStripButtonEditar_Click);
+            // 
+            // toolStripButtonGravar
+            // 
+            this.toolStripButtonGravar.Image = global::StandAutomoveis.Properties.Resources.iconSave;
+            this.toolStripButtonGravar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonGravar.Name = "toolStripButtonGravar";
+            this.toolStripButtonGravar.Size = new System.Drawing.Size(65, 24);
+            this.toolStripButtonGravar.Text = "Gravar";
+            this.toolStripButtonGravar.Click += new System.EventHandler(this.toolStripButtonGravar_Click);
             // 
             // clienteDataGridView
             // 
@@ -231,6 +361,41 @@
             this.clienteDataGridView.ReadOnly = true;
             this.clienteDataGridView.Size = new System.Drawing.Size(543, 319);
             this.clienteDataGridView.TabIndex = 10;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCliente";
+            this.dataGridViewTextBoxColumn1.HeaderText = "IdCliente";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NIF";
+            this.dataGridViewTextBoxColumn3.HeaderText = "NIF";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Morada";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Morada";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Contacto";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Contacto";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // contactoTextBox
             // 
@@ -281,156 +446,96 @@
             this.buttonFiltrar.UseVisualStyleBackColor = true;
             this.buttonFiltrar.Click += new System.EventHandler(this.buttonFiltrar_Click);
             // 
-            // bindingNavigatorAddNewItem
+            // panelCarroTop
             // 
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(114, 24);
-            this.bindingNavigatorAddNewItem.Text = "Adicionar Linha";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            this.panelCarroTop.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelCarroTop.Controls.Add(this.panel2);
+            this.panelCarroTop.Controls.Add(this.panel1);
+            this.panelCarroTop.Controls.Add(this.label1);
+            this.panelCarroTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelCarroTop.Location = new System.Drawing.Point(0, 0);
+            this.panelCarroTop.Name = "panelCarroTop";
+            this.panelCarroTop.Size = new System.Drawing.Size(990, 65);
+            this.panelCarroTop.TabIndex = 12;
             // 
-            // bindingNavigatorDeleteItem
+            // panel2
             // 
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(109, 24);
-            this.bindingNavigatorDeleteItem.Text = "Apagar Cliente";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            this.panel2.BackgroundImage = global::StandAutomoveis.Properties.Resources.wrench_512;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(754, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(66, 65);
+            this.panel2.TabIndex = 9;
             // 
-            // bindingNavigatorMoveFirstItem
+            // panel1
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            this.panel1.BackgroundImage = global::StandAutomoveis.Properties.Resources._72_200;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(154, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(66, 65);
+            this.panel1.TabIndex = 8;
             // 
-            // bindingNavigatorMovePreviousItem
+            // label1
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(193)))), ((int)(((byte)(253)))));
+            this.label1.Location = new System.Drawing.Point(226, -1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(532, 66);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Stand Automóveis";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bindingNavigatorMoveNextItem
+            // panelLeftCarro
             // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            this.panelLeftCarro.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelLeftCarro.Controls.Add(this.button1);
+            this.panelLeftCarro.Controls.Add(this.buttonAluguerCliente);
+            this.panelLeftCarro.Controls.Add(this.buttonVenda);
+            this.panelLeftCarro.Controls.Add(this.buttonOficina);
+            this.panelLeftCarro.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeftCarro.Location = new System.Drawing.Point(0, 0);
+            this.panelLeftCarro.Name = "panelLeftCarro";
+            this.panelLeftCarro.Size = new System.Drawing.Size(85, 410);
+            this.panelLeftCarro.TabIndex = 23;
             // 
-            // bindingNavigatorMoveLastItem
+            // buttonVenda
             // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            this.buttonVenda.Image = global::StandAutomoveis.Properties.Resources.iconeVenda;
+            this.buttonVenda.Location = new System.Drawing.Point(0, 218);
+            this.buttonVenda.Name = "buttonVenda";
+            this.buttonVenda.Size = new System.Drawing.Size(85, 98);
+            this.buttonVenda.TabIndex = 24;
+            this.buttonVenda.Text = "Vendas";
+            this.buttonVenda.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonVenda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonVenda.UseVisualStyleBackColor = true;
             // 
-            // toolStripButtonEditar
+            // buttonOficina
             // 
-            this.toolStripButtonEditar.Image = global::StandAutomoveis.Properties.Resources.iconEdit;
-            this.toolStripButtonEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonEditar.Name = "toolStripButtonEditar";
-            this.toolStripButtonEditar.Size = new System.Drawing.Size(61, 24);
-            this.toolStripButtonEditar.Text = "Editar";
-            this.toolStripButtonEditar.Click += new System.EventHandler(this.toolStripButtonEditar_Click);
+            this.buttonOficina.Image = global::StandAutomoveis.Properties.Resources.iconeOficina;
+            this.buttonOficina.Location = new System.Drawing.Point(0, 6);
+            this.buttonOficina.Name = "buttonOficina";
+            this.buttonOficina.Size = new System.Drawing.Size(85, 101);
+            this.buttonOficina.TabIndex = 22;
+            this.buttonOficina.Text = "Oficina";
+            this.buttonOficina.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonOficina.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonOficina.UseVisualStyleBackColor = true;
             // 
-            // toolStripButtonGravar
+            // button1
             // 
-            this.toolStripButtonGravar.Image = global::StandAutomoveis.Properties.Resources.iconSave;
-            this.toolStripButtonGravar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonGravar.Name = "toolStripButtonGravar";
-            this.toolStripButtonGravar.Size = new System.Drawing.Size(65, 24);
-            this.toolStripButtonGravar.Text = "Gravar";
-            this.toolStripButtonGravar.Click += new System.EventHandler(this.toolStripButtonGravar_Click);
-            // 
-            // buttonVendasCliente
-            // 
-            this.buttonVendasCliente.Image = global::StandAutomoveis.Properties.Resources.iconeVenda;
-            this.buttonVendasCliente.Location = new System.Drawing.Point(3, 292);
-            this.buttonVendasCliente.Name = "buttonVendasCliente";
-            this.buttonVendasCliente.Size = new System.Drawing.Size(79, 79);
-            this.buttonVendasCliente.TabIndex = 22;
-            this.buttonVendasCliente.UseVisualStyleBackColor = true;
-            this.buttonVendasCliente.Click += new System.EventHandler(this.buttonVendasCliente_Click);
-            // 
-            // buttonAluguerCliente
-            // 
-            this.buttonAluguerCliente.Image = global::StandAutomoveis.Properties.Resources.iconeAluguer;
-            this.buttonAluguerCliente.Location = new System.Drawing.Point(3, 171);
-            this.buttonAluguerCliente.Name = "buttonAluguerCliente";
-            this.buttonAluguerCliente.Size = new System.Drawing.Size(79, 79);
-            this.buttonAluguerCliente.TabIndex = 21;
-            this.buttonAluguerCliente.UseVisualStyleBackColor = true;
-            this.buttonAluguerCliente.Click += new System.EventHandler(this.buttonAluguerCliente_Click);
-            // 
-            // buttonOficinaCliente
-            // 
-            this.buttonOficinaCliente.Image = global::StandAutomoveis.Properties.Resources.iconeOficina;
-            this.buttonOficinaCliente.Location = new System.Drawing.Point(3, 52);
-            this.buttonOficinaCliente.Name = "buttonOficinaCliente";
-            this.buttonOficinaCliente.Size = new System.Drawing.Size(79, 79);
-            this.buttonOficinaCliente.TabIndex = 20;
-            this.buttonOficinaCliente.UseVisualStyleBackColor = true;
-            this.buttonOficinaCliente.Click += new System.EventHandler(this.buttonOficinaCliente_Click);
-            // 
-            // buttonExitApp
-            // 
-            this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
-            this.buttonExitApp.Location = new System.Drawing.Point(962, 3);
-            this.buttonExitApp.Name = "buttonExitApp";
-            this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
-            this.buttonExitApp.TabIndex = 11;
-            this.buttonExitApp.UseVisualStyleBackColor = true;
-            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCliente";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IdCliente";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NIF";
-            this.dataGridViewTextBoxColumn3.HeaderText = "NIF";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Morada";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Morada";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Contacto";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Contacto";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.button1.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(0, 380);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 30);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Sair";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormCliente
             // 
@@ -462,8 +567,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
+            this.panelCarroTop.ResumeLayout(false);
+            this.panelCarroTop.PerformLayout();
+            this.panelLeftCarro.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,5 +612,13 @@
         private System.Windows.Forms.Button buttonFiltrar;
         private System.Windows.Forms.ToolStripButton toolStripButtonGravar;
         private System.Windows.Forms.ToolStripButton toolStripButtonEditar;
+        private System.Windows.Forms.Panel panelCarroTop;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelLeftCarro;
+        private System.Windows.Forms.Button buttonVenda;
+        private System.Windows.Forms.Button buttonOficina;
+        private System.Windows.Forms.Button button1;
     }
 }
