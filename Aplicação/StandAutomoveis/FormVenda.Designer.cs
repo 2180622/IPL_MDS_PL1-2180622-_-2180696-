@@ -37,9 +37,14 @@
             this.buttonCliente = new System.Windows.Forms.Button();
             this.buttonOficina = new System.Windows.Forms.Button();
             this.carroVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBoxClientes = new System.Windows.Forms.GroupBox();
+            this.listBoxClientes = new System.Windows.Forms.ListBox();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelCarroTop.SuspendLayout();
             this.panelLeftCarro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carroVendaBindingSource)).BeginInit();
+            this.groupBoxClientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCarroTop
@@ -117,12 +122,36 @@
             // 
             this.carroVendaBindingSource.DataSource = typeof(StandAutomoveis.CarroVenda);
             // 
+            // groupBoxClientes
+            // 
+            this.groupBoxClientes.Controls.Add(this.listBoxClientes);
+            this.groupBoxClientes.Location = new System.Drawing.Point(88, 68);
+            this.groupBoxClientes.Name = "groupBoxClientes";
+            this.groupBoxClientes.Size = new System.Drawing.Size(217, 408);
+            this.groupBoxClientes.TabIndex = 7;
+            this.groupBoxClientes.TabStop = false;
+            this.groupBoxClientes.Text = "Selecione um Cliente";
+            // 
+            // listBoxClientes
+            // 
+            this.listBoxClientes.DataSource = this.clienteBindingSource;
+            this.listBoxClientes.FormattingEnabled = true;
+            this.listBoxClientes.Location = new System.Drawing.Point(6, 21);
+            this.listBoxClientes.Name = "listBoxClientes";
+            this.listBoxClientes.Size = new System.Drawing.Size(205, 381);
+            this.listBoxClientes.TabIndex = 5;
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
+            // 
             // FormVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(990, 475);
+            this.Controls.Add(this.groupBoxClientes);
             this.Controls.Add(this.panelLeftCarro);
             this.Controls.Add(this.panelCarroTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -132,6 +161,8 @@
             this.panelCarroTop.PerformLayout();
             this.panelLeftCarro.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.carroVendaBindingSource)).EndInit();
+            this.groupBoxClientes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -146,5 +177,8 @@
         private System.Windows.Forms.Button buttonCliente;
         private System.Windows.Forms.Button buttonOficina;
         private System.Windows.Forms.BindingSource carroVendaBindingSource;
+        private System.Windows.Forms.GroupBox groupBoxClientes;
+        private System.Windows.Forms.ListBox listBoxClientes;
+        private System.Windows.Forms.BindingSource clienteBindingSource;
     }
 }

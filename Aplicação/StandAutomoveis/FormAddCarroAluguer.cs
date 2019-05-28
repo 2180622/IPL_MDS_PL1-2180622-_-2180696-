@@ -32,7 +32,6 @@ namespace StandAutomoveis
         private void buttonAddCarroAluguer_Click(object sender, EventArgs e)
         {
             CarroAluguer novoCarroAluguer = new CarroAluguer();
-            Cliente clienteSelecionado = (Cliente)listBoxAluguer.SelectedItem;
             FormAluguer formAluguer = new FormAluguer();
 
             BDStand.Carros.Add(novoCarroAluguer);
@@ -42,6 +41,17 @@ namespace StandAutomoveis
             this.Close();
 
             formAluguer.ShowDialog();
+        }
+
+        private void listBoxAluguer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Aluguer AluguerSelecionado = (Aluguer)listBoxAluguer.SelectedItem;
+
+            if(AluguerSelecionado != null)
+            {
+                listBoxAluguer.DataSource = null;
+                listBoxAluguer.DataSource = aluguerBindingSource;
+            }
         }
     }
 }

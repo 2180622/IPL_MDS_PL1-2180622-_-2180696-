@@ -319,7 +319,7 @@
           <Property Name="Contacto" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CarrosOficina" Relationship="BDStand.ClienteCarroOficina" FromRole="Cliente" ToRole="CarroOficina" />
           <NavigationProperty Name="Vendas" Relationship="BDStand.ClienteVenda" FromRole="Cliente" ToRole="Venda" />
-          <NavigationProperty Name="Algueres" Relationship="BDStand.ClienteAluguer" FromRole="Cliente" ToRole="Alguer" />
+          <NavigationProperty Name="Alugueres" Relationship="BDStand.ClienteAluguer" FromRole="Cliente" ToRole="Alguer" />
         </EntityType>
         <EntityType Name="Aluguer">
           <Key>

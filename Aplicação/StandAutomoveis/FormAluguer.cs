@@ -77,6 +77,11 @@ namespace StandAutomoveis
 
         private void buttonAddAluguer_Click(object sender, EventArgs e)
         {
+            if(valorTextBox.TextLength == 0 || kmsTextBox.TextLength == 0)
+            {
+                return;
+            }
+
             Aluguer novoAluguer = new Aluguer(decimal.Parse(valorTextBox.Text), double.Parse(kmsTextBox.Text));
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
@@ -84,7 +89,7 @@ namespace StandAutomoveis
             
             BDStand.Algueres.Add(novoAluguer);
 
-            listBoxAlugueres.DataSource = aluguerBindingSource;
+            listBoxAlugueres.DataSource = clienteSelecionado.Alugueres.ToList();
         }
 
         private void listBoxAluguerClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,12 +103,16 @@ namespace StandAutomoveis
                 labelNIFCliente.Text = clienteSelecionado.NIF;
                 labelMoradaCliente.Text = clienteSelecionado.Morada;
 
-                // Limpa listBox dos carros
+                // Limpa listBox dos serviços
                 listBoxCarros.DataSource = null;
                 // Adicionar CarroOficina à listbox
                 listBoxAlugueres.DataSource = null;
                 listBoxAlugueres.DataSource = aluguerBindingSource;
             }
+        }
+
+        private void listBoxAlugueres_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }

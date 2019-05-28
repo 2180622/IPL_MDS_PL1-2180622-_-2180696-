@@ -70,6 +70,7 @@ namespace StandAutomoveis
 
                 clienteSelecionado.CarrosOficina.Add(novoCarroOficina);
             }
+            this.Refresh();
         }
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)

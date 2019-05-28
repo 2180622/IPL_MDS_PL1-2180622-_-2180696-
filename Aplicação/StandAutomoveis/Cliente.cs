@@ -19,7 +19,7 @@ namespace StandAutomoveis
         {
             this.CarrosOficina = new HashSet<CarroOficina>();
             this.Vendas = new HashSet<Venda>();
-            this.Algueres = new HashSet<Aluguer>();
+            this.Alugueres = new HashSet<Aluguer>();
         }
     
         public int IdCliente { get; set; }
@@ -33,6 +33,6 @@ namespace StandAutomoveis
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Venda> Vendas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Aluguer> Algueres { get; set; }
+        public virtual ICollection<Aluguer> Alugueres { get; set; }
     }
 }

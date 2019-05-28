@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/22/2019 21:08:18
--- Generated from EDMX file: C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Desenvolvimento de Aplicações\VELHO\Aplicação\StandAutomoveis\BDStand.edmx
+-- Date Created: 05/28/2019 08:31:30
+-- Generated from EDMX file: C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Nova pasta\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\BDStand.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -32,11 +32,11 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_AluguerCarroAluguer]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Algueres] DROP CONSTRAINT [FK_AluguerCarroAluguer];
 GO
-IF OBJECT_ID(N'[dbo].[FK_CarroOficinaServico]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Servicos] DROP CONSTRAINT [FK_CarroOficinaServico];
-GO
 IF OBJECT_ID(N'[dbo].[FK_ServicoParcela]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Parcelas] DROP CONSTRAINT [FK_ServicoParcela];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CarroOficinaServico]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Servicos] DROP CONSTRAINT [FK_CarroOficinaServico];
 GO
 IF OBJECT_ID(N'[dbo].[FK_CarroOficina_inherits_Carro]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Carros_CarroOficina] DROP CONSTRAINT [FK_CarroOficina_inherits_Carro];
