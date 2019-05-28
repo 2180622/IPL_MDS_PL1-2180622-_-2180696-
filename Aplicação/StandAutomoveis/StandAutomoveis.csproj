@@ -192,6 +192,7 @@
     <None Include="Properties\DataSources\CarroOficina.datasource" />
     <None Include="Properties\DataSources\CarroVenda.datasource" />
     <None Include="Properties\DataSources\Cliente.datasource" />
+    <None Include="Properties\DataSources\Parcela1.datasource" />
     <None Include="Properties\DataSources\Servico.datasource" />
     <None Include="Properties\DataSources\Venda.datasource" />
     <None Include="Properties\Settings.settings">

@@ -45,6 +45,7 @@ namespace StandAutomoveis
                 // Adicionar CarroOficina à listbox
                 listBoxCarros.DataSource = null;
                 listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
+
             }
         }
 
@@ -63,14 +64,12 @@ namespace StandAutomoveis
             // instancia um novo form para adicionar o carro
             FormAddCarroOficina formaddcarro = new FormAddCarroOficina();
             this.Hide();
-            if (formaddcarro.ShowDialog() == DialogResult.OK)
-            {
-                CarroOficina novoCarroOficina = new CarroOficina(formaddcarro.marca, formaddcarro.modelo, formaddcarro.matricula, formaddcarro.numeroChassis, formaddcarro.kms, formaddcarro.combustivel);
-                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            CarroOficina novoCarroOficina = new CarroOficina(formaddcarro.marca, formaddcarro.modelo, formaddcarro.matricula, formaddcarro.numeroChassis, formaddcarro.kms, formaddcarro.combustivel);
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
-                clienteSelecionado.CarrosOficina.Add(novoCarroOficina);
-            }
-            this.Refresh();
+            formaddcarro.ShowDialog();
+            listBoxCarros.DataSource = null;
+            listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
         }
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,6 +83,7 @@ namespace StandAutomoveis
                 listBoxServicos.DataSource = null;
                 listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
             }
+            
         }
 
         private void buttonAddServico_Click(object sender, EventArgs e)
@@ -91,14 +91,15 @@ namespace StandAutomoveis
             Servico novoServico = new Servico(tipoTextBox.Text, dataEntradaDateTimePicker.Value, dataSaidaDateTimePicker.Value);
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            int indexCarro = listBoxCarros.SelectedIndex;
             
-            novoServico.CarroOficinaIdCarro = carroSelecionado.IdCarro;
-            
-            BDStand.Servicos.Add(novoServico);
-
-            listBoxServicos.DataSource = novoServico;
-
+            carroSelecionado.Servicos.Add(novoServico);
             BDStand.SaveChanges();
+
+            listBoxServicos.DataSource = null;
+            listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+
+            listBoxCarros.SelectedIndex = indexCarro;
         }
 
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,6 +135,7 @@ namespace StandAutomoveis
 
             formvenda.ShowDialog();
         }
+        
     }
 
 

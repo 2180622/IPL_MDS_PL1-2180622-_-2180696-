@@ -88,8 +88,9 @@ namespace StandAutomoveis
             novoAluguer.ClienteIdCliente = clienteSelecionado.IdCliente;
             
             BDStand.Algueres.Add(novoAluguer);
-
-            listBoxAlugueres.DataSource = clienteSelecionado.Alugueres;
+            
+            listBoxAlugueres.DataSource = null;
+            listBoxAlugueres.DataSource = aluguerBindingSource;
         }
 
         private void listBoxAluguerClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,6 +114,7 @@ namespace StandAutomoveis
 
         private void listBoxAlugueres_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Aluguer aluguerSelecionado = (Aluguer)listBoxAlugueres.SelectedItem;
         }
     }
 }

@@ -47,15 +47,14 @@ namespace StandAutomoveis
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             FormOficina formOficina = new FormOficina();
 
-            novoCarroOficina.ClienteIdCliente = clienteSelecionado.IdCliente;
-
-            BDStand.Carros.Add(novoCarroOficina);
+            clienteSelecionado.CarrosOficina.Add(novoCarroOficina);
 
             BDStand.SaveChanges();
 
             this.Close();
             
             formOficina.Show();
+            
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,9 +64,6 @@ namespace StandAutomoveis
             if (clienteSelecionado != null)
             {
                 labelNomeCliente.Text = clienteSelecionado.Nome;
-
-                listBoxClientes.DataSource = null;
-                listBoxClientes.DataSource = clienteBindingSource;
             }
         }
     }

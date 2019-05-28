@@ -208,3 +208,6 @@ C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Nova pasta\IPL_MDS_PL1-2180622-_-
 C:\Users\USER\Source\Repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddCarroAluguer.resources
 C:\Users\USER\Source\Repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAluguer.resources
 C:\Users\USER\Source\Repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormVenda.resources
+C:\Users\2180622\Downloads\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddCarroAluguer.resources
+C:\Users\2180622\Downloads\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAluguer.resources
+C:\Users\2180622\Downloads\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormVenda.resources
