@@ -88,13 +88,15 @@ namespace StandAutomoveis
 
         private void buttonAddServico_Click(object sender, EventArgs e)
         {
-            Servico novoServico = new Servico(tipoTextBox.Text);
+            Servico novoServico = new Servico(tipoTextBox.Text, dataEntradaDateTimePicker.Value, dataSaidaDateTimePicker.Value);
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             
             novoServico.CarroOficinaIdCarro = carroSelecionado.IdCarro;
-
+            
             BDStand.Servicos.Add(novoServico);
+
+            listBoxServicos.DataSource = novoServico;
 
             BDStand.SaveChanges();
         }

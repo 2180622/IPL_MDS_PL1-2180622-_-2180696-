@@ -205,3 +205,6 @@ C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Nova pasta\IPL_MDS_PL1-2180622-_-
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Nova pasta\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.xml
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Nova pasta\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.SqlServer.xml
 C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Nova pasta\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CopyComplete
+C:\Users\USER\Source\Repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddCarroAluguer.resources
+C:\Users\USER\Source\Repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAluguer.resources
+C:\Users\USER\Source\Repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormVenda.resources

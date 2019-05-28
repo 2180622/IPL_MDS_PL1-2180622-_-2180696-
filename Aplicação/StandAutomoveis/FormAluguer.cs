@@ -82,14 +82,14 @@ namespace StandAutomoveis
                 return;
             }
 
-            Aluguer novoAluguer = new Aluguer(decimal.Parse(valorTextBox.Text), double.Parse(kmsTextBox.Text));
+            Aluguer novoAluguer = new Aluguer(dataInicioDateTimePicker.Value, dataFimDateTimePicker.Value, decimal.Parse(valorTextBox.Text), double.Parse(kmsTextBox.Text));
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
             novoAluguer.ClienteIdCliente = clienteSelecionado.IdCliente;
             
             BDStand.Algueres.Add(novoAluguer);
 
-            listBoxAlugueres.DataSource = clienteSelecionado.Alugueres.ToList();
+            listBoxAlugueres.DataSource = clienteSelecionado.Alugueres;
         }
 
         private void listBoxAluguerClientes_SelectedIndexChanged(object sender, EventArgs e)
