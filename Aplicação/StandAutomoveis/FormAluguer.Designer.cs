@@ -243,7 +243,7 @@
             // 
             this.groupBoxAdicionarCarro.Controls.Add(this.buttonAddCarro);
             this.groupBoxAdicionarCarro.Controls.Add(this.listBoxCarros);
-            this.groupBoxAdicionarCarro.Location = new System.Drawing.Point(778, 142);
+            this.groupBoxAdicionarCarro.Location = new System.Drawing.Point(314, 142);
             this.groupBoxAdicionarCarro.Name = "groupBoxAdicionarCarro";
             this.groupBoxAdicionarCarro.Size = new System.Drawing.Size(212, 333);
             this.groupBoxAdicionarCarro.TabIndex = 13;
@@ -290,7 +290,7 @@
             this.groupBoxAluguer.Controls.Add(this.buttonEditAluguer);
             this.groupBoxAluguer.Controls.Add(this.buttonAddAluguer);
             this.groupBoxAluguer.Controls.Add(this.listBoxAlugueres);
-            this.groupBoxAluguer.Location = new System.Drawing.Point(314, 142);
+            this.groupBoxAluguer.Location = new System.Drawing.Point(532, 144);
             this.groupBoxAluguer.Name = "groupBoxAluguer";
             this.groupBoxAluguer.Size = new System.Drawing.Size(458, 331);
             this.groupBoxAluguer.TabIndex = 14;

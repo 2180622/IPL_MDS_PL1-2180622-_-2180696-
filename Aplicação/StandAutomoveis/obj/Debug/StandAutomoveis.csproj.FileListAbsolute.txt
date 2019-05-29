@@ -232,3 +232,24 @@ C:\TeSP\2º Semestre\Desenvolvimento de Aplicações\IPL_MDS_PL1-2180622-_-21806
 C:\TeSP\2º Semestre\Desenvolvimento de Aplicações\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CopyComplete
 C:\TeSP\2º Semestre\Desenvolvimento de Aplicações\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.exe
 C:\TeSP\2º Semestre\Desenvolvimento de Aplicações\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.pdb
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\StandAutomoveis.exe.config
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\StandAutomoveis.exe
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\StandAutomoveis.pdb
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.dll
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.SqlServer.dll
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.xml
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.SqlServer.xml
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csprojAssemblyReference.cache
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddCarroAluguer.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddCarroOficina.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAluguer.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormOficina.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormInicial.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormCliente.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormVenda.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.Properties.Resources.resources
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.GenerateResource.cache
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CoreCompileInputs.cache
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CopyComplete
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.exe
+C:\IPLeiria - PSI - TeSP - 1ºano\2º Semestre\Tópicos de Segurança\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.pdb

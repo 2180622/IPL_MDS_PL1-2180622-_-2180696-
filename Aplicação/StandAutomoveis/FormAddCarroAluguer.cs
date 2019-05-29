@@ -15,6 +15,13 @@ namespace StandAutomoveis
     {
         public BDStandContainer BDStand;
 
+        public string matricula;
+        public string marca;
+        public string modelo;
+        public string numeroChassis;
+        public string combustivel;
+        public string estado;
+
         public FormAddCarroAluguer()
         {
             InitializeComponent();
@@ -31,7 +38,7 @@ namespace StandAutomoveis
 
         private void buttonAddCarroAluguer_Click(object sender, EventArgs e)
         {
-            CarroAluguer novoCarroAluguer = new CarroAluguer();
+            CarroAluguer novoCarroAluguer = new CarroAluguer(combustivelTextBox.Text, estadoTextBox.Text, marcaTextBox.Text, matriculaTextBox.Text, modeloTextBox.Text, numeroChassisTextBox.Text);
             FormAluguer formAluguer = new FormAluguer();
 
             BDStand.Carros.Add(novoCarroAluguer);
@@ -45,12 +52,12 @@ namespace StandAutomoveis
 
         private void listBoxAluguer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Aluguer AluguerSelecionado = (Aluguer)listBoxAluguer.SelectedItem;
+            Cliente clienteSelecionado = (Cliente)listBoxCliente.SelectedItem;
 
-            if(AluguerSelecionado != null)
+            if(clienteSelecionado != null)
             {
-                listBoxAluguer.DataSource = null;
-                listBoxAluguer.DataSource = aluguerBindingSource;
+                listBoxCliente.DataSource = null;
+                listBoxCliente.DataSource = BDStand.Clientes;
             }
         }
     }

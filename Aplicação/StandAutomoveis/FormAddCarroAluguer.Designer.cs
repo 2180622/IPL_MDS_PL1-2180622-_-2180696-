@@ -39,8 +39,8 @@
             this.buttonExitApp = new System.Windows.Forms.Button();
             this.labelTituloForm1 = new System.Windows.Forms.Label();
             this.panelLeftCarro = new System.Windows.Forms.Panel();
-            this.groupBoxAluguer = new System.Windows.Forms.GroupBox();
-            this.listBoxAluguer = new System.Windows.Forms.ListBox();
+            this.groupBoxCliente = new System.Windows.Forms.GroupBox();
+            this.listBoxCliente = new System.Windows.Forms.ListBox();
             this.aluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carroAluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -58,7 +58,7 @@
             modeloLabel = new System.Windows.Forms.Label();
             numeroChassisLabel = new System.Windows.Forms.Label();
             this.panelForm1.SuspendLayout();
-            this.groupBoxAluguer.SuspendLayout();
+            this.groupBoxCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aluguerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).BeginInit();
@@ -158,25 +158,25 @@
             this.panelLeftCarro.Size = new System.Drawing.Size(85, 415);
             this.panelLeftCarro.TabIndex = 8;
             // 
-            // groupBoxAluguer
+            // groupBoxCliente
             // 
-            this.groupBoxAluguer.Controls.Add(this.listBoxAluguer);
-            this.groupBoxAluguer.Location = new System.Drawing.Point(91, 69);
-            this.groupBoxAluguer.Name = "groupBoxAluguer";
-            this.groupBoxAluguer.Size = new System.Drawing.Size(217, 410);
-            this.groupBoxAluguer.TabIndex = 53;
-            this.groupBoxAluguer.TabStop = false;
-            this.groupBoxAluguer.Text = "Selecione um aluguer";
+            this.groupBoxCliente.Controls.Add(this.listBoxCliente);
+            this.groupBoxCliente.Location = new System.Drawing.Point(91, 69);
+            this.groupBoxCliente.Name = "groupBoxCliente";
+            this.groupBoxCliente.Size = new System.Drawing.Size(217, 410);
+            this.groupBoxCliente.TabIndex = 53;
+            this.groupBoxCliente.TabStop = false;
+            this.groupBoxCliente.Text = "Selecione um cliente";
             // 
-            // listBoxAluguer
+            // listBoxCliente
             // 
-            this.listBoxAluguer.DataSource = this.aluguerBindingSource;
-            this.listBoxAluguer.FormattingEnabled = true;
-            this.listBoxAluguer.Location = new System.Drawing.Point(6, 21);
-            this.listBoxAluguer.Name = "listBoxAluguer";
-            this.listBoxAluguer.Size = new System.Drawing.Size(205, 381);
-            this.listBoxAluguer.TabIndex = 5;
-            this.listBoxAluguer.SelectedIndexChanged += new System.EventHandler(this.listBoxAluguer_SelectedIndexChanged);
+            this.listBoxCliente.DataSource = this.aluguerBindingSource;
+            this.listBoxCliente.FormattingEnabled = true;
+            this.listBoxCliente.Location = new System.Drawing.Point(6, 21);
+            this.listBoxCliente.Name = "listBoxCliente";
+            this.listBoxCliente.Size = new System.Drawing.Size(205, 381);
+            this.listBoxCliente.TabIndex = 5;
+            this.listBoxCliente.SelectedIndexChanged += new System.EventHandler(this.listBoxAluguer_SelectedIndexChanged);
             // 
             // aluguerBindingSource
             // 
@@ -267,7 +267,7 @@
             this.Controls.Add(this.modeloTextBox);
             this.Controls.Add(numeroChassisLabel);
             this.Controls.Add(this.numeroChassisTextBox);
-            this.Controls.Add(this.groupBoxAluguer);
+            this.Controls.Add(this.groupBoxCliente);
             this.Controls.Add(this.panelLeftCarro);
             this.Controls.Add(this.panelForm1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -275,7 +275,7 @@
             this.Text = "FormAddCarroAluguer";
             this.panelForm1.ResumeLayout(false);
             this.panelForm1.PerformLayout();
-            this.groupBoxAluguer.ResumeLayout(false);
+            this.groupBoxCliente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.aluguerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroAluguerBindingSource)).EndInit();
@@ -290,8 +290,8 @@
         private System.Windows.Forms.Button buttonExitApp;
         private System.Windows.Forms.Label labelTituloForm1;
         private System.Windows.Forms.Panel panelLeftCarro;
-        private System.Windows.Forms.GroupBox groupBoxAluguer;
-        private System.Windows.Forms.ListBox listBoxAluguer;
+        private System.Windows.Forms.GroupBox groupBoxCliente;
+        private System.Windows.Forms.ListBox listBoxCliente;
         private System.Windows.Forms.BindingSource carroBindingSource;
         private System.Windows.Forms.BindingSource carroAluguerBindingSource;
         private System.Windows.Forms.TextBox combustivelTextBox;

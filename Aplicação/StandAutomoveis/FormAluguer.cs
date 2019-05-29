@@ -49,9 +49,9 @@ namespace StandAutomoveis
         private void buttonAluguerCliente_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormAluguer formaluguer = new FormAluguer();
+            FormOficina formoficina = new FormOficina();
 
-            formaluguer.ShowDialog();
+            formoficina.ShowDialog();
         }
 
         private void buttonVendasCliente_Click(object sender, EventArgs e)
@@ -64,15 +64,15 @@ namespace StandAutomoveis
 
         private void buttonAddCarro_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             FormAddCarroAluguer formaddcarro = new FormAddCarroAluguer();
-            if (formaddcarro.ShowDialog() == DialogResult.OK)
-            {
-                CarroAluguer novoCarroAluguer = new CarroAluguer();
-                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            this.Hide();
+            CarroAluguer novoCarroAluguer = new CarroAluguer(formaddcarro.combustivel, formaddcarro.estado, formaddcarro.marca, formaddcarro.matricula, formaddcarro.modelo, formaddcarro.numeroChassis);
 
-                //clienteSelecionado
-            }
+            formaddcarro.ShowDialog();
+
+            listBoxCarros.DataSource = null;
+            listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
         }
 
         private void buttonAddAluguer_Click(object sender, EventArgs e)
@@ -87,7 +87,9 @@ namespace StandAutomoveis
             int indexCliente = listBoxClientes.SelectedIndex;
             
             clienteSelecionado.Alugueres.Add(novoAluguer);
-            
+
+            BDStand.SaveChanges();
+
             listBoxAlugueres.DataSource = null;
             listBoxAlugueres.DataSource = clienteSelecionado.Alugueres.ToList();
 
