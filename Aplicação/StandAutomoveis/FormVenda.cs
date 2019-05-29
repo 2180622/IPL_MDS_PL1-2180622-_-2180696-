@@ -57,11 +57,12 @@ namespace StandAutomoveis
         private void buttonAddVenda_Click(object sender, EventArgs e)
         {
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            Venda novaVenda = new Venda(decimal.Parse(valorTextBox.Text), estadoTextBox.Text);
-
-            novaVenda.ClienteIdCliente = clienteSelecionado.IdCliente;
-
+            Venda novaVenda = new Venda(decimal.Parse(valorTextBox.Text), estadoTextBox.Text, dataDateTimePicker.Value);
+            int indexCliente = listBoxClientes.SelectedIndex;
+            
             BDStand.Vendas.Add(novaVenda);
+
+            
         }
     }
 }

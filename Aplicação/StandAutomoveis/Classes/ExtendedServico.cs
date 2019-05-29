@@ -17,7 +17,7 @@ namespace StandAutomoveis
 
         public override string ToString()
         {
-            return "Data de entrada:" + DataEntrada.ToShortDateString()  + " | Tipo de serviço: " + Tipo + " | Data de saída: " + DataSaida.ToShortDateString();
+            return "Entrada:" + DataEntrada.ToShortDateString()  + " | Tipo de serviço: " + Tipo + " | Saída: " + DataSaida.ToShortDateString();
         }
     }
 }

@@ -29,6 +29,16 @@ namespace StandAutomoveis
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
         }
 
+        private void buttonExitForm_Click(object sender, EventArgs e)
+        {
+            // fecha o form e abre o menu inicial
+            FormInicial forminicial = new FormInicial();
+
+            this.Close();
+
+            forminicial.Show();
+        }
+
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
@@ -40,8 +50,9 @@ namespace StandAutomoveis
                 labelNIFCliente.Text = clienteSelecionado.NIF;
                 labelMoradaCliente.Text = clienteSelecionado.Morada;
 
-                // Limpa listBox dos serviços
+                // Limpa listBox dos serviços e parcelas
                 listBoxServicos.DataSource = null;
+                listBoxParcelas.DataSource = null;
                 // Adicionar CarroOficina à listbox
                 listBoxCarros.DataSource = null;
                 listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
@@ -49,23 +60,13 @@ namespace StandAutomoveis
             }
         }
 
-        private void buttonExitForm_Click(object sender, EventArgs e)
-        {
-            // fecha o form e abre o menu inicial
-            FormInicial forminicial = new FormInicial();
-
-            this.Close();
-
-            forminicial.Show();
-        }
-
         private void buttonAddCarro_Click(object sender, EventArgs e)
         {
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             // instancia um novo form para adicionar o carro
             FormAddCarroOficina formaddcarro = new FormAddCarroOficina();
             this.Hide();
             CarroOficina novoCarroOficina = new CarroOficina(formaddcarro.marca, formaddcarro.modelo, formaddcarro.matricula, formaddcarro.numeroChassis, formaddcarro.kms, formaddcarro.combustivel);
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
             formaddcarro.ShowDialog();
             listBoxCarros.DataSource = null;
@@ -74,12 +75,13 @@ namespace StandAutomoveis
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
 
             if (carroSelecionado != null)
             {
+                listBoxParcelas.DataSource = null;
+
                 listBoxServicos.DataSource = null;
                 listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
             }
@@ -88,9 +90,8 @@ namespace StandAutomoveis
 
         private void buttonAddServico_Click(object sender, EventArgs e)
         {
-            Servico novoServico = new Servico(tipoTextBox.Text, dataEntradaDateTimePicker.Value, dataSaidaDateTimePicker.Value);
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            Servico novoServico = new Servico(tipoTextBox.Text, dataEntradaDateTimePicker.Value, dataSaidaDateTimePicker.Value);
             int indexCarro = listBoxCarros.SelectedIndex;
             
             carroSelecionado.Servicos.Add(novoServico);
@@ -104,12 +105,34 @@ namespace StandAutomoveis
 
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
             if(servicoSelecionado != null)
             {
-
+                listBoxParcelas.DataSource = null;
+                listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
             }
+        }
+
+        private void buttonAddParcelas_Click(object sender, EventArgs e)
+        {   
+            // Vai buscar o serviço e instancia uma nova parcela
+            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+            Parcela novaParcela = new Parcela(Decimal.Parse(valorTextBox.Text), descricaoTextBox.Text);
+            // Adiciona a nova parcela às parcelas na BD
+            servicoSelecionado.Parcelas.Add(novaParcela);
+            // Guarda as alterações
+            BDStand.SaveChanges();
+
+            // "Refresh" da listbox das parcelas
+            listBoxParcelas.DataSource = null;
+            listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+
+            // Reset as textboxes dentro da groupBoxParcela
+            valorTextBox.Text = "";
+            descricaoTextBox.Text = "";
         }
 
         private void buttonOficinaCliente_Click(object sender, EventArgs e)

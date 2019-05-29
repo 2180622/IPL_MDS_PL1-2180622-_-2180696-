@@ -16,9 +16,14 @@ namespace StandAutomoveis
             this.Kms = kms;
         }
 
+        public Aluguer()
+        {
+
+        }
+
         public override string ToString()
         {
-            return this.DataInicio.ToLongDateString() + "  " + this.DataFim.ToLongDateString() + " " + Valor + "€  " + Kms + "Km";
+            return "Inicio: " + this.DataInicio.ToShortDateString() + "  Saida: " + this.DataFim.ToShortDateString() + " " + Valor + "€  " + Kms + "Km";
         }
     }
 }

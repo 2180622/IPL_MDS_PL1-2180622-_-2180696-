@@ -108,6 +108,7 @@ namespace StandAutomoveis
         {
             try
             {
+                clienteBindingSource.AddNew();
                 BDStand.SaveChanges();
 
                 nomeTextBox.Enabled = true;
@@ -135,6 +136,8 @@ namespace StandAutomoveis
             nIFTextBox.Enabled = true;
             moradaTextBox.Enabled = true;
             contactoTextBox.Enabled = true;
+
+            MessageBox.Show(clienteBindingSource.AllowNew.ToString());
         }
     }
 }

@@ -6,23 +6,22 @@ using System.Threading.Tasks;
 
 namespace StandAutomoveis
 {
-    public partial class Venda
+    public partial class Parcela
     {
-        public Venda(decimal valor, string estado, DateTime data)
+        public Parcela(decimal valor, string descricao)
         {
             this.Valor = valor;
-            this.Estado = estado;
-            this.Data = data;
+            this.Descricao = descricao;
         }
 
-        public Venda()
+        public Parcela()
         {
 
         }
 
         public override string ToString()
         {
-            return Valor + "€ " + Estado + " Vendido a:" + Data;
+            return Descricao + "  " + " | " + Valor + "€";
         }
     }
 }

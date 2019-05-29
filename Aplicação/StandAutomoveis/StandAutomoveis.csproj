@@ -94,6 +94,8 @@
     <Compile Include="Classes\ExtendedCarroAluguer.cs" />
     <Compile Include="Classes\ExtendedAluguer.cs" />
     <Compile Include="Classes\ExtendedVenda.cs" />
+    <Compile Include="Classes\ExtendedParcela.cs" />
+    <Compile Include="Classes\ExtendedCarroVenda.cs" />
     <Compile Include="FormAddCarroAluguer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -232,8 +234,6 @@
       <LastGenOutput>BDStand.cs</LastGenOutput>
       <DependentUpon>BDStand.edmx</DependentUpon>
     </Content>
-    <None Include="Resources\wrench-512.png" />
-    <None Include="Resources\72-200.png" />
     <None Include="Resources\iconEdit.png" />
     <None Include="Resources\iconSave.png" />
     <None Include="Resources\iconeClientes.png" />
