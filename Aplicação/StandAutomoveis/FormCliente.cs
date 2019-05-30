@@ -69,31 +69,7 @@ namespace StandAutomoveis
 
         private void buttonFiltrar_Click(object sender, EventArgs e)
         {
-            if (textBoxFiltrar.Text.Length > 0)
-            {
-                bindingNavigatorAddNewItem.Enabled = true;
-                BDStand.Dispose(); 
-                BDStand = new BDStandContainer();
-
-                (from cliente in BDStand.Clientes
-                    where cliente.Nome.ToUpper().Contains(textBoxFiltrar.Text.ToUpper())
-                    orderby cliente.Nome
-                    select cliente).ToList();
-
-                clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
-            }
-            else
-            {
-                bindingNavigatorAddNewItem.Enabled = true;
-
-                BDStand.Dispose();
-                BDStand = new BDStandContainer();
-                (from cliente in BDStand.Clientes
-                    orderby cliente.Nome
-                    select cliente).Load();
-
-                clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
-            }
+            
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -136,6 +112,35 @@ namespace StandAutomoveis
             nIFTextBox.Enabled = true;
             moradaTextBox.Enabled = true;
             contactoTextBox.Enabled = true;
+        }
+
+        private void textBoxFiltrar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (textBoxFiltrar.Text.Length > 0)
+            {
+                bindingNavigatorAddNewItem.Enabled = true;
+                BDStand.Dispose();
+                BDStand = new BDStandContainer();
+
+                (from cliente in BDStand.Clientes
+                 where cliente.Nome.ToUpper().Contains(textBoxFiltrar.Text.ToUpper())
+                 orderby cliente.Nome
+                 select cliente).ToList();
+
+                clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+            }
+            else
+            {
+                bindingNavigatorAddNewItem.Enabled = true;
+
+                BDStand.Dispose();
+                BDStand = new BDStandContainer();
+                (from cliente in BDStand.Clientes
+                 orderby cliente.Nome
+                 select cliente).Load();
+
+                clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+            }
         }
     }
 }

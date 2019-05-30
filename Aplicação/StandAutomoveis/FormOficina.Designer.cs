@@ -66,7 +66,6 @@
             this.parcelaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.descricaoTextBox = new System.Windows.Forms.TextBox();
             this.valorTextBox = new System.Windows.Forms.TextBox();
-            this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             dataEntradaLabel = new System.Windows.Forms.Label();
             dataSaidaLabel = new System.Windows.Forms.Label();
             tipoLabel = new System.Windows.Forms.Label();
@@ -83,7 +82,6 @@
             this.groupBoxServicos.SuspendLayout();
             this.groupBoxParcela.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataEntradaLabel
@@ -427,10 +425,6 @@
             this.valorTextBox.Size = new System.Drawing.Size(100, 20);
             this.valorTextBox.TabIndex = 7;
             // 
-            // vendaBindingSource
-            // 
-            this.vendaBindingSource.DataSource = typeof(StandAutomoveis.Venda);
-            // 
             // FormOficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -464,7 +458,6 @@
             this.groupBoxParcela.ResumeLayout(false);
             this.groupBoxParcela.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.parcelaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,6 +497,5 @@
         private System.Windows.Forms.TextBox descricaoTextBox;
         private System.Windows.Forms.BindingSource parcelaBindingSource;
         private System.Windows.Forms.TextBox valorTextBox;
-        private System.Windows.Forms.BindingSource vendaBindingSource;
     }
 }
