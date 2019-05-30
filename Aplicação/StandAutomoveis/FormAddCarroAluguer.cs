@@ -38,7 +38,7 @@ namespace StandAutomoveis
 
         private void buttonAddCarroAluguer_Click(object sender, EventArgs e)
         {
-            CarroAluguer novoCarroAluguer = new CarroAluguer(combustivelTextBox.Text, estadoTextBox.Text, marcaTextBox.Text, matriculaTextBox.Text, modeloTextBox.Text, numeroChassisTextBox.Text);
+            CarroAluguer novoCarroAluguer = new CarroAluguer(combustivelTextBox.Text, estadoComboBox.Text, marcaTextBox.Text, matriculaTextBox.Text, modeloTextBox.Text, numeroChassisTextBox.Text);
             FormAluguer formAluguer = new FormAluguer();
 
             BDStand.Carros.Add(novoCarroAluguer);
@@ -59,6 +59,13 @@ namespace StandAutomoveis
                 listBoxCliente.DataSource = null;
                 listBoxCliente.DataSource = BDStand.Clientes;
             }
+        }
+
+        private void buttonExitApp_Click(object sender, EventArgs e)
+        {
+            FormAluguer formaluguer = new FormAluguer();
+            this.Close();
+            formaluguer.Show();
         }
     }
 }

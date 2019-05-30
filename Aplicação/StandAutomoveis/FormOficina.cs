@@ -35,8 +35,7 @@ namespace StandAutomoveis
             FormInicial forminicial = new FormInicial();
 
             this.Close();
-
-            forminicial.Show();
+            forminicial.ShowDialog();
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,23 +64,24 @@ namespace StandAutomoveis
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             // instancia um novo form para adicionar o carro
             FormAddCarroOficina formaddcarro = new FormAddCarroOficina();
-            this.Hide();
             CarroOficina novoCarroOficina = new CarroOficina(formaddcarro.marca, formaddcarro.modelo, formaddcarro.matricula, formaddcarro.numeroChassis, formaddcarro.kms, formaddcarro.combustivel);
 
+            this.Hide();
             formaddcarro.ShowDialog();
-            listBoxCarros.DataSource = null;
-            listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
+
+            if (clienteSelecionado != null)
+            {
+                listBoxCarros.DataSource = null;
+                listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
+            }
         }
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
 
             if (carroSelecionado != null)
             {
-                listBoxParcelas.DataSource = null;
-
                 listBoxServicos.DataSource = null;
                 listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
             }
@@ -105,14 +105,16 @@ namespace StandAutomoveis
 
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
             if(servicoSelecionado != null)
             {
                 listBoxParcelas.DataSource = null;
-                listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+
+                if(servicoSelecionado.Parcelas != null)
+                {
+                    listBoxParcelas.DataSource=servicoSelecionado.Parcelas.ToList();
+                }
             }
         }
 

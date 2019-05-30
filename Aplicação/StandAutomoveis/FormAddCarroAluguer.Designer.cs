@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label combustivelLabel;
-            System.Windows.Forms.Label estadoLabel;
             System.Windows.Forms.Label marcaLabel;
             System.Windows.Forms.Label matriculaLabel;
             System.Windows.Forms.Label modeloLabel;
             System.Windows.Forms.Label numeroChassisLabel;
+            System.Windows.Forms.Label estadoLabel;
             this.panelForm1 = new System.Windows.Forms.Panel();
             this.buttonExitApp = new System.Windows.Forms.Button();
             this.labelTituloForm1 = new System.Windows.Forms.Label();
@@ -45,18 +45,18 @@
             this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carroAluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.combustivelTextBox = new System.Windows.Forms.TextBox();
-            this.estadoTextBox = new System.Windows.Forms.TextBox();
             this.marcaTextBox = new System.Windows.Forms.TextBox();
             this.matriculaTextBox = new System.Windows.Forms.TextBox();
             this.modeloTextBox = new System.Windows.Forms.TextBox();
             this.numeroChassisTextBox = new System.Windows.Forms.TextBox();
             this.buttonAddCarroAluguer = new System.Windows.Forms.Button();
+            this.estadoComboBox = new System.Windows.Forms.ComboBox();
             combustivelLabel = new System.Windows.Forms.Label();
-            estadoLabel = new System.Windows.Forms.Label();
             marcaLabel = new System.Windows.Forms.Label();
             matriculaLabel = new System.Windows.Forms.Label();
             modeloLabel = new System.Windows.Forms.Label();
             numeroChassisLabel = new System.Windows.Forms.Label();
+            estadoLabel = new System.Windows.Forms.Label();
             this.panelForm1.SuspendLayout();
             this.groupBoxCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aluguerBindingSource)).BeginInit();
@@ -67,20 +67,11 @@
             // combustivelLabel
             // 
             combustivelLabel.AutoSize = true;
-            combustivelLabel.Location = new System.Drawing.Point(321, 147);
+            combustivelLabel.Location = new System.Drawing.Point(321, 143);
             combustivelLabel.Name = "combustivelLabel";
             combustivelLabel.Size = new System.Drawing.Size(67, 13);
             combustivelLabel.TabIndex = 54;
             combustivelLabel.Text = "Combustivel:";
-            // 
-            // estadoLabel
-            // 
-            estadoLabel.AutoSize = true;
-            estadoLabel.Location = new System.Drawing.Point(321, 182);
-            estadoLabel.Name = "estadoLabel";
-            estadoLabel.Size = new System.Drawing.Size(43, 13);
-            estadoLabel.TabIndex = 56;
-            estadoLabel.Text = "Estado:";
             // 
             // marcaLabel
             // 
@@ -118,6 +109,15 @@
             numeroChassisLabel.TabIndex = 66;
             numeroChassisLabel.Text = "Numero Chassis:";
             // 
+            // estadoLabel
+            // 
+            estadoLabel.AutoSize = true;
+            estadoLabel.Location = new System.Drawing.Point(321, 176);
+            estadoLabel.Name = "estadoLabel";
+            estadoLabel.Size = new System.Drawing.Size(43, 13);
+            estadoLabel.TabIndex = 68;
+            estadoLabel.Text = "Estado:";
+            // 
             // panelForm1
             // 
             this.panelForm1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -126,17 +126,18 @@
             this.panelForm1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelForm1.Location = new System.Drawing.Point(0, 0);
             this.panelForm1.Name = "panelForm1";
-            this.panelForm1.Size = new System.Drawing.Size(620, 65);
+            this.panelForm1.Size = new System.Drawing.Size(622, 65);
             this.panelForm1.TabIndex = 7;
             // 
             // buttonExitApp
             // 
             this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
-            this.buttonExitApp.Location = new System.Drawing.Point(592, 3);
+            this.buttonExitApp.Location = new System.Drawing.Point(597, 3);
             this.buttonExitApp.Name = "buttonExitApp";
             this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
             this.buttonExitApp.TabIndex = 7;
             this.buttonExitApp.UseVisualStyleBackColor = true;
+            this.buttonExitApp.Click += new System.EventHandler(this.buttonExitApp_Click);
             // 
             // labelTituloForm1
             // 
@@ -155,7 +156,7 @@
             this.panelLeftCarro.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftCarro.Location = new System.Drawing.Point(0, 65);
             this.panelLeftCarro.Name = "panelLeftCarro";
-            this.panelLeftCarro.Size = new System.Drawing.Size(85, 415);
+            this.panelLeftCarro.Size = new System.Drawing.Size(85, 434);
             this.panelLeftCarro.TabIndex = 8;
             // 
             // groupBoxCliente
@@ -193,18 +194,10 @@
             // combustivelTextBox
             // 
             this.combustivelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroAluguerBindingSource, "Combustivel", true));
-            this.combustivelTextBox.Location = new System.Drawing.Point(413, 144);
+            this.combustivelTextBox.Location = new System.Drawing.Point(413, 140);
             this.combustivelTextBox.Name = "combustivelTextBox";
             this.combustivelTextBox.Size = new System.Drawing.Size(189, 20);
             this.combustivelTextBox.TabIndex = 55;
-            // 
-            // estadoTextBox
-            // 
-            this.estadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroAluguerBindingSource, "Estado", true));
-            this.estadoTextBox.Location = new System.Drawing.Point(413, 179);
-            this.estadoTextBox.Name = "estadoTextBox";
-            this.estadoTextBox.Size = new System.Drawing.Size(189, 20);
-            this.estadoTextBox.TabIndex = 57;
             // 
             // marcaTextBox
             // 
@@ -248,17 +241,32 @@
             this.buttonAddCarroAluguer.UseVisualStyleBackColor = true;
             this.buttonAddCarroAluguer.Click += new System.EventHandler(this.buttonAddCarroAluguer_Click);
             // 
+            // estadoComboBox
+            // 
+            this.estadoComboBox.AutoCompleteCustomSource.AddRange(new string[] {
+            "Novo",
+            "Usado",
+            "Comercial"});
+            this.estadoComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.estadoComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.estadoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroAluguerBindingSource, "Estado", true));
+            this.estadoComboBox.FormattingEnabled = true;
+            this.estadoComboBox.Location = new System.Drawing.Point(413, 173);
+            this.estadoComboBox.Name = "estadoComboBox";
+            this.estadoComboBox.Size = new System.Drawing.Size(189, 21);
+            this.estadoComboBox.TabIndex = 69;
+            // 
             // FormAddCarroAluguer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(620, 480);
+            this.ClientSize = new System.Drawing.Size(622, 499);
+            this.Controls.Add(estadoLabel);
+            this.Controls.Add(this.estadoComboBox);
             this.Controls.Add(this.buttonAddCarroAluguer);
             this.Controls.Add(combustivelLabel);
             this.Controls.Add(this.combustivelTextBox);
-            this.Controls.Add(estadoLabel);
-            this.Controls.Add(this.estadoTextBox);
             this.Controls.Add(marcaLabel);
             this.Controls.Add(this.marcaTextBox);
             this.Controls.Add(matriculaLabel);
@@ -295,12 +303,12 @@
         private System.Windows.Forms.BindingSource carroBindingSource;
         private System.Windows.Forms.BindingSource carroAluguerBindingSource;
         private System.Windows.Forms.TextBox combustivelTextBox;
-        private System.Windows.Forms.TextBox estadoTextBox;
         private System.Windows.Forms.TextBox marcaTextBox;
         private System.Windows.Forms.TextBox matriculaTextBox;
         private System.Windows.Forms.TextBox modeloTextBox;
         private System.Windows.Forms.TextBox numeroChassisTextBox;
         private System.Windows.Forms.Button buttonAddCarroAluguer;
         private System.Windows.Forms.BindingSource aluguerBindingSource;
+        private System.Windows.Forms.ComboBox estadoComboBox;
     }
 }

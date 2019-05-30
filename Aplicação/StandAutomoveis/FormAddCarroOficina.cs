@@ -38,7 +38,9 @@ namespace StandAutomoveis
 
         private void buttonExitApp_Click(object sender, EventArgs e)
         {
+            FormOficina formoficina = new FormOficina();
             this.Close();
+            formoficina.Show();
         }
 
         private void buttonAddCarroOficina_Click(object sender, EventArgs e)
@@ -52,9 +54,7 @@ namespace StandAutomoveis
             BDStand.SaveChanges();
 
             this.Close();
-            
             formOficina.Show();
-            
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)

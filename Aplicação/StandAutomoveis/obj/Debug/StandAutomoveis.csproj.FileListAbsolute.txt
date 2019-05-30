@@ -260,7 +260,6 @@ C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\
 C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.SqlServer.dll
 C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.xml
 C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\bin\Debug\EntityFramework.SqlServer.xml
-C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csprojAssemblyReference.cache
 C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddCarroAluguer.resources
 C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddCarroOficina.resources
 C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAluguer.resources
@@ -274,3 +273,4 @@ C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\
 C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CopyComplete
 C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.exe
 C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.pdb
+C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csprojAssemblyReference.cache

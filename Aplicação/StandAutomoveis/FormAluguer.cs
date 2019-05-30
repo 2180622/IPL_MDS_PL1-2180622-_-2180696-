@@ -35,7 +35,7 @@ namespace StandAutomoveis
 
             this.Close();
 
-            forminicial.Show();
+            forminicial.ShowDialog();
         }
 
         private void buttonOficinaCliente_Click(object sender, EventArgs e)

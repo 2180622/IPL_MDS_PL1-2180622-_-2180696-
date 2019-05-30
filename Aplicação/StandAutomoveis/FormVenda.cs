@@ -34,7 +34,7 @@ namespace StandAutomoveis
             FormInicial forminicial = new FormInicial();
             this.Close();
 
-            forminicial.Show();
+            forminicial.ShowDialog();
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)

@@ -131,7 +131,7 @@
             // buttonExitApp
             // 
             this.buttonExitApp.Image = global::StandAutomoveis.Properties.Resources.actions_exit_application;
-            this.buttonExitApp.Location = new System.Drawing.Point(592, 3);
+            this.buttonExitApp.Location = new System.Drawing.Point(595, 0);
             this.buttonExitApp.Name = "buttonExitApp";
             this.buttonExitApp.Size = new System.Drawing.Size(25, 25);
             this.buttonExitApp.TabIndex = 7;

@@ -20,7 +20,7 @@ namespace StandAutomoveis
 
         public void buttonGestaoClientes_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             FormCliente formcliente = new FormCliente();
             
             formcliente.ShowDialog();
@@ -33,7 +33,7 @@ namespace StandAutomoveis
 
         private void buttonGestaoOficina_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             FormOficina formOficina = new FormOficina();
 
             formOficina.ShowDialog();
@@ -41,7 +41,7 @@ namespace StandAutomoveis
 
         private void buttonGestaoVendas_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             FormVenda formvenda = new FormVenda();
 
             formvenda.ShowDialog();
@@ -49,7 +49,7 @@ namespace StandAutomoveis
 
         private void buttonGestaoAluguer_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             FormAluguer formaluguer = new FormAluguer();
 
             formaluguer.ShowDialog();
