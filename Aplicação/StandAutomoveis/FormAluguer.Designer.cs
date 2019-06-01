@@ -270,7 +270,6 @@
             this.groupBoxAluguerCarros.TabIndex = 14;
             this.groupBoxAluguerCarros.TabStop = false;
             this.groupBoxAluguerCarros.Text = "Lista de Alugueres e Carros";
-            this.groupBoxAluguerCarros.Enter += new System.EventHandler(this.groupBoxAluguerCarros_Enter);
             // 
             // buttonAddAluguer
             // 

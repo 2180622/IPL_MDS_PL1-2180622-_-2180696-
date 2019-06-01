@@ -22,17 +22,19 @@ namespace StandAutomoveis
 
             BDStand = new BDStandContainer();
 
+
             (from cliente in BDStand.Clientes
              orderby cliente.Nome
              select cliente).Load();
-
-            clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
 
             (from carro in BDStand.Carros
              orderby carro.IdCarro
              select carro).Load();
 
+            clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+
             listBoxCarros.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
+
         }
 
         private void buttonExitForm_Click(object sender, EventArgs e)
@@ -74,22 +76,7 @@ namespace StandAutomoveis
 
             this.Hide();
             formadd.ShowDialog();
-        }
-
-        private void buttonAddAluguerCarro_Click(object sender, EventArgs e)
-        {
-
-
-            /*clienteSelecionado.Alugueres.Add(novoAluguer);
-
-            BDStand.SaveChanges();
-
-            listBoxAlugueres.DataSource = null;
-            listBoxAlugueres.DataSource = clienteSelecionado.Alugueres.ToList();
-
-            listBoxClientes.SelectedIndex = indexCliente;*/
-        }
-        
+        }       
 
         private void listBoxAluguerClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -115,6 +102,11 @@ namespace StandAutomoveis
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(listBoxAlugueres.SelectedIndex == -1)
+            {
+                return;
+            }
+
             CarroAluguer carroSelecionado = (CarroAluguer)listBoxCarros.SelectedItem;
 
             listBoxCarros.DataSource = null;
@@ -127,14 +119,11 @@ namespace StandAutomoveis
             }
         }
 
-        private void groupBoxAluguerCarros_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonAddAluguer_Click(object sender, EventArgs e)
         {
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            CarroAluguer carroSelecionado = (CarroAluguer)listBoxCarros.SelectedItem;
+
             Aluguer novoAluguer = new Aluguer(dataInicioDateTimePicker.Value, dataFimDateTimePicker.Value, Decimal.Parse(valorTextBox.Text), double.Parse(kmsTextBox.Text));
 
 
