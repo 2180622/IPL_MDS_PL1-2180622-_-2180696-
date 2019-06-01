@@ -78,10 +78,17 @@ namespace StandAutomoveis
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(listBoxClientes.SelectedIndex == -1)
+            {
+                return;
+            }
+
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
 
             if (carroSelecionado != null)
             {
+                listBoxParcelas.DataSource = null;
+
                 listBoxServicos.DataSource = null;
                 listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
             }
@@ -90,6 +97,11 @@ namespace StandAutomoveis
 
         private void buttonAddServico_Click(object sender, EventArgs e)
         {
+            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1)
+            {
+                return;
+            }
+
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico novoServico = new Servico(tipoTextBox.Text, dataEntradaDateTimePicker.Value, dataSaidaDateTimePicker.Value);
             int indexCarro = listBoxCarros.SelectedIndex;
@@ -122,16 +134,26 @@ namespace StandAutomoveis
         {   
             // Vai buscar o serviço e instancia uma nova parcela
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+            int indexServico = listBoxServicos.SelectedIndex;
+
             Parcela novaParcela = new Parcela(Decimal.Parse(valorTextBox.Text), descricaoTextBox.Text);
-            // Adiciona a nova parcela às parcelas na BD
-            servicoSelecionado.Parcelas.Add(novaParcela);
+            if(servicoSelecionado.Parcelas != null)
+            {
+                // Adiciona a nova parcela às parcelas na
+                servicoSelecionado.Parcelas.Add(novaParcela);
+            }
+            
             // Guarda as alterações
             BDStand.SaveChanges();
-
+            
             // "Refresh" da listbox das parcelas
-            listBoxParcelas.DataSource = null;
-            listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+            if(servicoSelecionado != null)
+            {
+                listBoxParcelas.DataSource = null;
+                listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+            }
 
+            listBoxServicos.SelectedIndex = indexServico;
             // Reset as textboxes dentro da groupBoxParcela
             valorTextBox.Text = "";
             descricaoTextBox.Text = "";

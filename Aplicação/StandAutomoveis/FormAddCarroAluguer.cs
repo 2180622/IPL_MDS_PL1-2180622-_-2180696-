@@ -47,18 +47,7 @@ namespace StandAutomoveis
 
             this.Close();
 
-            formAluguer.ShowDialog();
-        }
-
-        private void listBoxAluguer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Cliente clienteSelecionado = (Cliente)listBoxCliente.SelectedItem;
-
-            if(clienteSelecionado != null)
-            {
-                listBoxCliente.DataSource = null;
-                listBoxCliente.DataSource = BDStand.Clientes;
-            }
+            formAluguer.Show();
         }
 
         private void buttonExitApp_Click(object sender, EventArgs e)
