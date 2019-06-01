@@ -151,6 +151,7 @@ namespace StandAutomoveis
             {
                 listBoxParcelas.DataSource = null;
                 listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+                
             }
 
             listBoxServicos.SelectedIndex = indexServico;

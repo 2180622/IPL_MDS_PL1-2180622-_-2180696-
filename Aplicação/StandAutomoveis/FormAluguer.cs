@@ -27,6 +27,12 @@ namespace StandAutomoveis
              select cliente).Load();
 
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+
+            (from carro in BDStand.Carros
+             orderby carro.IdCarro
+             select carro).Load();
+
+            listBoxCarros.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
         }
 
         private void buttonExitForm_Click(object sender, EventArgs e)
@@ -65,7 +71,6 @@ namespace StandAutomoveis
         private void buttonAddCarro_Click(object sender, EventArgs e)
         {
             FormAddCarroAluguer formadd = new FormAddCarroAluguer();
-            CarroAluguer novoCarro = new CarroAluguer(formadd.combustivel, formadd.estado, formadd.marca, formadd.matricula, formadd.modelo, formadd.numeroChassis);
 
             this.Hide();
             formadd.ShowDialog();

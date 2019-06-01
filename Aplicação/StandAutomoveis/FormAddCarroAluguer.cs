@@ -39,7 +39,6 @@ namespace StandAutomoveis
         private void buttonAddCarroAluguer_Click(object sender, EventArgs e)
         {
             CarroAluguer novoCarroAluguer = new CarroAluguer(combustivelTextBox.Text, estadoComboBox.Text, marcaTextBox.Text, matriculaTextBox.Text, modeloTextBox.Text, numeroChassisTextBox.Text);
-            FormAluguer formAluguer = new FormAluguer();
 
             BDStand.Carros.Add(novoCarroAluguer);
 
@@ -47,6 +46,7 @@ namespace StandAutomoveis
 
             this.Close();
 
+            FormAluguer formAluguer = new FormAluguer();
             formAluguer.Show();
         }
 
