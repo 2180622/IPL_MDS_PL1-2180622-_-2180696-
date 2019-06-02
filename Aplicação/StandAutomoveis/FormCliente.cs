@@ -147,5 +147,10 @@ namespace StandAutomoveis
                 clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
             }
         }
+
+        private void panelCarroTop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -234,6 +234,16 @@
       <LastGenOutput>BDStand.cs</LastGenOutput>
       <DependentUpon>BDStand.edmx</DependentUpon>
     </Content>
+    <None Include="Resources\icons8-car-rental-64.png" />
+    <None Include="Resources\icons8-profile-64.png" />
+    <None Include="Resources\icons8-job-64.png" />
+    <None Include="Resources\icons8-price-tag-64.png" />
+    <None Include="Resources\abstract-white-transparent-waves-in-motion-at-the-top-and-bottom-on-gradient-blue-background-loop-animation_4vowt3ocg__F0000.png" />
+    <None Include="Resources\blue-gradient-background-6518.jpeg" />
+    <None Include="Resources\icons8-traffic-jam-64.png" />
+    <None Include="Resources\icons8-fiat-500-64.png" />
+    <None Include="Resources\icons8-delete-48.png" />
+    <None Include="Resources\transferir %281%29.png" />
     <None Include="Resources\iconEdit.png" />
     <None Include="Resources\iconSave.png" />
     <None Include="Resources\iconeClientes.png" />
