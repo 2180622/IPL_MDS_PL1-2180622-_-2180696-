@@ -31,10 +31,13 @@ namespace StandAutomoveis
              orderby carro.IdCarro
              select carro).Load();
 
+<<<<<<< HEAD
             (from aluguer in BDStand.Algueres
              orderby aluguer.IdAluguer
              select aluguer).Load();
 
+=======
+>>>>>>> 7049352b2916de32a8fef3dce1b5c17236f26726
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
 
             listBoxCarros.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
@@ -81,6 +84,7 @@ namespace StandAutomoveis
             this.Hide();
             formadd.ShowDialog();
         }       
+<<<<<<< HEAD
 
         private void listBoxAluguerClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -106,6 +110,8 @@ namespace StandAutomoveis
         private void listBoxAlugueres_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
+=======
+>>>>>>> 7049352b2916de32a8fef3dce1b5c17236f26726
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -118,6 +124,15 @@ namespace StandAutomoveis
 
             if (clienteSelecionado != null)
             {
+<<<<<<< HEAD
+=======
+                // atualiza as labels de acordo com o cliente selecionado
+                labelClienteSelecionado.Text = clienteSelecionado.Nome;
+                labelNIFCliente.Text = clienteSelecionado.NIF;
+                labelMoradaCliente.Text = clienteSelecionado.Morada;
+                
+                // Adicionar CarroOficina à listbox
+>>>>>>> 7049352b2916de32a8fef3dce1b5c17236f26726
                 listBoxAlugueres.DataSource = null;
                 listBoxAlugueres.DataSource = clienteSelecionado.Alugueres.ToList();
             }
@@ -163,6 +178,35 @@ namespace StandAutomoveis
 
             valorTextBox.Text = "";
             kmsTextBox.Text = "";
+        }
+
+        private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(listBoxAlugueres.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            CarroAluguer carroSelecionado = (CarroAluguer)listBoxCarros.SelectedItem;
+
+            listBoxCarros.DataSource = null;
+            listBoxCarros.DataSource = BDStand.Carros.ToList();
+
+            if(carroSelecionado != null)
+            {
+                listBoxAlugueres.DataSource = null;
+                listBoxAlugueres.DataSource = carroSelecionado.Aluguer.ToList();
+            }
+        }
+
+        private void buttonAddAluguer_Click(object sender, EventArgs e)
+        {
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            CarroAluguer carroSelecionado = (CarroAluguer)listBoxCarros.SelectedItem;
+
+            Aluguer novoAluguer = new Aluguer(dataInicioDateTimePicker.Value, dataFimDateTimePicker.Value, Decimal.Parse(valorTextBox.Text), double.Parse(kmsTextBox.Text));
+
+
         }
     }
 }
