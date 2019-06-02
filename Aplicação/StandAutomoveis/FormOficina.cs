@@ -74,7 +74,6 @@ namespace StandAutomoveis
                 listBoxCarros.DataSource = null;
                 listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
             }
-
         }
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)

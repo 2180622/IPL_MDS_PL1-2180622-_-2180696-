@@ -18,6 +18,10 @@ namespace StandAutomoveis
             this.NumeroChassis = nrChassis;
         }
 
+       /* public CarroAluguer()
+        {
+        }*/
+
         public override string ToString()
         {
             return Marca + " " + Modelo +  " | " + Estado + " | " + Combustivel + "L";
