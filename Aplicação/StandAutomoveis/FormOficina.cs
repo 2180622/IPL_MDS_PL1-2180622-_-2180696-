@@ -190,6 +190,56 @@ namespace StandAutomoveis
 
             formvenda.ShowDialog();
         }
+
+        private void buttonDelCarro_Click(object sender, EventArgs e)
+        {
+            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            try
+            {
+                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+
+                clienteSelecionado.CarrosOficina.Remove((CarroOficina)listBoxCarros.SelectedItem);
+                BDStand.Carros.Remove((CarroOficina)listBoxCarros.SelectedItem);
+
+                BDStand.SaveChanges();
+
+                listBoxCarros.DataSource = null;
+                listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Não é possível remover um carros com serviços atribuidos");
+            }
+        }
+
+        private void buttonDelServico_Click(object sender, EventArgs e)
+        {
+            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            try
+            {
+                CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+
+                carroSelecionado.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
+                BDStand.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
+
+                BDStand.SaveChanges();
+
+                listBoxServicos.DataSource = null;
+                listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Não é possível remover serviços com parcelas atribuidas");
+            }
+        }
     }
 
 

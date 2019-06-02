@@ -74,16 +74,9 @@ namespace StandAutomoveis
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            try
+            foreach (DataGridViewRow item in this.clienteDataGridView.SelectedRows)
             {
-                foreach (DataGridViewRow item in this.clienteDataGridView.SelectedRows)
-                {
-                    clienteDataGridView.Rows.RemoveAt(item.Index);
-                }
-            }
-            catch
-            {
-
+                clienteDataGridView.Rows.RemoveAt(item.Index);
             }
         }
 
@@ -125,6 +118,7 @@ namespace StandAutomoveis
             contactoTextBox.Text = "";
         }
 
+        // delay de 1 keypress. Try to FIX!
         private void textBoxFiltrar_KeyDown(object sender, KeyEventArgs e)
         {
             if (textBoxFiltrar.Text.Length > 0)

@@ -45,6 +45,7 @@
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxClientes = new System.Windows.Forms.GroupBox();
             this.groupBoxAdicionarCarro = new System.Windows.Forms.GroupBox();
+            this.buttonDelCarro = new System.Windows.Forms.Button();
             this.buttonAddCarro = new System.Windows.Forms.Button();
             this.listBoxCarros = new System.Windows.Forms.ListBox();
             this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -55,20 +56,19 @@
             this.labelValorTotalCliente = new System.Windows.Forms.Label();
             this.servicosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxServicos = new System.Windows.Forms.GroupBox();
+            this.buttonDelServico = new System.Windows.Forms.Button();
             this.dataEntradaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dataSaidaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tipoTextBox = new System.Windows.Forms.TextBox();
             this.buttonAddServico = new System.Windows.Forms.Button();
             this.listBoxServicos = new System.Windows.Forms.ListBox();
             this.groupBoxParcela = new System.Windows.Forms.GroupBox();
+            this.buttonRemoveParcela = new System.Windows.Forms.Button();
             this.buttonAddParcelas = new System.Windows.Forms.Button();
             this.listBoxParcelas = new System.Windows.Forms.ListBox();
             this.parcelaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.descricaoTextBox = new System.Windows.Forms.TextBox();
             this.valorTextBox = new System.Windows.Forms.TextBox();
-            this.buttonDelCarro = new System.Windows.Forms.Button();
-            this.buttonDelServico = new System.Windows.Forms.Button();
-            this.buttonRemoveParcela = new System.Windows.Forms.Button();
             dataEntradaLabel = new System.Windows.Forms.Label();
             dataSaidaLabel = new System.Windows.Forms.Label();
             tipoLabel = new System.Windows.Forms.Label();
@@ -242,6 +242,16 @@
             this.groupBoxAdicionarCarro.TabStop = false;
             this.groupBoxAdicionarCarro.Text = "Adicionar Carro";
             // 
+            // buttonDelCarro
+            // 
+            this.buttonDelCarro.Location = new System.Drawing.Point(111, 302);
+            this.buttonDelCarro.Name = "buttonDelCarro";
+            this.buttonDelCarro.Size = new System.Drawing.Size(95, 25);
+            this.buttonDelCarro.TabIndex = 2;
+            this.buttonDelCarro.Text = "Remover Carro";
+            this.buttonDelCarro.UseVisualStyleBackColor = true;
+            this.buttonDelCarro.Click += new System.EventHandler(this.buttonDelCarro_Click);
+            // 
             // buttonAddCarro
             // 
             this.buttonAddCarro.Location = new System.Drawing.Point(5, 302);
@@ -332,6 +342,16 @@
             this.groupBoxServicos.TabStop = false;
             this.groupBoxServicos.Text = "Criar Serviço";
             // 
+            // buttonDelServico
+            // 
+            this.buttonDelServico.Location = new System.Drawing.Point(226, 198);
+            this.buttonDelServico.Name = "buttonDelServico";
+            this.buttonDelServico.Size = new System.Drawing.Size(220, 25);
+            this.buttonDelServico.TabIndex = 12;
+            this.buttonDelServico.Text = "Remover Serviço";
+            this.buttonDelServico.UseVisualStyleBackColor = true;
+            this.buttonDelServico.Click += new System.EventHandler(this.buttonDelServico_Click);
+            // 
             // dataEntradaDateTimePicker
             // 
             this.dataEntradaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.servicosBindingSource, "DataEntrada", true));
@@ -392,6 +412,15 @@
             this.groupBoxParcela.TabStop = false;
             this.groupBoxParcela.Text = "Inserir Parcelas";
             // 
+            // buttonRemoveParcela
+            // 
+            this.buttonRemoveParcela.Location = new System.Drawing.Point(371, 99);
+            this.buttonRemoveParcela.Name = "buttonRemoveParcela";
+            this.buttonRemoveParcela.Size = new System.Drawing.Size(75, 42);
+            this.buttonRemoveParcela.TabIndex = 10;
+            this.buttonRemoveParcela.Text = "Remover Parcela";
+            this.buttonRemoveParcela.UseVisualStyleBackColor = true;
+            // 
             // buttonAddParcelas
             // 
             this.buttonAddParcelas.Location = new System.Drawing.Point(279, 99);
@@ -430,33 +459,6 @@
             this.valorTextBox.Name = "valorTextBox";
             this.valorTextBox.Size = new System.Drawing.Size(100, 20);
             this.valorTextBox.TabIndex = 7;
-            // 
-            // buttonDelCarro
-            // 
-            this.buttonDelCarro.Location = new System.Drawing.Point(111, 302);
-            this.buttonDelCarro.Name = "buttonDelCarro";
-            this.buttonDelCarro.Size = new System.Drawing.Size(95, 25);
-            this.buttonDelCarro.TabIndex = 2;
-            this.buttonDelCarro.Text = "Remover Carro";
-            this.buttonDelCarro.UseVisualStyleBackColor = true;
-            // 
-            // buttonDelServico
-            // 
-            this.buttonDelServico.Location = new System.Drawing.Point(226, 198);
-            this.buttonDelServico.Name = "buttonDelServico";
-            this.buttonDelServico.Size = new System.Drawing.Size(220, 25);
-            this.buttonDelServico.TabIndex = 12;
-            this.buttonDelServico.Text = "Remover Serviço";
-            this.buttonDelServico.UseVisualStyleBackColor = true;
-            // 
-            // buttonRemoveParcela
-            // 
-            this.buttonRemoveParcela.Location = new System.Drawing.Point(371, 99);
-            this.buttonRemoveParcela.Name = "buttonRemoveParcela";
-            this.buttonRemoveParcela.Size = new System.Drawing.Size(75, 42);
-            this.buttonRemoveParcela.TabIndex = 10;
-            this.buttonRemoveParcela.Text = "Remover Parcela";
-            this.buttonRemoveParcela.UseVisualStyleBackColor = true;
             // 
             // FormOficina
             // 
