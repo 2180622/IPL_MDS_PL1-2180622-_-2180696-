@@ -138,7 +138,7 @@ namespace StandAutomoveis
             
             if (clienteSelecionado.Alugueres.Count != 0 || carroSelecionado.Aluguer.Count != 0)
             {
-                MessageBox.Show("Já tem um aluguer associado a este cliente");
+                MessageBox.Show("Não pode ter mais do que um cliente e/ou carro associado a um aluguer");
                 return;
             }
             else

@@ -98,6 +98,8 @@ namespace StandAutomoveis
                 nIFTextBox.Enabled = true;
                 moradaTextBox.Enabled = true;
                 contactoTextBox.Enabled = true;
+
+                contactoTextBox.Text = "";
             }
             catch(Exception ex)
             {
@@ -119,6 +121,8 @@ namespace StandAutomoveis
             nIFTextBox.Enabled = true;
             moradaTextBox.Enabled = true;
             contactoTextBox.Enabled = true;
+
+            contactoTextBox.Text = "";
         }
 
         private void textBoxFiltrar_KeyDown(object sender, KeyEventArgs e)

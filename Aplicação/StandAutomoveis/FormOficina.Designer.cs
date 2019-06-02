@@ -66,6 +66,9 @@
             this.parcelaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.descricaoTextBox = new System.Windows.Forms.TextBox();
             this.valorTextBox = new System.Windows.Forms.TextBox();
+            this.buttonDelCarro = new System.Windows.Forms.Button();
+            this.buttonDelServico = new System.Windows.Forms.Button();
+            this.buttonRemoveParcela = new System.Windows.Forms.Button();
             dataEntradaLabel = new System.Windows.Forms.Label();
             dataSaidaLabel = new System.Windows.Forms.Label();
             tipoLabel = new System.Windows.Forms.Label();
@@ -229,6 +232,7 @@
             // 
             // groupBoxAdicionarCarro
             // 
+            this.groupBoxAdicionarCarro.Controls.Add(this.buttonDelCarro);
             this.groupBoxAdicionarCarro.Controls.Add(this.buttonAddCarro);
             this.groupBoxAdicionarCarro.Controls.Add(this.listBoxCarros);
             this.groupBoxAdicionarCarro.Location = new System.Drawing.Point(314, 140);
@@ -242,7 +246,7 @@
             // 
             this.buttonAddCarro.Location = new System.Drawing.Point(5, 302);
             this.buttonAddCarro.Name = "buttonAddCarro";
-            this.buttonAddCarro.Size = new System.Drawing.Size(203, 25);
+            this.buttonAddCarro.Size = new System.Drawing.Size(95, 25);
             this.buttonAddCarro.TabIndex = 1;
             this.buttonAddCarro.Text = "Adicionar Carro";
             this.buttonAddCarro.UseVisualStyleBackColor = true;
@@ -312,6 +316,7 @@
             // 
             // groupBoxServicos
             // 
+            this.groupBoxServicos.Controls.Add(this.buttonDelServico);
             this.groupBoxServicos.Controls.Add(dataEntradaLabel);
             this.groupBoxServicos.Controls.Add(this.dataEntradaDateTimePicker);
             this.groupBoxServicos.Controls.Add(dataSaidaLabel);
@@ -353,9 +358,9 @@
             // 
             // buttonAddServico
             // 
-            this.buttonAddServico.Location = new System.Drawing.Point(13, 198);
+            this.buttonAddServico.Location = new System.Drawing.Point(5, 198);
             this.buttonAddServico.Name = "buttonAddServico";
-            this.buttonAddServico.Size = new System.Drawing.Size(427, 25);
+            this.buttonAddServico.Size = new System.Drawing.Size(220, 25);
             this.buttonAddServico.TabIndex = 1;
             this.buttonAddServico.Text = "Criar Serviço";
             this.buttonAddServico.UseVisualStyleBackColor = true;
@@ -373,6 +378,7 @@
             // 
             // groupBoxParcela
             // 
+            this.groupBoxParcela.Controls.Add(this.buttonRemoveParcela);
             this.groupBoxParcela.Controls.Add(this.buttonAddParcelas);
             this.groupBoxParcela.Controls.Add(this.listBoxParcelas);
             this.groupBoxParcela.Controls.Add(descricaoLabel);
@@ -388,9 +394,9 @@
             // 
             // buttonAddParcelas
             // 
-            this.buttonAddParcelas.Location = new System.Drawing.Point(284, 112);
+            this.buttonAddParcelas.Location = new System.Drawing.Point(279, 99);
             this.buttonAddParcelas.Name = "buttonAddParcelas";
-            this.buttonAddParcelas.Size = new System.Drawing.Size(156, 23);
+            this.buttonAddParcelas.Size = new System.Drawing.Size(75, 42);
             this.buttonAddParcelas.TabIndex = 9;
             this.buttonAddParcelas.Text = "Adicionar Parcela";
             this.buttonAddParcelas.UseVisualStyleBackColor = true;
@@ -424,6 +430,33 @@
             this.valorTextBox.Name = "valorTextBox";
             this.valorTextBox.Size = new System.Drawing.Size(100, 20);
             this.valorTextBox.TabIndex = 7;
+            // 
+            // buttonDelCarro
+            // 
+            this.buttonDelCarro.Location = new System.Drawing.Point(111, 302);
+            this.buttonDelCarro.Name = "buttonDelCarro";
+            this.buttonDelCarro.Size = new System.Drawing.Size(95, 25);
+            this.buttonDelCarro.TabIndex = 2;
+            this.buttonDelCarro.Text = "Remover Carro";
+            this.buttonDelCarro.UseVisualStyleBackColor = true;
+            // 
+            // buttonDelServico
+            // 
+            this.buttonDelServico.Location = new System.Drawing.Point(226, 198);
+            this.buttonDelServico.Name = "buttonDelServico";
+            this.buttonDelServico.Size = new System.Drawing.Size(220, 25);
+            this.buttonDelServico.TabIndex = 12;
+            this.buttonDelServico.Text = "Remover Serviço";
+            this.buttonDelServico.UseVisualStyleBackColor = true;
+            // 
+            // buttonRemoveParcela
+            // 
+            this.buttonRemoveParcela.Location = new System.Drawing.Point(371, 99);
+            this.buttonRemoveParcela.Name = "buttonRemoveParcela";
+            this.buttonRemoveParcela.Size = new System.Drawing.Size(75, 42);
+            this.buttonRemoveParcela.TabIndex = 10;
+            this.buttonRemoveParcela.Text = "Remover Parcela";
+            this.buttonRemoveParcela.UseVisualStyleBackColor = true;
             // 
             // FormOficina
             // 
@@ -497,5 +530,8 @@
         private System.Windows.Forms.TextBox descricaoTextBox;
         private System.Windows.Forms.BindingSource parcelaBindingSource;
         private System.Windows.Forms.TextBox valorTextBox;
+        private System.Windows.Forms.Button buttonDelCarro;
+        private System.Windows.Forms.Button buttonDelServico;
+        private System.Windows.Forms.Button buttonRemoveParcela;
     }
 }

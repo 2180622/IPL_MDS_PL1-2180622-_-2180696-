@@ -105,7 +105,7 @@ namespace StandAutomoveis
 
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico novoServico = new Servico(tipoTextBox.Text, dataEntradaDateTimePicker.Value, dataSaidaDateTimePicker.Value);
-            int indexCarro = listBoxCarros.SelectedIndex;
+            //int indexCarro = listBoxCarros.SelectedIndex;
             
             carroSelecionado.Servicos.Add(novoServico);
             BDStand.SaveChanges();
@@ -113,7 +113,7 @@ namespace StandAutomoveis
             listBoxServicos.DataSource = null;
             listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
 
-            listBoxCarros.SelectedIndex = indexCarro;
+            //listBoxCarros.SelectedIndex = indexCarro;
         }
 
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
@@ -133,6 +133,11 @@ namespace StandAutomoveis
 
         private void buttonAddParcelas_Click(object sender, EventArgs e)
         {   
+            if(descricaoTextBox.TextLength == 0 || valorTextBox.TextLength == 0)
+            {
+                return;
+            }
+
             // Vai buscar o serviço e instancia uma nova parcela
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
             int indexServico = listBoxServicos.SelectedIndex;
@@ -156,7 +161,7 @@ namespace StandAutomoveis
                 
             }
 
-            listBoxServicos.SelectedIndex = indexServico;
+            // listBoxServicos.SelectedIndex = indexServico;
             // Reset as textboxes dentro da groupBoxParcela
             valorTextBox.Text = "";
             descricaoTextBox.Text = "";
