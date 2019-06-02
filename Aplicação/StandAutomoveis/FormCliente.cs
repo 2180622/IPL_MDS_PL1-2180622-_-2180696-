@@ -34,38 +34,6 @@ namespace StandAutomoveis
             moradaTextBox.Enabled = false;
             contactoTextBox.Enabled = false;
         }
-        private void buttonExitApp_Click(object sender, EventArgs e)
-        {
-            FormInicial forminicial = new FormInicial();
-
-            this.Close();
-
-            forminicial.ShowDialog();
-        }
-
-        private void buttonOficinaCliente_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormOficina formoficina = new FormOficina();
-
-            formoficina.ShowDialog();
-        }
-
-        private void buttonAluguerCliente_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormAluguer formaluguer = new FormAluguer();
-
-            formaluguer.ShowDialog();
-        }
-
-        private void buttonVendasCliente_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormVenda formvenda = new FormVenda();
-
-            formvenda.ShowDialog();
-        }
 
         private void buttonFiltrar_Click(object sender, EventArgs e)
         {
@@ -148,9 +116,37 @@ namespace StandAutomoveis
             }
         }
 
-        private void panelCarroTop_Paint(object sender, PaintEventArgs e)
+        private void buttonExitForm_Click(object sender, EventArgs e)
         {
+            FormInicial forminicial = new FormInicial();
 
+            this.Hide();
+
+            forminicial.ShowDialog();
+        }
+
+        private void buttonOficina_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormOficina formoficina = new FormOficina();
+
+            formoficina.ShowDialog();
+        }
+
+        private void buttonAluguerCliente_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAluguer formaluguer = new FormAluguer();
+
+            formaluguer.ShowDialog();
+        }
+
+        private void buttonVenda_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormVenda formvenda = new FormVenda();
+
+            formvenda.ShowDialog();
         }
     }
 }

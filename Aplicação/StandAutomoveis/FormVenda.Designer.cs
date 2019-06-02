@@ -39,6 +39,7 @@
             System.Windows.Forms.Label numeroChassisLabel;
             this.panelCarroTop = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -71,7 +72,6 @@
             this.valorTextBox = new System.Windows.Forms.TextBox();
             this.buttonAddVenda = new System.Windows.Forms.Button();
             this.listBoxVendas = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
             dataLabel = new System.Windows.Forms.Label();
             estadoLabel = new System.Windows.Forms.Label();
             valorLabel = new System.Windows.Forms.Label();
@@ -201,11 +201,23 @@
             this.panel1.Size = new System.Drawing.Size(1320, 80);
             this.panel1.TabIndex = 12;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(193)))), ((int)(((byte)(253)))));
+            this.label1.Location = new System.Drawing.Point(87, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 22);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Menu Venda";
+            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_price_tag_64;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(81, 81);
@@ -215,8 +227,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_traffic_jam_64;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Location = new System.Drawing.Point(972, 0);
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(995, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(81, 81);
             this.panel2.TabIndex = 13;
@@ -225,7 +237,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_fiat_500_64;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Location = new System.Drawing.Point(247, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(81, 81);
@@ -243,17 +255,18 @@
             this.button1.Size = new System.Drawing.Size(81, 81);
             this.button1.TabIndex = 11;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.buttonExitForm_Click);
             // 
             // labelTituloCliente
             // 
             this.labelTituloCliente.AutoSize = true;
             this.labelTituloCliente.BackColor = System.Drawing.Color.Transparent;
-            this.labelTituloCliente.Font = new System.Drawing.Font("MS Reference Sans Serif", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTituloCliente.Font = new System.Drawing.Font("MS Reference Sans Serif", 39F, System.Drawing.FontStyle.Bold);
             this.labelTituloCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(193)))), ((int)(((byte)(253)))));
             this.labelTituloCliente.Location = new System.Drawing.Point(316, -4);
             this.labelTituloCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTituloCliente.Name = "labelTituloCliente";
-            this.labelTituloCliente.Size = new System.Drawing.Size(672, 84);
+            this.labelTituloCliente.Size = new System.Drawing.Size(644, 80);
             this.labelTituloCliente.TabIndex = 7;
             this.labelTituloCliente.Text = "Stand Automóveis";
             // 
@@ -305,6 +318,7 @@
             this.buttonOficina.Text = "Oficina";
             this.buttonOficina.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonOficina.UseVisualStyleBackColor = false;
+            this.buttonOficina.Click += new System.EventHandler(this.buttonOficina_Click);
             // 
             // buttonCliente
             // 
@@ -318,6 +332,7 @@
             this.buttonCliente.Text = "Clientes";
             this.buttonCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonCliente.UseVisualStyleBackColor = false;
+            this.buttonCliente.Click += new System.EventHandler(this.buttonCliente_Click);
             // 
             // buttonAluguerCliente
             // 
@@ -331,6 +346,7 @@
             this.buttonAluguerCliente.Text = "Aluguer";
             this.buttonAluguerCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonAluguerCliente.UseVisualStyleBackColor = false;
+            this.buttonAluguerCliente.Click += new System.EventHandler(this.buttonAluguerCliente_Click);
             // 
             // carroVendaBindingSource
             // 
@@ -544,18 +560,6 @@
             this.listBoxVendas.Name = "listBoxVendas";
             this.listBoxVendas.Size = new System.Drawing.Size(255, 372);
             this.listBoxVendas.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(193)))), ((int)(((byte)(253)))));
-            this.label1.Location = new System.Drawing.Point(87, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 22);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Menu Venda";
             // 
             // FormVenda
             // 

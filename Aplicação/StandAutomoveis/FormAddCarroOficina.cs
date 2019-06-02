@@ -36,13 +36,6 @@ namespace StandAutomoveis
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
         }
 
-        private void buttonExitApp_Click(object sender, EventArgs e)
-        {
-            FormOficina formoficina = new FormOficina();
-            this.Close();
-            formoficina.Show();
-        }
-
         private void buttonAddCarroOficina_Click(object sender, EventArgs e)
         {
             CarroOficina novoCarroOficina = new CarroOficina(marcaTextBox.Text, modeloTextBox.Text, matriculaTextBox.Text, numeroChassisTextBox.Text, kmsTextBox.Text, combustivelTextBox.Text);
@@ -53,7 +46,7 @@ namespace StandAutomoveis
 
             BDStand.SaveChanges();
 
-            this.Close();
+            this.Hide();
             formOficina.Show();
         }
 
@@ -65,6 +58,13 @@ namespace StandAutomoveis
             {
                 labelNomeCliente.Text = clienteSelecionado.Nome;
             }
+        }
+
+        private void buttonExitForm_Click(object sender, EventArgs e)
+        {
+            FormOficina formoficina = new FormOficina();
+            this.Hide();
+            formoficina.Show();
         }
     }
 }

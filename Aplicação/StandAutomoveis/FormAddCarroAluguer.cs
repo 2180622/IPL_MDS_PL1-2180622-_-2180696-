@@ -44,16 +44,17 @@ namespace StandAutomoveis
 
             BDStand.SaveChanges();
 
-            this.Close();
+            this.Hide();
 
             FormAluguer formAluguer = new FormAluguer();
             formAluguer.Show();
         }
 
-        private void buttonExitApp_Click(object sender, EventArgs e)
+
+        private void buttonExitForm_Click(object sender, EventArgs e)
         {
             FormAluguer formaluguer = new FormAluguer();
-            this.Close();
+            this.Hide();
             formaluguer.Show();
         }
     }

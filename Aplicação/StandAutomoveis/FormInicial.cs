@@ -54,5 +54,10 @@ namespace StandAutomoveis
             this.Hide();
             formaluguer.ShowDialog();
         }
+
+        private void buttonExitForm_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

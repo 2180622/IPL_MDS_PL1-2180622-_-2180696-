@@ -31,11 +31,7 @@ namespace StandAutomoveis
 
         private void buttonExitForm_Click(object sender, EventArgs e)
         {
-            // fecha o form e abre o menu inicial
-            FormInicial forminicial = new FormInicial();
 
-            this.Close();
-            forminicial.ShowDialog();
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -167,29 +163,6 @@ namespace StandAutomoveis
             descricaoTextBox.Text = "";
         }
 
-        private void buttonOficinaCliente_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormCliente formcliente = new FormCliente();
-
-            formcliente.ShowDialog();
-        }
-
-        private void buttonAluguerCliente_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormAluguer formaluguer = new FormAluguer();
-
-            formaluguer.ShowDialog();
-        }
-
-        private void buttonVendasCliente_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            FormVenda formvenda = new FormVenda();
-
-            formvenda.ShowDialog();
-        }
 
         private void buttonDelCarro_Click(object sender, EventArgs e)
         {
@@ -239,6 +212,40 @@ namespace StandAutomoveis
             {
                 MessageBox.Show("Não é possível remover serviços com parcelas atribuidas");
             }
+        }
+
+        private void buttonExitForm_Click_1(object sender, EventArgs e)
+        {
+            FormInicial forminicial = new FormInicial();
+
+            this.Hide();
+
+            forminicial.ShowDialog();
+        }
+
+        private void buttonCliente_Click(object sender, EventArgs e)
+        {
+            FormCliente formcliente = new FormCliente();
+
+            this.Hide();
+
+            formcliente.ShowDialog();
+        }
+
+        private void buttonAluguer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAluguer formaluguer = new FormAluguer();
+
+            formaluguer.ShowDialog();
+        }
+
+        private void buttonVenda_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormVenda formvenda = new FormVenda();
+
+            formvenda.ShowDialog();
         }
     }
 

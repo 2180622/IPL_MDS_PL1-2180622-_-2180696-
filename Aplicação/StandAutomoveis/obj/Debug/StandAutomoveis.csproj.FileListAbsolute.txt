@@ -316,3 +316,6 @@ C:\Users\USER\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696--master\Aplica�
 C:\Users\USER\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.csproj.CopyComplete
 C:\Users\USER\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.exe
 C:\Users\USER\source\repos\2180622\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.pdb
+C:\Users\rui_p\Source\Repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAddCarroAluguer.resources
+C:\Users\rui_p\Source\Repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormAluguer.resources
+C:\Users\rui_p\Source\Repos\2180622\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\obj\Debug\StandAutomoveis.FormVenda.resources

@@ -60,8 +60,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelCarroTop = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
             dataFimLabel = new System.Windows.Forms.Label();
             dataInicioLabel = new System.Windows.Forms.Label();
             kmsLabel = new System.Windows.Forms.Label();
@@ -361,12 +361,12 @@
             // 
             this.labelTituloCliente.AutoSize = true;
             this.labelTituloCliente.BackColor = System.Drawing.Color.Transparent;
-            this.labelTituloCliente.Font = new System.Drawing.Font("MS Reference Sans Serif", 40.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTituloCliente.Font = new System.Drawing.Font("MS Reference Sans Serif", 39F, System.Drawing.FontStyle.Bold);
             this.labelTituloCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(193)))), ((int)(((byte)(253)))));
             this.labelTituloCliente.Location = new System.Drawing.Point(316, -4);
             this.labelTituloCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTituloCliente.Name = "labelTituloCliente";
-            this.labelTituloCliente.Size = new System.Drawing.Size(672, 84);
+            this.labelTituloCliente.Size = new System.Drawing.Size(644, 80);
             this.labelTituloCliente.TabIndex = 7;
             this.labelTituloCliente.Text = "Stand Automóveis";
             // 
@@ -388,7 +388,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_fiat_500_64;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(247, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(81, 81);
@@ -398,8 +398,8 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_traffic_jam_64;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Location = new System.Drawing.Point(972, 0);
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(995, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(81, 81);
             this.panel2.TabIndex = 13;
@@ -421,16 +421,6 @@
             this.panelCarroTop.Size = new System.Drawing.Size(1320, 80);
             this.panelCarroTop.TabIndex = 4;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_car_rental_64;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel5.Location = new System.Drawing.Point(3, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(81, 81);
-            this.panel5.TabIndex = 15;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -442,6 +432,16 @@
             this.label1.Size = new System.Drawing.Size(141, 22);
             this.label1.TabIndex = 16;
             this.label1.Text = "Menu Aluguer";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_car_rental_64;
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.Location = new System.Drawing.Point(3, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(81, 81);
+            this.panel5.TabIndex = 15;
             // 
             // FormAluguer
             // 

@@ -45,7 +45,7 @@ namespace StandAutomoveis
         {
             FormInicial forminicial = new FormInicial();
 
-            this.Close();
+            this.Hide();
 
             forminicial.ShowDialog();
         }

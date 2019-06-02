@@ -32,6 +32,7 @@ namespace StandAutomoveis
         private void buttonExitForm_Click(object sender, EventArgs e)
         {
             FormInicial forminicial = new FormInicial();
+
             this.Close();
 
             forminicial.ShowDialog();
@@ -63,6 +64,30 @@ namespace StandAutomoveis
             BDStand.Vendas.Add(novaVenda);
 
             
+        }
+
+        private void buttonCliente_Click(object sender, EventArgs e)
+        {
+            FormCliente formcliente = new FormCliente();
+            this.Hide();
+
+            formcliente.ShowDialog();
+        }
+
+        private void buttonAluguerCliente_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormAluguer formaluguer = new FormAluguer();
+
+            formaluguer.ShowDialog();
+        }
+
+        private void buttonOficina_Click(object sender, EventArgs e)
+        {
+            FormOficina formOficina = new FormOficina();
+
+            this.Hide();
+            formOficina.ShowDialog();
         }
     }
 }
