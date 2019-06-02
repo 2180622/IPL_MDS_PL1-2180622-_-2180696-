@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\TeSP\2º Semestre\IPL_MDS_PL1-2180622-_-2180696-\Aplicação\StandAutomoveis\BDStand.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\TeSP\2º Semestre\Desenvolvimento de Aplicações\IPL_MDS_PL1-2180622-_-2180696--master\Aplicação\StandAutomoveis\BDStand.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

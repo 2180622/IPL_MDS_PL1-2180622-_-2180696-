@@ -74,9 +74,16 @@ namespace StandAutomoveis
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow item in this.clienteDataGridView.SelectedRows)
+            try
             {
-                clienteDataGridView.Rows.RemoveAt(item.Index);
+                foreach (DataGridViewRow item in this.clienteDataGridView.SelectedRows)
+                {
+                    clienteDataGridView.Rows.RemoveAt(item.Index);
+                }
+            }
+            catch
+            {
+
             }
         }
 

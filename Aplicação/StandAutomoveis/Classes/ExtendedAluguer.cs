@@ -23,7 +23,7 @@ namespace StandAutomoveis
 
         public override string ToString()
         {
-            return "Inicio: " + this.DataInicio.ToShortDateString() + "  Saida: " + this.DataFim.ToShortDateString() + " " + Valor + "€  " + Kms + "Km";
+            return "Inicio: " + DataInicio.ToShortDateString() + "  Saida: " + DataFim.ToShortDateString() + " " + Valor + "€  " + Kms + "Km";
         }
     }
 }
