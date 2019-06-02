@@ -75,11 +75,7 @@
             // dataFimLabel
             // 
             dataFimLabel.AutoSize = true;
-<<<<<<< HEAD
             dataFimLabel.Location = new System.Drawing.Point(241, 58);
-=======
-            dataFimLabel.Location = new System.Drawing.Point(241, 27);
->>>>>>> 7049352b2916de32a8fef3dce1b5c17236f26726
             dataFimLabel.Name = "dataFimLabel";
             dataFimLabel.Size = new System.Drawing.Size(52, 13);
             dataFimLabel.TabIndex = 5;
@@ -88,11 +84,7 @@
             // dataInicioLabel
             // 
             dataInicioLabel.AutoSize = true;
-<<<<<<< HEAD
             dataInicioLabel.Location = new System.Drawing.Point(241, 19);
-=======
-            dataInicioLabel.Location = new System.Drawing.Point(244, 66);
->>>>>>> 7049352b2916de32a8fef3dce1b5c17236f26726
             dataInicioLabel.Name = "dataInicioLabel";
             dataInicioLabel.Size = new System.Drawing.Size(61, 13);
             dataInicioLabel.TabIndex = 7;
@@ -278,7 +270,6 @@
             this.groupBoxAluguerCarros.TabIndex = 14;
             this.groupBoxAluguerCarros.TabStop = false;
             this.groupBoxAluguerCarros.Text = "Lista de Alugueres e Carros";
-            this.groupBoxAluguerCarros.Enter += new System.EventHandler(this.groupBoxAluguerCarros_Enter);
             // 
             // buttonAddAluguer
             // 
@@ -293,11 +284,7 @@
             // dataFimDateTimePicker
             // 
             this.dataFimDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.aluguerBindingSource, "DataFim", true));
-<<<<<<< HEAD
             this.dataFimDateTimePicker.Location = new System.Drawing.Point(244, 74);
-=======
-            this.dataFimDateTimePicker.Location = new System.Drawing.Point(244, 43);
->>>>>>> 7049352b2916de32a8fef3dce1b5c17236f26726
             this.dataFimDateTimePicker.Name = "dataFimDateTimePicker";
             this.dataFimDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dataFimDateTimePicker.TabIndex = 6;
@@ -309,11 +296,7 @@
             // dataInicioDateTimePicker
             // 
             this.dataInicioDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.aluguerBindingSource, "DataInicio", true));
-<<<<<<< HEAD
             this.dataInicioDateTimePicker.Location = new System.Drawing.Point(241, 35);
-=======
-            this.dataInicioDateTimePicker.Location = new System.Drawing.Point(244, 82);
->>>>>>> 7049352b2916de32a8fef3dce1b5c17236f26726
             this.dataInicioDateTimePicker.Name = "dataInicioDateTimePicker";
             this.dataInicioDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dataInicioDateTimePicker.TabIndex = 8;

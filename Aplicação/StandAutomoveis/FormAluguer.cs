@@ -22,32 +22,23 @@ namespace StandAutomoveis
 
             BDStand = new BDStandContainer();
 
+
             (from cliente in BDStand.Clientes
              orderby cliente.Nome
              select cliente).Load();
-
-            clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
 
             (from carro in BDStand.Carros
              orderby carro.IdCarro
              select carro).Load();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
             (from aluguer in BDStand.Algueres
              orderby aluguer.IdAluguer
              select aluguer).Load();
 
-=======
->>>>>>> 7049352b2916de32a8fef3dce1b5c17236f26726
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
 
-=======
->>>>>>> parent of 7049352... mostra carros e clientes. Associação de alugueres a clientes e carros
-=======
->>>>>>> parent of 7049352... mostra carros e clientes. Associação de alugueres a clientes e carros
             listBoxCarros.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
+
         }
 
         private void buttonExitForm_Click(object sender, EventArgs e)
@@ -89,33 +80,7 @@ namespace StandAutomoveis
 
             this.Hide();
             formadd.ShowDialog();
-<<<<<<< HEAD
-<<<<<<< HEAD
         }       
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 7049352... mostra carros e clientes. Associação de alugueres a clientes e carros
-        }
-
-        private void buttonAddAluguerCarro_Click(object sender, EventArgs e)
-        {
-
-
-            /*clienteSelecionado.Alugueres.Add(novoAluguer);
-
-            BDStand.SaveChanges();
-
-            listBoxAlugueres.DataSource = null;
-            listBoxAlugueres.DataSource = clienteSelecionado.Alugueres.ToList();
-
-            listBoxClientes.SelectedIndex = indexCliente;*/
-        }
-        
-<<<<<<< HEAD
->>>>>>> parent of 7049352... mostra carros e clientes. Associação de alugueres a clientes e carros
-=======
->>>>>>> parent of 7049352... mostra carros e clientes. Associação de alugueres a clientes e carros
 
         private void listBoxAluguerClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -141,12 +106,9 @@ namespace StandAutomoveis
         private void listBoxAlugueres_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
-=======
->>>>>>> 7049352b2916de32a8fef3dce1b5c17236f26726
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             if(listBoxAlugueres.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1)
             {
                 return;
@@ -156,15 +118,6 @@ namespace StandAutomoveis
 
             if (clienteSelecionado != null)
             {
-<<<<<<< HEAD
-=======
-                // atualiza as labels de acordo com o cliente selecionado
-                labelClienteSelecionado.Text = clienteSelecionado.Nome;
-                labelNIFCliente.Text = clienteSelecionado.NIF;
-                labelMoradaCliente.Text = clienteSelecionado.Morada;
-                
-                // Adicionar CarroOficina à listbox
->>>>>>> 7049352b2916de32a8fef3dce1b5c17236f26726
                 listBoxAlugueres.DataSource = null;
                 listBoxAlugueres.DataSource = clienteSelecionado.Alugueres.ToList();
             }
@@ -210,35 +163,6 @@ namespace StandAutomoveis
 
             valorTextBox.Text = "";
             kmsTextBox.Text = "";
-        }
-
-        private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
-        {
-=======
->>>>>>> parent of 7049352... mostra carros e clientes. Associação de alugueres a clientes e carros
-            CarroAluguer carroSelecionado = (CarroAluguer)listBoxCarros.SelectedItem;
-
-            listBoxCarros.DataSource = null;
-            listBoxCarros.DataSource = BDStand.Carros.ToList();
-
-            if(carroSelecionado != null)
-            {
-                listBoxAlugueres.DataSource = null;
-                listBoxAlugueres.DataSource = carroSelecionado.Aluguer.ToList();
-            }
-        }
-
-        private void groupBoxAluguerCarros_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonAddAluguer_Click(object sender, EventArgs e)
-        {
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            Aluguer novoAluguer = new Aluguer(dataInicioDateTimePicker.Value, dataFimDateTimePicker.Value, Decimal.Parse(valorTextBox.Text), double.Parse(kmsTextBox.Text));
-
-
         }
     }
 }

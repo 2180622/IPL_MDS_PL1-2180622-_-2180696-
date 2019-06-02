@@ -74,6 +74,7 @@ namespace StandAutomoveis
                 listBoxCarros.DataSource = null;
                 listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
             }
+
         }
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,10 +138,7 @@ namespace StandAutomoveis
             int indexServico = listBoxServicos.SelectedIndex;
 
             Parcela novaParcela = new Parcela(Decimal.Parse(valorTextBox.Text), descricaoTextBox.Text);
-<<<<<<< HEAD
 
-=======
->>>>>>> 7049352b2916de32a8fef3dce1b5c17236f26726
             if(servicoSelecionado.Parcelas != null)
             {
                 // Adiciona a nova parcela às parcelas na

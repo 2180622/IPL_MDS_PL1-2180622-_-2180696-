@@ -17,6 +17,11 @@ namespace StandAutomoveis
             this.Extras = extras;
         }
 
+        public CarroVenda()
+        {
+
+        }
+
         public override string ToString()
         {
             return Marca + " " + Modelo + " Extras: " + Extras;
