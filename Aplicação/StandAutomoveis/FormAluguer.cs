@@ -34,6 +34,7 @@ namespace StandAutomoveis
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             (from aluguer in BDStand.Algueres
              orderby aluguer.IdAluguer
              select aluguer).Load();
@@ -42,6 +43,8 @@ namespace StandAutomoveis
 >>>>>>> 7049352b2916de32a8fef3dce1b5c17236f26726
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
 
+=======
+>>>>>>> parent of 7049352... mostra carros e clientes. Associação de alugueres a clientes e carros
 =======
 >>>>>>> parent of 7049352... mostra carros e clientes. Associação de alugueres a clientes e carros
             listBoxCarros.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
@@ -87,9 +90,12 @@ namespace StandAutomoveis
             this.Hide();
             formadd.ShowDialog();
 <<<<<<< HEAD
+<<<<<<< HEAD
         }       
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 7049352... mostra carros e clientes. Associação de alugueres a clientes e carros
         }
 
         private void buttonAddAluguerCarro_Click(object sender, EventArgs e)
@@ -106,6 +112,9 @@ namespace StandAutomoveis
             listBoxClientes.SelectedIndex = indexCliente;*/
         }
         
+<<<<<<< HEAD
+>>>>>>> parent of 7049352... mostra carros e clientes. Associação de alugueres a clientes e carros
+=======
 >>>>>>> parent of 7049352... mostra carros e clientes. Associação de alugueres a clientes e carros
 
         private void listBoxAluguerClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -137,6 +146,7 @@ namespace StandAutomoveis
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             if(listBoxAlugueres.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1)
             {
                 return;
@@ -204,6 +214,8 @@ namespace StandAutomoveis
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
+=======
+>>>>>>> parent of 7049352... mostra carros e clientes. Associação de alugueres a clientes e carros
             CarroAluguer carroSelecionado = (CarroAluguer)listBoxCarros.SelectedItem;
 
             listBoxCarros.DataSource = null;
