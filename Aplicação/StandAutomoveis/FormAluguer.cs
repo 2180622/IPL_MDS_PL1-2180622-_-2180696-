@@ -45,32 +45,31 @@ namespace StandAutomoveis
         {
             FormInicial forminicial = new FormInicial();
 
-            this.Hide();
-
+            this.Dispose();
             forminicial.ShowDialog();
         }
 
         private void buttonOficinaCliente_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormCliente formcliente = new FormCliente();
 
+            this.Dispose();
             formcliente.ShowDialog();
         }
 
         private void buttonAluguerCliente_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormOficina formoficina = new FormOficina();
 
+            this.Dispose();
             formoficina.ShowDialog();
         }
 
         private void buttonVendasCliente_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormVenda formvenda = new FormVenda();
 
+            this.Dispose();
             formvenda.ShowDialog();
         }
 
@@ -78,7 +77,7 @@ namespace StandAutomoveis
         {
             FormAddCarroAluguer formadd = new FormAddCarroAluguer();
 
-            this.Hide();
+            this.Dispose();
             formadd.ShowDialog();
         }       
 

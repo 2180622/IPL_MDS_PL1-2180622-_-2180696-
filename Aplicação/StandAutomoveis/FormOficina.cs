@@ -28,10 +28,14 @@ namespace StandAutomoveis
 
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
         }
-
-        private void buttonExitForm_Click(object sender, EventArgs e)
+        
+        private void buttonExitForm_Click_1(object sender, EventArgs e)
         {
+            FormInicial forminicial = new FormInicial();
 
+            this.Hide();
+
+            forminicial.ShowDialog();
         }
 
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -214,37 +218,27 @@ namespace StandAutomoveis
             }
         }
 
-        private void buttonExitForm_Click_1(object sender, EventArgs e)
-        {
-            FormInicial forminicial = new FormInicial();
-
-            this.Hide();
-
-            forminicial.ShowDialog();
-        }
-
         private void buttonCliente_Click(object sender, EventArgs e)
         {
             FormCliente formcliente = new FormCliente();
 
-            this.Hide();
-
+            this.Dispose();
             formcliente.ShowDialog();
         }
 
         private void buttonAluguer_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormAluguer formaluguer = new FormAluguer();
 
+            this.Dispose();
             formaluguer.ShowDialog();
         }
 
         private void buttonVenda_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormVenda formvenda = new FormVenda();
 
+            this.Dispose();
             formvenda.ShowDialog();
         }
     }
