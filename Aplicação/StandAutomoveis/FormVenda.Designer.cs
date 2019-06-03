@@ -53,7 +53,6 @@
             this.buttonAluguerCliente = new System.Windows.Forms.Button();
             this.groupBoxClientes = new System.Windows.Forms.GroupBox();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelMoradaCliente = new System.Windows.Forms.Label();
             this.labelNIFCliente = new System.Windows.Forms.Label();
             this.labelClienteSelecionado = new System.Windows.Forms.Label();
@@ -72,6 +71,7 @@
             this.buttonAddVenda = new System.Windows.Forms.Button();
             this.listBoxVendas = new System.Windows.Forms.ListBox();
             this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             combustivelLabel = new System.Windows.Forms.Label();
             extrasLabel = new System.Windows.Forms.Label();
             marcaLabel = new System.Windows.Forms.Label();
@@ -85,11 +85,11 @@
             this.panelLeftCarro.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBoxClientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.groupBoxVendas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carroVendaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // combustivelLabel
@@ -358,10 +358,6 @@
             this.listBoxClientes.TabIndex = 5;
             this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
-            // 
             // labelMoradaCliente
             // 
             this.labelMoradaCliente.AutoSize = true;
@@ -533,6 +529,10 @@
             // 
             this.vendaBindingSource.DataSource = typeof(StandAutomoveis.Venda);
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
+            // 
             // FormVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -557,12 +557,12 @@
             this.panelLeftCarro.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.groupBoxClientes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.groupBoxVendas.ResumeLayout(false);
             this.groupBoxVendas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.carroVendaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

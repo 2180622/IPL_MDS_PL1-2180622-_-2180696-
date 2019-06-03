@@ -17,12 +17,11 @@ namespace StandAutomoveis
 
         public Venda()
         {
-
         }
 
         public override string ToString()
         {
-            return Valor + "€ " + Estado + " Vendido a:" + Data;
+            return Valor + "€  " + Estado + "  Vendido a: " + Data.ToShortDateString();
         }
     }
 }

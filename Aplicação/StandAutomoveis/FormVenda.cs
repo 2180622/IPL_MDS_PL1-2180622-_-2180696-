@@ -71,13 +71,20 @@ namespace StandAutomoveis
 
         private void buttonAddVenda_Click(object sender, EventArgs e)
         {
+            // Criar a venda e adicionar ao cliente e BD
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            CarroVenda novoCarro = new CarroVenda(numeroChassisTextBox.Text, marcaTextBox.Text, modeloTextBox.Text, combustivelComboBox.Text, extrasTextBox.Text);
             Venda novaVenda = new Venda(decimal.Parse(valorTextBox.Text), estadoTextBox.Text, dataDateTimePicker.Value);
             
-            BDStand.Vendas.Add(novaVenda);
+            //Cria o carro e adiciona-o à venda
+            Venda vendaSelecionada = (Venda)listBoxVendas.SelectedItem;
+            CarroVenda carroSelecionado = (CarroVenda)listBoxCarros.SelectedItem;
+            CarroVenda novoCarro = new CarroVenda(numeroChassisTextBox.Text, marcaTextBox.Text, modeloTextBox.Text, combustivelComboBox.Text, extrasTextBox.Text);
 
-            
+            novaVenda.CarroVenda = novoCarro;
+
+            clienteSelecionado.Vendas.Add(novaVenda);
+
+            BDStand.SaveChanges();
         }
 
         private void buttonCliente_Click(object sender, EventArgs e)

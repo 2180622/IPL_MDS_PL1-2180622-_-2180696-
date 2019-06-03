@@ -19,7 +19,6 @@ namespace StandAutomoveis
 
         public CarroVenda()
         {
-
         }
 
         public override string ToString()
