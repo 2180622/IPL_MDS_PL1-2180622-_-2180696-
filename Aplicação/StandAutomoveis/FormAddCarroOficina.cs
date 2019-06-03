@@ -35,7 +35,7 @@ namespace StandAutomoveis
             (from cliente in BDStand.Clientes
              orderby cliente.Nome
              select cliente).Load();
-
+            
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
         }
 
@@ -43,12 +43,13 @@ namespace StandAutomoveis
         {
             CarroOficina novoCarroOficina = new CarroOficina(marcaTextBox.Text, modeloTextBox.Text, matriculaTextBox.Text, numeroChassisTextBox.Text, kmsTextBox.Text, combustivelComboBox.Text);
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            FormOficina formOficina = new FormOficina();
             
             clienteSelecionado.CarrosOficina.Add(novoCarroOficina);
 
             BDStand.SaveChanges();
-            
+
+            FormOficina formOficina = new FormOficina();
+
             this.Hide();
             formOficina.Show();
         }

@@ -30,7 +30,12 @@ namespace StandAutomoveis
              orderby cliente.Nome
              select cliente).Load();
 
+            (from carro in BDStand.Carros
+             orderby carro.IdCarro
+             select carro).Load();
+
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+            
         }
         
         private void buttonExitForm_Click_1(object sender, EventArgs e)
@@ -76,7 +81,7 @@ namespace StandAutomoveis
             if (clienteSelecionado != null)
             {
                 listBoxCarros.DataSource = null;
-                listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
+                listBoxCarros.DataSource = BDStand.Carros.ToList();
             }
 
         }
@@ -109,7 +114,7 @@ namespace StandAutomoveis
 
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico novoServico = new Servico(tipoTextBox.Text, dataEntradaDateTimePicker.Value, dataSaidaDateTimePicker.Value);
-            //int indexCarro = listBoxCarros.SelectedIndex;
+           // int indexCarro = listBoxCarros.SelectedIndex;
             
             carroSelecionado.Servicos.Add(novoServico);
             BDStand.SaveChanges();
@@ -117,7 +122,7 @@ namespace StandAutomoveis
             listBoxServicos.DataSource = null;
             listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
 
-            //listBoxCarros.SelectedIndex = indexCarro;
+           // listBoxCarros.SelectedIndex = indexCarro;
         }
 
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
@@ -281,7 +286,7 @@ namespace StandAutomoveis
        
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
-
+            MoverForm = false;
         }
     }
 }

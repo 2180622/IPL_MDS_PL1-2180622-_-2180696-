@@ -39,8 +39,6 @@ namespace StandAutomoveis
              select venda).Load();
             
             listBoxClientes.DataSource = BDStand.Clientes.Local.ToBindingList().ToList();
-
-            listBoxCarros.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroVenda>().ToList();
         }
 
         private void buttonExitForm_Click(object sender, EventArgs e)

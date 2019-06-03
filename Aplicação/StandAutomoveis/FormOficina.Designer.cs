@@ -247,7 +247,7 @@
             // 
             // buttonDelCarro
             // 
-            this.buttonDelCarro.Location = new System.Drawing.Point(111, 288);
+            this.buttonDelCarro.Location = new System.Drawing.Point(111, 292);
             this.buttonDelCarro.Name = "buttonDelCarro";
             this.buttonDelCarro.Size = new System.Drawing.Size(95, 25);
             this.buttonDelCarro.TabIndex = 2;
@@ -257,7 +257,7 @@
             // 
             // buttonAddCarro
             // 
-            this.buttonAddCarro.Location = new System.Drawing.Point(4, 288);
+            this.buttonAddCarro.Location = new System.Drawing.Point(5, 292);
             this.buttonAddCarro.Name = "buttonAddCarro";
             this.buttonAddCarro.Size = new System.Drawing.Size(95, 25);
             this.buttonAddCarro.TabIndex = 1;
