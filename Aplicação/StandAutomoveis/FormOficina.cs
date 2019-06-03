@@ -143,13 +143,12 @@ namespace StandAutomoveis
             int indexServico = listBoxServicos.SelectedIndex;
 
             Parcela novaParcela = new Parcela(Decimal.Parse(valorTextBox.Text), descricaoTextBox.Text);
-
+            
             if(servicoSelecionado.Parcelas != null)
             {
                 // Adiciona a nova parcela às parcelas na
                 servicoSelecionado.Parcelas.Add(novaParcela);
             }
-            
             // Guarda as alterações
             BDStand.SaveChanges();
             
@@ -216,6 +215,17 @@ namespace StandAutomoveis
             {
                 MessageBox.Show("Não é possível remover serviços com parcelas atribuidas");
             }
+        }
+
+        private void buttonRemoveParcela_Click(object sender, EventArgs e)
+        {
+            if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1 || listBoxServicos.SelectedIndex == -1 || listBoxParcelas.SelectedIndex == -1)
+            {
+                return;
+            }
+
+
+
         }
 
         private void buttonCliente_Click(object sender, EventArgs e)

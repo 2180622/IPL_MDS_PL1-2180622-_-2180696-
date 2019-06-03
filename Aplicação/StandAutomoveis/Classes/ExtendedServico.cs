@@ -10,6 +10,7 @@ namespace StandAutomoveis
     {
         public Servico(string tipo, DateTime dataEntrada, DateTime dataSaida)
         {
+            this.Parcelas = new HashSet<Parcela>();
             this.Tipo = tipo;
             this.DataEntrada = dataEntrada;
             this.DataSaida = dataSaida;

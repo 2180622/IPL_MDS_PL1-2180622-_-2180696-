@@ -38,14 +38,14 @@ namespace StandAutomoveis
 
         private void buttonAddCarroOficina_Click(object sender, EventArgs e)
         {
-            CarroOficina novoCarroOficina = new CarroOficina(marcaTextBox.Text, modeloTextBox.Text, matriculaTextBox.Text, numeroChassisTextBox.Text, kmsTextBox.Text, combustivelTextBox.Text);
+            CarroOficina novoCarroOficina = new CarroOficina(marcaTextBox.Text, modeloTextBox.Text, matriculaTextBox.Text, numeroChassisTextBox.Text, kmsTextBox.Text, combustivelComboBox.Text);
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             FormOficina formOficina = new FormOficina();
-
+            
             clienteSelecionado.CarrosOficina.Add(novoCarroOficina);
 
             BDStand.SaveChanges();
-
+            
             this.Hide();
             formOficina.Show();
         }

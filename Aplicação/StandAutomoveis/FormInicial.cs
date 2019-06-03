@@ -12,10 +12,19 @@ namespace StandAutomoveis
 {
     public partial class FormInicial : Form
     {
+        public BDStandContainer BDStand;
+
         public FormInicial()
         {
             InitializeComponent();
             CenterToScreen();
+
+            BDStand = new BDStandContainer();
+
+            clientesCountToolStripStatusLabel.Text =  BDStand.Clientes.Count().ToString();
+            carrosCountToolStripStatusLabel.Text = BDStand.Carros.Count().ToString();
+            alugueresCountToolStripStatusLabel.Text = BDStand.Algueres.Count().ToString();
+            vendasCountToolStripStatusLabel.Text = BDStand.Vendas.Count().ToString();
         }
 
         public void buttonGestaoClientes_Click(object sender, EventArgs e)
@@ -58,6 +67,11 @@ namespace StandAutomoveis
         private void buttonExitForm_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void timerHorasAtuais_Tick(object sender, EventArgs e)
+        {
+            toolStripStatusLabelHoras.Text = DateTime.Now.ToString();
         }
     }
 }
