@@ -13,7 +13,11 @@ namespace StandAutomoveis
 {
     public partial class FormOficina : Form
     {
-        public BDStandContainer BDStand; 
+        public BDStandContainer BDStand;
+
+        bool MoverForm;
+        int eixoX;
+        int eixoY;
 
         public FormOficina()
         {
@@ -224,7 +228,15 @@ namespace StandAutomoveis
                 return;
             }
 
+            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
+            servicoSelecionado.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
+            BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
+
+            BDStand.SaveChanges();
+
+            listBoxParcelas.DataSource = null;
+            listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
 
         }
 
@@ -251,7 +263,25 @@ namespace StandAutomoveis
             this.Dispose();
             formvenda.ShowDialog();
         }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoverForm = true;
+            eixoX = e.X;
+            eixoY = e.Y;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MoverForm == true)
+            {
+                SetDesktopLocation(MousePosition.X - eixoX, MousePosition.Y - eixoY);
+            }
+        }
+       
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
     }
-
-
 }

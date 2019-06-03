@@ -114,6 +114,17 @@
             numeroChassisLabel.TabIndex = 49;
             numeroChassisLabel.Text = "Numero Chassis:";
             // 
+            // combustivelLabel1
+            // 
+            combustivelLabel1.AutoSize = true;
+            combustivelLabel1.BackColor = System.Drawing.Color.Transparent;
+            combustivelLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            combustivelLabel1.Location = new System.Drawing.Point(323, 138);
+            combustivelLabel1.Name = "combustivelLabel1";
+            combustivelLabel1.Size = new System.Drawing.Size(67, 13);
+            combustivelLabel1.TabIndex = 54;
+            combustivelLabel1.Text = "Combustivel:";
+            // 
             // buttonAddCarroOficina
             // 
             this.buttonAddCarroOficina.Location = new System.Drawing.Point(326, 400);
@@ -215,6 +226,9 @@
             this.panelCarroTop.Name = "panelCarroTop";
             this.panelCarroTop.Size = new System.Drawing.Size(651, 65);
             this.panelCarroTop.TabIndex = 54;
+            this.panelCarroTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCarroTop_MouseDown);
+            this.panelCarroTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCarroTop_MouseMove);
+            this.panelCarroTop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelCarroTop_MouseUp);
             // 
             // buttonExitForm
             // 
@@ -244,17 +258,6 @@
             // carroBindingSource
             // 
             this.carroBindingSource.DataSource = typeof(StandAutomoveis.Carro);
-            // 
-            // combustivelLabel1
-            // 
-            combustivelLabel1.AutoSize = true;
-            combustivelLabel1.BackColor = System.Drawing.Color.Transparent;
-            combustivelLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            combustivelLabel1.Location = new System.Drawing.Point(323, 138);
-            combustivelLabel1.Name = "combustivelLabel1";
-            combustivelLabel1.Size = new System.Drawing.Size(67, 13);
-            combustivelLabel1.TabIndex = 54;
-            combustivelLabel1.Text = "Combustivel:";
             // 
             // combustivelComboBox
             // 

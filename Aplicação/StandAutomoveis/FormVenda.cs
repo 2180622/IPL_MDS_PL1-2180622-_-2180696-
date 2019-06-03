@@ -15,6 +15,10 @@ namespace StandAutomoveis
     {
         public BDStandContainer BDStand;
 
+        bool MoverForm;
+        int eixoX;
+        int eixoY;
+
         public FormVenda()
         {
             InitializeComponent();
@@ -26,14 +30,24 @@ namespace StandAutomoveis
              orderby cliente.Nome
              select cliente).Load();
 
-            clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+            (from carro in BDStand.Carros
+             orderby carro.IdCarro
+             select carro).Load();
+
+            (from venda in BDStand.Vendas
+             orderby venda.IdVenda
+             select venda).Load();
+            
+            listBoxClientes.DataSource = BDStand.Clientes.Local.ToBindingList().ToList();
+
+            listBoxCarros.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroVenda>().ToList();
         }
 
         private void buttonExitForm_Click(object sender, EventArgs e)
         {
             FormInicial forminicial = new FormInicial();
 
-            this.Close();
+            this.Dispose();
 
             forminicial.ShowDialog();
         }
@@ -58,8 +72,8 @@ namespace StandAutomoveis
         private void buttonAddVenda_Click(object sender, EventArgs e)
         {
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            CarroVenda novoCarro = new CarroVenda(numeroChassisTextBox.Text, marcaTextBox.Text, modeloTextBox.Text, combustivelComboBox.Text, extrasTextBox.Text);
             Venda novaVenda = new Venda(decimal.Parse(valorTextBox.Text), estadoTextBox.Text, dataDateTimePicker.Value);
-            int indexCliente = listBoxClientes.SelectedIndex;
             
             BDStand.Vendas.Add(novaVenda);
 
@@ -88,6 +102,27 @@ namespace StandAutomoveis
 
             this.Hide();
             formOficina.ShowDialog();
+        }
+
+        // Torna o form draggable
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoverForm = true;
+            eixoX = e.X;
+            eixoY = e.Y;
+        }
+        // "
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MoverForm == true)
+            {
+                SetDesktopLocation(MousePosition.X - eixoX, MousePosition.Y - eixoY);
+            }
+        }
+        // "
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            MoverForm = false;
         }
     }
 }

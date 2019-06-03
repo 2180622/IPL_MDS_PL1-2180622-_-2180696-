@@ -13,6 +13,10 @@ namespace StandAutomoveis
     public partial class FormInicial : Form
     {
         public BDStandContainer BDStand;
+        
+        bool MoverForm;
+        int eixoX;
+        int eixoY;
 
         public FormInicial()
         {
@@ -72,6 +76,27 @@ namespace StandAutomoveis
         private void timerHorasAtuais_Tick(object sender, EventArgs e)
         {
             toolStripStatusLabelHoras.Text = DateTime.Now.ToString();
+        }
+
+        // Torna o form draggable
+        private void panelCarroTop_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoverForm = true;
+            eixoX = e.X;
+            eixoY = e.Y;
+        }
+        // "
+        private void panelCarroTop_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MoverForm == true)
+            {
+                SetDesktopLocation(MousePosition.X - eixoX, MousePosition.Y - eixoY);
+            }
+        }
+        // "
+        private void panelCarroTop_MouseUp(object sender, MouseEventArgs e)
+        {
+            MoverForm = false;
         }
     }
 }

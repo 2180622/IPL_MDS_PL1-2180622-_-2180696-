@@ -126,6 +126,9 @@
             this.panelCarroTop.Name = "panelCarroTop";
             this.panelCarroTop.Size = new System.Drawing.Size(990, 65);
             this.panelCarroTop.TabIndex = 5;
+            this.panelCarroTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCarroTop_MouseDown);
+            this.panelCarroTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCarroTop_MouseMove);
+            this.panelCarroTop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelCarroTop_MouseUp);
             // 
             // panel2
             // 

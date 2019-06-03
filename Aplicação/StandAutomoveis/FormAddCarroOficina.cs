@@ -21,6 +21,9 @@ namespace StandAutomoveis
         public string numeroChassis;
         public string kms;
         public string combustivel;
+        bool MoverForm;
+        int eixoX;
+        int eixoY;
 
         public FormAddCarroOficina()
         {
@@ -65,6 +68,26 @@ namespace StandAutomoveis
             FormOficina formoficina = new FormOficina();
             this.Hide();
             formoficina.Show();
+        }
+
+        private void panelCarroTop_MouseDown(object sender, MouseEventArgs e)
+        {
+            MoverForm = true;
+            eixoX = e.X;
+            eixoY = e.Y;
+        }
+
+        private void panelCarroTop_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (MoverForm == true)
+            {
+                SetDesktopLocation(MousePosition.X - eixoX, MousePosition.Y - eixoY);
+            }
+        }
+
+        private void panelCarroTop_MouseUp(object sender, MouseEventArgs e)
+        {
+            MoverForm = false;
         }
     }
 }

@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label dataLabel;
-            System.Windows.Forms.Label estadoLabel;
-            System.Windows.Forms.Label valorLabel;
             System.Windows.Forms.Label combustivelLabel;
             System.Windows.Forms.Label extrasLabel;
             System.Windows.Forms.Label marcaLabel;
             System.Windows.Forms.Label modeloLabel;
             System.Windows.Forms.Label numeroChassisLabel;
+            System.Windows.Forms.Label dataLabel;
+            System.Windows.Forms.Label estadoLabel;
+            System.Windows.Forms.Label valorLabel;
             this.panelCarroTop = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,118 +51,118 @@
             this.buttonOficina = new System.Windows.Forms.Button();
             this.buttonCliente = new System.Windows.Forms.Button();
             this.buttonAluguerCliente = new System.Windows.Forms.Button();
-            this.carroVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxClientes = new System.Windows.Forms.GroupBox();
             this.listBoxClientes = new System.Windows.Forms.ListBox();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelMoradaCliente = new System.Windows.Forms.Label();
             this.labelNIFCliente = new System.Windows.Forms.Label();
             this.labelClienteSelecionado = new System.Windows.Forms.Label();
             this.groupBoxVendas = new System.Windows.Forms.GroupBox();
-            this.listBoxCarros = new System.Windows.Forms.ListBox();
-            this.combustivelTextBox = new System.Windows.Forms.TextBox();
-            this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.carroVendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.estadoTextBox = new System.Windows.Forms.TextBox();
+            this.valorTextBox = new System.Windows.Forms.TextBox();
+            this.combustivelComboBox = new System.Windows.Forms.ComboBox();
             this.extrasTextBox = new System.Windows.Forms.TextBox();
             this.marcaTextBox = new System.Windows.Forms.TextBox();
             this.modeloTextBox = new System.Windows.Forms.TextBox();
             this.numeroChassisTextBox = new System.Windows.Forms.TextBox();
-            this.dataDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.estadoTextBox = new System.Windows.Forms.TextBox();
-            this.valorTextBox = new System.Windows.Forms.TextBox();
+            this.listBoxCarros = new System.Windows.Forms.ListBox();
+            this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonAddVenda = new System.Windows.Forms.Button();
             this.listBoxVendas = new System.Windows.Forms.ListBox();
-            dataLabel = new System.Windows.Forms.Label();
-            estadoLabel = new System.Windows.Forms.Label();
-            valorLabel = new System.Windows.Forms.Label();
+            this.vendaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             combustivelLabel = new System.Windows.Forms.Label();
             extrasLabel = new System.Windows.Forms.Label();
             marcaLabel = new System.Windows.Forms.Label();
             modeloLabel = new System.Windows.Forms.Label();
             numeroChassisLabel = new System.Windows.Forms.Label();
+            dataLabel = new System.Windows.Forms.Label();
+            estadoLabel = new System.Windows.Forms.Label();
+            valorLabel = new System.Windows.Forms.Label();
             this.panelCarroTop.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelLeftCarro.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carroVendaBindingSource)).BeginInit();
             this.groupBoxClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
             this.groupBoxVendas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carroVendaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataLabel
-            // 
-            dataLabel.AutoSize = true;
-            dataLabel.Location = new System.Drawing.Point(200, 50);
-            dataLabel.Name = "dataLabel";
-            dataLabel.Size = new System.Drawing.Size(33, 13);
-            dataLabel.TabIndex = 13;
-            dataLabel.Text = "Data:";
-            // 
-            // estadoLabel
-            // 
-            estadoLabel.AutoSize = true;
-            estadoLabel.Location = new System.Drawing.Point(200, 73);
-            estadoLabel.Name = "estadoLabel";
-            estadoLabel.Size = new System.Drawing.Size(43, 13);
-            estadoLabel.TabIndex = 15;
-            estadoLabel.Text = "Estado:";
-            // 
-            // valorLabel
-            // 
-            valorLabel.AutoSize = true;
-            valorLabel.Location = new System.Drawing.Point(200, 99);
-            valorLabel.Name = "valorLabel";
-            valorLabel.Size = new System.Drawing.Size(34, 13);
-            valorLabel.TabIndex = 19;
-            valorLabel.Text = "Valor:";
             // 
             // combustivelLabel
             // 
             combustivelLabel.AutoSize = true;
-            combustivelLabel.Location = new System.Drawing.Point(200, 203);
+            combustivelLabel.Location = new System.Drawing.Point(205, 22);
             combustivelLabel.Name = "combustivelLabel";
             combustivelLabel.Size = new System.Drawing.Size(67, 13);
-            combustivelLabel.TabIndex = 20;
+            combustivelLabel.TabIndex = 32;
             combustivelLabel.Text = "Combustivel:";
             // 
             // extrasLabel
             // 
             extrasLabel.AutoSize = true;
-            extrasLabel.Location = new System.Drawing.Point(200, 229);
+            extrasLabel.Location = new System.Drawing.Point(205, 49);
             extrasLabel.Name = "extrasLabel";
             extrasLabel.Size = new System.Drawing.Size(39, 13);
-            extrasLabel.TabIndex = 22;
+            extrasLabel.TabIndex = 34;
             extrasLabel.Text = "Extras:";
             // 
             // marcaLabel
             // 
             marcaLabel.AutoSize = true;
-            marcaLabel.Location = new System.Drawing.Point(200, 177);
+            marcaLabel.Location = new System.Drawing.Point(205, 75);
             marcaLabel.Name = "marcaLabel";
             marcaLabel.Size = new System.Drawing.Size(40, 13);
-            marcaLabel.TabIndex = 26;
+            marcaLabel.TabIndex = 38;
             marcaLabel.Text = "Marca:";
             // 
             // modeloLabel
             // 
             modeloLabel.AutoSize = true;
-            modeloLabel.Location = new System.Drawing.Point(200, 151);
+            modeloLabel.Location = new System.Drawing.Point(205, 101);
             modeloLabel.Name = "modeloLabel";
             modeloLabel.Size = new System.Drawing.Size(45, 13);
-            modeloLabel.TabIndex = 28;
+            modeloLabel.TabIndex = 40;
             modeloLabel.Text = "Modelo:";
             // 
             // numeroChassisLabel
             // 
             numeroChassisLabel.AutoSize = true;
-            numeroChassisLabel.Location = new System.Drawing.Point(200, 125);
+            numeroChassisLabel.Location = new System.Drawing.Point(205, 127);
             numeroChassisLabel.Name = "numeroChassisLabel";
             numeroChassisLabel.Size = new System.Drawing.Size(86, 13);
-            numeroChassisLabel.TabIndex = 30;
+            numeroChassisLabel.TabIndex = 42;
             numeroChassisLabel.Text = "Numero Chassis:";
+            // 
+            // dataLabel
+            // 
+            dataLabel.AutoSize = true;
+            dataLabel.Location = new System.Drawing.Point(206, 156);
+            dataLabel.Name = "dataLabel";
+            dataLabel.Size = new System.Drawing.Size(33, 13);
+            dataLabel.TabIndex = 45;
+            dataLabel.Text = "Data:";
+            // 
+            // estadoLabel
+            // 
+            estadoLabel.AutoSize = true;
+            estadoLabel.Location = new System.Drawing.Point(205, 179);
+            estadoLabel.Name = "estadoLabel";
+            estadoLabel.Size = new System.Drawing.Size(43, 13);
+            estadoLabel.TabIndex = 47;
+            estadoLabel.Text = "Estado:";
+            // 
+            // valorLabel
+            // 
+            valorLabel.AutoSize = true;
+            valorLabel.Location = new System.Drawing.Point(205, 205);
+            valorLabel.Name = "valorLabel";
+            valorLabel.Size = new System.Drawing.Size(34, 13);
+            valorLabel.TabIndex = 51;
+            valorLabel.Text = "Valor:";
             // 
             // panelCarroTop
             // 
@@ -190,6 +190,9 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(990, 65);
             this.panel1.TabIndex = 12;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // label1
             // 
@@ -210,7 +213,7 @@
             this.panel5.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_price_tag_64;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(61, 66);
             this.panel5.TabIndex = 14;
@@ -221,7 +224,7 @@
             this.panel2.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_traffic_jam_64;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Location = new System.Drawing.Point(746, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(61, 66);
             this.panel2.TabIndex = 13;
@@ -232,7 +235,7 @@
             this.panel3.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_fiat_500_64;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Location = new System.Drawing.Point(185, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(61, 66);
             this.panel3.TabIndex = 12;
@@ -334,10 +337,6 @@
             this.buttonAluguerCliente.UseVisualStyleBackColor = false;
             this.buttonAluguerCliente.Click += new System.EventHandler(this.buttonAluguerCliente_Click);
             // 
-            // carroVendaBindingSource
-            // 
-            this.carroVendaBindingSource.DataSource = typeof(StandAutomoveis.CarroVenda);
-            // 
             // groupBoxClientes
             // 
             this.groupBoxClientes.BackColor = System.Drawing.Color.Transparent;
@@ -362,10 +361,6 @@
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataSource = typeof(StandAutomoveis.Cliente);
-            // 
-            // carroBindingSource
-            // 
-            this.carroBindingSource.DataSource = typeof(StandAutomoveis.Carro);
             // 
             // labelMoradaCliente
             // 
@@ -403,9 +398,14 @@
             // groupBoxVendas
             // 
             this.groupBoxVendas.BackColor = System.Drawing.Color.Transparent;
-            this.groupBoxVendas.Controls.Add(this.listBoxCarros);
+            this.groupBoxVendas.Controls.Add(dataLabel);
+            this.groupBoxVendas.Controls.Add(this.dataDateTimePicker);
+            this.groupBoxVendas.Controls.Add(estadoLabel);
+            this.groupBoxVendas.Controls.Add(this.estadoTextBox);
+            this.groupBoxVendas.Controls.Add(valorLabel);
+            this.groupBoxVendas.Controls.Add(this.valorTextBox);
             this.groupBoxVendas.Controls.Add(combustivelLabel);
-            this.groupBoxVendas.Controls.Add(this.combustivelTextBox);
+            this.groupBoxVendas.Controls.Add(this.combustivelComboBox);
             this.groupBoxVendas.Controls.Add(extrasLabel);
             this.groupBoxVendas.Controls.Add(this.extrasTextBox);
             this.groupBoxVendas.Controls.Add(marcaLabel);
@@ -414,20 +414,88 @@
             this.groupBoxVendas.Controls.Add(this.modeloTextBox);
             this.groupBoxVendas.Controls.Add(numeroChassisLabel);
             this.groupBoxVendas.Controls.Add(this.numeroChassisTextBox);
-            this.groupBoxVendas.Controls.Add(dataLabel);
-            this.groupBoxVendas.Controls.Add(this.dataDateTimePicker);
-            this.groupBoxVendas.Controls.Add(estadoLabel);
-            this.groupBoxVendas.Controls.Add(this.estadoTextBox);
-            this.groupBoxVendas.Controls.Add(valorLabel);
-            this.groupBoxVendas.Controls.Add(this.valorTextBox);
+            this.groupBoxVendas.Controls.Add(this.listBoxCarros);
             this.groupBoxVendas.Controls.Add(this.buttonAddVenda);
             this.groupBoxVendas.Controls.Add(this.listBoxVendas);
             this.groupBoxVendas.Location = new System.Drawing.Point(311, 134);
             this.groupBoxVendas.Name = "groupBoxVendas";
-            this.groupBoxVendas.Size = new System.Drawing.Size(667, 328);
+            this.groupBoxVendas.Size = new System.Drawing.Size(681, 328);
             this.groupBoxVendas.TabIndex = 18;
             this.groupBoxVendas.TabStop = false;
             this.groupBoxVendas.Text = "Criar Venda";
+            // 
+            // dataDateTimePicker
+            // 
+            this.dataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.carroVendaBindingSource, "Venda.Data", true));
+            this.dataDateTimePicker.Location = new System.Drawing.Point(297, 150);
+            this.dataDateTimePicker.Name = "dataDateTimePicker";
+            this.dataDateTimePicker.Size = new System.Drawing.Size(149, 20);
+            this.dataDateTimePicker.TabIndex = 46;
+            // 
+            // carroVendaBindingSource
+            // 
+            this.carroVendaBindingSource.DataSource = typeof(StandAutomoveis.CarroVenda);
+            // 
+            // estadoTextBox
+            // 
+            this.estadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroVendaBindingSource, "Venda.Estado", true));
+            this.estadoTextBox.Location = new System.Drawing.Point(297, 176);
+            this.estadoTextBox.Name = "estadoTextBox";
+            this.estadoTextBox.Size = new System.Drawing.Size(149, 20);
+            this.estadoTextBox.TabIndex = 48;
+            // 
+            // valorTextBox
+            // 
+            this.valorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroVendaBindingSource, "Venda.Valor", true));
+            this.valorTextBox.Location = new System.Drawing.Point(297, 202);
+            this.valorTextBox.Name = "valorTextBox";
+            this.valorTextBox.Size = new System.Drawing.Size(149, 20);
+            this.valorTextBox.TabIndex = 52;
+            // 
+            // combustivelComboBox
+            // 
+            this.combustivelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroVendaBindingSource, "Combustivel", true));
+            this.combustivelComboBox.FormattingEnabled = true;
+            this.combustivelComboBox.Items.AddRange(new object[] {
+            "Gasoleo",
+            "Gasolina",
+            "GPL"});
+            this.combustivelComboBox.Location = new System.Drawing.Point(297, 19);
+            this.combustivelComboBox.Name = "combustivelComboBox";
+            this.combustivelComboBox.Size = new System.Drawing.Size(149, 21);
+            this.combustivelComboBox.TabIndex = 33;
+            // 
+            // extrasTextBox
+            // 
+            this.extrasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroVendaBindingSource, "Extras", true));
+            this.extrasTextBox.Location = new System.Drawing.Point(297, 46);
+            this.extrasTextBox.Name = "extrasTextBox";
+            this.extrasTextBox.Size = new System.Drawing.Size(149, 20);
+            this.extrasTextBox.TabIndex = 35;
+            // 
+            // marcaTextBox
+            // 
+            this.marcaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroVendaBindingSource, "Marca", true));
+            this.marcaTextBox.Location = new System.Drawing.Point(297, 72);
+            this.marcaTextBox.Name = "marcaTextBox";
+            this.marcaTextBox.Size = new System.Drawing.Size(149, 20);
+            this.marcaTextBox.TabIndex = 39;
+            // 
+            // modeloTextBox
+            // 
+            this.modeloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroVendaBindingSource, "Modelo", true));
+            this.modeloTextBox.Location = new System.Drawing.Point(297, 98);
+            this.modeloTextBox.Name = "modeloTextBox";
+            this.modeloTextBox.Size = new System.Drawing.Size(149, 20);
+            this.modeloTextBox.TabIndex = 41;
+            // 
+            // numeroChassisTextBox
+            // 
+            this.numeroChassisTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroVendaBindingSource, "NumeroChassis", true));
+            this.numeroChassisTextBox.Location = new System.Drawing.Point(297, 124);
+            this.numeroChassisTextBox.Name = "numeroChassisTextBox";
+            this.numeroChassisTextBox.Size = new System.Drawing.Size(149, 20);
+            this.numeroChassisTextBox.TabIndex = 43;
             // 
             // listBoxCarros
             // 
@@ -438,73 +506,9 @@
             this.listBoxCarros.Size = new System.Drawing.Size(209, 303);
             this.listBoxCarros.TabIndex = 32;
             // 
-            // combustivelTextBox
+            // carroBindingSource
             // 
-            this.combustivelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendaBindingSource, "CarroVenda.Combustivel", true));
-            this.combustivelTextBox.Location = new System.Drawing.Point(290, 200);
-            this.combustivelTextBox.Name = "combustivelTextBox";
-            this.combustivelTextBox.Size = new System.Drawing.Size(156, 20);
-            this.combustivelTextBox.TabIndex = 21;
-            // 
-            // vendaBindingSource
-            // 
-            this.vendaBindingSource.DataSource = typeof(StandAutomoveis.Venda);
-            // 
-            // extrasTextBox
-            // 
-            this.extrasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendaBindingSource, "CarroVenda.Extras", true));
-            this.extrasTextBox.Location = new System.Drawing.Point(290, 226);
-            this.extrasTextBox.Name = "extrasTextBox";
-            this.extrasTextBox.Size = new System.Drawing.Size(156, 20);
-            this.extrasTextBox.TabIndex = 23;
-            // 
-            // marcaTextBox
-            // 
-            this.marcaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendaBindingSource, "CarroVenda.Marca", true));
-            this.marcaTextBox.Location = new System.Drawing.Point(290, 174);
-            this.marcaTextBox.Name = "marcaTextBox";
-            this.marcaTextBox.Size = new System.Drawing.Size(156, 20);
-            this.marcaTextBox.TabIndex = 27;
-            // 
-            // modeloTextBox
-            // 
-            this.modeloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendaBindingSource, "CarroVenda.Modelo", true));
-            this.modeloTextBox.Location = new System.Drawing.Point(290, 148);
-            this.modeloTextBox.Name = "modeloTextBox";
-            this.modeloTextBox.Size = new System.Drawing.Size(156, 20);
-            this.modeloTextBox.TabIndex = 29;
-            // 
-            // numeroChassisTextBox
-            // 
-            this.numeroChassisTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendaBindingSource, "CarroVenda.NumeroChassis", true));
-            this.numeroChassisTextBox.Location = new System.Drawing.Point(290, 122);
-            this.numeroChassisTextBox.Name = "numeroChassisTextBox";
-            this.numeroChassisTextBox.Size = new System.Drawing.Size(156, 20);
-            this.numeroChassisTextBox.TabIndex = 31;
-            // 
-            // dataDateTimePicker
-            // 
-            this.dataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.vendaBindingSource, "Data", true));
-            this.dataDateTimePicker.Location = new System.Drawing.Point(290, 43);
-            this.dataDateTimePicker.Name = "dataDateTimePicker";
-            this.dataDateTimePicker.Size = new System.Drawing.Size(156, 20);
-            this.dataDateTimePicker.TabIndex = 14;
-            // 
-            // estadoTextBox
-            // 
-            this.estadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendaBindingSource, "Estado", true));
-            this.estadoTextBox.Location = new System.Drawing.Point(290, 70);
-            this.estadoTextBox.Name = "estadoTextBox";
-            this.estadoTextBox.Size = new System.Drawing.Size(156, 20);
-            this.estadoTextBox.TabIndex = 16;
-            // 
-            // valorTextBox
-            // 
-            this.valorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendaBindingSource, "Valor", true));
-            this.valorTextBox.Location = new System.Drawing.Point(290, 96);
-            this.valorTextBox.Name = "valorTextBox";
-            this.valorTextBox.Size = new System.Drawing.Size(156, 20);
-            this.valorTextBox.TabIndex = 20;
+            this.carroBindingSource.DataSource = typeof(StandAutomoveis.Carro);
             // 
             // buttonAddVenda
             // 
@@ -524,6 +528,10 @@
             this.listBoxVendas.Name = "listBoxVendas";
             this.listBoxVendas.Size = new System.Drawing.Size(192, 303);
             this.listBoxVendas.TabIndex = 1;
+            // 
+            // vendaBindingSource
+            // 
+            this.vendaBindingSource.DataSource = typeof(StandAutomoveis.Venda);
             // 
             // FormVenda
             // 
@@ -548,12 +556,12 @@
             this.panel1.PerformLayout();
             this.panelLeftCarro.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.carroVendaBindingSource)).EndInit();
             this.groupBoxClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
             this.groupBoxVendas.ResumeLayout(false);
             this.groupBoxVendas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carroVendaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -565,26 +573,14 @@
         private System.Windows.Forms.Panel panelCarroTop;
         private System.Windows.Forms.Button buttonExitForm;
         private System.Windows.Forms.Panel panelLeftCarro;
-        private System.Windows.Forms.BindingSource carroVendaBindingSource;
         private System.Windows.Forms.GroupBox groupBoxClientes;
         private System.Windows.Forms.ListBox listBoxClientes;
-        private System.Windows.Forms.BindingSource clienteBindingSource;
-        private System.Windows.Forms.BindingSource carroBindingSource;
         private System.Windows.Forms.Label labelMoradaCliente;
         private System.Windows.Forms.Label labelNIFCliente;
         private System.Windows.Forms.Label labelClienteSelecionado;
         private System.Windows.Forms.GroupBox groupBoxVendas;
         private System.Windows.Forms.ListBox listBoxVendas;
-        private System.Windows.Forms.BindingSource vendaBindingSource;
         private System.Windows.Forms.Button buttonAddVenda;
-        private System.Windows.Forms.TextBox combustivelTextBox;
-        private System.Windows.Forms.TextBox extrasTextBox;
-        private System.Windows.Forms.TextBox marcaTextBox;
-        private System.Windows.Forms.TextBox modeloTextBox;
-        private System.Windows.Forms.TextBox numeroChassisTextBox;
-        private System.Windows.Forms.DateTimePicker dataDateTimePicker;
-        private System.Windows.Forms.TextBox estadoTextBox;
-        private System.Windows.Forms.TextBox valorTextBox;
         private System.Windows.Forms.ListBox listBoxCarros;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -597,5 +593,17 @@
         private System.Windows.Forms.Button buttonOficina;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dataDateTimePicker;
+        private System.Windows.Forms.BindingSource carroVendaBindingSource;
+        private System.Windows.Forms.TextBox estadoTextBox;
+        private System.Windows.Forms.TextBox valorTextBox;
+        private System.Windows.Forms.ComboBox combustivelComboBox;
+        private System.Windows.Forms.TextBox extrasTextBox;
+        private System.Windows.Forms.TextBox marcaTextBox;
+        private System.Windows.Forms.TextBox modeloTextBox;
+        private System.Windows.Forms.TextBox numeroChassisTextBox;
+        private System.Windows.Forms.BindingSource carroBindingSource;
+        private System.Windows.Forms.BindingSource vendaBindingSource;
+        private System.Windows.Forms.BindingSource clienteBindingSource;
     }
 }
