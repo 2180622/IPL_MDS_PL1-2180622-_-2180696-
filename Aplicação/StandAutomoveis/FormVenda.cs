@@ -39,6 +39,8 @@ namespace StandAutomoveis
              select venda).Load();
             
             listBoxClientes.DataSource = BDStand.Clientes.Local.ToBindingList().ToList();
+            listBoxVendas.DataSource = BDStand.Vendas.Local.ToList();
+            listBoxCarros.DataSource = BDStand.Carros.Local.OfType<CarroVenda>().ToList();
         }
 
         private void buttonExitForm_Click(object sender, EventArgs e)
@@ -60,19 +62,21 @@ namespace StandAutomoveis
                 labelClienteSelecionado.Text = clienteSelecionado.Nome;
                 labelNIFCliente.Text = clienteSelecionado.NIF;
                 labelMoradaCliente.Text = clienteSelecionado.Morada;
-                
-                // Adicionar CarroOficina à listbox
+
+
+                listBoxCarros.DataSource = null;
+                // Adicionar Venda à listbox
                 listBoxVendas.DataSource = null;
                 listBoxVendas.DataSource = clienteSelecionado.Vendas.ToList();
             }
         }
 
-        private void buttonAddVenda_Click(object sender, EventArgs e)
+        private void buttonAddVendaCarro_Click(object sender, EventArgs e)
         {
             // Criar a venda e adicionar ao cliente e BD
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             Venda novaVenda = new Venda(decimal.Parse(valorTextBox.Text), estadoTextBox.Text, dataDateTimePicker.Value);
-            
+
             //Cria o carro e adiciona-o à venda
             Venda vendaSelecionada = (Venda)listBoxVendas.SelectedItem;
             CarroVenda carroSelecionado = (CarroVenda)listBoxCarros.SelectedItem;
@@ -83,6 +87,19 @@ namespace StandAutomoveis
             clienteSelecionado.Vendas.Add(novaVenda);
 
             BDStand.SaveChanges();
+
+            listBoxVendas.DataSource = clienteSelecionado.Vendas.ToList();
+        }
+
+        private void listBoxVendas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Venda vendaSelecionada = (Venda)listBoxVendas.SelectedItem;
+            if(vendaSelecionada != null)
+            {
+                listBoxCarros.DataSource = null;
+                listBoxCarros.Items.Clear();
+                listBoxCarros.Items.Add(vendaSelecionada.CarroVenda);
+            }
         }
 
         private void buttonCliente_Click(object sender, EventArgs e)
