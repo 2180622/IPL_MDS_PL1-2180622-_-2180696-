@@ -236,7 +236,7 @@
             this.buttonExitForm.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_delete_48;
             this.buttonExitForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonExitForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExitForm.Location = new System.Drawing.Point(560, -1);
+            this.buttonExitForm.Location = new System.Drawing.Point(587, -1);
             this.buttonExitForm.Name = "buttonExitForm";
             this.buttonExitForm.Size = new System.Drawing.Size(61, 66);
             this.buttonExitForm.TabIndex = 11;

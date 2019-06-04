@@ -40,7 +40,7 @@ namespace StandAutomoveis
 
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
 
-            listBoxCarros.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
+            carroBindingSource.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
         }
 
         private void buttonExitForm_Click(object sender, EventArgs e)

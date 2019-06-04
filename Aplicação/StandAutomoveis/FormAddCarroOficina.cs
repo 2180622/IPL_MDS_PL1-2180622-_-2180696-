@@ -41,6 +41,17 @@ namespace StandAutomoveis
 
         private void buttonAddCarroOficina_Click(object sender, EventArgs e)
         {
+            if (listBoxClientes.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione primeiro um cliente");
+                return;
+            }
+            if(marcaTextBox.TextLength == 0 || modeloTextBox.TextLength == 0 || matriculaTextBox.TextLength == 0 || numeroChassisTextBox.TextLength == 0 || kmsTextBox.TextLength == 0 || combustivelComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("Preencha todos os campos");
+                return;
+            }
+
             CarroOficina novoCarroOficina = new CarroOficina(marcaTextBox.Text, modeloTextBox.Text, matriculaTextBox.Text, numeroChassisTextBox.Text, kmsTextBox.Text, combustivelComboBox.Text);
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             

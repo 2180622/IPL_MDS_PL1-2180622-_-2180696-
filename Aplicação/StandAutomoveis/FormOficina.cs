@@ -70,6 +70,12 @@ namespace StandAutomoveis
 
         private void buttonAddCarro_Click(object sender, EventArgs e)
         {
+            if(listBoxClientes.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione primeiro um cliente");
+                return;
+            }
+
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             // instancia um novo form para adicionar o carro
             FormAddCarroOficina formaddcarro = new FormAddCarroOficina();

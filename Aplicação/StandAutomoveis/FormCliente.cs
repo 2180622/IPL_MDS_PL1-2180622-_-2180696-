@@ -39,11 +39,6 @@ namespace StandAutomoveis
             contactoTextBox.Enabled = false;
         }
 
-        private void buttonFiltrar_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in this.clienteDataGridView.SelectedRows)
@@ -54,6 +49,12 @@ namespace StandAutomoveis
 
         private void toolStripButtonGravar_Click(object sender, EventArgs e)
         {
+            if(nomeTextBox.TextLength == 0 || nIFTextBox.TextLength == 0 || contactoTextBox.TextLength ==0 || moradaTextBox.TextLength == 0)
+            {
+                MessageBox.Show("Não pode deixar campos em branco");
+                return;
+            }
+
             try
             {
                 clienteBindingSource.AddNew();
@@ -64,12 +65,13 @@ namespace StandAutomoveis
                 moradaTextBox.Enabled = true;
                 contactoTextBox.Enabled = true;
 
-                contactoTextBox.Text = "";
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            contactoTextBox.Text = "";
         }
 
         private void toolStripButtonEditar_Click(object sender, EventArgs e)
