@@ -18,8 +18,9 @@ namespace StandAutomoveis
         bool MoverForm;
         int eixoX;
         int eixoY;
+        int indexCliente;
 
-        public FormAluguer()
+        public FormAluguer(int indexCliente)
         {
             InitializeComponent();
             CenterToScreen();
@@ -38,9 +39,12 @@ namespace StandAutomoveis
              orderby aluguer.IdAluguer
              select aluguer).Load();
 
+
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
 
             carroBindingSource.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
+
+            listBoxClientes.SelectedIndex = indexCliente;
         }
 
         private void buttonExitForm_Click(object sender, EventArgs e)
@@ -61,7 +65,9 @@ namespace StandAutomoveis
 
         private void buttonAluguerCliente_Click(object sender, EventArgs e)
         {
-            FormOficina formoficina = new FormOficina();
+            indexCliente = listBoxClientes.SelectedIndex;
+
+            FormOficina formoficina = new FormOficina(indexCliente);
 
             this.Dispose();
             formoficina.ShowDialog();
@@ -69,7 +75,9 @@ namespace StandAutomoveis
 
         private void buttonVendasCliente_Click(object sender, EventArgs e)
         {
-            FormVenda formvenda = new FormVenda();
+            indexCliente = listBoxClientes.SelectedIndex;
+
+            FormVenda formvenda = new FormVenda(indexCliente);
 
             this.Dispose();
             formvenda.ShowDialog();

@@ -24,8 +24,9 @@ namespace StandAutomoveis
         bool MoverForm;
         int eixoX;
         int eixoY;
+        int indexCliente;
 
-        public FormAddCarroOficina()
+        public FormAddCarroOficina(int indexCliente)
         {
             InitializeComponent();
             CenterToScreen();
@@ -37,7 +38,10 @@ namespace StandAutomoveis
              select cliente).Load();
             
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+
+            listBoxClientes.SelectedIndex = indexCliente;
         }
+        
 
         private void buttonAddCarroOficina_Click(object sender, EventArgs e)
         {
@@ -46,12 +50,13 @@ namespace StandAutomoveis
                 MessageBox.Show("Selecione primeiro um cliente");
                 return;
             }
+
             if(marcaTextBox.TextLength == 0 || modeloTextBox.TextLength == 0 || matriculaTextBox.TextLength == 0 || numeroChassisTextBox.TextLength == 0 || kmsTextBox.TextLength == 0 || combustivelComboBox.SelectedIndex == -1)
             {
                 MessageBox.Show("Preencha todos os campos");
                 return;
             }
-
+            
             CarroOficina novoCarroOficina = new CarroOficina(marcaTextBox.Text, modeloTextBox.Text, matriculaTextBox.Text, numeroChassisTextBox.Text, kmsTextBox.Text, combustivelComboBox.Text);
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             
@@ -59,7 +64,7 @@ namespace StandAutomoveis
 
             BDStand.SaveChanges();
 
-            FormOficina formOficina = new FormOficina();
+            FormOficina formOficina = new FormOficina(indexCliente);
 
             this.Hide();
             formOficina.Show();
@@ -77,7 +82,7 @@ namespace StandAutomoveis
 
         private void buttonExitForm_Click(object sender, EventArgs e)
         {
-            FormOficina formoficina = new FormOficina();
+            FormOficina formoficina = new FormOficina(indexCliente);
             this.Hide();
             formoficina.Show();
         }

@@ -18,8 +18,9 @@ namespace StandAutomoveis
         bool MoverForm;
         int eixoX;
         int eixoY;
+        int indexCliente;
 
-        public FormVenda()
+        public FormVenda(int indexCliente)
         {
             InitializeComponent();
             CenterToScreen();
@@ -41,6 +42,8 @@ namespace StandAutomoveis
             listBoxClientes.DataSource = BDStand.Clientes.Local.ToBindingList().ToList();
             listBoxVendas.DataSource = BDStand.Vendas.Local.ToList();
             listBoxCarros.DataSource = BDStand.Carros.Local.OfType<CarroVenda>().ToList();
+
+            listBoxClientes.SelectedIndex = indexCliente;
         }
 
         private void buttonExitForm_Click(object sender, EventArgs e)
@@ -62,12 +65,11 @@ namespace StandAutomoveis
                 labelClienteSelecionado.Text = clienteSelecionado.Nome;
                 labelNIFCliente.Text = clienteSelecionado.NIF;
                 labelMoradaCliente.Text = clienteSelecionado.Morada;
-
-
-                listBoxCarros.DataSource = null;
-                // Adicionar Venda à listbox
+                
+                // atualiza as listboxes
                 listBoxVendas.DataSource = null;
                 listBoxVendas.DataSource = clienteSelecionado.Vendas.ToList();
+                listBoxCarros.DataSource = null;
             }
         }
 
@@ -89,6 +91,13 @@ namespace StandAutomoveis
             BDStand.SaveChanges();
 
             listBoxVendas.DataSource = clienteSelecionado.Vendas.ToList();
+
+            valorTextBox.Text = "";
+            numeroChassisTextBox.Text = "";
+            marcaTextBox.Text = "";
+            modeloTextBox.Text = "";
+            combustivelComboBox.Text = "";
+            extrasTextBox.Text = "";
         }
 
         private void listBoxVendas_SelectedIndexChanged(object sender, EventArgs e)
@@ -112,17 +121,21 @@ namespace StandAutomoveis
 
         private void buttonAluguerCliente_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormAluguer formaluguer = new FormAluguer();
+            indexCliente = listBoxClientes.SelectedIndex;
+            
+            FormAluguer formaluguer = new FormAluguer(indexCliente);
 
+            this.Dispose();
             formaluguer.ShowDialog();
         }
 
         private void buttonOficina_Click(object sender, EventArgs e)
         {
-            FormOficina formOficina = new FormOficina();
+            indexCliente = listBoxClientes.SelectedIndex;
 
-            this.Hide();
+            FormOficina formOficina = new FormOficina(indexCliente);
+
+            this.Dispose();
             formOficina.ShowDialog();
         }
 

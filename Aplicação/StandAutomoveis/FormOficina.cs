@@ -18,8 +18,9 @@ namespace StandAutomoveis
         bool MoverForm;
         int eixoX;
         int eixoY;
+        int indexCliente;
 
-        public FormOficina()
+        public FormOficina(int indexCliente)
         {
             InitializeComponent();
             CenterToScreen();
@@ -35,9 +36,12 @@ namespace StandAutomoveis
              select carro).Load();
 
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
-            
+
+            listBoxCarros.DataSource = carroOficinaBindingSource;
+
+            listBoxClientes.SelectedIndex = indexCliente;
         }
-        
+
         private void buttonExitForm_Click_1(object sender, EventArgs e)
         {
             FormInicial forminicial = new FormInicial();
@@ -77,28 +81,25 @@ namespace StandAutomoveis
             }
 
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            indexCliente = listBoxClientes.SelectedIndex;
             // instancia um novo form para adicionar o carro
-            FormAddCarroOficina formaddcarro = new FormAddCarroOficina();
+            FormAddCarroOficina formaddcarro = new FormAddCarroOficina(indexCliente);
             CarroOficina novoCarroOficina = new CarroOficina(formaddcarro.marca, formaddcarro.modelo, formaddcarro.matricula, formaddcarro.numeroChassis, formaddcarro.kms, formaddcarro.combustivel);
-
+            
             this.Hide();
             formaddcarro.ShowDialog();
+
 
             if (clienteSelecionado != null)
             {
                 listBoxCarros.DataSource = null;
-                listBoxCarros.DataSource = BDStand.Carros.ToList();
+                listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
             }
 
         }
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(listBoxClientes.SelectedIndex == -1)
-            {
-                return;
-            }
-
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
 
             if (carroSelecionado != null)
@@ -108,7 +109,6 @@ namespace StandAutomoveis
                 listBoxServicos.DataSource = null;
                 listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
             }
-            
         }
 
         private void buttonAddServico_Click(object sender, EventArgs e)
@@ -127,8 +127,7 @@ namespace StandAutomoveis
 
             listBoxServicos.DataSource = null;
             listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
-
-           // listBoxCarros.SelectedIndex = indexCarro;
+            
         }
 
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
@@ -189,21 +188,42 @@ namespace StandAutomoveis
                 return;
             }
 
-            try
-            {
-                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+            Parcela parcelaSelecionada = (Parcela)listBoxParcelas.SelectedItem;
 
+            if(servicoSelecionado == null || parcelaSelecionada == null)
+            {
                 clienteSelecionado.CarrosOficina.Remove((CarroOficina)listBoxCarros.SelectedItem);
-                BDStand.Carros.Remove((CarroOficina)listBoxCarros.SelectedItem);
+                BDStand.Carros.Remove((Carro)listBoxCarros.SelectedItem);
 
                 BDStand.SaveChanges();
 
                 listBoxCarros.DataSource = null;
                 listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
             }
-            catch
+            else
             {
-                MessageBox.Show("Não é possível remover um carros com serviços atribuidos");
+                if (MessageBox.Show("Os dados dos carros, SERVIÇOS E PARCELAS serão eliminados.\nDeseja continuar?",
+                    "Confirmação",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    clienteSelecionado.CarrosOficina.Remove((CarroOficina)listBoxCarros.SelectedItem);
+                    BDStand.Carros.Remove((CarroOficina)listBoxCarros.SelectedItem);
+
+                    carroSelecionado.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
+                    BDStand.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
+
+                    servicoSelecionado.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
+                    BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
+
+                    BDStand.SaveChanges();
+
+                    listBoxServicos.DataSource = null;
+                    listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+                }
             }
         }
 
@@ -214,10 +234,12 @@ namespace StandAutomoveis
                 return;
             }
 
-            try
-            {
-                CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+            CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+            Parcela parcelaSelecionada = (Parcela)listBoxParcelas.SelectedItem;
 
+            if (parcelaSelecionada == null)
+            {
                 carroSelecionado.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
                 BDStand.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
 
@@ -226,10 +248,26 @@ namespace StandAutomoveis
                 listBoxServicos.DataSource = null;
                 listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
             }
-            catch
+            else
             {
-                MessageBox.Show("Não é possível remover serviços com parcelas atribuidas");
+                if (MessageBox.Show("Os dados dos serviços E PARCELAS serão eliminados.\nDeseja continuar?",
+                    "Confirmação",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    carroSelecionado.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
+                    BDStand.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
+
+                    servicoSelecionado.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
+                    BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
+
+                    BDStand.SaveChanges();
+
+                    listBoxServicos.DataSource = null;
+                    listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+                }
             }
+
         }
 
         private void buttonRemoveParcela_Click(object sender, EventArgs e)
@@ -254,14 +292,16 @@ namespace StandAutomoveis
         private void buttonCliente_Click(object sender, EventArgs e)
         {
             FormCliente formcliente = new FormCliente();
-
+           
             this.Dispose();
             formcliente.ShowDialog();
         }
 
         private void buttonAluguer_Click(object sender, EventArgs e)
         {
-            FormAluguer formaluguer = new FormAluguer();
+            indexCliente = listBoxClientes.SelectedIndex;
+
+            FormAluguer formaluguer = new FormAluguer(indexCliente);
 
             this.Dispose();
             formaluguer.ShowDialog();
@@ -269,7 +309,9 @@ namespace StandAutomoveis
 
         private void buttonVenda_Click(object sender, EventArgs e)
         {
-            FormVenda formvenda = new FormVenda();
+            indexCliente = listBoxClientes.SelectedIndex;
+
+            FormVenda formvenda = new FormVenda(indexCliente);
 
             this.Dispose();
             formvenda.ShowDialog();

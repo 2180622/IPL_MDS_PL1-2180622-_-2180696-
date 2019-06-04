@@ -267,7 +267,7 @@
             // 
             // listBoxCarros
             // 
-            this.listBoxCarros.DataSource = this.carroBindingSource;
+            this.listBoxCarros.DataSource = this.carroOficinaBindingSource;
             this.listBoxCarros.FormattingEnabled = true;
             this.listBoxCarros.Location = new System.Drawing.Point(5, 19);
             this.listBoxCarros.Name = "listBoxCarros";

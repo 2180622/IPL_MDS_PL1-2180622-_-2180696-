@@ -17,6 +17,7 @@ namespace StandAutomoveis
         bool MoverForm;
         int eixoX;
         int eixoY;
+        int indexCliente;
 
         public FormInicial()
         {
@@ -46,7 +47,7 @@ namespace StandAutomoveis
 
         private void buttonGestaoOficina_Click(object sender, EventArgs e)
         {
-            FormOficina formOficina = new FormOficina();
+            FormOficina formOficina = new FormOficina(indexCliente);
 
             this.Hide();
             formOficina.ShowDialog();
@@ -54,7 +55,7 @@ namespace StandAutomoveis
 
         private void buttonGestaoVendas_Click(object sender, EventArgs e)
         { 
-            FormVenda formvenda = new FormVenda();
+            FormVenda formvenda = new FormVenda(indexCliente);
 
             this.Hide();
             formvenda.ShowDialog();
@@ -62,7 +63,7 @@ namespace StandAutomoveis
 
         private void buttonGestaoAluguer_Click(object sender, EventArgs e)
         {
-            FormAluguer formaluguer = new FormAluguer();
+            FormAluguer formaluguer = new FormAluguer(indexCliente);
 
             this.Hide();
             formaluguer.ShowDialog();

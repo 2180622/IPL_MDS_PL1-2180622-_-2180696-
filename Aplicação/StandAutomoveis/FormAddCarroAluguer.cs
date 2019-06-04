@@ -24,6 +24,7 @@ namespace StandAutomoveis
         bool MoverForm;
         int eixoX;
         int eixoY;
+        int indexCliente;
 
         public FormAddCarroAluguer()
         {
@@ -41,7 +42,13 @@ namespace StandAutomoveis
 
         private void buttonAddCarroAluguer_Click(object sender, EventArgs e)
         {
-            CarroAluguer novoCarroAluguer = new CarroAluguer(combustivelTextBox.Text, estadoComboBox.Text, marcaTextBox.Text, matriculaTextBox.Text, modeloTextBox.Text, numeroChassisTextBox.Text);
+            if (combustivelComboBox.SelectedIndex == -1 || estadoComboBox.SelectedIndex == -1 || marcaTextBox.TextLength == 0 || matriculaTextBox.TextLength == 0  || modeloTextBox.TextLength == 0 || numeroChassisTextBox.TextLength == 0)
+            {
+                MessageBox.Show("Preencha todos os campos");
+                return;
+            }
+
+            CarroAluguer novoCarroAluguer = new CarroAluguer(combustivelComboBox.Text, estadoComboBox.Text, marcaTextBox.Text, matriculaTextBox.Text, modeloTextBox.Text, numeroChassisTextBox.Text);
 
             BDStand.Carros.Add(novoCarroAluguer);
 
@@ -49,14 +56,14 @@ namespace StandAutomoveis
 
             this.Hide();
 
-            FormAluguer formAluguer = new FormAluguer();
+            FormAluguer formAluguer = new FormAluguer(indexCliente);
             formAluguer.Show();
         }
 
 
         private void buttonExitForm_Click(object sender, EventArgs e)
         {
-            FormAluguer formaluguer = new FormAluguer();
+            FormAluguer formaluguer = new FormAluguer(indexCliente);
             this.Hide();
             formaluguer.Show();
         }
