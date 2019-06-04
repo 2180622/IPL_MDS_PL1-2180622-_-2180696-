@@ -37,8 +37,6 @@ namespace StandAutomoveis
 
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
 
-            listBoxCarros.DataSource = carroOficinaBindingSource;
-
             listBoxClientes.SelectedIndex = indexCliente;
         }
 
@@ -85,10 +83,6 @@ namespace StandAutomoveis
             // instancia um novo form para adicionar o carro
             FormAddCarroOficina formaddcarro = new FormAddCarroOficina(indexCliente);
             CarroOficina novoCarroOficina = new CarroOficina(formaddcarro.marca, formaddcarro.modelo, formaddcarro.matricula, formaddcarro.numeroChassis, formaddcarro.kms, formaddcarro.combustivel);
-            
-            this.Hide();
-            formaddcarro.ShowDialog();
-
 
             if (clienteSelecionado != null)
             {
@@ -96,6 +90,8 @@ namespace StandAutomoveis
                 listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
             }
 
+            this.Hide();
+            formaddcarro.ShowDialog();            
         }
 
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,6 +109,18 @@ namespace StandAutomoveis
 
         private void buttonAddServico_Click(object sender, EventArgs e)
         {
+            if(tipoTextBox.TextLength == 0)
+            {
+                MessageBox.Show("Preencha o campo 'tipo'");
+                return;
+            }
+
+            if(dataEntradaDateTimePicker.Value > dataSaidaDateTimePicker.Value)
+            {
+                MessageBox.Show("A data de entrada não pode ser mais recente que a data de saída");
+                return;
+            }
+
             if (listBoxClientes.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1)
             {
                 return;
@@ -120,14 +128,12 @@ namespace StandAutomoveis
 
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico novoServico = new Servico(tipoTextBox.Text, dataEntradaDateTimePicker.Value, dataSaidaDateTimePicker.Value);
-           // int indexCarro = listBoxCarros.SelectedIndex;
             
             carroSelecionado.Servicos.Add(novoServico);
             BDStand.SaveChanges();
 
             listBoxServicos.DataSource = null;
             listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
-            
         }
 
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
@@ -149,6 +155,7 @@ namespace StandAutomoveis
         {   
             if(descricaoTextBox.TextLength == 0 || valorTextBox.TextLength == 0)
             {
+                MessageBox.Show("Preencha os campos 'descrição' e 'valor'");
                 return;
             }
 
@@ -171,10 +178,8 @@ namespace StandAutomoveis
             {
                 listBoxParcelas.DataSource = null;
                 listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
-                
             }
-
-            // listBoxServicos.SelectedIndex = indexServico;
+            
             // Reset as textboxes dentro da groupBoxParcela
             valorTextBox.Text = "";
             descricaoTextBox.Text = "";
@@ -193,19 +198,22 @@ namespace StandAutomoveis
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
             Parcela parcelaSelecionada = (Parcela)listBoxParcelas.SelectedItem;
 
-            if(servicoSelecionado == null || parcelaSelecionada == null)
+            if(servicoSelecionado == null && parcelaSelecionada == null)
             {
                 clienteSelecionado.CarrosOficina.Remove((CarroOficina)listBoxCarros.SelectedItem);
                 BDStand.Carros.Remove((Carro)listBoxCarros.SelectedItem);
 
                 BDStand.SaveChanges();
 
+                listBoxParcelas.DataSource = null;
+                listBoxServicos.DataSource = null;
+
                 listBoxCarros.DataSource = null;
                 listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
             }
             else
             {
-                if (MessageBox.Show("Os dados dos carros, SERVIÇOS E PARCELAS serão eliminados.\nDeseja continuar?",
+                if (MessageBox.Show("Os dados dos CARROS, SERVIÇOS E PARCELAS serão eliminados.\nDeseja continuar?",
                     "Confirmação",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
@@ -213,16 +221,24 @@ namespace StandAutomoveis
                     clienteSelecionado.CarrosOficina.Remove((CarroOficina)listBoxCarros.SelectedItem);
                     BDStand.Carros.Remove((CarroOficina)listBoxCarros.SelectedItem);
 
-                    carroSelecionado.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
-                    BDStand.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
-
-                    servicoSelecionado.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
-                    BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
-
+                    if (servicoSelecionado != null)
+                    {
+                        carroSelecionado.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
+                        BDStand.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
+                    }
+                    if(parcelaSelecionada != null)
+                    {
+                        servicoSelecionado.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
+                        BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
+                    }
+                    
                     BDStand.SaveChanges();
 
+                    listBoxParcelas.DataSource = null;
                     listBoxServicos.DataSource = null;
-                    listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+
+                    listBoxCarros.DataSource = null;
+                    listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
                 }
             }
         }
@@ -250,7 +266,7 @@ namespace StandAutomoveis
             }
             else
             {
-                if (MessageBox.Show("Os dados dos serviços E PARCELAS serão eliminados.\nDeseja continuar?",
+                if (MessageBox.Show("Os dados dos SERVIÇOS E PARCELAS serão eliminados.\nDeseja continuar?",
                     "Confirmação",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
@@ -262,6 +278,8 @@ namespace StandAutomoveis
                     BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
 
                     BDStand.SaveChanges();
+
+                    listBoxParcelas.DataSource = null;
 
                     listBoxServicos.DataSource = null;
                     listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
@@ -286,7 +304,6 @@ namespace StandAutomoveis
 
             listBoxParcelas.DataSource = null;
             listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
-
         }
 
         private void buttonCliente_Click(object sender, EventArgs e)

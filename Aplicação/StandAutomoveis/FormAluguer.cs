@@ -40,9 +40,11 @@ namespace StandAutomoveis
              select aluguer).Load();
 
 
-            clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+            //clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
 
             carroBindingSource.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
+
+            listBoxClientes.DataSource = BDStand.Clientes.Local.ToBindingList();
 
             listBoxClientes.SelectedIndex = indexCliente;
         }
@@ -94,7 +96,8 @@ namespace StandAutomoveis
         private void listBoxAluguerClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            
+
+            listBoxAlugueres.SelectedIndex = -1;
 
             if (clienteSelecionado != null)
             {
@@ -109,6 +112,8 @@ namespace StandAutomoveis
                     listBoxAlugueres.DataSource = null;
                     listBoxAlugueres.DataSource = clienteSelecionado.Alugueres.ToList();
                 }
+
+
             }
         }
 
@@ -124,9 +129,12 @@ namespace StandAutomoveis
             }
 
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            CarroAluguer carroSelecionado = (CarroAluguer)listBoxCarros.SelectedItem;
 
             if (clienteSelecionado != null)
             {
+                labelCarroAlugado.Text = carroSelecionado.Marca + carroSelecionado.Modelo;
+
                 listBoxAlugueres.DataSource = null;
                 listBoxAlugueres.DataSource = clienteSelecionado.Alugueres.ToList();
             }
@@ -137,6 +145,12 @@ namespace StandAutomoveis
             if(kmsTextBox.TextLength == 0 || valorTextBox.TextLength == 0)
             {
                 MessageBox.Show("Preencha todos os campos");
+                return;
+            }
+
+            if (dataInicioDateTimePicker.Value > dataFimDateTimePicker.Value)
+            {
+                MessageBox.Show("A data de entrada não pode ser mais recente que a data de saída");
                 return;
             }
 

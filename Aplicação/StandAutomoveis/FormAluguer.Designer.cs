@@ -42,6 +42,7 @@
             this.listBoxCarros = new System.Windows.Forms.ListBox();
             this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBoxAluguerCarros = new System.Windows.Forms.GroupBox();
+            this.buttonCloseAluguer = new System.Windows.Forms.Button();
             this.buttonAddAluguer = new System.Windows.Forms.Button();
             this.dataFimDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.aluguerBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -62,6 +63,7 @@
             this.panelCarroTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.labelCarroAlugado = new System.Windows.Forms.Label();
             dataFimLabel = new System.Windows.Forms.Label();
             dataInicioLabel = new System.Windows.Forms.Label();
             kmsLabel = new System.Windows.Forms.Label();
@@ -125,7 +127,6 @@
             // 
             // listBoxClientes
             // 
-            this.listBoxClientes.DataSource = this.clienteBindingSource;
             this.listBoxClientes.FormattingEnabled = true;
             this.listBoxClientes.Location = new System.Drawing.Point(7, 28);
             this.listBoxClientes.Name = "listBoxClientes";
@@ -187,6 +188,7 @@
             // groupBoxAluguerCarros
             // 
             this.groupBoxAluguerCarros.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxAluguerCarros.Controls.Add(this.buttonCloseAluguer);
             this.groupBoxAluguerCarros.Controls.Add(this.buttonAddAluguer);
             this.groupBoxAluguerCarros.Controls.Add(dataFimLabel);
             this.groupBoxAluguerCarros.Controls.Add(this.dataFimDateTimePicker);
@@ -206,9 +208,18 @@
             this.groupBoxAluguerCarros.TabStop = false;
             this.groupBoxAluguerCarros.Text = "Lista de Alugueres e Carros";
             // 
+            // buttonCloseAluguer
+            // 
+            this.buttonCloseAluguer.Location = new System.Drawing.Point(247, 287);
+            this.buttonCloseAluguer.Name = "buttonCloseAluguer";
+            this.buttonCloseAluguer.Size = new System.Drawing.Size(197, 25);
+            this.buttonCloseAluguer.TabIndex = 16;
+            this.buttonCloseAluguer.Text = "Fechar Aluguer";
+            this.buttonCloseAluguer.UseVisualStyleBackColor = true;
+            // 
             // buttonAddAluguer
             // 
-            this.buttonAddAluguer.Location = new System.Drawing.Point(247, 256);
+            this.buttonAddAluguer.Location = new System.Drawing.Point(247, 258);
             this.buttonAddAluguer.Name = "buttonAddAluguer";
             this.buttonAddAluguer.Size = new System.Drawing.Size(197, 23);
             this.buttonAddAluguer.TabIndex = 15;
@@ -233,7 +244,7 @@
             this.dataInicioDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.aluguerBindingSource, "DataInicio", true));
             this.dataInicioDateTimePicker.Location = new System.Drawing.Point(241, 35);
             this.dataInicioDateTimePicker.Name = "dataInicioDateTimePicker";
-            this.dataInicioDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.dataInicioDateTimePicker.Size = new System.Drawing.Size(203, 20);
             this.dataInicioDateTimePicker.TabIndex = 8;
             // 
             // kmsTextBox
@@ -264,7 +275,6 @@
             // 
             // listBoxAlugueres
             // 
-            this.listBoxAlugueres.DataSource = this.aluguerBindingSource;
             this.listBoxAlugueres.DisplayMember = "Combustivel";
             this.listBoxAlugueres.FormattingEnabled = true;
             this.listBoxAlugueres.Location = new System.Drawing.Point(6, 19);
@@ -361,7 +371,7 @@
             this.panel1.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_fiat_500_64;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(185, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(61, 66);
             this.panel1.TabIndex = 12;
@@ -372,7 +382,7 @@
             this.panel2.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_traffic_jam_64;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Location = new System.Drawing.Point(746, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(61, 66);
             this.panel2.TabIndex = 13;
@@ -415,10 +425,21 @@
             this.panel5.BackgroundImage = global::StandAutomoveis.Properties.Resources.icons8_car_rental_64;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Location = new System.Drawing.Point(2, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(61, 66);
             this.panel5.TabIndex = 15;
+            // 
+            // labelCarroAlugado
+            // 
+            this.labelCarroAlugado.AutoSize = true;
+            this.labelCarroAlugado.BackColor = System.Drawing.Color.Transparent;
+            this.labelCarroAlugado.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
+            this.labelCarroAlugado.Location = new System.Drawing.Point(630, 68);
+            this.labelCarroAlugado.Name = "labelCarroAlugado";
+            this.labelCarroAlugado.Size = new System.Drawing.Size(236, 29);
+            this.labelCarroAlugado.TabIndex = 15;
+            this.labelCarroAlugado.Text = "Sem carro Alugado";
             // 
             // FormAluguer
             // 
@@ -428,6 +449,7 @@
             this.BackgroundImage = global::StandAutomoveis.Properties.Resources.abstract_white_transparent_waves_in_motion_at_the_top_and_bottom_on_gradient_blue_background_loop_animation_4vowt3ocg__F0000;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(990, 475);
+            this.Controls.Add(this.labelCarroAlugado);
             this.Controls.Add(this.groupBoxAluguerCarros);
             this.Controls.Add(this.labelMoradaCliente);
             this.Controls.Add(this.labelNIFCliente);
@@ -483,5 +505,7 @@
         private System.Windows.Forms.Panel panelCarroTop;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonCloseAluguer;
+        private System.Windows.Forms.Label labelCarroAlugado;
     }
 }
