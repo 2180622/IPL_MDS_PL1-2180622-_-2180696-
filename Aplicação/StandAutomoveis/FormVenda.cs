@@ -77,7 +77,7 @@ namespace StandAutomoveis
         {
             // Criar a venda e adicionar ao cliente e BD
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            Venda novaVenda = new Venda(decimal.Parse(valorTextBox.Text), estadoTextBox.Text, dataDateTimePicker.Value);
+            Venda novaVenda = new Venda(decimal.Parse(valorTextBox.Text), estadoComboBox.Text, dataDateTimePicker.Value);
 
             //Cria o carro e adiciona-o à venda
             Venda vendaSelecionada = (Venda)listBoxVendas.SelectedItem;

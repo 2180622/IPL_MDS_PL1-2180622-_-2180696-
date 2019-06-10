@@ -46,8 +46,8 @@
             this.buttonDelCarro = new System.Windows.Forms.Button();
             this.buttonAddCarro = new System.Windows.Forms.Button();
             this.listBoxCarros = new System.Windows.Forms.ListBox();
-            this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carroOficinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carroBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelClienteSelecionado = new System.Windows.Forms.Label();
             this.labelNIFCliente = new System.Windows.Forms.Label();
             this.labelMoradaCliente = new System.Windows.Forms.Label();
@@ -75,6 +75,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonExitForm = new System.Windows.Forms.Button();
             this.labelTituloCliente = new System.Windows.Forms.Label();
+            this.buttonPrint = new System.Windows.Forms.Button();
             dataEntradaLabel = new System.Windows.Forms.Label();
             dataSaidaLabel = new System.Windows.Forms.Label();
             tipoLabel = new System.Windows.Forms.Label();
@@ -85,8 +86,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.groupBoxClientes.SuspendLayout();
             this.groupBoxAdicionarCarro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroOficinaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicosBindingSource)).BeginInit();
             this.groupBoxServicos.SuspendLayout();
             this.groupBoxParcela.SuspendLayout();
@@ -275,13 +276,13 @@
             this.listBoxCarros.TabIndex = 0;
             this.listBoxCarros.SelectedIndexChanged += new System.EventHandler(this.listBoxCarros_SelectedIndexChanged);
             // 
-            // carroBindingSource
-            // 
-            this.carroBindingSource.DataSource = typeof(StandAutomoveis.Carro);
-            // 
             // carroOficinaBindingSource
             // 
             this.carroOficinaBindingSource.DataSource = typeof(StandAutomoveis.CarroOficina);
+            // 
+            // carroBindingSource
+            // 
+            this.carroBindingSource.DataSource = typeof(StandAutomoveis.Carro);
             // 
             // labelClienteSelecionado
             // 
@@ -571,6 +572,16 @@
             this.labelTituloCliente.TabIndex = 7;
             this.labelTituloCliente.Text = "Stand Automóveis";
             // 
+            // buttonPrint
+            // 
+            this.buttonPrint.Location = new System.Drawing.Point(757, 75);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(100, 22);
+            this.buttonPrint.TabIndex = 14;
+            this.buttonPrint.Text = "Imprimir Fatura";
+            this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
+            // 
             // FormOficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,6 +590,7 @@
             this.BackgroundImage = global::StandAutomoveis.Properties.Resources.abstract_white_transparent_waves_in_motion_at_the_top_and_bottom_on_gradient_blue_background_loop_animation_4vowt3ocg__F0000;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(990, 475);
+            this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.groupBoxParcela);
             this.Controls.Add(this.groupBoxServicos);
             this.Controls.Add(this.groupBoxAdicionarCarro);
@@ -597,8 +609,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.groupBoxClientes.ResumeLayout(false);
             this.groupBoxAdicionarCarro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroOficinaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carroBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.servicosBindingSource)).EndInit();
             this.groupBoxServicos.ResumeLayout(false);
             this.groupBoxServicos.PerformLayout();
@@ -655,5 +667,6 @@
         private System.Windows.Forms.Button buttonCliente;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonPrint;
     }
 }

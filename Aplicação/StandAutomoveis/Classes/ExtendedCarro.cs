@@ -8,17 +8,27 @@ namespace StandAutomoveis
 {
     public partial class Carro
     {
-        /*public Carro(string nrChassis, string marca, string modelo, string combustivel)
-        {
-            this.NumeroChassis = nrChassis;
-            this.Marca = marca;
-            this.Modelo = modelo;
-            this.Combustivel = combustivel;
-        }
+        BDStandContainer BDStand;
+        public float Valor;
 
-        public override string ToString()
+        public float Total
         {
-            return Marca + Modelo + " | " + NumeroChassis + " | " + Combustivel + "L";
-        }*/
+            get
+            {
+                //instacia o internoTotal como 0 para inicar a variavel
+                float internoTotal = 0;
+
+                foreach (Servico item in BDStand.Servicos)
+                {
+
+                    internoTotal += item.Valor;
+
+                }
+
+                return internoTotal;
+
+            }
+
+        }
     }
 }

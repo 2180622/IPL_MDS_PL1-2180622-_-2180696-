@@ -67,9 +67,9 @@ namespace StandAutomoveis
                 contactoTextBox.Enabled = true;
 
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Não é possível remover clientes com um carro, venda ou aluguer associado");
             }
 
             contactoTextBox.Text = "";

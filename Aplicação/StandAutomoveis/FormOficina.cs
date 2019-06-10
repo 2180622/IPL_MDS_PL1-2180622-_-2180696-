@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -146,7 +147,7 @@ namespace StandAutomoveis
 
                 if(servicoSelecionado.Parcelas != null)
                 {
-                    listBoxParcelas.DataSource=servicoSelecionado.Parcelas.ToList();
+                    listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
                 }
             }
         }
@@ -183,6 +184,9 @@ namespace StandAutomoveis
             // Reset as textboxes dentro da groupBoxParcela
             valorTextBox.Text = "";
             descricaoTextBox.Text = "";
+
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            labelValorTotalCliente.Text = "Valor Total: " + clienteSelecionado.Total.ToString();
         }
 
 
@@ -352,6 +356,36 @@ namespace StandAutomoveis
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             MoverForm = false;
+        }
+
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+
+            StreamWriter GuardaFicheiro = new StreamWriter("FaturaDoCliente.txt");
+            GuardaFicheiro.WriteLine(clienteSelecionado + "| Carro: " + carroSelecionado.Marca + " " + carroSelecionado.Modelo);
+            GuardaFicheiro.WriteLine("________________________________________________________");
+            
+            foreach (Servico servicos in carroSelecionado.Servicos)
+            {
+                GuardaFicheiro.WriteLine("Efetuada a: " + dataSaidaDateTimePicker.Value.ToShortDateString());
+                GuardaFicheiro.WriteLine("________________________________________________________");
+                GuardaFicheiro.WriteLine(" ");
+
+                foreach (Parcela linhaDeCompra in servicos.Parcelas)
+                {
+                    GuardaFicheiro.WriteLine("-" + linhaDeCompra.ToString());
+                }
+                GuardaFicheiro.WriteLine("Total: " + //servicos.Total + 
+                    "€");
+                GuardaFicheiro.WriteLine("________________________________________________________");
+            }
+
+            MessageBox.Show("Fatura imprimida");
+            GuardaFicheiro.Close();
         }
     }
 }
