@@ -11,7 +11,7 @@ namespace StandAutomoveis
         BDStandContainer BDStand;
         public float Valor;
 
-        public float Total
+        /*public float Total
         {
             get
             {
@@ -29,6 +29,6 @@ namespace StandAutomoveis
 
             }
 
-        }
+        }*/
     }
 }

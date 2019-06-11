@@ -19,7 +19,7 @@ namespace StandAutomoveis
             this.DataSaida = dataSaida;
         }
 
-        public decimal Total
+        /*public decimal Total
         {
             get
             {
@@ -36,8 +36,8 @@ namespace StandAutomoveis
                 return internoTotal;
 
             }
-
-        }
+            
+        }*/
 
         public override string ToString()
         {

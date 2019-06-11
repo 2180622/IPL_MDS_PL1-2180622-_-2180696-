@@ -186,7 +186,7 @@ namespace StandAutomoveis
             descricaoTextBox.Text = "";
 
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            labelValorTotalCliente.Text = "Valor Total: " + clienteSelecionado.Total.ToString();
+            labelValorTotalCliente.Text = "Valor Total: " + servicoSelecionado.Parcelas.Sum(soma => soma.Valor).ToString();
         }
 
 
@@ -222,20 +222,22 @@ namespace StandAutomoveis
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    clienteSelecionado.CarrosOficina.Remove((CarroOficina)listBoxCarros.SelectedItem);
-                    BDStand.Carros.Remove((CarroOficina)listBoxCarros.SelectedItem);
+                    if (parcelaSelecionada != null)
+                    {
+                        //servicoSelecionado.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
+                        listBoxParcelas.Items.Clear();
+                        BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
+                    }
 
                     if (servicoSelecionado != null)
                     {
                         carroSelecionado.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
                         BDStand.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
                     }
-                    if(parcelaSelecionada != null)
-                    {
-                        servicoSelecionado.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
-                        BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
-                    }
-                    
+
+                    clienteSelecionado.CarrosOficina.Remove((CarroOficina)listBoxCarros.SelectedItem);
+                    BDStand.Carros.Remove((CarroOficina)listBoxCarros.SelectedItem);
+
                     BDStand.SaveChanges();
 
                     listBoxParcelas.DataSource = null;
@@ -379,8 +381,7 @@ namespace StandAutomoveis
                 {
                     GuardaFicheiro.WriteLine("-" + linhaDeCompra.ToString());
                 }
-                GuardaFicheiro.WriteLine("Total: " + //servicos.Total + 
-                    "€");
+                GuardaFicheiro.WriteLine("\n\n Total: " + servicos.Parcelas.Sum(soma => soma.Valor).ToString() + "€");
                 GuardaFicheiro.WriteLine("________________________________________________________");
             }
 

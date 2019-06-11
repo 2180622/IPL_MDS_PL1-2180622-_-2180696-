@@ -18,7 +18,7 @@ namespace StandAutomoveis
             this.Contacto = contacto;
         }
 
-        public float Total
+       /* public float Total
         {
             get
             {
@@ -36,7 +36,7 @@ namespace StandAutomoveis
 
             }
 
-        }
+        }*/
         public override string ToString()
         {
             return Nome + "(" + NIF + ")" + " Contacto: " + Contacto;
