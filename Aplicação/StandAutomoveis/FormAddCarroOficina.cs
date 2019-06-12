@@ -29,39 +29,46 @@ namespace StandAutomoveis
         public FormAddCarroOficina(int indexCliente)
         {
             InitializeComponent();
+            // Função para centrar a janela
             CenterToScreen();
 
             BDStand = new BDStandContainer();
 
+            // Pesquisa na base de dados para passar a informação do cliente para a binding list
             (from cliente in BDStand.Clientes
              orderby cliente.Nome
              select cliente).Load();
             
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
 
+            // Fazer com que cliente selecionado seja o mesmo que na janela oficina
             listBoxClientes.SelectedIndex = indexCliente;
         }
         
 
         private void buttonAddCarroOficina_Click(object sender, EventArgs e)
         {
+            // Instruções para prevenir campos em vazio serem processados
             if (listBoxClientes.SelectedIndex == -1)
             {
                 MessageBox.Show("Selecione primeiro um cliente");
                 return;
             }
-
-            if(marcaTextBox.TextLength == 0 || modeloTextBox.TextLength == 0 || matriculaTextBox.TextLength == 0 || numeroChassisTextBox.TextLength == 0 || kmsTextBox.TextLength == 0 || combustivelComboBox.SelectedIndex == -1)
+            // Instruções para prevenir campos em vazio serem processados
+            if (marcaTextBox.TextLength == 0 || modeloTextBox.TextLength == 0 || matriculaTextBox.TextLength == 0 || numeroChassisTextBox.TextLength == 0 || kmsTextBox.TextLength == 0 || combustivelComboBox.SelectedIndex == -1)
             {
                 MessageBox.Show("Preencha todos os campos");
                 return;
             }
             
+            // Criação dos objetos passando os parametros na caixa de texto como os valores dentro do construtor
             CarroOficina novoCarroOficina = new CarroOficina(marcaTextBox.Text, modeloTextBox.Text, matriculaTextBox.Text, numeroChassisTextBox.Text, kmsTextBox.Text, combustivelComboBox.Text);
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             
+            // Adicionar o novo carroOficina ao cliente na base de dados
             clienteSelecionado.CarrosOficina.Add(novoCarroOficina);
 
+            // Função para gravar dados na BDStand
             BDStand.SaveChanges();
 
             FormOficina formOficina = new FormOficina(indexCliente);
@@ -70,6 +77,7 @@ namespace StandAutomoveis
             formOficina.Show();
         }
 
+        // Função genérica para atualizar uma label com o nome do cliente selecionado
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
@@ -87,6 +95,7 @@ namespace StandAutomoveis
             formoficina.Show();
         }
 
+        // Funções para tornar o form arrastável
         private void panelCarroTop_MouseDown(object sender, MouseEventArgs e)
         {
             MoverForm = true;

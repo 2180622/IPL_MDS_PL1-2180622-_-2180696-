@@ -29,10 +29,12 @@ namespace StandAutomoveis
         public FormAddCarroAluguer()
         {
             InitializeComponent();
+            // Função para centrar a janela
             CenterToScreen();
 
             BDStand = new BDStandContainer();
 
+            // Pesquisa na base de dados para passar a informação do cliente para a binding list
             (from cliente in BDStand.Clientes
              orderby cliente.Nome
              select cliente).Load();
@@ -42,16 +44,20 @@ namespace StandAutomoveis
 
         private void buttonAddCarroAluguer_Click(object sender, EventArgs e)
         {
+            // Instruções para prevenir campos em vazio serem processados
             if (combustivelComboBox.SelectedIndex == -1 || estadoComboBox.SelectedIndex == -1 || marcaTextBox.TextLength == 0 || matriculaTextBox.TextLength == 0  || modeloTextBox.TextLength == 0 || numeroChassisTextBox.TextLength == 0)
             {
                 MessageBox.Show("Preencha todos os campos");
                 return;
             }
 
+            // Criação dos objetos passando os parametros na caixa de texto como os valores dentro do construtor
             CarroAluguer novoCarroAluguer = new CarroAluguer(combustivelComboBox.Text, estadoComboBox.Text, marcaTextBox.Text, matriculaTextBox.Text, modeloTextBox.Text, numeroChassisTextBox.Text);
 
+            // Adicionar o carroAluguer à base de dados
             BDStand.Carros.Add(novoCarroAluguer);
 
+            // Função para gravar dados na BDStand
             BDStand.SaveChanges();
 
             this.Hide();
@@ -68,6 +74,7 @@ namespace StandAutomoveis
             formaluguer.Show();
         }
 
+        // Funções para tornar o form arrastável
         private void panelCarroTop_MouseDown(object sender, MouseEventArgs e)
         {
             MoverForm = true;
