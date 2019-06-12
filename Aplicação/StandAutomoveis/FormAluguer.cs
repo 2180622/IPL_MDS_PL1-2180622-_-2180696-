@@ -188,6 +188,29 @@ namespace StandAutomoveis
             kmsTextBox.Text = "";
         }
 
+        private void buttonCloseAluguer_Click(object sender, EventArgs e)
+        {
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            Aluguer aluguerSelecionado = (Aluguer)listBoxAlugueres.SelectedItem;
+            CarroAluguer carroSelecionado = (CarroAluguer)listBoxCarros.SelectedItem;
+
+            clienteSelecionado.Alugueres.Remove(aluguerSelecionado);
+            carroSelecionado.Aluguer.Remove(aluguerSelecionado);
+
+            carroSelecionado.Estado = "Disponivel";
+
+            BDStand.SaveChanges();
+
+            if (clienteSelecionado != null)
+            {
+                listBoxAlugueres.DataSource = null;
+                listBoxAlugueres.DataSource = clienteSelecionado.Alugueres.ToList();
+
+                listBoxCarros.DataSource = null;
+                listBoxCarros.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
+            }
+        }
+
         // Torna o form draggable
         private void panelCarroTop_MouseDown(object sender, MouseEventArgs e)
         {

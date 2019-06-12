@@ -222,17 +222,25 @@ namespace StandAutomoveis
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    if (parcelaSelecionada != null)
-                    {
-                        //servicoSelecionado.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
-                        listBoxParcelas.Items.Clear();
-                        BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
-                    }
-
                     if (servicoSelecionado != null)
                     {
-                        carroSelecionado.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
-                        BDStand.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
+                        List<Servico> listaServicos = carroSelecionado.Servicos.ToList();
+
+                        foreach(Servico servico in listaServicos)
+                        {
+                            if (parcelaSelecionada != null)
+                            {
+                                List<Parcela> listaParcelas = servico.Parcelas.ToList();
+
+                                foreach(Parcela parcela in listaParcelas)
+                                {
+                                    BDStand.Parcelas.Remove(parcela);
+                                }
+                            }
+
+                            BDStand.Servicos.Remove(servico);
+                        }
+                        BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
                     }
 
                     clienteSelecionado.CarrosOficina.Remove((CarroOficina)listBoxCarros.SelectedItem);
@@ -277,8 +285,15 @@ namespace StandAutomoveis
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    carroSelecionado.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
-                    BDStand.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
+                    if(parcelaSelecionada != null)
+                    {
+                        List<Parcela> listaParcelas = servicoSelecionado.Parcelas.ToList();
+
+                        foreach (Parcela parcela in listaParcelas)
+                        {
+                            BDStand.Parcelas.Remove(parcela);
+                        }
+                    }
 
                     servicoSelecionado.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
                     BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
