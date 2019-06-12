@@ -42,6 +42,7 @@ namespace StandAutomoveis
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
+            //Ciclo que percorre toda a datagrid e elimina a selecionada
             foreach (DataGridViewRow item in this.clienteDataGridView.SelectedRows)
             {
                 clienteDataGridView.Rows.RemoveAt(item.Index);
@@ -50,6 +51,7 @@ namespace StandAutomoveis
 
         private void toolStripButtonGravar_Click(object sender, EventArgs e)
         {
+            //Verifica se há campos em branco nas textboxes
             if(nomeTextBox.TextLength == 0 || nIFTextBox.TextLength == 0 || contactoTextBox.TextLength ==0 || moradaTextBox.TextLength == 0)
             {
                 MessageBox.Show("Não pode deixar campos em branco");
@@ -69,7 +71,7 @@ namespace StandAutomoveis
             }
             catch(Exception)
             {
-                MessageBox.Show("Não é possível remover clientes com um carro, venda ou aluguer associado");
+                MessageBox.Show("Não foi possível guardar as alterações");
             }
 
             contactoTextBox.Text = "";
@@ -96,6 +98,7 @@ namespace StandAutomoveis
         // delay de 1 keypress. Try to FIX!
         private void textBoxFiltrar_KeyDown(object sender, KeyEventArgs e)
         {
+            //Verifica se há conteúdo na textbox para filtrar
             if (textBoxFiltrar.Text.Length > 0)
             {
                 bindingNavigatorAddNewItem.Enabled = true;
@@ -125,6 +128,7 @@ namespace StandAutomoveis
 
         private void buttonExitForm_Click(object sender, EventArgs e)
         {
+            //Fecha o form e volta ao menu inicial
             FormInicial forminicial = new FormInicial();
 
             this.Dispose();
@@ -133,6 +137,7 @@ namespace StandAutomoveis
 
         private void buttonOficina_Click(object sender, EventArgs e)
         {
+            //Vai para o menu da oficina
             FormOficina formoficina = new FormOficina(indexCliente);
             
 
@@ -142,6 +147,7 @@ namespace StandAutomoveis
 
         private void buttonAluguerCliente_Click_1(object sender, EventArgs e)
         {
+            //Vai para o menu de aluguer
             FormAluguer formaluguer = new FormAluguer(indexCliente);
 
             this.Dispose();
@@ -150,12 +156,14 @@ namespace StandAutomoveis
 
         private void buttonVenda_Click(object sender, EventArgs e)
         {
+            //Vai para o menu da venda
             FormVenda formvenda = new FormVenda(indexCliente);
 
             this.Dispose();
             formvenda.ShowDialog();
         }
 
+        // possibilita o movimento de todos os forms (draggable)
         private void panelCarroTop_MouseDown(object sender, MouseEventArgs e)
         {
             MoverForm = true;

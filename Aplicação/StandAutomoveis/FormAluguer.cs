@@ -46,7 +46,10 @@ namespace StandAutomoveis
 
             listBoxClientes.DataSource = BDStand.Clientes.Local.ToBindingList();
 
-            listBoxClientes.SelectedIndex = indexCliente;
+            if (BDStand.Clientes.Count() != 0)
+            {
+                listBoxClientes.SelectedIndex = indexCliente;
+            }
         }
 
         private void buttonExitForm_Click(object sender, EventArgs e)

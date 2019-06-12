@@ -38,7 +38,11 @@ namespace StandAutomoveis
 
             clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
 
-            listBoxClientes.SelectedIndex = indexCliente;
+            // "Transporta" o cliente selecionado de form para form
+            if(BDStand.Clientes.Count() != 0)
+            {
+                listBoxClientes.SelectedIndex = indexCliente;
+            }
         }
 
         private void buttonExitForm_Click_1(object sender, EventArgs e)
@@ -112,6 +116,7 @@ namespace StandAutomoveis
 
         private void buttonAddServico_Click(object sender, EventArgs e)
         {
+            //Verificação
             if(tipoTextBox.TextLength == 0)
             {
                 MessageBox.Show("Preencha o campo 'tipo'");
@@ -131,7 +136,7 @@ namespace StandAutomoveis
 
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico novoServico = new Servico(tipoTextBox.Text, dataEntradaDateTimePicker.Value, dataSaidaDateTimePicker.Value);
-            
+            // Adiciona o serviço à base de dados e ao respetivo carro selecionado
             carroSelecionado.Servicos.Add(novoServico);
             BDStand.SaveChanges();
 
@@ -160,6 +165,7 @@ namespace StandAutomoveis
 
         private void buttonAddParcelas_Click(object sender, EventArgs e)
         {   
+            //Verificação
             if(descricaoTextBox.TextLength == 0 || valorTextBox.TextLength == 0)
             {
                 MessageBox.Show("Preencha os campos 'descrição' e 'valor'");
@@ -190,7 +196,7 @@ namespace StandAutomoveis
             // Reset as textboxes dentro da groupBoxParcela
             valorTextBox.Text = "";
             descricaoTextBox.Text = "";
-
+            //Atualiza a label com o valor total do serviço
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             labelValorTotalCliente.Text = "Total do serviço: " + servicoSelecionado.Parcelas.Sum(soma => soma.Valor).ToString() + "€";
         }
@@ -208,6 +214,7 @@ namespace StandAutomoveis
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
             Parcela parcelaSelecionada = (Parcela)listBoxParcelas.SelectedItem;
 
+            // Verifica se há serviços e/ou parcelas associadas ao carro. Caso nao haja remove o carro selecionado
             if(servicoSelecionado == null && parcelaSelecionada == null)
             {
                 clienteSelecionado.CarrosOficina.Remove((CarroOficina)listBoxCarros.SelectedItem);
@@ -230,30 +237,33 @@ namespace StandAutomoveis
                 {
                     if (servicoSelecionado != null)
                     {
+                        // Cria uma lista de acordo com a lista de serviços associada ao carro
                         List<Servico> listaServicos = carroSelecionado.Servicos.ToList();
-
+                        // Percorre a lista de serviços criada
                         foreach(Servico servico in listaServicos)
                         {
                             if (parcelaSelecionada != null)
                             {
+                                // Cria lista de parcelas de acordo com a lista de parcelas associada ao serviço
                                 List<Parcela> listaParcelas = servico.Parcelas.ToList();
-
+                                // Percorre a lista de parcelas
                                 foreach(Parcela parcela in listaParcelas)
                                 {
+                                    // Remove todas as parcelas que encontra relacionadas com o serviço selecionado
                                     BDStand.Parcelas.Remove(parcela);
                                 }
                             }
-
+                            // Remove todos os serviços que encontra relacionadas com o carro selecionado
                             BDStand.Servicos.Remove(servico);
                         }
-                        BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
                     }
-
+                    // Remove o carro depois de ter eliminado os serviços e parcelas associadas
                     clienteSelecionado.CarrosOficina.Remove((CarroOficina)listBoxCarros.SelectedItem);
                     BDStand.Carros.Remove((CarroOficina)listBoxCarros.SelectedItem);
-
+                    // Grava alterações
                     BDStand.SaveChanges();
 
+                    // Refresh
                     listBoxParcelas.DataSource = null;
                     listBoxServicos.DataSource = null;
 
@@ -273,7 +283,7 @@ namespace StandAutomoveis
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
             Parcela parcelaSelecionada = (Parcela)listBoxParcelas.SelectedItem;
-
+            // Verifica se há parcelas associadas ao serviço. Caso nao haja remove o serviço selecionado
             if (parcelaSelecionada == null)
             {
                 carroSelecionado.Servicos.Remove((Servico)listBoxServicos.SelectedItem);
@@ -293,8 +303,9 @@ namespace StandAutomoveis
                 {
                     if(parcelaSelecionada != null)
                     {
+                        // Percorre a lista de parcelas
                         List<Parcela> listaParcelas = servicoSelecionado.Parcelas.ToList();
-
+                        // Remove todas as parcelas que encontra relacionadas com o serviço selecionado
                         foreach (Parcela parcela in listaParcelas)
                         {
                             BDStand.Parcelas.Remove(parcela);
@@ -323,7 +334,7 @@ namespace StandAutomoveis
             }
 
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
-
+            // Remove a parcela selecionada
             servicoSelecionado.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
             BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
 
@@ -332,6 +343,7 @@ namespace StandAutomoveis
             listBoxParcelas.DataSource = null;
             listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
 
+            // Atualiza a label para o valor com o total das parcelas do serviço selecionado
             labelValorTotalCliente.Text = "Total do serviço: " + servicoSelecionado.Parcelas.Sum(soma => soma.Valor).ToString() + "€";
         }
 
@@ -390,11 +402,14 @@ namespace StandAutomoveis
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
             StreamWriter GuardaFicheiro = new StreamWriter("FaturaDoCliente.txt");
+            // Info do cliente e o carro que está a usar
             GuardaFicheiro.WriteLine(clienteSelecionado + "| Carro: " + carroSelecionado.Marca + " " + carroSelecionado.Modelo);
             GuardaFicheiro.WriteLine("________________________________________________________");
             
+            // Percorre todos os serviços do cliente selecionado
             foreach (Servico servicos in carroSelecionado.Servicos)
             {
+                // 
                 GuardaFicheiro.WriteLine("Efetuada a: " + dataEntradaDateTimePicker.Value.ToString());
                 GuardaFicheiro.WriteLine("\n");
 

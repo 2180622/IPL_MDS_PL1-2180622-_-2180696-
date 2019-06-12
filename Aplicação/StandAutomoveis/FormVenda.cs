@@ -43,7 +43,10 @@ namespace StandAutomoveis
             listBoxVendas.DataSource = BDStand.Vendas.Local.ToList();
             listBoxCarros.DataSource = BDStand.Carros.Local.OfType<CarroVenda>().ToList();
 
-            listBoxClientes.SelectedIndex = indexCliente;
+            if (BDStand.Clientes.Count() != 0)
+            {
+                listBoxClientes.SelectedIndex = indexCliente;
+            }
         }
 
         private void buttonExitForm_Click(object sender, EventArgs e)
