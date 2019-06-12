@@ -36,11 +36,12 @@ namespace StandAutomoveis
              orderby carro.IdCarro
              select carro).Load();
 
-            clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
+            clienteBindingSource.DataSource = BDStand.Clientes.Local.ToList();
 
-            // "Transporta" o cliente selecionado de form para form
-            if(BDStand.Clientes.Count() != 0)
+            // Se não existirem clientes ele nao entra no if
+            if (BDStand.Clientes.Count() != 0)
             {
+                // Traz o index do cliente selecionado dos forms anteriores
                 listBoxClientes.SelectedIndex = indexCliente;
             }
         }
@@ -119,13 +120,13 @@ namespace StandAutomoveis
 
         private void buttonAddServico_Click(object sender, EventArgs e)
         {
-            //Verificação
+            // Verificação
             if(tipoTextBox.TextLength == 0)
             {
                 MessageBox.Show("Preencha o campo 'tipo'");
                 return;
             }
-
+            // Validação da data
             if(dataEntradaDateTimePicker.Value > dataSaidaDateTimePicker.Value)
             {
                 MessageBox.Show("A data de entrada não pode ser mais recente que a data de saída");
@@ -183,7 +184,7 @@ namespace StandAutomoveis
             
             if(servicoSelecionado.Parcelas != null)
             {
-                // Adiciona a nova parcela às parcelas na
+                // Adiciona a nova parcela às parcelas do serviço selecionado
                 servicoSelecionado.Parcelas.Add(novaParcela);
             }
             // Guarda as alterações
@@ -314,12 +315,13 @@ namespace StandAutomoveis
                             BDStand.Parcelas.Remove(parcela);
                         }
                     }
-
+                    // Remove o serviço depois de ter removido as parcelas associadas
                     servicoSelecionado.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
                     BDStand.Parcelas.Remove((Parcela)listBoxParcelas.SelectedItem);
-
+                    // Grava alterações
                     BDStand.SaveChanges();
 
+                    // Refresh
                     listBoxParcelas.DataSource = null;
 
                     listBoxServicos.DataSource = null;
@@ -412,14 +414,16 @@ namespace StandAutomoveis
             // Percorre todos os serviços do cliente selecionado
             foreach (Servico servicos in carroSelecionado.Servicos)
             {
-                // 
+                // guarda a data de entrada do serviço
                 GuardaFicheiro.WriteLine("Efetuada a: " + dataEntradaDateTimePicker.Value.ToString());
                 GuardaFicheiro.WriteLine("\n");
 
                 foreach (Parcela linhaDeCompra in servicos.Parcelas)
                 {
+                    // Parcelas de cada serviço
                     GuardaFicheiro.WriteLine("-" + linhaDeCompra.ToString());
                 }
+                // Total das parcelas de cada serviço
                 GuardaFicheiro.WriteLine("\n\n Total: " + servicos.Parcelas.Sum(soma => soma.Valor).ToString() + "€");
                 GuardaFicheiro.WriteLine("________________________________________________________");
             }

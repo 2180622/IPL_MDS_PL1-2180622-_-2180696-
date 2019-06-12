@@ -38,16 +38,16 @@ namespace StandAutomoveis
             (from aluguer in BDStand.Algueres
              orderby aluguer.IdAluguer
              select aluguer).Load();
-
-
-            //clienteBindingSource.DataSource = BDStand.Clientes.Local.ToBindingList();
-
+            
+            // Lista os carros oficina a partir dos carros
             carroBindingSource.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
 
             listBoxClientes.DataSource = BDStand.Clientes.Local.ToBindingList();
 
+            // Se não existirem clientes ele nao entra no if
             if (BDStand.Clientes.Count() != 0)
             {
+                // Traz o index do cliente selecionado dos forms anteriores
                 listBoxClientes.SelectedIndex = indexCliente;
             }
         }
@@ -70,6 +70,7 @@ namespace StandAutomoveis
 
         private void buttonAluguerCliente_Click(object sender, EventArgs e)
         {
+            // Leva o index do cliente selecionado para o form a seguir
             indexCliente = listBoxClientes.SelectedIndex;
 
             FormOficina formoficina = new FormOficina(indexCliente);
@@ -119,14 +120,10 @@ namespace StandAutomoveis
 
             }
         }
-
-        private void listBoxAlugueres_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
+        
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(listBoxAlugueres.SelectedIndex == -1 || listBoxCarros.SelectedIndex == -1)
+            if(listBoxAlugueres.SelectedIndex == -1)
             {
                 return;
             }
@@ -136,6 +133,7 @@ namespace StandAutomoveis
 
             if (clienteSelecionado != null)
             {
+                // atualiza labels e listboxes
                 labelCarroAlugado.Text = carroSelecionado.Marca + carroSelecionado.Modelo;
 
                 listBoxAlugueres.DataSource = null;
@@ -145,12 +143,13 @@ namespace StandAutomoveis
 
         private void buttonAddAluguer_Click(object sender, EventArgs e)
         {
+            // Valor tem de ter algum valor
             if(valorTextBox.TextLength == 0)
             {
                 MessageBox.Show("Preencha o 'Valor'");
                 return;
             }
-
+            // Validação da data
             if (dataInicioDateTimePicker.Value >= dataFimDateTimePicker.Value)
             {
                 MessageBox.Show("A data de entrada não pode ser mais recente que a data de saída");
@@ -165,9 +164,11 @@ namespace StandAutomoveis
 
             if (aluguerSelecionado != null)
             {
+                // Alugeres numa lista
                 List<Aluguer> listaAlugueres = clienteSelecionado.Alugueres.ToList();
                 foreach(Aluguer aluguer in listaAlugueres)
                 {
+                    // Se o aluguer selecionado tiver 0kms ou o carro estiver "indisponivel" nao permite criar aluguer
                     if (aluguerSelecionado.Kms == 0 || carroSelecionado.Estado == "Indisponivel")
                     {
                         MessageBox.Show("Não pode ter mais do que um cliente e/ou carro associado a um aluguer");
@@ -175,20 +176,22 @@ namespace StandAutomoveis
                     }
                 }
             }
-
-            if(carroSelecionado.Estado == "Indisponivel")
+            // Se o carro estiver "indisponivel" nao permite criar aluguer
+            if (carroSelecionado.Estado == "Indisponivel")
             {
                 MessageBox.Show("Não pode ter mais do que um cliente e/ou carro associado a um aluguer");
                 return;
             }
 
+            // Adiciona o cliente e o carro ao novo aluguer
             clienteSelecionado.Alugueres.Add(novoAluguer);
             carroSelecionado.Aluguer.Add(novoAluguer);
-
+            // Carro fica indisponivel depois de alugado
             carroSelecionado.Estado = "Indisponivel";
-
+            // Gravar alteraçoes na BD
             BDStand.SaveChanges();
-
+            
+            // Atualizações
             if (clienteSelecionado != null)
             {
                 listBoxAlugueres.DataSource = null;
@@ -209,19 +212,21 @@ namespace StandAutomoveis
             Aluguer aluguerSelecionado = (Aluguer)listBoxAlugueres.SelectedItem;
             CarroAluguer carroSelecionado = (CarroAluguer)listBoxCarros.SelectedItem;
 
+            // Se houver algum aluguer com mais de 0 kms ou com 0 kms feitos é restringido
             if (aluguerSelecionado.Kms != 0 || kmsTextBox.Text == "0" )
             {
                 MessageBox.Show("Não pode fechar um aluguer que já tenha sido fechado. \nInsira um valor maior que 0 nos 'Kms'.");
+                return;
             }
-
+            // Atualiza os dados dos kms e torna o carro disponivel de novo
             if (aluguerSelecionado.Kms == 0)
             {
                 aluguerSelecionado.Kms = double.Parse(kmsTextBox.Text);
                 carroSelecionado.Estado = "Disponivel";
             }
-
+            // Grava alterações
             BDStand.SaveChanges();
-
+            // Atualizações
             if (clienteSelecionado != null)
             {
                 listBoxAlugueres.DataSource = null;

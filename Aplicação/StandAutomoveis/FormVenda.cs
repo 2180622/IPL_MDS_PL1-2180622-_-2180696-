@@ -13,6 +13,7 @@ namespace StandAutomoveis
 {
     public partial class FormVenda : Form
     {
+        // Cria o container
         public BDStandContainer BDStand;
 
         bool MoverForm;
@@ -24,7 +25,7 @@ namespace StandAutomoveis
         {
             InitializeComponent();
             CenterToScreen();
-
+            // instancia container
             BDStand = new BDStandContainer();
 
             (from cliente in BDStand.Clientes
@@ -43,8 +44,10 @@ namespace StandAutomoveis
             listBoxVendas.DataSource = BDStand.Vendas.Local.ToList();
             listBoxCarros.DataSource = BDStand.Carros.Local.OfType<CarroVenda>().ToList();
 
+            // Se não existirem clientes ele nao entra no if
             if (BDStand.Clientes.Count() != 0)
             {
+                // Traz o index do cliente selecionado dos forms anteriores
                 listBoxClientes.SelectedIndex = indexCliente;
             }
         }
@@ -78,21 +81,21 @@ namespace StandAutomoveis
 
         private void buttonAddVendaCarro_Click(object sender, EventArgs e)
         {
-            // Criar a venda e adicionar ao cliente e BD
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            // Criar a venda
             Venda novaVenda = new Venda(decimal.Parse(valorTextBox.Text), estadoComboBox.Text, dataDateTimePicker.Value);
-
-            //Cria o carro e adiciona-o à venda
+            
             Venda vendaSelecionada = (Venda)listBoxVendas.SelectedItem;
             CarroVenda carroSelecionado = (CarroVenda)listBoxCarros.SelectedItem;
+            //Cria o carro
             CarroVenda novoCarro = new CarroVenda(numeroChassisTextBox.Text, marcaTextBox.Text, modeloTextBox.Text, combustivelComboBox.Text, extrasTextBox.Text);
-
+            // Adiciona o novo carro a venda
             novaVenda.CarroVenda = novoCarro;
-
+            // Associa a venda(com o carro) ao cliente selecionado
             clienteSelecionado.Vendas.Add(novaVenda);
-
+            // Grava alterações
             BDStand.SaveChanges();
-
+            // atualiza a listbox
             listBoxVendas.DataSource = clienteSelecionado.Vendas.ToList();
 
             valorTextBox.Text = "";

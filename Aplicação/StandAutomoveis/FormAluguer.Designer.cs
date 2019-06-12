@@ -295,7 +295,6 @@
             this.listBoxAlugueres.Size = new System.Drawing.Size(282, 303);
             this.listBoxAlugueres.TabIndex = 0;
             this.listBoxAlugueres.ValueMember = "Combustivel";
-            this.listBoxAlugueres.SelectedIndexChanged += new System.EventHandler(this.listBoxAlugueres_SelectedIndexChanged);
             // 
             // carroAluguerBindingSource
             // 
