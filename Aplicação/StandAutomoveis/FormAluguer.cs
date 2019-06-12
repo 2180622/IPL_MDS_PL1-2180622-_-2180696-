@@ -142,13 +142,13 @@ namespace StandAutomoveis
 
         private void buttonAddAluguer_Click(object sender, EventArgs e)
         {
-            if(kmsTextBox.TextLength == 0 || valorTextBox.TextLength == 0)
+            if(valorTextBox.TextLength == 0)
             {
-                MessageBox.Show("Preencha todos os campos");
+                MessageBox.Show("Preencha o 'Valor'");
                 return;
             }
 
-            if (dataInicioDateTimePicker.Value > dataFimDateTimePicker.Value)
+            if (dataInicioDateTimePicker.Value >= dataFimDateTimePicker.Value)
             {
                 MessageBox.Show("A data de entrada não pode ser mais recente que a data de saída");
                 return;
@@ -156,33 +156,35 @@ namespace StandAutomoveis
 
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             CarroAluguer carroSelecionado = (CarroAluguer)listBoxCarros.SelectedItem;
-            Aluguer novoAluguer = new Aluguer(dataInicioDateTimePicker.Value, dataFimDateTimePicker.Value, Decimal.Parse(valorTextBox.Text), double.Parse(kmsTextBox.Text));
+            Aluguer novoAluguer = new Aluguer(dataInicioDateTimePicker.Value, dataFimDateTimePicker.Value, Decimal.Parse(valorTextBox.Text), 0);
+            Aluguer aluguerSelecionado = (Aluguer)listBoxAlugueres.SelectedItem;
             int indexCliente = listBoxClientes.SelectedIndex;
-            
-            if (clienteSelecionado.Alugueres.Count != 0 || carroSelecionado.Aluguer.Count != 0)
+
+            if (aluguerSelecionado != null)
             {
-                MessageBox.Show("Não pode ter mais do que um cliente e/ou carro associado a um aluguer");
-                return;
-            }
-            else
-            {
-                clienteSelecionado.Alugueres.Add(novoAluguer);
-                carroSelecionado.Aluguer.Add(novoAluguer);
-
-                carroSelecionado.Estado = "Indisponivel";
-
-                BDStand.SaveChanges();
-
-                if(clienteSelecionado != null)
+                if (aluguerSelecionado.Kms == 0 || carroSelecionado.Estado == "Indisponivel")
                 {
-                    listBoxAlugueres.DataSource = null;
-                    listBoxAlugueres.DataSource = clienteSelecionado.Alugueres.ToList();
-
-                    listBoxCarros.DataSource = null;
-                    listBoxCarros.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
+                    MessageBox.Show("Não pode ter mais do que um cliente e/ou carro associado a um aluguer");
+                    return;
                 }
-                listBoxClientes.SelectedIndex = indexCliente;
             }
+
+            clienteSelecionado.Alugueres.Add(novoAluguer);
+            carroSelecionado.Aluguer.Add(novoAluguer);
+
+            carroSelecionado.Estado = "Indisponivel";
+
+            BDStand.SaveChanges();
+
+            if (clienteSelecionado != null)
+            {
+                listBoxAlugueres.DataSource = null;
+                listBoxAlugueres.DataSource = clienteSelecionado.Alugueres.ToList();
+
+                listBoxCarros.DataSource = null;
+                listBoxCarros.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
+            }
+            listBoxClientes.SelectedIndex = indexCliente;
 
             valorTextBox.Text = "";
             kmsTextBox.Text = "";
@@ -194,10 +196,16 @@ namespace StandAutomoveis
             Aluguer aluguerSelecionado = (Aluguer)listBoxAlugueres.SelectedItem;
             CarroAluguer carroSelecionado = (CarroAluguer)listBoxCarros.SelectedItem;
 
-            clienteSelecionado.Alugueres.Remove(aluguerSelecionado);
-            carroSelecionado.Aluguer.Remove(aluguerSelecionado);
+            if (aluguerSelecionado.Kms != 0 || kmsTextBox.Text == "0" )
+            {
+                MessageBox.Show("Não pode fechar um aluguer que já tenha sido fechado. \nInsira um valor maior que 0 nos 'Kms'.");
+            }
 
-            carroSelecionado.Estado = "Disponivel";
+            if (aluguerSelecionado.Kms == 0)
+            {
+                aluguerSelecionado.Kms = double.Parse(kmsTextBox.Text);
+                carroSelecionado.Estado = "Disponivel";
+            }
 
             BDStand.SaveChanges();
 

@@ -20,7 +20,7 @@ namespace StandAutomoveis
 
         public override string ToString()
         {
-            return Marca + " " + Modelo +  " | " + Estado + " | " + Combustivel + "L";
+            return Marca + " " + Modelo +  " | " + Estado + " | " + Combustivel;
         }
     }
 }

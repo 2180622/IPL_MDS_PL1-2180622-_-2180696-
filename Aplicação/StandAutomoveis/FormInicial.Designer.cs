@@ -179,6 +179,7 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.Transparent;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.infoStandToolStripStatusLabel,
@@ -230,6 +231,7 @@
             // 
             // alugueresStripStatusLabel
             // 
+            this.alugueresStripStatusLabel.BackColor = System.Drawing.Color.Transparent;
             this.alugueresStripStatusLabel.Name = "alugueresStripStatusLabel";
             this.alugueresStripStatusLabel.Size = new System.Drawing.Size(127, 17);
             this.alugueresStripStatusLabel.Text = "Número de alugueres: ";

@@ -53,9 +53,11 @@ namespace StandAutomoveis
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
-            if(clienteSelecionado != null)
+            if (clienteSelecionado != null)
             {
+
                 // atualiza as labels de acordo com o cliente selecionado
                 labelClienteSelecionado.Text = clienteSelecionado.Nome;
                 labelNIFCliente.Text = clienteSelecionado.NIF;
@@ -67,7 +69,7 @@ namespace StandAutomoveis
                 // Adicionar CarroOficina à listbox
                 listBoxCarros.DataSource = null;
                 listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
-
+                
             }
         }
 
@@ -135,6 +137,8 @@ namespace StandAutomoveis
 
             listBoxServicos.DataSource = null;
             listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+
+            tipoTextBox.Text = "";
         }
 
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,8 +152,10 @@ namespace StandAutomoveis
                 if(servicoSelecionado.Parcelas != null)
                 {
                     listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+                    labelValorTotalCliente.Text = "Total do serviço: " + servicoSelecionado.Parcelas.Sum(soma => soma.Valor).ToString() + "€";
                 }
             }
+
         }
 
         private void buttonAddParcelas_Click(object sender, EventArgs e)
@@ -186,7 +192,7 @@ namespace StandAutomoveis
             descricaoTextBox.Text = "";
 
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            labelValorTotalCliente.Text = "Valor Total: " + servicoSelecionado.Parcelas.Sum(soma => soma.Valor).ToString();
+            labelValorTotalCliente.Text = "Total do serviço: " + servicoSelecionado.Parcelas.Sum(soma => soma.Valor).ToString() + "€";
         }
 
 
@@ -325,6 +331,8 @@ namespace StandAutomoveis
 
             listBoxParcelas.DataSource = null;
             listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+
+            labelValorTotalCliente.Text = "Total do serviço: " + servicoSelecionado.Parcelas.Sum(soma => soma.Valor).ToString() + "€";
         }
 
         private void buttonCliente_Click(object sender, EventArgs e)
@@ -377,7 +385,6 @@ namespace StandAutomoveis
 
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
@@ -388,9 +395,8 @@ namespace StandAutomoveis
             
             foreach (Servico servicos in carroSelecionado.Servicos)
             {
-                GuardaFicheiro.WriteLine("Efetuada a: " + dataSaidaDateTimePicker.Value.ToShortDateString());
-                GuardaFicheiro.WriteLine("________________________________________________________");
-                GuardaFicheiro.WriteLine(" ");
+                GuardaFicheiro.WriteLine("Efetuada a: " + dataEntradaDateTimePicker.Value.ToString());
+                GuardaFicheiro.WriteLine("\n");
 
                 foreach (Parcela linhaDeCompra in servicos.Parcelas)
                 {
