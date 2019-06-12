@@ -66,6 +66,10 @@ namespace StandAutomoveis
                 labelClienteSelecionado.Text = clienteSelecionado.Nome;
                 labelNIFCliente.Text = clienteSelecionado.NIF;
                 labelMoradaCliente.Text = clienteSelecionado.Morada;
+                if(servicoSelecionado == null)
+                {
+                    labelValorTotalCliente.Text = "Total do serviço: 0€";
+                }
 
                 // Limpa listBox dos serviços e parcelas
                 listBoxServicos.DataSource = null;

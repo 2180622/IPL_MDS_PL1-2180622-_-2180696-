@@ -83,7 +83,7 @@
             // dataFimLabel
             // 
             dataFimLabel.AutoSize = true;
-            dataFimLabel.Location = new System.Drawing.Point(305, 58);
+            dataFimLabel.Location = new System.Drawing.Point(294, 58);
             dataFimLabel.Name = "dataFimLabel";
             dataFimLabel.Size = new System.Drawing.Size(52, 13);
             dataFimLabel.TabIndex = 5;
@@ -92,7 +92,7 @@
             // dataInicioLabel
             // 
             dataInicioLabel.AutoSize = true;
-            dataInicioLabel.Location = new System.Drawing.Point(305, 19);
+            dataInicioLabel.Location = new System.Drawing.Point(294, 19);
             dataInicioLabel.Name = "dataInicioLabel";
             dataInicioLabel.Size = new System.Drawing.Size(61, 13);
             dataInicioLabel.TabIndex = 7;
@@ -110,7 +110,7 @@
             // valorLabel
             // 
             valorLabel.AutoSize = true;
-            valorLabel.Location = new System.Drawing.Point(305, 102);
+            valorLabel.Location = new System.Drawing.Point(294, 102);
             valorLabel.Name = "valorLabel";
             valorLabel.Size = new System.Drawing.Size(34, 13);
             valorLabel.TabIndex = 13;
@@ -177,9 +177,9 @@
             // 
             this.listBoxCarros.DataSource = this.carroBindingSource;
             this.listBoxCarros.FormattingEnabled = true;
-            this.listBoxCarros.Location = new System.Drawing.Point(475, 17);
+            this.listBoxCarros.Location = new System.Drawing.Point(459, 17);
             this.listBoxCarros.Name = "listBoxCarros";
-            this.listBoxCarros.Size = new System.Drawing.Size(174, 264);
+            this.listBoxCarros.Size = new System.Drawing.Size(190, 264);
             this.listBoxCarros.TabIndex = 0;
             this.listBoxCarros.SelectedIndexChanged += new System.EventHandler(this.listBoxCarros_SelectedIndexChanged);
             // 
@@ -213,7 +213,7 @@
             this.groupBoxFecharAluguer.Controls.Add(this.buttonCloseAluguer);
             this.groupBoxFecharAluguer.Controls.Add(this.kmsTextBox);
             this.groupBoxFecharAluguer.Controls.Add(kmsLabel);
-            this.groupBoxFecharAluguer.Location = new System.Drawing.Point(305, 222);
+            this.groupBoxFecharAluguer.Location = new System.Drawing.Point(294, 222);
             this.groupBoxFecharAluguer.Name = "groupBoxFecharAluguer";
             this.groupBoxFecharAluguer.Size = new System.Drawing.Size(164, 100);
             this.groupBoxFecharAluguer.TabIndex = 17;
@@ -244,7 +244,7 @@
             // 
             // buttonAddAluguer
             // 
-            this.buttonAddAluguer.Location = new System.Drawing.Point(308, 144);
+            this.buttonAddAluguer.Location = new System.Drawing.Point(297, 144);
             this.buttonAddAluguer.Name = "buttonAddAluguer";
             this.buttonAddAluguer.Size = new System.Drawing.Size(156, 23);
             this.buttonAddAluguer.TabIndex = 15;
@@ -255,7 +255,7 @@
             // dataFimDateTimePicker
             // 
             this.dataFimDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.aluguerBindingSource, "DataFim", true));
-            this.dataFimDateTimePicker.Location = new System.Drawing.Point(308, 74);
+            this.dataFimDateTimePicker.Location = new System.Drawing.Point(297, 74);
             this.dataFimDateTimePicker.Name = "dataFimDateTimePicker";
             this.dataFimDateTimePicker.Size = new System.Drawing.Size(156, 20);
             this.dataFimDateTimePicker.TabIndex = 6;
@@ -263,7 +263,7 @@
             // dataInicioDateTimePicker
             // 
             this.dataInicioDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.aluguerBindingSource, "DataInicio", true));
-            this.dataInicioDateTimePicker.Location = new System.Drawing.Point(308, 35);
+            this.dataInicioDateTimePicker.Location = new System.Drawing.Point(297, 35);
             this.dataInicioDateTimePicker.Name = "dataInicioDateTimePicker";
             this.dataInicioDateTimePicker.Size = new System.Drawing.Size(156, 20);
             this.dataInicioDateTimePicker.TabIndex = 8;
@@ -271,16 +271,16 @@
             // valorTextBox
             // 
             this.valorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aluguerBindingSource, "Valor", true));
-            this.valorTextBox.Location = new System.Drawing.Point(308, 118);
+            this.valorTextBox.Location = new System.Drawing.Point(297, 118);
             this.valorTextBox.Name = "valorTextBox";
             this.valorTextBox.Size = new System.Drawing.Size(156, 20);
             this.valorTextBox.TabIndex = 14;
             // 
             // buttonAddCarro
             // 
-            this.buttonAddCarro.Location = new System.Drawing.Point(475, 287);
+            this.buttonAddCarro.Location = new System.Drawing.Point(459, 287);
             this.buttonAddCarro.Name = "buttonAddCarro";
-            this.buttonAddCarro.Size = new System.Drawing.Size(174, 25);
+            this.buttonAddCarro.Size = new System.Drawing.Size(190, 25);
             this.buttonAddCarro.TabIndex = 1;
             this.buttonAddCarro.Text = "Adicionar Carro";
             this.buttonAddCarro.UseVisualStyleBackColor = true;
@@ -292,7 +292,7 @@
             this.listBoxAlugueres.FormattingEnabled = true;
             this.listBoxAlugueres.Location = new System.Drawing.Point(6, 19);
             this.listBoxAlugueres.Name = "listBoxAlugueres";
-            this.listBoxAlugueres.Size = new System.Drawing.Size(293, 303);
+            this.listBoxAlugueres.Size = new System.Drawing.Size(282, 303);
             this.listBoxAlugueres.TabIndex = 0;
             this.listBoxAlugueres.ValueMember = "Combustivel";
             this.listBoxAlugueres.SelectedIndexChanged += new System.EventHandler(this.listBoxAlugueres_SelectedIndexChanged);

@@ -165,11 +165,21 @@ namespace StandAutomoveis
 
             if (aluguerSelecionado != null)
             {
-                if (aluguerSelecionado.Kms == 0 || carroSelecionado.Estado == "Indisponivel")
+                List<Aluguer> listaAlugueres = clienteSelecionado.Alugueres.ToList();
+                foreach(Aluguer aluguer in listaAlugueres)
                 {
-                    MessageBox.Show("Não pode ter mais do que um cliente e/ou carro associado a um aluguer");
-                    return;
+                    if (aluguerSelecionado.Kms == 0 || carroSelecionado.Estado == "Indisponivel")
+                    {
+                        MessageBox.Show("Não pode ter mais do que um cliente e/ou carro associado a um aluguer");
+                        return;
+                    }
                 }
+            }
+
+            if(carroSelecionado.Estado == "Indisponivel")
+            {
+                MessageBox.Show("Não pode ter mais do que um cliente e/ou carro associado a um aluguer");
+                return;
             }
 
             clienteSelecionado.Alugueres.Add(novoAluguer);
@@ -220,6 +230,8 @@ namespace StandAutomoveis
                 listBoxCarros.DataSource = null;
                 listBoxCarros.DataSource = BDStand.Carros.Local.ToBindingList().OfType<CarroAluguer>().ToList();
             }
+
+            kmsTextBox.Text = "";
         }
 
         // Torna o form draggable
