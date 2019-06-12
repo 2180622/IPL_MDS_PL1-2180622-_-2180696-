@@ -13,25 +13,31 @@ namespace StandAutomoveis
     public partial class FormInicial : Form
     {
         public BDStandContainer BDStand;
-        
+        // Variáveis para poder arrastar o form
         bool MoverForm;
         int eixoX;
         int eixoY;
+
         int indexCliente;
 
         public FormInicial()
         {
             InitializeComponent();
+            // Centrar a janela
             CenterToScreen();
 
+            // Criar container para a base de dados
             BDStand = new BDStandContainer();
 
-            clientesCountToolStripStatusLabel.Text =  BDStand.Clientes.Count().ToString();
+            // Funções para colocar a contagem de registos numa label no status strip
+            clientesCountToolStripStatusLabel.Text = BDStand.Clientes.Count().ToString();
             carrosCountToolStripStatusLabel.Text = BDStand.Carros.Count().ToString();
             alugueresCountToolStripStatusLabel.Text = BDStand.Algueres.Count().ToString();
             vendasCountToolStripStatusLabel.Text = BDStand.Vendas.Count().ToString();
         }
 
+
+        // Botões de atalho e fecho de janelas
         public void buttonGestaoClientes_Click(object sender, EventArgs e)
         {
             FormCliente formcliente = new FormCliente();
@@ -54,7 +60,7 @@ namespace StandAutomoveis
         }
 
         private void buttonGestaoVendas_Click(object sender, EventArgs e)
-        { 
+        {
             FormVenda formvenda = new FormVenda(indexCliente);
 
             this.Hide();
@@ -74,19 +80,20 @@ namespace StandAutomoveis
             Application.Exit();
         }
 
+        // Label com as horas atuais
         private void timerHorasAtuais_Tick(object sender, EventArgs e)
         {
             toolStripStatusLabelHoras.Text = DateTime.Now.ToString();
         }
 
-        // Torna o form draggable
+        // Funções para tornar o form arrastável
         private void panelCarroTop_MouseDown(object sender, MouseEventArgs e)
         {
             MoverForm = true;
             eixoX = e.X;
             eixoY = e.Y;
         }
-        // "
+
         private void panelCarroTop_MouseMove(object sender, MouseEventArgs e)
         {
             if (MoverForm == true)
@@ -94,10 +101,24 @@ namespace StandAutomoveis
                 SetDesktopLocation(MousePosition.X - eixoX, MousePosition.Y - eixoY);
             }
         }
-        // "
+
         private void panelCarroTop_MouseUp(object sender, MouseEventArgs e)
         {
             MoverForm = false;
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
