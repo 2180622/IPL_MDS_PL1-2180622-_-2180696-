@@ -73,7 +73,6 @@ namespace StandAutomoveis
                 // Adicionar CarroOficina à listbox
                 listBoxCarros.DataSource = null;
                 listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
-                
             }
         }
 

@@ -58,6 +58,11 @@ namespace StandAutomoveis
                 return;
             }
 
+            if (nIFTextBox.TextLength != 9 || contactoTextBox.TextLength != 9)
+            {
+                MessageBox.Show("O 'NIF' e o 'Contacto' necessitam de 9 dígitos");
+            }
+
             try
             {
                 clienteBindingSource.AddNew();
